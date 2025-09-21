@@ -1,0 +1,8 @@
+opensearch-py==2.6.*
+httpx==0.27.*
+beautifulsoup4==4.12.*
+python-dotenv==1.0.*
+openai==1.*
+rapidfuzz==3.*
+lxml==5.*
+pytest==8.*
