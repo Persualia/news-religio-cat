@@ -13,7 +13,7 @@ from chunking import chunk_text
 from embeddings import embed_texts
 from models import Article, Chunk
 from opensearch_client import get_client
-from scraping.salesians import SalesiansScraper
+from scraping import BaseScraper, instantiate_scrapers
 
 from .opensearch_ops import ensure_monthly_indices, ensure_templates, index_articles, index_chunks
 from .summary import post_summary, summarize_articles
@@ -37,13 +37,13 @@ class DailyPipeline:
     def __init__(
         self,
         *,
-        scrapers: Optional[Sequence[SalesiansScraper]] = None,
+        scrapers: Optional[Sequence[BaseScraper]] = None,
         client: Optional[OpenSearch] = None,
         embedder: Optional[Embedder] = None,
         summarizer: Optional[Summarizer] = None,
         summary_poster: Optional[SummaryPoster] = None,
     ) -> None:
-        self._scrapers = list(scrapers) if scrapers else [SalesiansScraper()]
+        self._scrapers = list(scrapers) if scrapers else instantiate_scrapers()
         self._client = client
         self._embedder = embedder or embed_texts
         self._summarizer = summarizer or summarize_articles
