@@ -113,6 +113,7 @@ class SalesiansScraper(BaseScraper):
         return Article(
             site=self.site_id,
             url=url,
+            base_url=self.base_url,
             lang=lang,
             title=title,
             content=content,

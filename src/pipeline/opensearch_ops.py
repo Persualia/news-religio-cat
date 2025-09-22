@@ -34,6 +34,7 @@ ARTICLES_TEMPLATE = {
             "properties": {
                 "site": {"type": "keyword"},
                 "url": {"type": "keyword"},
+                "base_url": {"type": "keyword"},
                 "lang": {"type": "keyword"},
                 "author": {"type": "keyword"},
                 "published_at": {"type": "date"},
@@ -79,6 +80,7 @@ CHUNKS_TEMPLATE = {
             "properties": {
                 "site": {"type": "keyword"},
                 "url": {"type": "keyword"},
+                "base_url": {"type": "keyword"},
                 "lang": {"type": "keyword"},
                 "author": {"type": "keyword"},
                 "published_at": {"type": "date"},

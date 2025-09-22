@@ -31,6 +31,7 @@ def test_parse_article_success():
         "https://www.salesians.cat/noticia/primera-noticia/",
     )
     assert article.site == "salesians"
+    assert article.base_url == scraper.base_url
     assert article.lang == "ca"
     assert article.title == "Celebració de la comunitat salesiana"
     assert "Primer paràgraf" in article.content

@@ -19,21 +19,26 @@ class StubScraper:
 
 @pytest.fixture(autouse=True)
 def patch_pipeline(monkeypatch):
-    monkeypatch.setattr("pipeline.ingestion.ensure_templates", Mock(return_value=True))
-    monkeypatch.setattr(
-        "pipeline.ingestion.ensure_monthly_indices",
-        Mock(return_value=("articles-2024.05", "chunks-2024.05")),
-    )
-    monkeypatch.setattr("pipeline.ingestion.index_articles", Mock())
-    monkeypatch.setattr("pipeline.ingestion.index_chunks", Mock())
-    monkeypatch.setattr("pipeline.ingestion.post_summary", Mock())
-    yield
+    mocks = {
+        "ensure_templates": Mock(return_value=True),
+        "ensure_monthly_indices": Mock(return_value=("articles-2024.05", "chunks-2024.05")),
+        "index_articles": Mock(),
+        "index_chunks": Mock(),
+        "post_summary": Mock(),
+    }
+    monkeypatch.setattr("pipeline.ingestion.ensure_templates", mocks["ensure_templates"])
+    monkeypatch.setattr("pipeline.ingestion.ensure_monthly_indices", mocks["ensure_monthly_indices"])
+    monkeypatch.setattr("pipeline.ingestion.index_articles", mocks["index_articles"])
+    monkeypatch.setattr("pipeline.ingestion.index_chunks", mocks["index_chunks"])
+    monkeypatch.setattr("pipeline.ingestion.post_summary", mocks["post_summary"])
+    return mocks
 
 
-def test_pipeline_run_success():
+def test_pipeline_run_success(patch_pipeline):
     article = Article(
         site="salesians",
         url="https://example.com/news/1",
+        base_url="https://example.com",
         lang="ca",
         title="Títol",
         content="Contingut de prova amb informació rellevant.",
@@ -60,12 +65,16 @@ def test_pipeline_run_success():
     embedder.assert_called_once()
     summarizer.assert_called_once()
     summary_poster.assert_called_once_with("Resum de prova")
+    patch_pipeline["ensure_templates"].assert_called_once()
+    patch_pipeline["index_articles"].assert_called_once()
+    patch_pipeline["index_chunks"].assert_called_once()
 
 
-def test_pipeline_run_handles_summary_post_failure():
+def test_pipeline_run_handles_summary_post_failure(patch_pipeline):
     article = Article(
         site="salesians",
         url="https://example.com/news/1",
+        base_url="https://example.com",
         lang="ca",
         title="Títol",
         content="Contingut curt",
@@ -89,10 +98,11 @@ def test_pipeline_run_handles_summary_post_failure():
     summary_poster.assert_called_once()
 
 
-def test_pipeline_dry_run_skips_external_calls():
+def test_pipeline_dry_run_skips_external_calls(patch_pipeline):
     article = Article(
         site="salesians",
         url="https://example.com/news/1",
+        base_url="https://example.com",
         lang="ca",
         title="Títol",
         content="Contingut curt",
@@ -116,3 +126,39 @@ def test_pipeline_dry_run_skips_external_calls():
     embedder.assert_not_called()
     summarizer.assert_not_called()
     summary_poster.assert_not_called()
+    patch_pipeline["ensure_templates"].assert_not_called()
+    patch_pipeline["index_articles"].assert_not_called()
+    patch_pipeline["index_chunks"].assert_not_called()
+
+
+def test_pipeline_skip_indexing_calls_summary(patch_pipeline):
+    article = Article(
+        site="salesians",
+        url="https://example.com/news/1",
+        base_url="https://example.com",
+        lang="ca",
+        title="Títol",
+        content="Contingut curt",
+    )
+
+    embedder = Mock(return_value=[[0.1]])
+    summarizer = Mock(return_value="Resum de prova")
+    summary_poster = Mock()
+
+    pipeline = DailyPipeline(
+        scrapers=[StubScraper(article)],
+        client=Mock(),
+        embedder=embedder,
+        summarizer=summarizer,
+        summary_poster=summary_poster,
+    )
+
+    result = pipeline.run(skip_indexing=True)
+
+    assert result.summary == "Resum de prova"
+    assert result.articles_indexed == 0
+    assert result.chunks_indexed == 0
+    summary_poster.assert_called_once()
+    patch_pipeline["ensure_templates"].assert_not_called()
+    patch_pipeline["index_articles"].assert_not_called()
+    patch_pipeline["index_chunks"].assert_not_called()

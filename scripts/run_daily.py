@@ -16,6 +16,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run the daily news ingestion pipeline")
     parser.add_argument("--limit-per-site", type=int, default=None, help="Optional max articles per scraper")
     parser.add_argument("--dry-run", action="store_true", help="Scrape and log without indexing or external API calls")
+    parser.add_argument("--no-index", action="store_true", help="Evita escribir en OpenSearch pero mantiene embeddings y resumen")
     parser.add_argument(
         "--log-level",
         default="INFO",
@@ -29,7 +30,11 @@ def main() -> None:
     args = parse_args()
     setup_logging(level=getattr(logging, args.log_level.upper()))
     pipeline = DailyPipeline()
-    result = pipeline.run(limit_per_site=args.limit_per_site, dry_run=args.dry_run)
+    result = pipeline.run(
+        limit_per_site=args.limit_per_site,
+        dry_run=args.dry_run,
+        skip_indexing=args.no_index,
+    )
     print(json.dumps(result.__dict__, indent=2, ensure_ascii=False))
 
 

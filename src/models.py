@@ -29,6 +29,7 @@ def url_to_id(url: str) -> str:
 class Article:
     site: str
     url: str
+    base_url: str
     lang: str
     title: str
     content: str
@@ -42,6 +43,7 @@ class Article:
         doc = {
             "site": self.site,
             "url": self.url,
+            "base_url": self.base_url,
             "lang": self.lang,
             "title": self.title,
             "content": self.content,
@@ -71,6 +73,7 @@ class Chunk:
         doc = {
             "site": self.article.site,
             "url": self.article.url,
+            "base_url": self.article.base_url,
             "lang": self.article.lang,
             "author": self.article.author,
             "published_at": _to_iso(self.article.published_at)

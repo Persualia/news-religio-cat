@@ -46,6 +46,7 @@ Fields (all lowercase keys):
 
 * `site` *(keyword)* — **Source identifier** from our websites list (not the article’s domain).
 * `url` *(keyword, unique)* — Canonical article URL.
+* `base_url` *(keyword)* — URL base del scraper (punto de entrada).
 * `lang` *(keyword)* — e.g., `ca`, `es`, `en` (detected or provided).
 * `author` *(keyword, nullable)*.
 * `published_at` *(date, nullable)* — As parsed; may be missing.
@@ -213,7 +214,8 @@ CHUNK_OVERLAP=120
 
 * Los logs se imprimen por consola con cabecera y resumen final; puedes ajustar la verbosidad con `--log-level` (`DEBUG`, `INFO`, etc.).
 * Ejecuta `PYTHONPATH=src python scripts/run_daily.py --dry-run --log-level DEBUG` para inspeccionar los documentos generados (se muestran como JSON multilínea) sin tocar OpenSearch ni OpenAI.
-* En modo normal (sin `--dry-run`) el pipeline indexa datos; solo verás los eventos principales y posibles avisos de fallo.
+* Usa `--no-index` para ejecutar scraping + resumen (+ embeddings opcionales) sin escribir en OpenSearch; útil para probar integraciones como n8n.
+* En modo normal (sin `--dry-run`/`--no-index`) el pipeline indexa datos y genera resumen final.
 
 ---
 
