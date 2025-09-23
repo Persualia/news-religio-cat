@@ -6,16 +6,23 @@ from datetime import datetime
 import json
 import logging
 from typing import Callable, Iterable, Optional, Sequence
+import time
 
 from opensearchpy import OpenSearch
 
 from chunking import chunk_text
 from embeddings import embed_texts
-from models import Article, Chunk
+from models import Article, Chunk, url_to_id
 from opensearch_client import get_client
 from scraping import BaseScraper, instantiate_scrapers
 
-from .opensearch_ops import ensure_monthly_indices, ensure_templates, index_articles, index_chunks
+from .opensearch_ops import (
+    ensure_monthly_indices,
+    ensure_templates,
+    index_articles,
+    index_chunks,
+    find_existing_article_ids,
+)
 from .summary import post_summary, summarize_articles
 
 Embedder = Callable[[Sequence[str]], list[list[float]]]
@@ -89,8 +96,54 @@ class DailyPipeline:
 
         articles: list[Article] = []
         for scraper in self._scrapers:
-            logger.debug("Scraping site %s", scraper.site_id)
-            articles.extend(scraper.scrape(limit=limit_per_site))
+            logger.debug("Scraping site %s", getattr(scraper, "site_id", type(scraper).__name__))
+
+            if isinstance(scraper, BaseScraper):
+                # Phase 1: listing + precheck existing (when OS client available)
+                try:
+                    listing_soup = scraper._get_soup(scraper.listing_url)
+                    raw_urls = list(scraper.extract_article_urls(listing_soup))
+                    # Normalize to absolute + canonical form as scrapers would
+                    candidate_urls = list(dict.fromkeys(scraper._normalize_url(u) for u in raw_urls))
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("Failed listing for %s: %s", scraper.site_id, exc)
+                    candidate_urls = []
+
+                # Apply precheck to skip existing docs across months when indexing is enabled
+                to_fetch_urls: list[str] = candidate_urls
+                if client is not None and candidate_urls:
+                    ids = [url_to_id(u) for u in candidate_urls]
+                    existing = find_existing_article_ids(client, ids)
+                    if existing:
+                        logger.debug(
+                            "%s: %d/%d URLs already indexed; skipping.",
+                            scraper.site_id,
+                            len(existing),
+                            len(ids),
+                        )
+                    idset = set(existing)
+                    to_fetch_urls = [u for u, i in zip(candidate_urls, ids, strict=False) if i not in idset]
+
+                # Respect limit AFTER filtering, to process up to N new items
+                if limit_per_site is not None:
+                    to_fetch_urls = to_fetch_urls[: limit_per_site]
+
+                # Phase 2: fetch + parse remaining URLs
+                for url in to_fetch_urls:
+                    try:
+                        soup = scraper._get_soup(url)
+                        article = scraper.parse_article(soup, url)
+                        articles.append(article)
+                        # Throttle per scraper settings
+                        time.sleep(getattr(scraper, "_throttle_seconds", 0))
+                    except Exception as exc:  # noqa: BLE001
+                        logger.warning("Failed to parse %s: %s", url, exc)
+            else:
+                # Fallback for simple stub scrapers used in tests
+                try:
+                    articles.extend(scraper.scrape(limit=limit_per_site))
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("Fallback scrape failed for %s: %s", type(scraper).__name__, exc)
 
         deduped_articles = list({article.doc_id: article for article in articles}.values())
         logger.info("Scraped %d articles (deduped).", len(deduped_articles))

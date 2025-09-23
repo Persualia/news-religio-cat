@@ -4,6 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from hashlib import sha1
+from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from typing import Optional
 
 
@@ -21,8 +22,50 @@ def _to_iso(dt: datetime) -> str:
 
 
 def url_to_id(url: str) -> str:
-    """Generate the deterministic OpenSearch document ID from the URL."""
-    return sha1(url.encode("utf-8")).hexdigest()
+    """Generate a deterministic document ID from a canonicalized URL.
+
+    Canonicalization for ID purposes:
+    - Lowercase host, remove default ports.
+    - Remove fragment.
+    - Remove common tracking params (utm_*, fbclid, gclid, ref, mc_*).
+    - Sort query params and remove empties.
+    - Collapse duplicate slashes.
+    - Remove trailing slash except for root.
+    """
+    try:
+        split = urlsplit(url)
+        scheme = split.scheme or "https"
+        netloc = (split.netloc or "").lower()
+        if netloc.endswith(":80") and scheme == "http":
+            netloc = netloc[:-3]
+        if netloc.endswith(":443") and scheme == "https":
+            netloc = netloc[:-4]
+
+        # Normalize path: collapse multiple slashes
+        import re as _re
+
+        path = _re.sub(r"/+", "/", split.path or "/")
+        if path != "/" and path.endswith("/"):
+            path = path[:-1]
+
+        # Clean query params
+        params = []
+        for k, v in parse_qsl(split.query, keep_blank_values=False):
+            lk = k.lower()
+            if lk.startswith("utm_"):
+                continue
+            if lk in {"fbclid", "gclid", "yclid", "mc_cid", "mc_eid", "ref", "ref_src", "igshid"}:
+                continue
+            params.append((k, v))
+        params.sort()
+        query = urlencode(params, doseq=True)
+
+        fragment = ""
+        normalized = urlunsplit((scheme, netloc, path, query, fragment))
+    except Exception:
+        normalized = url
+
+    return sha1(normalized.encode("utf-8")).hexdigest()
 
 
 @dataclass(slots=True)

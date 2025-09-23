@@ -79,7 +79,60 @@ class BaseScraper(ABC):
         return BeautifulSoup(response.text, "lxml")
 
     def _normalize_url(self, url: str) -> str:
-        return urljoin(self.base_url, url)
+        """Canonicalize a URL using listing context.
+
+        Rules:
+        - Resolve against ``base_url`` and drop fragments.
+        - Lowercase host, remove default ports.
+        - Remove common tracking params (utm_*, fbclid, gclid, ref, mc_*).
+        - Sort query params and remove empties.
+        - Collapse duplicate slashes and trim trailing slash (except root).
+        """
+        absolute = urljoin(self.base_url, url)
+
+        try:
+            from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+
+            split = urlsplit(absolute)
+            scheme = split.scheme or "https"
+            netloc = split.netloc.lower()
+            if netloc.endswith(":80") and scheme == "http":
+                netloc = netloc[:-3]
+            if netloc.endswith(":443") and scheme == "https":
+                netloc = netloc[:-4]
+
+            # Normalize path: collapse multiple slashes
+            orig_has_trailing = (split.path or "").endswith("/")
+            path = re.sub(r"/+", "/", split.path or "/")
+
+            # Preserve trailing slash if present in original; else trim (except root)
+            if path != "/":
+                if orig_has_trailing and not path.endswith("/"):
+                    path = path + "/"
+                elif not orig_has_trailing and path.endswith("/"):
+                    path = path[:-1]
+
+            # Clean query params
+            params = []
+            for k, v in parse_qsl(split.query, keep_blank_values=False):
+                lk = k.lower()
+                if lk.startswith("utm_"):
+                    continue
+                if lk in {"fbclid", "gclid", "yclid", "mc_cid", "mc_eid", "ref", "ref_src", "igshid"}:
+                    continue
+                params.append((k, v))
+            # Sort for determinism
+            params.sort()
+            query = urlencode(params, doseq=True)
+
+            # Drop fragment
+            fragment = ""
+
+            normalized = urlunsplit((scheme, netloc, path, query, fragment))
+            return normalized
+        except Exception:
+            # Fallback to simple resolution if anything goes wrong
+            return absolute
 
     # -- Language helpers -------------------------------------------------
 

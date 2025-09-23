@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 import copy
-from typing import Iterable
+from typing import Iterable, Iterable as _Iterable
 
 from opensearchpy import OpenSearch, helpers
 from opensearchpy.exceptions import AuthorizationException
@@ -158,27 +158,65 @@ def _ensure_alias(client: OpenSearch, *, alias: str, target_index: str) -> None:
 def index_articles(client: OpenSearch, articles: Iterable[Article], *, index_name: str) -> None:
     actions = (
         {
-            "_op_type": "index",
+            "_op_type": "create",
             "_index": index_name,
             "_id": article.doc_id,
             "_source": article.to_document(),
         }
         for article in articles
     )
-    helpers.bulk(client, actions, stats_only=True)
+    helpers.bulk(client, actions, stats_only=True, raise_on_error=False)
 
 
 def index_chunks(client: OpenSearch, chunks: Iterable[Chunk], *, index_name: str) -> None:
     actions = (
         {
-            "_op_type": "index",
+            "_op_type": "create",
             "_index": index_name,
             "_id": chunk.doc_id,
             "_source": chunk.to_document(),
         }
         for chunk in chunks
     )
-    helpers.bulk(client, actions, stats_only=True)
+    helpers.bulk(client, actions, stats_only=True, raise_on_error=False)
+
+
+def find_existing_article_ids(client: OpenSearch, ids: _Iterable[str]) -> set[str]:
+    """Return the subset of ``ids`` that already exist across all monthly indices.
+
+    Uses a search with an ``ids`` query over ``articles-*`` to avoid knowing
+    the specific monthly index containing a document.
+    """
+    id_list = [i for i in ids if i]
+    if not id_list:
+        return set()
+
+    found: set[str] = set()
+
+    def _chunks(seq: list[str], size: int = 512):
+        for i in range(0, len(seq), size):
+            yield seq[i : i + size]
+
+    for batch in _chunks(id_list):
+        try:
+            res = client.search(
+                index="articles-*",
+                body={
+                    "size": len(batch),
+                    "query": {"ids": {"values": batch}},
+                    "_source": False,
+                },
+            )
+            if isinstance(res, dict):
+                hits = res.get("hits", {}).get("hits", [])
+                for h in hits:
+                    doc_id = h.get("_id") if isinstance(h, dict) else None
+                    if doc_id:
+                        found.add(doc_id)
+        except Exception:
+            # Fail-closed: if search is unavailable (e.g., mocked client), assume none found
+            return set()
+    return found
 
 
 __all__ = [
@@ -186,6 +224,7 @@ __all__ = [
     "ensure_monthly_indices",
     "index_articles",
     "index_chunks",
+    "find_existing_article_ids",
     "ARTICLES_ALIAS",
     "CHUNKS_ALIAS",
 ]
