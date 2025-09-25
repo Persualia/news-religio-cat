@@ -1,0 +1,160 @@
+{
+  "query": "Dona’m les 5 més rellevants sobre vocacions dels últims tres mesos",
+  "plan": {
+    "intent": "search_articles",
+    "topK": 5,
+    "keywords": "vocacions",
+    "semantic": true,
+    "mode": "hybrid",
+    "filters": {
+      "date_from": "2025-06-25",
+      "date_to": "2025-09-25"
+    },
+    "sort": {
+      "by": "published_at",
+      "order": "desc"
+    },
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "need_summary": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "vocacions",
+      "semantic": false,
+      "mode": "lexical",
+      "filters": {
+        "date_from": "2025-06-25",
+        "date_to": "2025-09-25"
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    },
+    "query_text": "vocacions",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site",
+      "author",
+      "description"
+    ],
+    "top_k": 5,
+    "semantic": false,
+    "mode": "lexical"
+  },
+  "dsl": {
+    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
+    "body": {
+      "size": 5,
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "range": {
+                "published_at": {
+                  "gte": "2025-06-25",
+                  "lte": "2025-09-25"
+                }
+              }
+            }
+          ],
+          "should": [
+            {
+              "multi_match": {
+                "query": "vocacions",
+                "fields": [
+                  "search_text_short^3",
+                  "title^4",
+                  "description^2",
+                  "content"
+                ],
+                "type": "best_fields",
+                "operator": "and"
+              }
+            }
+          ],
+          "minimum_should_match": 1
+        }
+      },
+      "sort": [
+        {
+          "published_at": {
+            "order": "desc",
+            "unmapped_type": "date"
+          }
+        }
+      ],
+      "_source": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "index_name": "articles-live"
+  },
+  "opensearch_response": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "articles-2025.09",
+          "_id": "e6f01917dd9556c8039c2a4d73d69c53e44fdd7b",
+          "_score": null,
+          "_source": {
+            "site": "maristes",
+            "title": "La Travessa 2025: Expedició L’Hermitage",
+            "published_at": "2025-07-24T08:08:43Z",
+            "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage"
+          },
+          "sort": [
+            1753344523000
+          ]
+        }
+      ]
+    }
+  },
+  "fallback": "semantic_disabled_due_to_missing_knn"
+}

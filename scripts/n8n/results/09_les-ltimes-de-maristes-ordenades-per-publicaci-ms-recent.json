@@ -1,0 +1,234 @@
+{
+  "query": "Les últimes de maristes ordenades per publicació més recent",
+  "plan": {
+    "intent": "latest_by_site",
+    "topK": 5,
+    "semantic": false,
+    "filters": {
+      "site": [
+        "maristes"
+      ]
+    },
+    "sort": {
+      "by": "published_at",
+      "order": "desc"
+    },
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "need_summary": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "latest_by_site",
+      "topK": 5,
+      "semantic": false,
+      "filters": {
+        "site": [
+          "maristes"
+        ]
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false,
+      "mode": "lexical"
+    },
+    "query_text": "notícies rellevants",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site",
+      "author",
+      "description"
+    ],
+    "top_k": 5,
+    "semantic": false,
+    "mode": "lexical"
+  },
+  "dsl": {
+    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
+    "body": {
+      "size": 0,
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "terms": {
+                "site.keyword": [
+                  "maristes"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "by_site": {
+          "terms": {
+            "field": "site.keyword",
+            "size": 50
+          },
+          "aggs": {
+            "latest": {
+              "top_hits": {
+                "size": 5,
+                "sort": [
+                  {
+                    "published_at": {
+                      "order": "desc",
+                      "unmapped_type": "date"
+                    }
+                  }
+                ],
+                "_source": [
+                  "title",
+                  "url",
+                  "published_at",
+                  "site",
+                  "author",
+                  "description"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "intent": "latest_by_site",
+    "target": "aggs",
+    "index_name": "articles-live"
+  },
+  "opensearch_response": {
+    "took": 4,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 11,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "by_site": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "maristes",
+            "doc_count": 11,
+            "latest": {
+              "hits": {
+                "total": {
+                  "value": 11,
+                  "relation": "eq"
+                },
+                "max_score": null,
+                "hits": [
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "7ec6faf4067cd491d6bd07a6e8a94a17c1685208",
+                    "_score": null,
+                    "_source": {
+                      "site": "maristes",
+                      "title": "Arrenca a les Filipines el XXIII Capítol general",
+                      "published_at": "2025-09-08T10:09:17Z",
+                      "url": "https://www.maristes.cat/noticies/arrenca-les-filipines-el-xxiii-capitol-general"
+                    },
+                    "sort": [
+                      1757326157000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "3189a3b1c8f4e47f553815b056c5f576cabb22ab",
+                    "_score": null,
+                    "_source": {
+                      "site": "maristes",
+                      "title": "El Camaleó es fa un lloc a l'Arxiu Històric Ciutat de Badalona",
+                      "published_at": "2025-07-29T10:41:20Z",
+                      "url": "https://www.maristes.cat/noticies/el-camaleo-es-fa-un-lloc-larxiu-historic-ciutat-de-badalona"
+                    },
+                    "sort": [
+                      1753785680000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "d8fe95a9061a2a515e88a81d692636edbdde46a0",
+                    "_score": null,
+                    "_source": {
+                      "site": "maristes",
+                      "title": "Nova etapa i nous somnis!",
+                      "published_at": "2025-07-24T14:47:48Z",
+                      "url": "https://www.maristes.cat/noticies/nova-etapa-i-nous-somnis"
+                    },
+                    "sort": [
+                      1753368468000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "e6f01917dd9556c8039c2a4d73d69c53e44fdd7b",
+                    "_score": null,
+                    "_source": {
+                      "site": "maristes",
+                      "title": "La Travessa 2025: Expedició L’Hermitage",
+                      "published_at": "2025-07-24T08:08:43Z",
+                      "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage"
+                    },
+                    "sort": [
+                      1753344523000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "758dc4897a6d5fc400610cd603cf55c4bd5a6104",
+                    "_score": null,
+                    "_source": {
+                      "site": "maristes",
+                      "title": "Trobada d'equips directius a les Avellanes: celebrem!",
+                      "published_at": "2025-07-23T15:37:57Z",
+                      "url": "https://www.maristes.cat/noticies/trobada-dequips-directius-les-avellanes-celebrem"
+                    },
+                    "sort": [
+                      1753285077000
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

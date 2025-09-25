@@ -1,0 +1,735 @@
+{
+  "Últimes notícies de l’església a Catalunya avui": {
+    "output": {
+      "intent": "latest_by_site",
+      "topK": 5,
+      "keywords": "església Catalunya",
+      "semantic": false,
+      "mode": "lexical",
+      "filters": {
+        "lang": [
+          "ca"
+        ]
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Què han publicat els salesians aquesta setmana?": {
+    "output": {
+      "intent": "latest_by_site",
+      "topK": 5,
+      "semantic": false,
+      "filters": {
+        "site": [
+          "salesians"
+        ],
+        "date_from": "2025-09-18",
+        "date_to": "2025-09-25"
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Dona’m les 5 més rellevants sobre vocacions dels últims tres mesos": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "vocacions",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "date_from": "2025-06-25",
+        "date_to": "2025-09-25"
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Notícies sobre refugiats i iniciatives solidàries dels jesuïtes": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "refugiats iniciatives solidàries jesuïtes",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "site": [
+          "jesuites"
+        ]
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Busco articles en català sobre educació i joves": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "educació joves",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "lang": [
+          "ca"
+        ]
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Hi ha algun reportatge sobre “vocació salesiana”?": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "phrase": "vocació salesiana",
+      "semantic": false,
+      "mode": "lexical",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Què s’ha dit del Papa Francesc aquest mes?": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "Papa Francesc",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "date_from": "2025-09-01",
+        "date_to": "2025-09-25"
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Resum curt del més important publicat ahir": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "date_from": "2025-09-24",
+        "date_to": "2025-09-24"
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": true
+    }
+  },
+  "Les últimes de maristes ordenades per publicació més recent": {
+    "output": {
+      "intent": "latest_by_site",
+      "topK": 5,
+      "semantic": false,
+      "filters": {
+        "site": [
+          "maristes"
+        ]
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Articles amb entrevista a responsables pastorals (si n’hi ha)": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "entrevista responsables pastorals",
+      "semantic": true,
+      "mode": "hybrid",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Cronologia dels actes del darrer cap de setmana": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "actes darrer cap de setmana",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "date_from": "2025-09-20",
+        "date_to": "2025-09-22"
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Què s’ha publicat sobre conflicte i pau a nivell internacional?": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "conflicte i pau a nivell internacional",
+      "semantic": true,
+      "mode": "hybrid",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Notícies de formació per a animadors juvenils": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "formació animadors juvenils",
+      "semantic": true,
+      "mode": "hybrid",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Exacte: “Feliços els humils” (busca coincidència literal)": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "phrase": "Feliços els humils",
+      "semantic": false,
+      "mode": "lexical",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Alguna peça d’opinió sobre la canonització recent?": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "canonització recent opinió",
+      "semantic": true,
+      "mode": "hybrid",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Vull fragments on es parli explícitament de “acollida” i “inclusió”": {
+    "output": {
+      "intent": "search_chunks",
+      "topK": 5,
+      "keywords": "inclusió",
+      "phrase": "acollida",
+      "semantic": false,
+      "mode": "lexical",
+      "return": {
+        "index": "chunks",
+        "fields": [
+          "url",
+          "content",
+          "chunk_ix",
+          "published_at",
+          "site",
+          "lang",
+          "author"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Què hi ha de vocations (en anglès) als nostres portals?": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "vocations",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "lang": [
+          "en"
+        ]
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Dona’m les 3 darreres notícies de cada site": {
+    "output": {
+      "intent": "latest_by_site",
+      "topK": 3,
+      "semantic": false,
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Cerco contingut en castellà sobre educación i jóvenes": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "educación jóvenes",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "lang": [
+          "es"
+        ]
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Notícies relacionades amb escoles i inici de curs": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "escoles inici de curs",
+      "semantic": true,
+      "mode": "hybrid",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Resum en punts de les novetats dels salesians dels últims 7 dies": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "novetats salesians",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "site": [
+          "salesians"
+        ],
+        "date_from": "2025-09-18",
+        "date_to": "2025-09-25"
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": true
+    }
+  },
+  "Articles amb autor identificat “Salesians Comunicació”": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "Salesians Comunicació",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "author": [
+          "Salesians Comunicació"
+        ]
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Què s’ha publicat sobre refugiats ucraïnesos?": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "refugiats ucraïnesos",
+      "semantic": true,
+      "mode": "hybrid",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Exacte: “vocació salesiana” dels jesuïtes en català": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "phrase": "vocació salesiana",
+      "semantic": false,
+      "mode": "lexical",
+      "filters": {
+        "site": [
+          "jesuites"
+        ],
+        "lang": [
+          "ca"
+        ]
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Busco cròniques d’esdeveniments amb data entre 2025-09-01 i 2025-09-20": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "cròniques d’esdeveniments",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "date_from": "2025-09-01",
+        "date_to": "2025-09-20"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Darreres novetats sobre pastoral juvenil": {
+    "output": {
+      "intent": "latest_by_site",
+      "topK": 5,
+      "keywords": "pastoral juvenil",
+      "semantic": false,
+      "mode": "lexical",
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Un resum amb titular i enllaç del més destacat d’avui per site": {
+    "output": {
+      "intent": "latest_by_site",
+      "topK": 5,
+      "semantic": false,
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site"
+        ]
+      },
+      "need_summary": true
+    }
+  },
+  "Hi ha cap menció a campanyes solidàries recents?": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "campanyes solidàries",
+      "semantic": true,
+      "mode": "hybrid",
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false
+    }
+  },
+  "Resum final en català de tot el que s’ha publicat avui sobre vocació amb enllaços.": {
+    "output": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "vocació",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "date_from": "2025-09-25",
+        "date_to": "2025-09-25"
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": true
+    }
+  }
+}

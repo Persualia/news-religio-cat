@@ -1,0 +1,142 @@
+{
+  "query": "Notícies de formació per a animadors juvenils",
+  "plan": {
+    "intent": "search_articles",
+    "topK": 5,
+    "keywords": "formació animadors juvenils",
+    "semantic": true,
+    "mode": "hybrid",
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "need_summary": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "formació animadors juvenils",
+      "semantic": false,
+      "mode": "lexical",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false,
+      "filters": {},
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      }
+    },
+    "query_text": "formació animadors juvenils",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site",
+      "author",
+      "description"
+    ],
+    "top_k": 5,
+    "semantic": false,
+    "mode": "lexical"
+  },
+  "dsl": {
+    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
+    "body": {
+      "size": 5,
+      "query": {
+        "bool": {
+          "must": [],
+          "should": [
+            {
+              "multi_match": {
+                "query": "formació animadors juvenils",
+                "fields": [
+                  "search_text_short^3",
+                  "title^4",
+                  "description^2",
+                  "content"
+                ],
+                "type": "best_fields",
+                "operator": "and"
+              }
+            }
+          ],
+          "minimum_should_match": 1
+        }
+      },
+      "sort": [
+        {
+          "published_at": {
+            "order": "desc",
+            "unmapped_type": "date"
+          }
+        }
+      ],
+      "_source": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "index_name": "articles-live"
+  },
+  "opensearch_response": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "articles-2025.09",
+          "_id": "a9f8c20261ea0344f94c6b3a263fff4699b0afe0",
+          "_score": null,
+          "_source": {
+            "site": "salesians",
+            "author": "Salesians Comunicació",
+            "description": "Els centres juvenils salesians de tota Espanya arrenquen el curs 2025-2026 amb convivències de programació, inscripcions i reunions amb famílies, impulsats pel compromís dels seus joves animadors voluntaris i salesians, decidits a ser “Protagonistes de la Història”.",
+            "title": "Els centres juvenils salesians inicien el curs preparats per a ser “Protagonistes de la Història”",
+            "published_at": "2025-09-23T00:00:00Z",
+            "url": "https://salesianos.info/blog/els-centres-juvenils-salesians-inicien-el-curs-preparats-per-a-ser-protagonistes-de-la-historia/"
+          },
+          "sort": [
+            1758585600000
+          ]
+        }
+      ]
+    }
+  },
+  "fallback": "semantic_disabled_due_to_missing_knn"
+}

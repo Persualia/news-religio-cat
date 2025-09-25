@@ -1,0 +1,379 @@
+{
+  "query": "Un resum amb titular i enllaç del més destacat d’avui per site",
+  "plan": {
+    "intent": "latest_by_site",
+    "topK": 5,
+    "semantic": false,
+    "sort": {
+      "by": "published_at",
+      "order": "desc"
+    },
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site"
+      ]
+    },
+    "need_summary": true
+  },
+  "prepared": {
+    "plan": {
+      "intent": "latest_by_site",
+      "topK": 5,
+      "semantic": false,
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site"
+        ]
+      },
+      "need_summary": true,
+      "mode": "lexical",
+      "filters": {}
+    },
+    "query_text": "notícies rellevants",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site"
+    ],
+    "top_k": 5,
+    "semantic": false,
+    "mode": "lexical"
+  },
+  "dsl": {
+    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
+    "body": {
+      "size": 0,
+      "query": {
+        "bool": {
+          "must": []
+        }
+      },
+      "aggs": {
+        "by_site": {
+          "terms": {
+            "field": "site.keyword",
+            "size": 50
+          },
+          "aggs": {
+            "latest": {
+              "top_hits": {
+                "size": 5,
+                "sort": [
+                  {
+                    "published_at": {
+                      "order": "desc",
+                      "unmapped_type": "date"
+                    }
+                  }
+                ],
+                "_source": [
+                  "title",
+                  "url",
+                  "published_at",
+                  "site"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "intent": "latest_by_site",
+    "target": "aggs",
+    "index_name": "articles-live"
+  },
+  "opensearch_response": {
+    "took": 8,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 31,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    },
+    "aggregations": {
+      "by_site": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": "maristes",
+            "doc_count": 11,
+            "latest": {
+              "hits": {
+                "total": {
+                  "value": 11,
+                  "relation": "eq"
+                },
+                "max_score": null,
+                "hits": [
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "7ec6faf4067cd491d6bd07a6e8a94a17c1685208",
+                    "_score": null,
+                    "_source": {
+                      "site": "maristes",
+                      "title": "Arrenca a les Filipines el XXIII Capítol general",
+                      "published_at": "2025-09-08T10:09:17Z",
+                      "url": "https://www.maristes.cat/noticies/arrenca-les-filipines-el-xxiii-capitol-general"
+                    },
+                    "sort": [
+                      1757326157000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "3189a3b1c8f4e47f553815b056c5f576cabb22ab",
+                    "_score": null,
+                    "_source": {
+                      "site": "maristes",
+                      "title": "El Camaleó es fa un lloc a l'Arxiu Històric Ciutat de Badalona",
+                      "published_at": "2025-07-29T10:41:20Z",
+                      "url": "https://www.maristes.cat/noticies/el-camaleo-es-fa-un-lloc-larxiu-historic-ciutat-de-badalona"
+                    },
+                    "sort": [
+                      1753785680000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "d8fe95a9061a2a515e88a81d692636edbdde46a0",
+                    "_score": null,
+                    "_source": {
+                      "site": "maristes",
+                      "title": "Nova etapa i nous somnis!",
+                      "published_at": "2025-07-24T14:47:48Z",
+                      "url": "https://www.maristes.cat/noticies/nova-etapa-i-nous-somnis"
+                    },
+                    "sort": [
+                      1753368468000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "e6f01917dd9556c8039c2a4d73d69c53e44fdd7b",
+                    "_score": null,
+                    "_source": {
+                      "site": "maristes",
+                      "title": "La Travessa 2025: Expedició L’Hermitage",
+                      "published_at": "2025-07-24T08:08:43Z",
+                      "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage"
+                    },
+                    "sort": [
+                      1753344523000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "758dc4897a6d5fc400610cd603cf55c4bd5a6104",
+                    "_score": null,
+                    "_source": {
+                      "site": "maristes",
+                      "title": "Trobada d'equips directius a les Avellanes: celebrem!",
+                      "published_at": "2025-07-23T15:37:57Z",
+                      "url": "https://www.maristes.cat/noticies/trobada-dequips-directius-les-avellanes-celebrem"
+                    },
+                    "sort": [
+                      1753285077000
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "key": "jesuites",
+            "doc_count": 10,
+            "latest": {
+              "hits": {
+                "total": {
+                  "value": 10,
+                  "relation": "eq"
+                },
+                "max_score": null,
+                "hits": [
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "cd74ec2b3d3a2d1a2f71099ac50667dfa206ac85",
+                    "_score": null,
+                    "_source": {
+                      "site": "jesuites",
+                      "title": "Davant el genocidi a la Franja de Gaza",
+                      "published_at": "2025-09-24T00:00:00Z",
+                      "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza"
+                    },
+                    "sort": [
+                      1758672000000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "718edd7089fa3b61f8bd747814c05524b15420b9",
+                    "_score": null,
+                    "_source": {
+                      "site": "jesuites",
+                      "title": "El Provincial presenta a Catalunya el nou Projecte Apostòlic",
+                      "published_at": "2025-09-21T00:00:00Z",
+                      "url": "https://jesuites.net/ca/noticia/el-provincial-presenta-catalunya-el-nou-projecte-apostolic"
+                    },
+                    "sort": [
+                      1758412800000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "d1422a73f8bec73eb4fb8388bc5354d77c71253e",
+                    "_score": null,
+                    "_source": {
+                      "site": "jesuites",
+                      "title": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad",
+                      "published_at": "2025-09-17T00:00:00Z",
+                      "url": "https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la"
+                    },
+                    "sort": [
+                      1758067200000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "06f2f53c5b3cef1690fb7931029b56242038bdc7",
+                    "_score": null,
+                    "_source": {
+                      "site": "jesuites",
+                      "title": "Publicació del segon volum sobre la història dels jesuïtes a Barcelona",
+                      "published_at": "2025-09-16T00:00:00Z",
+                      "url": "https://jesuites.net/ca/noticia/publicacio-del-segon-volum-sobre-la-historia-dels-jesuites-barcelona"
+                    },
+                    "sort": [
+                      1757980800000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "b212d9a1c6278aacf340b632fdf71ef01729a634",
+                    "_score": null,
+                    "_source": {
+                      "site": "jesuites",
+                      "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
+                      "published_at": "2025-09-15T00:00:00Z",
+                      "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona"
+                    },
+                    "sort": [
+                      1757894400000
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "key": "salesians",
+            "doc_count": 10,
+            "latest": {
+              "hits": {
+                "total": {
+                  "value": 10,
+                  "relation": "eq"
+                },
+                "max_score": null,
+                "hits": [
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "8c8b8b252500e6c8f15a8ca056d3d9c6660aa7e9",
+                    "_score": null,
+                    "_source": {
+                      "site": "salesians",
+                      "title": "Entre la espera y la esperanza. El Jubileo 2025, una oportunidad",
+                      "published_at": "2025-09-24T00:00:00Z",
+                      "url": "https://salesianos.info/blog/entre-la-espera-y-la-esperanza-el-jubileo-2025-una-oportunidad/"
+                    },
+                    "sort": [
+                      1758672000000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "c5e9a26fcd4433e437ca834b7dc1963f3d907c1c",
+                    "_score": null,
+                    "_source": {
+                      "site": "salesians",
+                      "title": "L’Equip Coordinador del CNSPJ planifica a Madrid els reptes de la Pastoral Juvenil Salesiana",
+                      "published_at": "2025-09-23T00:00:00Z",
+                      "url": "https://salesianos.info/blog/lequip-coordinador-del-cnspj-planifica-a-madrid-els-reptes-de-la-pastoral-juvenil-salesiana/"
+                    },
+                    "sort": [
+                      1758585600000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "c79a34333747c64b6533ee772df74064c46d5982",
+                    "_score": null,
+                    "_source": {
+                      "site": "salesians",
+                      "title": "L’equip d’Escoles de la Inspectoria Maria Auxiliadora impulsa la coordinació i el treball en xarxa",
+                      "published_at": "2025-09-23T00:00:00Z",
+                      "url": "https://salesianos.info/blog/lequip-descoles-de-la-inspectoria-maria-auxiliadora-impulsa-la-coordinacio-i-el-treball-en-xarxa/"
+                    },
+                    "sort": [
+                      1758585600000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "a9f8c20261ea0344f94c6b3a263fff4699b0afe0",
+                    "_score": null,
+                    "_source": {
+                      "site": "salesians",
+                      "title": "Els centres juvenils salesians inicien el curs preparats per a ser “Protagonistes de la Història”",
+                      "published_at": "2025-09-23T00:00:00Z",
+                      "url": "https://salesianos.info/blog/els-centres-juvenils-salesians-inicien-el-curs-preparats-per-a-ser-protagonistes-de-la-historia/"
+                    },
+                    "sort": [
+                      1758585600000
+                    ]
+                  },
+                  {
+                    "_index": "articles-2025.09",
+                    "_id": "0315dd4e1982e679b28b26eff0f5941244364ee5",
+                    "_score": null,
+                    "_source": {
+                      "site": "salesians",
+                      "title": "Un refugi d’aprenentatge per a la infància enmig del conflicte del Líban",
+                      "published_at": "2025-09-23T00:00:00Z",
+                      "url": "https://salesianos.info/blog/un-refugi-daprenentatge-per-a-la-infancia-enmig-del-conflicte-del-liban/"
+                    },
+                    "sort": [
+                      1758585600000
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

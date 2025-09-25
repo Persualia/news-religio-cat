@@ -1,0 +1,321 @@
+[
+  {
+    "query": "Últimes notícies de l’església a Catalunya avui",
+    "intent": "latest_by_site",
+    "target": "aggs",
+    "hits": {
+      "value": 27,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/01_ltimes-notcies-de-lesglsia-a-catalunya-avui.json",
+    "fallback": false
+  },
+  {
+    "query": "Què han publicat els salesians aquesta setmana?",
+    "intent": "latest_by_site",
+    "target": "aggs",
+    "hits": {
+      "value": 9,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/02_qu-han-publicat-els-salesians-aquesta-setmana.json",
+    "fallback": false
+  },
+  {
+    "query": "Dona’m les 5 més rellevants sobre vocacions dels últims tres mesos",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 1,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/03_donam-les-5-ms-rellevants-sobre-vocacions-dels-ltims-tres-me.json",
+    "fallback": true
+  },
+  {
+    "query": "Notícies sobre refugiats i iniciatives solidàries dels jesuïtes",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/04_notcies-sobre-refugiats-i-iniciatives-solidries-dels-jesutes.json",
+    "fallback": true
+  },
+  {
+    "query": "Busco articles en català sobre educació i joves",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 1,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/05_busco-articles-en-catal-sobre-educaci-i-joves.json",
+    "fallback": true
+  },
+  {
+    "query": "Hi ha algun reportatge sobre “vocació salesiana”?",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/06_hi-ha-algun-reportatge-sobre-vocaci-salesiana.json",
+    "fallback": false
+  },
+  {
+    "query": "Què s’ha dit del Papa Francesc aquest mes?",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 1,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/07_qu-sha-dit-del-papa-francesc-aquest-mes.json",
+    "fallback": true
+  },
+  {
+    "query": "Resum curt del més important publicat ahir",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/08_resum-curt-del-ms-important-publicat-ahir.json",
+    "fallback": true
+  },
+  {
+    "query": "Les últimes de maristes ordenades per publicació més recent",
+    "intent": "latest_by_site",
+    "target": "aggs",
+    "hits": {
+      "value": 11,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/09_les-ltimes-de-maristes-ordenades-per-publicaci-ms-recent.json",
+    "fallback": false
+  },
+  {
+    "query": "Articles amb entrevista a responsables pastorals (si n’hi ha)",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/10_articles-amb-entrevista-a-responsables-pastorals-si-nhi-ha.json",
+    "fallback": true
+  },
+  {
+    "query": "Cronologia dels actes del darrer cap de setmana",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/11_cronologia-dels-actes-del-darrer-cap-de-setmana.json",
+    "fallback": true
+  },
+  {
+    "query": "Què s’ha publicat sobre conflicte i pau a nivell internacional?",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/12_qu-sha-publicat-sobre-conflicte-i-pau-a-nivell-internacional.json",
+    "fallback": true
+  },
+  {
+    "query": "Notícies de formació per a animadors juvenils",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 1,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/13_notcies-de-formaci-per-a-animadors-juvenils.json",
+    "fallback": true
+  },
+  {
+    "query": "Exacte: “Feliços els humils” (busca coincidència literal)",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/14_exacte-felios-els-humils-busca-coincidncia-literal.json",
+    "fallback": false
+  },
+  {
+    "query": "Alguna peça d’opinió sobre la canonització recent?",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/15_alguna-pea-dopini-sobre-la-canonitzaci-recent.json",
+    "fallback": true
+  },
+  {
+    "query": "Vull fragments on es parli explícitament de “acollida” i “inclusió”",
+    "intent": "search_chunks",
+    "target": "chunks_lexical",
+    "hits": {
+      "value": 2,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/16_vull-fragments-on-es-parli-explcitament-de-acollida-i-inclus.json",
+    "fallback": false
+  },
+  {
+    "query": "Què hi ha de vocations (en anglès) als nostres portals?",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/17_qu-hi-ha-de-vocations-en-angls-als-nostres-portals.json",
+    "fallback": true
+  },
+  {
+    "query": "Dona’m les 3 darreres notícies de cada site",
+    "intent": "latest_by_site",
+    "target": "aggs",
+    "hits": {
+      "value": 31,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/18_donam-les-3-darreres-notcies-de-cada-site.json",
+    "fallback": false
+  },
+  {
+    "query": "Cerco contingut en castellà sobre educación i jóvenes",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 1,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/19_cerco-contingut-en-castell-sobre-educacin-i-jvenes.json",
+    "fallback": true
+  },
+  {
+    "query": "Notícies relacionades amb escoles i inici de curs",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/20_notcies-relacionades-amb-escoles-i-inici-de-curs.json",
+    "fallback": true
+  },
+  {
+    "query": "Resum en punts de les novetats dels salesians dels últims 7 dies",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/21_resum-en-punts-de-les-novetats-dels-salesians-dels-ltims-7-d.json",
+    "fallback": true
+  },
+  {
+    "query": "Articles amb autor identificat “Salesians Comunicació”",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/22_articles-amb-autor-identificat-salesians-comunicaci.json",
+    "fallback": true
+  },
+  {
+    "query": "Què s’ha publicat sobre refugiats ucraïnesos?",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/23_qu-sha-publicat-sobre-refugiats-ucranesos.json",
+    "fallback": true
+  },
+  {
+    "query": "Exacte: “vocació salesiana” dels jesuïtes en català",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/24_exacte-vocaci-salesiana-dels-jesutes-en-catal.json",
+    "fallback": false
+  },
+  {
+    "query": "Busco cròniques d’esdeveniments amb data entre 2025-09-01 i 2025-09-20",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/25_busco-crniques-desdeveniments-amb-data-entre-2025-09-01-i-20.json",
+    "fallback": true
+  },
+  {
+    "query": "Darreres novetats sobre pastoral juvenil",
+    "intent": "latest_by_site",
+    "target": "aggs",
+    "hits": {
+      "value": 31,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/26_darreres-novetats-sobre-pastoral-juvenil.json",
+    "fallback": false
+  },
+  {
+    "query": "Un resum amb titular i enllaç del més destacat d’avui per site",
+    "intent": "latest_by_site",
+    "target": "aggs",
+    "hits": {
+      "value": 31,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/27_un-resum-amb-titular-i-enlla-del-ms-destacat-davui-per-site.json",
+    "fallback": false
+  },
+  {
+    "query": "Hi ha cap menció a campanyes solidàries recents?",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/28_hi-ha-cap-menci-a-campanyes-solidries-recents.json",
+    "fallback": true
+  },
+  {
+    "query": "Resum final en català de tot el que s’ha publicat avui sobre vocació amb enllaços.",
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "hits": {
+      "value": 0,
+      "relation": "eq"
+    },
+    "output_file": "scripts/n8n/results/29_resum-final-en-catal-de-tot-el-que-sha-publicat-avui-sobre-v.json",
+    "fallback": true
+  }
+]

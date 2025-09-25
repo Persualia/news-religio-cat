@@ -69,7 +69,7 @@ CHUNKS_TEMPLATE = {
             "number_of_shards": 1,
             "number_of_replicas": 1,
             "refresh_interval": "1s",
-            "knn": True,
+            "index.knn": True,
             "analysis": {
                 "analyzer": {
                     "es_std": {"type": "standard", "stopwords": "_spanish_"}

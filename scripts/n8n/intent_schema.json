@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://persualia.com/schemas/opensearch-chat.plan.v2.json",
+  "title": "OpenSearch Chat Plan (v2)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["intent"],
+  "properties": {
+    "intent": {
+      "type": "string",
+      "enum": ["search_articles", "search_chunks", "latest_by_site", "summarize"],
+      "description": "Tipo de acción a realizar."
+    },
+    "topK": { "type": "integer", "minimum": 1, "maximum": 50, "default": 5 },
+    "keywords": { "type": "string", "minLength": 1, "description": "Consulta léxica (sin comillas)." },
+    "phrase": { "type": "string", "minLength": 1, "description": "Frase exacta cuando el usuario usa comillas." },
+    "semantic": { "type": "boolean", "default": false, "description": "Activa búsqueda vectorial (semántica)." },
+    "mode": {
+      "type": "string",
+      "enum": ["hybrid", "lexical"],
+      "description": "Convenience flag: 'hybrid' implica semantic=true; 'lexical' implica semantic=false."
+    },
+    "filters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "site": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["salesians", "jesuites", "maristes"] },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "lang": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["ca", "es", "en", "fr"] },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "author": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "date_from": { "type": "string", "format": "date" },
+        "date_to": { "type": "string", "format": "date" }
+      }
+    },
+    "sort": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "by": { "type": "string", "enum": ["published_at", "indexed_at"] },
+        "order": { "type": "string", "enum": ["asc", "desc"], "default": "desc" }
+      }
+    },
+    "return": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index"],
+      "properties": {
+        "index": { "type": "string", "enum": ["articles", "chunks"] },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "title", "url", "author", "published_at", "indexed_at",
+              "site", "base_url", "lang", "description", "content",
+              "chunk_ix"
+            ]
+          }
+        }
+      }
+    },
+    "need_summary": { "type": "boolean", "default": false }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "mode": { "const": "hybrid" } }, "required": ["mode"] },
+      "then": { "properties": { "semantic": { "const": true } } }
+    },
+    {
+      "if": { "properties": { "mode": { "const": "lexical" } }, "required": ["mode"] },
+      "then": { "properties": { "semantic": { "const": false } } }
+    },
+    {
+      "if": { "properties": { "return": { "properties": { "index": { "const": "articles" } }, "required": ["index"] } } },
+      "then": {
+        "properties": {
+          "return": {
+            "properties": {
+              "fields": {
+                "items": {
+                  "enum": [
+                    "title", "url", "author", "published_at", "indexed_at",
+                    "site", "base_url", "lang", "description", "content"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "return": { "properties": { "index": { "const": "chunks" } }, "required": ["index"] } } },
+      "then": {
+        "properties": {
+          "return": {
+            "properties": {
+              "fields": {
+                "items": {
+                  "enum": [
+                    "url", "author", "published_at", "indexed_at",
+                    "site", "base_url", "lang", "content", "chunk_ix"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "Si hay frase exacta, al menos una de 'phrase' o 'keywords' debe existir (ya garantizado por la presencia de 'phrase'). Además, recomienda 'lexical' o 'hybrid' explícito.",
+      "if": { "required": ["phrase"] },
+      "then": {
+        "anyOf": [
+          { "properties": { "mode": { "const": "lexical" } } },
+          { "properties": { "mode": { "const": "hybrid" } } }
+        ]
+      }
+    }
+  ],
+  "examples": [
+    {
+      "intent": "search_chunks",
+      "topK": 3,
+      "keywords": "joves refugiats",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": { "site": ["salesians"], "lang": ["ca"] },
+      "sort": { "by": "published_at", "order": "desc" },
+      "return": { "index": "chunks", "fields": ["url","content","published_at","site","author","chunk_ix"] },
+      "need_summary": false
+    },
+    {
+      "intent": "search_articles",
+      "topK": 5,
+      "phrase": "«vocació salesiana»",
+      "semantic": false,
+      "mode": "lexical",
+      "filters": { "site": ["jesuites"], "lang": ["ca","es"] },
+      "sort": { "by": "published_at", "order": "desc" },
+      "return": { "index": "articles", "fields": ["title","url","author","published_at","description"] },
+      "need_summary": true
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "query": "Vull fragments on es parli explícitament de “acollida” i “inclusió”",
+  "plan": {
+    "intent": "search_chunks",
+    "topK": 5,
+    "keywords": "inclusió",
+    "phrase": "acollida",
+    "semantic": false,
+    "mode": "lexical",
+    "return": {
+      "index": "chunks",
+      "fields": [
+        "url",
+        "content",
+        "chunk_ix",
+        "published_at",
+        "site",
+        "lang",
+        "author"
+      ]
+    },
+    "need_summary": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_chunks",
+      "topK": 5,
+      "keywords": "inclusió",
+      "phrase": "acollida",
+      "semantic": false,
+      "mode": "lexical",
+      "return": {
+        "index": "chunks",
+        "fields": [
+          "url",
+          "content",
+          "chunk_ix",
+          "published_at",
+          "site",
+          "lang",
+          "author"
+        ]
+      },
+      "need_summary": false,
+      "filters": {},
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      }
+    },
+    "query_text": "acollida",
+    "fields": [
+      "url",
+      "content",
+      "chunk_ix",
+      "published_at",
+      "site",
+      "lang",
+      "author"
+    ],
+    "top_k": 5,
+    "semantic": false,
+    "mode": "lexical"
+  },
+  "dsl": {
+    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/chunks-live/_search",
+    "body": {
+      "size": 5,
+      "query": {
+        "bool": {
+          "must": [],
+          "should": [
+            {
+              "match_phrase": {
+                "content": "acollida"
+              }
+            },
+            {
+              "multi_match": {
+                "query": "acollida",
+                "fields": [
+                  "content"
+                ],
+                "type": "best_fields",
+                "operator": "and"
+              }
+            }
+          ],
+          "minimum_should_match": 1
+        }
+      },
+      "sort": [
+        {
+          "published_at": {
+            "order": "desc",
+            "unmapped_type": "date"
+          }
+        }
+      ],
+      "_source": [
+        "url",
+        "content",
+        "chunk_ix",
+        "published_at",
+        "site",
+        "lang",
+        "author"
+      ]
+    },
+    "intent": "search_chunks",
+    "target": "chunks_lexical",
+    "index_name": "chunks-live"
+  },
+  "opensearch_response": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 2,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "chunks-2025.09",
+          "_id": "84fa6216d516da56a2d78f88712c1708afc2a896:000",
+          "_score": null,
+          "_source": {
+            "site": "jesuites",
+            "chunk_ix": 0,
+            "lang": "ca",
+            "published_at": "2025-09-11T00:00:00Z",
+            "url": "https://jesuites.net/ca/noticia/celebracio-de-sant-pere-claver-verdu",
+            "content": "Celebració de Sant Pere Claver a Verdú\n\nUn any més en la festivitat de Sant Pere Claver, el 9 de setembre, al poble de Verdú, on va néixer i créixer aquest sant jesuïta català, la celebració va tenir un to joiós i emotiu. L’eucaristia fou presidida pel delegat dels Jesuïtes a Catalunya, Pau Vidal, el rector de Tàrrega, Mn Joan Viladot i altres jesuïtes i preveres. L’homilia va anar a càrrec del jesuïta Rafa García Mora, recentment arribat de Bolívia, que va recordar com un 9 de setembre de fa 37 anys va ser ordenat a Bolívia, en una parròquia que porta el nom de Pere Claver. García Mora va ressaltar que la vida i testimoni del fill de Verdú ens encoratjava avui a viure una fe cristiana compromesa amb la justícia. A principis del segle XVII va marxar per ser missioner a Amèrica amb un desig molt diferent del que tenien altres, que hi anaven a fer fortuna, va dir: “Pere Claver havia entès l a paraula de Jesús d’una manera radical: servir als més pobres, els més oblidats, aquells que no tenen veu”. Així es trobà rebent als negres que arribaven a Cartagena d’Índies en vaixells negrers, carregats d’homes i dones arrencats de la seva terra d’Àfrica i tractats com a mercaderia. Pere Claver els guaria les ferides, els donava aigua i els acollia amb tendresa i dignitat. “El seu gest no era només caritat”, va destacar Rafa García Mora, “era un crit profètic contra un sistema que menyspreava la vida humana. En un món que justificava l’esclavitud”. I avui, va dir, ens trobem amb noves formes d’esclavitud que ens interpel·len i ens demanen treballar per ser instruments de llibertat i esperança. Tant a l’eucaristia com a l’acte posterior a la plaça de la vila, el poble va voler agrair els 153 anys de servei educatiu i de promoció humana i espiritual de les germanes Carmelites Vedrunes, que clouen una etapa tancant la comunitat de Verdú per l’avançada edat de les germanes i la falta de relleu. També es va fer la tradicional processó al Santuari, la veneració de la relíquia i tot seguit a la plaça un acte en reconeixement a les germanes vedrunes amb paraules de l’alcaldessa, Georgia Procter, de Mn. Viladot i del president dels Amics de Sant Pere Claver, David Tous. Les mateixes germanes van intervenir després per agrair tot allò que han pogut viure a Verdú tants anys i la gran acollida rebuda. La cobla va animar el ball de les sardanes per cloure un matí festiu en honor a Sant Pere Claver, el català universal, esclau dels esclaus negres. L’Associació d’Amics de Sant Pere Claver manté viva la memòria del fill de Verdú que encara avui ens esperona a comprometre’ns amb els més desfavorits. Coincidint amb aquesta festivitat, l'Asssociació d'Amics de Sant Pere Claver acaba de publicar el seu butlletí anual que podeu descarregar aquí ."
+          },
+          "sort": [
+            1757548800000
+          ]
+        },
+        {
+          "_index": "chunks-2025.09",
+          "_id": "e6f01917dd9556c8039c2a4d73d69c53e44fdd7b:000",
+          "_score": null,
+          "_source": {
+            "site": "maristes",
+            "chunk_ix": 0,
+            "lang": "ca",
+            "published_at": "2025-07-24T08:08:43Z",
+            "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
+            "content": "La Travessa 2025: Expedició L’Hermitage\n\nDesprés de la bona acollida de l’any passat, entre el 14 i el 18 de juliol hem viscut una nova edició de La Travessa , aquest cop seguint els camins al voltant de la casa de L’Hermitage, enguany que celebrem el bicentenari de la seva construcció. La Montse Francisco, de Maristes Girona , ens comparteix el seu testimoni: Riures i vida compartida a mans plenes M’hi vaig apuntar sense saber ben bé on em ficava. La Travessa: de què va? Va d’ADN marista! Per obtenir aquest codi només calen dos elements, i són a l’abast de tothom: humor i senzillesa. A L’Hermitage durant cinc dies ens hem despullat de l’oficialitat de les nostres professions i vocacions i cadascú ha triat la muda que li era més còmoda. Caminant entre boscos esplèndids, i tot descobrint espais recuperats pels que continuen mantenint encesa la flama de Marcel·lí a França, els dies s’han escolat entre rialles, converses franques i moments hilarants. Una experiència que ha amalgamat divuit ànimes, que marxen havent rebut el que assedega les ganes de viure: la generositat dels altres. La travessa a L’Hermitage ha estat un regal. Gràcies! Compartir"
+          },
+          "sort": [
+            1753344523000
+          ]
+        }
+      ]
+    }
+  }
+}

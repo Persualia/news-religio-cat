@@ -1,0 +1,157 @@
+{
+  "query": "Busco articles en català sobre educació i joves",
+  "plan": {
+    "intent": "search_articles",
+    "topK": 5,
+    "keywords": "educació joves",
+    "semantic": true,
+    "mode": "hybrid",
+    "filters": {
+      "lang": [
+        "ca"
+      ]
+    },
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "need_summary": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "educació joves",
+      "semantic": false,
+      "mode": "lexical",
+      "filters": {
+        "lang": [
+          "ca"
+        ]
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false,
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      }
+    },
+    "query_text": "educació joves",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site",
+      "author",
+      "description"
+    ],
+    "top_k": 5,
+    "semantic": false,
+    "mode": "lexical"
+  },
+  "dsl": {
+    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
+    "body": {
+      "size": 5,
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "terms": {
+                "lang.keyword": [
+                  "ca"
+                ]
+              }
+            }
+          ],
+          "should": [
+            {
+              "multi_match": {
+                "query": "educació joves",
+                "fields": [
+                  "search_text_short^3",
+                  "title^4",
+                  "description^2",
+                  "content"
+                ],
+                "type": "best_fields",
+                "operator": "and"
+              }
+            }
+          ],
+          "minimum_should_match": 1
+        }
+      },
+      "sort": [
+        {
+          "published_at": {
+            "order": "desc",
+            "unmapped_type": "date"
+          }
+        }
+      ],
+      "_source": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "index_name": "articles-live"
+  },
+  "opensearch_response": {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 1,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": [
+        {
+          "_index": "articles-2025.09",
+          "_id": "3024a0c4a9c05d4024adf2215ab910f5626e6026",
+          "_score": null,
+          "_source": {
+            "site": "maristes",
+            "title": "Un estiu amb cor marista!",
+            "published_at": "2025-07-22T12:23:55Z",
+            "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista"
+          },
+          "sort": [
+            1753187035000
+          ]
+        }
+      ]
+    }
+  },
+  "fallback": "semantic_disabled_due_to_missing_knn"
+}

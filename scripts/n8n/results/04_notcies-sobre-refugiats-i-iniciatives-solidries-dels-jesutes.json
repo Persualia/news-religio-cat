@@ -1,0 +1,142 @@
+{
+  "query": "Notícies sobre refugiats i iniciatives solidàries dels jesuïtes",
+  "plan": {
+    "intent": "search_articles",
+    "topK": 5,
+    "keywords": "refugiats iniciatives solidàries jesuïtes",
+    "semantic": true,
+    "mode": "hybrid",
+    "filters": {
+      "site": [
+        "jesuites"
+      ]
+    },
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "need_summary": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "refugiats iniciatives solidàries jesuïtes",
+      "semantic": false,
+      "mode": "lexical",
+      "filters": {
+        "site": [
+          "jesuites"
+        ]
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false,
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      }
+    },
+    "query_text": "refugiats iniciatives solidàries jesuïtes",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site",
+      "author",
+      "description"
+    ],
+    "top_k": 5,
+    "semantic": false,
+    "mode": "lexical"
+  },
+  "dsl": {
+    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
+    "body": {
+      "size": 5,
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "terms": {
+                "site.keyword": [
+                  "jesuites"
+                ]
+              }
+            }
+          ],
+          "should": [
+            {
+              "multi_match": {
+                "query": "refugiats iniciatives solidàries jesuïtes",
+                "fields": [
+                  "search_text_short^3",
+                  "title^4",
+                  "description^2",
+                  "content"
+                ],
+                "type": "best_fields",
+                "operator": "and"
+              }
+            }
+          ],
+          "minimum_should_match": 1
+        }
+      },
+      "sort": [
+        {
+          "published_at": {
+            "order": "desc",
+            "unmapped_type": "date"
+          }
+        }
+      ],
+      "_source": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "intent": "search_articles",
+    "target": "articles_lexical",
+    "index_name": "articles-live"
+  },
+  "opensearch_response": {
+    "took": 0,
+    "timed_out": false,
+    "_shards": {
+      "total": 1,
+      "successful": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 0,
+        "relation": "eq"
+      },
+      "max_score": null,
+      "hits": []
+    }
+  },
+  "fallback": "semantic_disabled_due_to_missing_knn"
+}
