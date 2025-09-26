@@ -38,11 +38,7 @@
         ]
       },
       "need_summary": false,
-      "filters": {},
-      "sort": {
-        "by": "published_at",
-        "order": "desc"
-      }
+      "filters": {}
     },
     "query_text": "Feliços els humils",
     "fields": [
@@ -54,68 +50,101 @@
       "description"
     ],
     "top_k": 5,
-    "semantic": false,
-    "mode": "lexical"
+    "requires_embedding": true
   },
-  "dsl": {
-    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
-    "body": {
-      "size": 5,
-      "query": {
-        "bool": {
-          "must": [],
-          "should": [
-            {
-              "match_phrase": {
-                "title": "Feliços els humils"
-              }
-            },
-            {
-              "match_phrase": {
-                "description": "Feliços els humils"
-              }
-            }
-          ],
-          "minimum_should_match": 1
-        }
-      },
-      "sort": [
-        {
-          "published_at": {
-            "order": "desc",
-            "unmapped_type": "date"
-          }
-        }
-      ],
-      "_source": [
-        "title",
-        "url",
-        "published_at",
-        "site",
-        "author",
-        "description"
-      ]
-    },
+  "search": {
     "intent": "search_articles",
-    "target": "articles_lexical",
-    "index_name": "articles-live"
-  },
-  "opensearch_response": {
-    "took": 1,
-    "timed_out": false,
-    "_shards": {
-      "total": 1,
-      "successful": 1,
-      "skipped": 0,
-      "failed": 0
-    },
-    "hits": {
-      "total": {
-        "value": 0,
-        "relation": "eq"
+    "hits": [
+      {
+        "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+        "vector_score": 0.37715623,
+        "recency_weight": 0.5224106352928951,
+        "combined_score": 0.4279952718525133,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "description": "El compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.",
+          "indexed_at": "2025-09-26T09:40:00Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879600
+        }
       },
-      "max_score": null,
-      "hits": []
-    }
+      {
+        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
+        "vector_score": 0.3696108,
+        "recency_weight": 0.5224106352928951,
+        "combined_score": 0.4230907423525133,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "description": "El projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.",
+          "indexed_at": "2025-09-26T09:40:01Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879601
+        }
+      },
+      {
+        "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
+        "vector_score": 0.3594923,
+        "recency_weight": 0.5224106352928951,
+        "combined_score": 0.4165137173525133,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
+          "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Confederació Espanyola de Religiosos",
+          "description": "La Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.",
+          "indexed_at": "2025-09-26T09:38:16Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879496
+        }
+      },
+      {
+        "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
+        "vector_score": 0.37159005,
+        "recency_weight": 0.32909807804723606,
+        "combined_score": 0.3567178598165326,
+        "timestamp": 1758672000,
+        "payload": {
+          "title": "Davant el genocidi a la Franja de Gaza",
+          "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+          "published_at": "2025-09-24T00:00:00Z",
+          "site": "jesuites",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:38:04Z",
+          "published_at_ts": 1758672000,
+          "indexed_at_ts": 1758879484
+        }
+      },
+      {
+        "id": "df95bdab-2304-c1ff-b29a-c95914b8521f",
+        "vector_score": 0.48163605,
+        "recency_weight": 5.696512038649764e-15,
+        "combined_score": 0.313063432500002,
+        "timestamp": 1752747280,
+        "payload": {
+          "title": "Tenim alguna cosa a celebrar?",
+          "url": "https://www.maristes.cat/noticies/tenim-alguna-cosa-celebrar",
+          "published_at": "2025-07-17T10:14:40Z",
+          "site": "maristes",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:39:52Z",
+          "published_at_ts": 1752747280,
+          "indexed_at_ts": 1758879592
+        }
+      }
+    ]
   }
 }

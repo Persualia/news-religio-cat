@@ -20,17 +20,17 @@ class StubScraper:
 @pytest.fixture(autouse=True)
 def patch_pipeline(monkeypatch):
     mocks = {
-        "ensure_templates": Mock(return_value=True),
-        "ensure_monthly_indices": Mock(return_value=("articles-2024.05", "chunks-2024.05")),
+        "ensure_collections": Mock(),
         "index_articles": Mock(),
         "index_chunks": Mock(),
         "post_summary": Mock(),
+        "find_existing_article_ids": Mock(return_value=set()),
     }
-    monkeypatch.setattr("pipeline.ingestion.ensure_templates", mocks["ensure_templates"])
-    monkeypatch.setattr("pipeline.ingestion.ensure_monthly_indices", mocks["ensure_monthly_indices"])
+    monkeypatch.setattr("pipeline.ingestion.ensure_collections", mocks["ensure_collections"])
     monkeypatch.setattr("pipeline.ingestion.index_articles", mocks["index_articles"])
     monkeypatch.setattr("pipeline.ingestion.index_chunks", mocks["index_chunks"])
     monkeypatch.setattr("pipeline.ingestion.post_summary", mocks["post_summary"])
+    monkeypatch.setattr("pipeline.ingestion.find_existing_article_ids", mocks["find_existing_article_ids"])
     return mocks
 
 
@@ -65,7 +65,7 @@ def test_pipeline_run_success(patch_pipeline):
     embedder.assert_called_once()
     summarizer.assert_called_once()
     summary_poster.assert_called_once_with("Resum de prova")
-    patch_pipeline["ensure_templates"].assert_called_once()
+    patch_pipeline["ensure_collections"].assert_called_once()
     patch_pipeline["index_articles"].assert_called_once()
     patch_pipeline["index_chunks"].assert_called_once()
 
@@ -126,7 +126,7 @@ def test_pipeline_dry_run_skips_external_calls(patch_pipeline):
     embedder.assert_not_called()
     summarizer.assert_not_called()
     summary_poster.assert_not_called()
-    patch_pipeline["ensure_templates"].assert_not_called()
+    patch_pipeline["ensure_collections"].assert_not_called()
     patch_pipeline["index_articles"].assert_not_called()
     patch_pipeline["index_chunks"].assert_not_called()
 
@@ -159,6 +159,6 @@ def test_pipeline_skip_indexing_calls_summary(patch_pipeline):
     assert result.articles_indexed == 0
     assert result.chunks_indexed == 0
     summary_poster.assert_called_once()
-    patch_pipeline["ensure_templates"].assert_not_called()
+    patch_pipeline["ensure_collections"].assert_not_called()
     patch_pipeline["index_articles"].assert_not_called()
     patch_pipeline["index_chunks"].assert_not_called()

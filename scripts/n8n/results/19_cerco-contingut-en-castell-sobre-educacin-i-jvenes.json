@@ -29,8 +29,8 @@
       "intent": "search_articles",
       "topK": 5,
       "keywords": "educación jóvenes",
-      "semantic": false,
-      "mode": "lexical",
+      "semantic": true,
+      "mode": "hybrid",
       "filters": {
         "lang": [
           "es"
@@ -47,11 +47,7 @@
           "description"
         ]
       },
-      "need_summary": false,
-      "sort": {
-        "by": "published_at",
-        "order": "desc"
-      }
+      "need_summary": false
     },
     "query_text": "educación jóvenes",
     "fields": [
@@ -63,96 +59,65 @@
       "description"
     ],
     "top_k": 5,
-    "semantic": false,
-    "mode": "lexical"
+    "requires_embedding": true
   },
-  "dsl": {
-    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
-    "body": {
-      "size": 5,
-      "query": {
-        "bool": {
-          "must": [
-            {
-              "terms": {
-                "lang.keyword": [
-                  "es"
-                ]
-              }
-            }
-          ],
-          "should": [
-            {
-              "multi_match": {
-                "query": "educación jóvenes",
-                "fields": [
-                  "search_text_short^3",
-                  "title^4",
-                  "description^2",
-                  "content"
-                ],
-                "type": "best_fields",
-                "operator": "and"
-              }
-            }
-          ],
-          "minimum_should_match": 1
-        }
-      },
-      "sort": [
-        {
-          "published_at": {
-            "order": "desc",
-            "unmapped_type": "date"
-          }
-        }
-      ],
-      "_source": [
-        "title",
-        "url",
-        "published_at",
-        "site",
-        "author",
-        "description"
-      ]
-    },
+  "search": {
     "intent": "search_articles",
-    "target": "articles_lexical",
-    "index_name": "articles-live"
-  },
-  "opensearch_response": {
-    "took": 2,
-    "timed_out": false,
-    "_shards": {
-      "total": 1,
-      "successful": 1,
-      "skipped": 0,
-      "failed": 0
-    },
-    "hits": {
-      "total": {
-        "value": 1,
-        "relation": "eq"
-      },
-      "max_score": null,
-      "hits": [
-        {
-          "_index": "articles-2025.09",
-          "_id": "d503e61faf79628d626c11bd22b1410712269f54",
-          "_score": null,
-          "_source": {
-            "site": "salesians",
-            "author": "Borja Pérez",
-            "title": "Testigos y no hacedores",
-            "published_at": "2025-09-22T00:00:00Z",
-            "url": "https://salesianos.info/blog/testigos-y-no-hacedores/"
-          },
-          "sort": [
-            1758499200000
-          ]
+    "hits": [
+      {
+        "id": "1c4b2b17-7831-f084-3724-748367d1b90d",
+        "vector_score": 0.3152061,
+        "recency_weight": 0.5224106352928951,
+        "combined_score": 0.3877276873525133,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Juicio sumarísimo",
+          "url": "https://salesianos.info/blog/juicio-sumarisimo/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Josep Lluís Burguera",
+          "description": null,
+          "indexed_at": "2025-09-26T09:40:05Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879605
         }
-      ]
-    }
-  },
-  "fallback": "semantic_disabled_due_to_missing_knn"
+      },
+      {
+        "id": "95b5f2e6-d3ea-311c-aa5f-8158cfa7fc4f",
+        "vector_score": 0.35502928,
+        "recency_weight": 0.32909807804723606,
+        "combined_score": 0.3459533593165326,
+        "timestamp": 1758672000,
+        "payload": {
+          "title": "Entre la espera y la esperanza. El Jubileo 2025, una oportunidad",
+          "url": "https://salesianos.info/blog/entre-la-espera-y-la-esperanza-el-jubileo-2025-una-oportunidad/",
+          "published_at": "2025-09-24T00:00:00Z",
+          "site": "salesians",
+          "author": "José Luis Guzón",
+          "description": null,
+          "indexed_at": "2025-09-26T09:40:06Z",
+          "published_at_ts": 1758672000,
+          "indexed_at_ts": 1758879606
+        }
+      },
+      {
+        "id": "be032452-5ec0-64a5-2e5e-1cf2b4f1fcc9",
+        "vector_score": 0.32141674,
+        "recency_weight": 0.13060265882322378,
+        "combined_score": 0.2546318115881283,
+        "timestamp": 1758499200,
+        "payload": {
+          "title": "Testigos y no hacedores",
+          "url": "https://salesianos.info/blog/testigos-y-no-hacedores/",
+          "published_at": "2025-09-22T00:00:00Z",
+          "site": "salesians",
+          "author": "Borja Pérez",
+          "description": null,
+          "indexed_at": "2025-09-26T09:40:08Z",
+          "published_at_ts": 1758499200,
+          "indexed_at_ts": 1758879608
+        }
+      }
+    ]
+  }
 }

@@ -1,13 +1,18 @@
-"""Initialize OpenSearch templates and monthly indices."""
-from opensearch_client import get_client
-from pipeline.opensearch_ops import ensure_monthly_indices, ensure_templates
+"""Ensure Qdrant collections are created."""
+from vector_client import get_client
+from pipeline.qdrant_ops import (
+    ARTICLES_COLLECTION,
+    CHUNKS_COLLECTION,
+    ensure_collections,
+)
 
 
 def main() -> None:
     client = get_client()
-    ensure_templates(client)
-    articles_index, chunks_index = ensure_monthly_indices(client)
-    print(f"Ensured indices: {articles_index}, {chunks_index}")
+    ensure_collections(client)
+    print(
+        f"Ensured collections: {ARTICLES_COLLECTION}, {CHUNKS_COLLECTION}"
+    )
 
 
 if __name__ == "__main__":

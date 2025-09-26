@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Simulate the n8n search tool locally and run all sample queries."""
+"""Simulate the n8n search tool locally against Qdrant."""
 from __future__ import annotations
 
 import json
 import re
 import sys
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
-from urllib.parse import urlparse
+from typing import Any, Dict, List, Optional, Sequence
 
 from dotenv import load_dotenv
 
@@ -19,8 +19,13 @@ for candidate in (ROOT, ROOT / "src"):
     if path_str not in sys.path:
         sys.path.insert(0, path_str)
 
-from src.opensearch_client import get_client  # noqa: E402
-from src.config import get_settings  # noqa: E402
+from src.vector_client import get_client  # noqa: E402
+from src.search.qdrant_search import (  # noqa: E402
+    SearchResult,
+    latest_by_site,
+    search_articles,
+    search_chunks,
+)
 
 try:
     from openai import OpenAI
@@ -37,25 +42,19 @@ class PreparedPlan:
     query_text: str
     fields: List[str]
     top_k: int
-    semantic: bool
-    mode: str
+    requires_embedding: bool
 
-
-@dataclass
-class DSLResult:
-    url: str
-    body: Dict[str, Any]
-    intent: str
-    target: str
-    index_name: str
+    @property
+    def intent(self) -> str:
+        return str(self.plan.get("intent"))
 
 
 QUERIES_PATH = ROOT / "scripts" / "n8n" / "query_samples.yml"
 INTENT_SAMPLES_PATH = ROOT / "scripts" / "n8n" / "intents_samples.json"
 OUTPUT_DIR = ROOT / "scripts" / "n8n" / "results"
 
+RECENCY_INFO_FIELDS = ["published_at", "indexed_at", "published_at_ts", "indexed_at_ts"]
 
-# ---------- Utilities mirroring the JS helpers ----------
 
 def clamp_int(n: Optional[int], min_value: int, max_value: int, default: int) -> int:
     if n is None or not isinstance(n, int):
@@ -77,17 +76,21 @@ def strip_quotes(text: str) -> str:
 
 
 EXACT_FIELDS = {
-    "site": "site.keyword",
-    "author": "author.keyword",
-    "lang": "lang.keyword",
+    "site": "site",
+    "author": "author",
+    "lang": "lang",
+    "base_url": "base_url",
+    "url": "url",
 }
 
 
-def resolve_field(field: str) -> str:
-    return EXACT_FIELDS.get(field, field)
+def normalize_field_list(value: Any, fallback: Optional[List[str]] = None) -> List[str]:
+    if isinstance(value, list) and value:
+        return [str(item) for item in value]
+    if isinstance(value, str) and value:
+        return [value]
+    return list(fallback) if fallback else []
 
-
-# ---------- Prepare plan (port from prepare_plan.js) ----------
 
 def prepare_plan(raw: Dict[str, Any]) -> PreparedPlan:
     plan = json.loads(json.dumps(raw or {}))  # deep copy & ensure dict
@@ -95,12 +98,8 @@ def prepare_plan(raw: Dict[str, Any]) -> PreparedPlan:
     plan_top_k = clamp_int(plan.get("topK"), 1, 50, 5)
     plan["topK"] = plan_top_k
 
-    mode = plan.get("mode")
-    semantic_flag = bool(plan.get("semantic"))
-    if not mode:
-        mode = "hybrid" if semantic_flag else "lexical"
-    plan["mode"] = mode
-    plan["semantic"] = mode == "hybrid"
+    intent = to_string_safe(plan.get("intent")) or "search_articles"
+    plan["intent"] = intent
 
     if to_string_safe(plan.get("phrase")):
         query_text = strip_quotes(to_string_safe(plan["phrase"]))
@@ -111,12 +110,12 @@ def prepare_plan(raw: Dict[str, Any]) -> PreparedPlan:
 
     plan_return = plan.get("return") or {}
     if not plan_return.get("index"):
-        plan_return["index"] = "chunks" if plan.get("intent") == "search_chunks" else "articles"
+        plan_return["index"] = "chunks" if intent == "search_chunks" else "articles"
 
-    fields = plan_return.get("fields")
-    if not isinstance(fields, list) or not fields:
+    fields = normalize_field_list(plan_return.get("fields"))
+    if not fields:
         if plan_return["index"] == "chunks":
-            plan_return["fields"] = [
+            fields = [
                 "url",
                 "content",
                 "chunk_ix",
@@ -126,7 +125,7 @@ def prepare_plan(raw: Dict[str, Any]) -> PreparedPlan:
                 "author",
             ]
         else:
-            plan_return["fields"] = [
+            fields = [
                 "title",
                 "url",
                 "published_at",
@@ -134,239 +133,61 @@ def prepare_plan(raw: Dict[str, Any]) -> PreparedPlan:
                 "author",
                 "description",
             ]
+    plan_return["fields"] = fields
     plan["return"] = plan_return
-    fields = plan_return["fields"]
 
     filters = plan.get("filters") or {}
-    for key in ("site", "lang", "author"):
-        value = filters.get(key)
-        if isinstance(value, list) and not value:
-            filters.pop(key, None)
-    plan["filters"] = filters
+    normalized_filters: Dict[str, Any] = {}
+    for key, value in filters.items():
+        if key in EXACT_FIELDS:
+            values = normalize_field_list(value)
+            if values:
+                normalized_filters[key] = values
+        else:
+            normalized_filters[key] = value
+    plan["filters"] = normalized_filters
 
-    plan_sort = plan.get("sort") or {"by": "published_at", "order": "desc"}
-    plan["sort"] = plan_sort
-
-    semantic = bool(plan.get("semantic"))
+    requires_embedding = intent in {"search_articles", "search_chunks"}
 
     return PreparedPlan(
         plan=plan,
         query_text=query_text,
         fields=fields,
         top_k=plan_top_k,
-        semantic=semantic,
-        mode=mode,
+        requires_embedding=requires_embedding,
     )
 
 
-# ---------- Build DSL (port from build_dsl.js) ----------
-
-def term_filter(field: str, values: Optional[List[str]]) -> Optional[Dict[str, Any]]:
-    if isinstance(values, list) and values:
-        return {"terms": {resolve_field(field): values}}
-    return None
-
-
-def range_filter(field: str, gte: Optional[str], lte: Optional[str]) -> Optional[Dict[str, Any]]:
-    range_body: Dict[str, str] = {}
-    if gte:
-        range_body["gte"] = gte
-    if lte:
-        range_body["lte"] = lte
-    if range_body:
-        return {"range": {field: range_body}}
-    return None
+def normalize_payload_fields(payload: Dict[str, Any], desired_fields: Sequence[str]) -> Dict[str, Any]:
+    if not desired_fields:
+        return dict(payload)
+    extracted = {field: payload.get(field) for field in desired_fields}
+    for field in RECENCY_INFO_FIELDS:
+        if field not in extracted and field in payload:
+            extracted[field] = payload[field]
+    return extracted
 
 
-def make_filters(filters: Dict[str, Any]) -> List[Dict[str, Any]]:
-    must: List[Dict[str, Any]] = []
-    if not filters:
-        return must
-    for clause in (
-        term_filter("site", filters.get("site")),
-        term_filter("lang", filters.get("lang")),
-        term_filter("author", filters.get("author")),
-        range_filter("published_at", filters.get("date_from"), filters.get("date_to")),
-    ):
-        if clause:
-            must.append(clause)
-    return must
-
-
-def lexical_query_articles(plan: Dict[str, Any], query_text: str, must_filters: List[Dict[str, Any]]) -> Dict[str, Any]:
-    should: List[Dict[str, Any]] = []
-    if plan.get("phrase"):
-        should.append({"match_phrase": {"title": query_text}})
-        should.append({"match_phrase": {"description": query_text}})
-    if plan.get("keywords") or (not plan.get("phrase") and query_text):
-        should.append(
-            {
-                "multi_match": {
-                    "query": query_text,
-                    "fields": ["search_text_short^3", "title^4", "description^2", "content"],
-                    "type": "best_fields",
-                    "operator": "and",
-                }
-            }
-        )
+def serialize_result(result: SearchResult, fields: Sequence[str]) -> Dict[str, Any]:
+    payload = normalize_payload_fields(dict(result.payload), fields)
+    payload_ts = payload.get("published_at_ts") or payload.get("indexed_at_ts")
     return {
-        "bool": {
-            "must": must_filters,
-            "should": should,
-            "minimum_should_match": 1 if should else 0,
-        }
+        "id": result.id,
+        "vector_score": result.vector_score,
+        "recency_weight": result.recency_weight,
+        "combined_score": result.combined_score,
+        "timestamp": payload_ts,
+        "payload": payload,
     }
 
 
-def lexical_query_chunks(plan: Dict[str, Any], query_text: str, must_filters: List[Dict[str, Any]]) -> Dict[str, Any]:
-    should: List[Dict[str, Any]] = []
-    if plan.get("phrase"):
-        should.append({"match_phrase": {"content": query_text}})
-    if plan.get("keywords") or (not plan.get("phrase") and query_text):
-        should.append(
-            {
-                "multi_match": {
-                    "query": query_text,
-                    "fields": ["content"],
-                    "type": "best_fields",
-                    "operator": "and",
-                }
-            }
-        )
-    return {
-        "bool": {
-            "must": must_filters,
-            "should": should,
-            "minimum_should_match": 1 if should else 0,
-        }
-    }
+def maybe_get_embedding(client: OpenAI, text: str) -> List[float]:
+    response = client.embeddings.create(
+        model="text-embedding-3-small",
+        input=text,
+    )
+    return response.data[0].embedding
 
-
-def join_url(base: str, path: str) -> str:
-    trimmed_base = base.rstrip("/") if base else ""
-    trimmed_path = path.lstrip("/")
-    return f"{trimmed_base}/{trimmed_path}" if trimmed_base else f"/{trimmed_path}"
-
-
-def build_dsl(
-    prepared: PreparedPlan,
-    query_text: str,
-    embedding: Optional[List[float]],
-    base_url: str,
-    index_articles: str,
-    index_chunks: str,
-) -> DSLResult:
-    plan = prepared.plan
-    filters_bool = make_filters(plan.get("filters") or {})
-    sort_by = plan.get("sort", {}).get("by", "published_at")
-    sort_order = plan.get("sort", {}).get("order", "desc")
-
-    url = ""
-    body: Dict[str, Any]
-    target = "articles" if plan.get("return", {}).get("index") != "chunks" else "chunks"
-    index_name = index_articles
-
-    if plan["intent"] == "latest_by_site":
-        top_hits: Dict[str, Any] = {
-            "size": plan.get("topK", prepared.top_k),
-            "sort": [{sort_by: {"order": sort_order, "unmapped_type": "date"}}],
-        }
-        if prepared.fields:
-            top_hits["_source"] = prepared.fields
-        body = {
-            "size": 0,
-            "query": {"bool": {"must": filters_bool}},
-            "aggs": {
-                "by_site": {
-                    "terms": {"field": resolve_field("site"), "size": 50},
-                    "aggs": {"latest": {"top_hits": top_hits}},
-                }
-            },
-        }
-        url = join_url(base_url, f"{index_articles}/_search")
-        target = "aggs"
-        index_name = index_articles
-    elif plan["intent"] == "search_articles":
-        if prepared.mode == "lexical":
-            body = {
-                "size": prepared.top_k,
-                "query": lexical_query_articles(plan, query_text, filters_bool),
-                "sort": [{sort_by: {"order": sort_order, "unmapped_type": "date"}}],
-            }
-            if prepared.fields:
-                body["_source"] = prepared.fields
-            url = join_url(base_url, f"{index_articles}/_search")
-            target = "articles_lexical"
-            index_name = index_articles
-        else:
-            if not embedding:
-                raise ValueError("Missing embedding for hybrid article search")
-            k = max(5 * prepared.top_k, 200)
-            num_candidates = max(10 * prepared.top_k, 500)
-            body = {
-                "size": k,
-                "_source": ["url", "site", "author", "published_at", "chunk_ix"],
-                "query": {
-                    "knn": {
-                        "field": "content_vec",
-                        "query_vector": embedding,
-                        "k": k,
-                        "num_candidates": num_candidates,
-                        "filter": {"bool": {"must": filters_bool}},
-                    }
-                },
-                "sort": [{sort_by: {"order": sort_order, "unmapped_type": "date"}}],
-            }
-            url = join_url(base_url, f"{index_chunks}/_search")
-            target = "articles_from_chunks"
-            index_name = index_chunks
-    elif plan["intent"] == "search_chunks":
-        if prepared.mode == "lexical":
-            body = {
-                "size": prepared.top_k,
-                "query": lexical_query_chunks(plan, query_text, filters_bool),
-                "sort": [{sort_by: {"order": sort_order, "unmapped_type": "date"}}],
-            }
-            if prepared.fields:
-                body["_source"] = prepared.fields
-            url = join_url(base_url, f"{index_chunks}/_search")
-            target = "chunks_lexical"
-            index_name = index_chunks
-        else:
-            if not embedding:
-                raise ValueError("Missing embedding for hybrid chunk search")
-            k = max(5 * prepared.top_k, 200)
-            num_candidates = max(10 * prepared.top_k, 500)
-            body = {
-                "size": prepared.top_k,
-                "_source": prepared.fields
-                or ["url", "content", "chunk_ix", "published_at", "site", "lang", "author"],
-                "query": {
-                    "knn": {
-                        "field": "content_vec",
-                        "query_vector": embedding,
-                        "k": k,
-                        "num_candidates": num_candidates,
-                        "filter": {"bool": {"must": filters_bool}},
-                    }
-                },
-                "sort": [{sort_by: {"order": sort_order, "unmapped_type": "date"}}],
-            }
-            url = join_url(base_url, f"{index_chunks}/_search")
-            target = "chunks_knn"
-            index_name = index_chunks
-    elif plan["intent"] == "summarize":
-        body = {"size": 0, "query": {"match_none": {}}}
-        url = join_url(base_url, f"{index_articles}/_search")
-        target = "noop"
-        index_name = index_articles
-    else:
-        raise ValueError(f"Unsupported intent: {plan['intent']}")
-
-    return DSLResult(url=url, body=body, intent=plan["intent"], target=target, index_name=index_name)
-
-
-# ---------- Orchestration helpers ----------
 
 def load_intent_samples() -> Dict[str, Dict[str, Any]]:
     raw = json.loads(INTENT_SAMPLES_PATH.read_text())
@@ -399,6 +220,67 @@ def load_queries() -> List[str]:
     return queries
 
 
+def run_plan(
+    client: Any,
+    prepared: PreparedPlan,
+    *,
+    embedding: Optional[List[float]],
+    now: datetime,
+) -> Dict[str, Any]:
+    intent = prepared.intent
+    filters = prepared.plan.get("filters") or {}
+
+    if intent == "latest_by_site":
+        grouped = latest_by_site(
+            client,
+            filters=filters,
+            per_site=prepared.top_k,
+            now=now,
+        )
+        return {
+            "intent": intent,
+            "groups": {
+                site: [serialize_result(result, prepared.fields) for result in results]
+                for site, results in grouped.items()
+            },
+        }
+
+    if intent == "search_articles":
+        if embedding is None:
+            raise ValueError("Embedding required for article search")
+        hits = search_articles(
+            client,
+            embedding,
+            limit=prepared.top_k,
+            filters=filters,
+            now=now,
+        )
+        return {
+            "intent": intent,
+            "hits": [serialize_result(result, prepared.fields) for result in hits],
+        }
+
+    if intent == "search_chunks":
+        if embedding is None:
+            raise ValueError("Embedding required for chunk search")
+        hits = search_chunks(
+            client,
+            embedding,
+            limit=prepared.top_k,
+            filters=filters,
+            now=now,
+        )
+        return {
+            "intent": intent,
+            "hits": [serialize_result(result, prepared.fields) for result in hits],
+        }
+
+    if intent == "summarize":
+        return {"intent": intent, "hits": []}
+
+    raise ValueError(f"Unsupported intent: {intent}")
+
+
 def slugify(text: str) -> str:
     normalized = (
         re.sub(r"\s+", " ", text.strip().lower())
@@ -409,47 +291,20 @@ def slugify(text: str) -> str:
     return slug or "query"
 
 
-def get_base_url(bonsai_url: str) -> Tuple[str, Tuple[str, str]]:
-    parsed = urlparse(bonsai_url)
-    if not parsed.scheme or not parsed.hostname:
-        raise ValueError("Invalid BONSAI_URL; expected scheme and host")
-    base = f"{parsed.scheme}://{parsed.hostname}"
-    if parsed.port:
-        base = f"{base}:{parsed.port}"
-    if not parsed.username or not parsed.password:
-        raise ValueError("BONSAI_URL must embed credentials (username:password)")
-    auth = (parsed.username, parsed.password)
-    return base, auth
-
-
-def maybe_get_embedding(client: OpenAI, text: str) -> List[float]:
-    response = client.embeddings.create(
-        model="text-embedding-3-small",
-        input=text,
-    )
-    return response.data[0].embedding
-
-
-def execute_search(dsl: DSLResult) -> Dict[str, Any]:
-    client = get_client()
-    response = client.search(index=dsl.index_name, body=dsl.body)
-    return response
-
-
 def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    settings = get_settings()
-    base_url, _auth = get_base_url(settings.bonsai.url)
     queries = load_queries()
     intent_samples = load_intent_samples()
 
     openai_client = OpenAI()
+    qdrant_client = get_client()
 
     summary_rows: List[Dict[str, Any]] = []
+    now = datetime.now(timezone.utc)
 
     for idx, query in enumerate(queries, start=1):
-        print(f"[{idx}/{len(queries)}] Procesando consulta: {query}")
+        print(f"[{idx}/{len(queries)}] Procesant consulta: {query}")
 
         file_slug = f"{idx:02d}_{slugify(query)[:60]}"
         output_path = OUTPUT_DIR / f"{file_slug}.json"
@@ -465,12 +320,24 @@ def main() -> None:
             summary_rows.append(record)
             continue
 
-        prepared = prepare_plan(plan_raw)
+        try:
+            prepared = prepare_plan(plan_raw)
+        except Exception as error:  # noqa: BLE001
+            print(f"  ✖ Plan preparation error: {error}")
+            record = {
+                "query": query,
+                "plan": plan_raw,
+                "error": f"prepare_failed: {error}",
+            }
+            output_path.write_text(json.dumps(record, indent=2, ensure_ascii=False))
+            summary_rows.append(record)
+            continue
+
         embedding: Optional[List[float]] = None
-        if prepared.semantic:
+        if prepared.requires_embedding:
             try:
                 embedding = maybe_get_embedding(openai_client, prepared.query_text)
-            except Exception as error:
+            except Exception as error:  # noqa: BLE001
                 print(f"  ✖ Embedding error: {error}")
                 record = {
                     "query": query,
@@ -483,65 +350,23 @@ def main() -> None:
                 continue
 
         try:
-            dsl = build_dsl(
-                prepared=prepared,
-                query_text=prepared.query_text,
+            search_output = run_plan(
+                qdrant_client,
+                prepared,
                 embedding=embedding,
-                base_url=base_url,
-                index_articles="articles-live",
-                index_chunks="chunks-live",
+                now=now,
             )
-        except Exception as error:
-            print(f"  ✖ DSL error: {error}")
+        except Exception as error:  # noqa: BLE001
+            print(f"  ✖ Search error: {error}")
             record = {
                 "query": query,
                 "plan": plan_raw,
                 "prepared": prepared.__dict__,
-                "error": f"dsl_failed: {error}",
+                "error": f"search_failed: {error}",
             }
             output_path.write_text(json.dumps(record, indent=2, ensure_ascii=False))
             summary_rows.append(record)
             continue
-
-        fallback_used = False
-        try:
-            search_response = execute_search(dsl)
-        except Exception as error:
-            error_message = str(error)
-            if prepared.semantic and "unknown query [knn]" in error_message:
-                print("  ↻ kNN no disponible; reintentando en modo lexical")
-                fallback_plan_raw = json.loads(json.dumps(prepared.plan))
-                fallback_plan_raw["mode"] = "lexical"
-                fallback_plan_raw["semantic"] = False
-                fallback_prepared = prepare_plan(fallback_plan_raw)
-                try:
-                    fallback_dsl = build_dsl(
-                        prepared=fallback_prepared,
-                        query_text=fallback_prepared.query_text,
-                        embedding=None,
-                        base_url=base_url,
-                        index_articles="articles-live",
-                        index_chunks="chunks-live",
-                    )
-                    search_response = execute_search(fallback_dsl)
-                    prepared = fallback_prepared
-                    dsl = fallback_dsl
-                    fallback_used = True
-                except Exception as fallback_error:
-                    error = fallback_error
-                    error_message = str(fallback_error)
-            if not fallback_used:
-                print(f"  ✖ OpenSearch error: {error_message}")
-                record = {
-                    "query": query,
-                    "plan": plan_raw,
-                    "prepared": prepared.__dict__,
-                    "dsl": dsl.__dict__,
-                    "error": f"opensearch_failed: {error_message}",
-                }
-                output_path.write_text(json.dumps(record, indent=2, ensure_ascii=False))
-                summary_rows.append(record)
-                continue
 
         record = {
             "query": query,
@@ -551,30 +376,20 @@ def main() -> None:
                 "query_text": prepared.query_text,
                 "fields": prepared.fields,
                 "top_k": prepared.top_k,
-                "semantic": prepared.semantic,
-                "mode": prepared.mode,
+                "requires_embedding": prepared.requires_embedding,
             },
-            "dsl": {
-                "url": dsl.url,
-                "body": dsl.body,
-                "intent": dsl.intent,
-                "target": dsl.target,
-                "index_name": dsl.index_name,
-            },
-            "opensearch_response": search_response,
+            "search": search_output,
         }
-        if fallback_used:
-            record["fallback"] = "semantic_disabled_due_to_missing_knn"
 
         output_path.write_text(json.dumps(record, indent=2, ensure_ascii=False))
         summary_rows.append(
             {
                 "query": query,
-                "intent": dsl.intent,
-                "target": dsl.target,
-                "hits": search_response.get("hits", {}).get("total"),
-                "output_file": str(output_path.relative_to(ROOT)),
-                "fallback": fallback_used,
+                "intent": prepared.intent,
+                "result_file": str(output_path.relative_to(ROOT)),
+                "hit_count": len(search_output.get("hits", []))
+                if "hits" in search_output
+                else sum(len(v) for v in search_output.get("groups", {}).values()),
             }
         )
         print(f"  ✓ Guardado en {output_path}")

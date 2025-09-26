@@ -29,8 +29,8 @@
       "intent": "search_articles",
       "topK": 5,
       "keywords": "vocations",
-      "semantic": false,
-      "mode": "lexical",
+      "semantic": true,
+      "mode": "hybrid",
       "filters": {
         "lang": [
           "en"
@@ -47,11 +47,7 @@
           "description"
         ]
       },
-      "need_summary": false,
-      "sort": {
-        "by": "published_at",
-        "order": "desc"
-      }
+      "need_summary": false
     },
     "query_text": "vocations",
     "fields": [
@@ -63,80 +59,10 @@
       "description"
     ],
     "top_k": 5,
-    "semantic": false,
-    "mode": "lexical"
+    "requires_embedding": true
   },
-  "dsl": {
-    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
-    "body": {
-      "size": 5,
-      "query": {
-        "bool": {
-          "must": [
-            {
-              "terms": {
-                "lang.keyword": [
-                  "en"
-                ]
-              }
-            }
-          ],
-          "should": [
-            {
-              "multi_match": {
-                "query": "vocations",
-                "fields": [
-                  "search_text_short^3",
-                  "title^4",
-                  "description^2",
-                  "content"
-                ],
-                "type": "best_fields",
-                "operator": "and"
-              }
-            }
-          ],
-          "minimum_should_match": 1
-        }
-      },
-      "sort": [
-        {
-          "published_at": {
-            "order": "desc",
-            "unmapped_type": "date"
-          }
-        }
-      ],
-      "_source": [
-        "title",
-        "url",
-        "published_at",
-        "site",
-        "author",
-        "description"
-      ]
-    },
+  "search": {
     "intent": "search_articles",
-    "target": "articles_lexical",
-    "index_name": "articles-live"
-  },
-  "opensearch_response": {
-    "took": 2,
-    "timed_out": false,
-    "_shards": {
-      "total": 1,
-      "successful": 1,
-      "skipped": 0,
-      "failed": 0
-    },
-    "hits": {
-      "total": {
-        "value": 0,
-        "relation": "eq"
-      },
-      "max_score": null,
-      "hits": []
-    }
-  },
-  "fallback": "semantic_disabled_due_to_missing_knn"
+    "hits": []
+  }
 }

@@ -55,8 +55,7 @@
           "description"
         ]
       },
-      "need_summary": false,
-      "mode": "lexical"
+      "need_summary": false
     },
     "query_text": "notícies rellevants",
     "fields": [
@@ -68,188 +67,103 @@
       "description"
     ],
     "top_k": 5,
-    "semantic": false,
-    "mode": "lexical"
+    "requires_embedding": false
   },
-  "dsl": {
-    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
-    "body": {
-      "size": 0,
-      "query": {
-        "bool": {
-          "must": [
-            {
-              "terms": {
-                "site.keyword": [
-                  "salesians"
-                ]
-              }
-            },
-            {
-              "range": {
-                "published_at": {
-                  "gte": "2025-09-18",
-                  "lte": "2025-09-25"
-                }
-              }
-            }
-          ]
-        }
-      },
-      "aggs": {
-        "by_site": {
-          "terms": {
-            "field": "site.keyword",
-            "size": 50
-          },
-          "aggs": {
-            "latest": {
-              "top_hits": {
-                "size": 5,
-                "sort": [
-                  {
-                    "published_at": {
-                      "order": "desc",
-                      "unmapped_type": "date"
-                    }
-                  }
-                ],
-                "_source": [
-                  "title",
-                  "url",
-                  "published_at",
-                  "site",
-                  "author",
-                  "description"
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
+  "search": {
     "intent": "latest_by_site",
-    "target": "aggs",
-    "index_name": "articles-live"
-  },
-  "opensearch_response": {
-    "took": 2,
-    "timed_out": false,
-    "_shards": {
-      "total": 1,
-      "successful": 1,
-      "skipped": 0,
-      "failed": 0
-    },
-    "hits": {
-      "total": {
-        "value": 9,
-        "relation": "eq"
-      },
-      "max_score": null,
-      "hits": []
-    },
-    "aggregations": {
-      "by_site": {
-        "doc_count_error_upper_bound": 0,
-        "sum_other_doc_count": 0,
-        "buckets": [
-          {
-            "key": "salesians",
-            "doc_count": 9,
-            "latest": {
-              "hits": {
-                "total": {
-                  "value": 9,
-                  "relation": "eq"
-                },
-                "max_score": null,
-                "hits": [
-                  {
-                    "_index": "articles-2025.09",
-                    "_id": "8c8b8b252500e6c8f15a8ca056d3d9c6660aa7e9",
-                    "_score": null,
-                    "_source": {
-                      "site": "salesians",
-                      "author": "José Luis Guzón",
-                      "title": "Entre la espera y la esperanza. El Jubileo 2025, una oportunidad",
-                      "published_at": "2025-09-24T00:00:00Z",
-                      "url": "https://salesianos.info/blog/entre-la-espera-y-la-esperanza-el-jubileo-2025-una-oportunidad/"
-                    },
-                    "sort": [
-                      1758672000000
-                    ]
-                  },
-                  {
-                    "_index": "articles-2025.09",
-                    "_id": "c5e9a26fcd4433e437ca834b7dc1963f3d907c1c",
-                    "_score": null,
-                    "_source": {
-                      "site": "salesians",
-                      "author": "Salesians Comunicació",
-                      "description": "Els dies 18 i 19 de setembre, l'Equip Coordinador del Centre Nacional Salesià de Pastoral Juvenil (CNSPJ) es va reunir a la Casa Don Bosco de Madrid per a planificar el nou curs i enfortir el seu compromís amb la Pastoral Juvenil Salesiana a Espanya.",
-                      "title": "L’Equip Coordinador del CNSPJ planifica a Madrid els reptes de la Pastoral Juvenil Salesiana",
-                      "published_at": "2025-09-23T00:00:00Z",
-                      "url": "https://salesianos.info/blog/lequip-coordinador-del-cnspj-planifica-a-madrid-els-reptes-de-la-pastoral-juvenil-salesiana/"
-                    },
-                    "sort": [
-                      1758585600000
-                    ]
-                  },
-                  {
-                    "_index": "articles-2025.09",
-                    "_id": "c79a34333747c64b6533ee772df74064c46d5982",
-                    "_score": null,
-                    "_source": {
-                      "site": "salesians",
-                      "author": "Andrés Corbacho",
-                      "description": "La Casa Don Bosco de Madrid ha acollit la trobada en el qual s'han abordat temes d'especial rellevància per al futur de les presències educatives salesianes. Entre els assumptes tractats van destacar el Projecte Inspectorial d'Escoles i la nova estructura organitzativa.",
-                      "title": "L’equip d’Escoles de la Inspectoria Maria Auxiliadora impulsa la coordinació i el treball en xarxa",
-                      "published_at": "2025-09-23T00:00:00Z",
-                      "url": "https://salesianos.info/blog/lequip-descoles-de-la-inspectoria-maria-auxiliadora-impulsa-la-coordinacio-i-el-treball-en-xarxa/"
-                    },
-                    "sort": [
-                      1758585600000
-                    ]
-                  },
-                  {
-                    "_index": "articles-2025.09",
-                    "_id": "a9f8c20261ea0344f94c6b3a263fff4699b0afe0",
-                    "_score": null,
-                    "_source": {
-                      "site": "salesians",
-                      "author": "Salesians Comunicació",
-                      "description": "Els centres juvenils salesians de tota Espanya arrenquen el curs 2025-2026 amb convivències de programació, inscripcions i reunions amb famílies, impulsats pel compromís dels seus joves animadors voluntaris i salesians, decidits a ser “Protagonistes de la Història”.",
-                      "title": "Els centres juvenils salesians inicien el curs preparats per a ser “Protagonistes de la Història”",
-                      "published_at": "2025-09-23T00:00:00Z",
-                      "url": "https://salesianos.info/blog/els-centres-juvenils-salesians-inicien-el-curs-preparats-per-a-ser-protagonistes-de-la-historia/"
-                    },
-                    "sort": [
-                      1758585600000
-                    ]
-                  },
-                  {
-                    "_index": "articles-2025.09",
-                    "_id": "0315dd4e1982e679b28b26eff0f5941244364ee5",
-                    "_score": null,
-                    "_source": {
-                      "site": "salesians",
-                      "author": "Salesians Comunicació",
-                      "description": "Més d’una trentena de nens i nenes de El Hossun s’han beneficiat d’un projecte de classes de reforç escolar després de veure’s obligats a desplaçar-se amb les famílies per culpa de la guerra.",
-                      "title": "Un refugi d’aprenentatge per a la infància enmig del conflicte del Líban",
-                      "published_at": "2025-09-23T00:00:00Z",
-                      "url": "https://salesianos.info/blog/un-refugi-daprenentatge-per-a-la-infancia-enmig-del-conflicte-del-liban/"
-                    },
-                    "sort": [
-                      1758585600000
-                    ]
-                  }
-                ]
-              }
-            }
+    "groups": {
+      "salesians": [
+        {
+          "id": "1c4b2b17-7831-f084-3724-748367d1b90d",
+          "vector_score": 0.0,
+          "recency_weight": 0.5224106352928951,
+          "combined_score": 0.5224106352928951,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "Juicio sumarísimo",
+            "url": "https://salesianos.info/blog/juicio-sumarisimo/",
+            "published_at": "2025-09-25T00:00:00Z",
+            "site": "salesians",
+            "author": "Josep Lluís Burguera",
+            "description": null,
+            "indexed_at": "2025-09-26T09:40:05Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879605
           }
-        ]
-      }
+        },
+        {
+          "id": "41014754-2986-5cb1-bdaa-95e297115c4b",
+          "vector_score": 0.0,
+          "recency_weight": 0.5224106352928951,
+          "combined_score": 0.5224106352928951,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "Processó Magna Mariana a Huelva amb la participació de Maria Auxiliadora",
+            "url": "https://salesianos.info/blog/processo-magna-mariana-a-huelva-amb-la-participacio-de-maria-auxiliadora/",
+            "published_at": "2025-09-25T00:00:00Z",
+            "site": "salesians",
+            "author": "Salesians Comunicació",
+            "description": "La ciutat de Huelva va viure durant la jornada del 20 de setembre de 2025 un esdeveniment històric amb la celebració de la processó Magna Mariana, emmarcada l'any Jubilar.",
+            "indexed_at": "2025-09-26T09:40:03Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879603
+          }
+        },
+        {
+          "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
+          "vector_score": 0.0,
+          "recency_weight": 0.5224106352928951,
+          "combined_score": 0.5224106352928951,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+            "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+            "published_at": "2025-09-25T00:00:00Z",
+            "site": "salesians",
+            "author": "Diari de Cadis",
+            "description": "El Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral",
+            "indexed_at": "2025-09-26T09:38:18Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879498
+          }
+        },
+        {
+          "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+          "vector_score": 0.0,
+          "recency_weight": 0.5224106352928951,
+          "combined_score": 0.5224106352928951,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+            "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+            "published_at": "2025-09-25T00:00:00Z",
+            "site": "salesians",
+            "author": "Salesians Comunicació",
+            "description": "Compromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora",
+            "indexed_at": "2025-09-26T09:38:20Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879500
+          }
+        },
+        {
+          "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+          "vector_score": 0.0,
+          "recency_weight": 0.5224106352928951,
+          "combined_score": 0.5224106352928951,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+            "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+            "published_at": "2025-09-25T00:00:00Z",
+            "site": "salesians",
+            "author": "Comunicació CEPSS",
+            "description": "El compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.",
+            "indexed_at": "2025-09-26T09:40:00Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879600
+          }
+        }
+      ]
     }
   }
 }

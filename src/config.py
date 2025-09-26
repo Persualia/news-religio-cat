@@ -31,11 +31,6 @@ class OpenAISettings:
 
 
 @dataclass(frozen=True)
-class BonsaiSettings:
-    url: str
-
-
-@dataclass(frozen=True)
 class SummarySettings:
     endpoint: str
     auth_token: Optional[str]
@@ -50,11 +45,20 @@ class ScraperSettings:
 
 
 @dataclass(frozen=True)
+class QdrantSettings:
+    url: str
+    api_key: Optional[str]
+    articles_collection: str
+    chunks_collection: str
+    timeout: Optional[float]
+
+
+@dataclass(frozen=True)
 class Settings:
     openai: OpenAISettings
-    bonsai: BonsaiSettings
     summary: SummarySettings
     scraper: ScraperSettings
+    qdrant: QdrantSettings
 
 
 @lru_cache(maxsize=1)
@@ -69,7 +73,6 @@ def get_settings() -> Settings:
 
     return Settings(
         openai=OpenAISettings(api_key=_require_env("OPENAI_API_KEY")),
-        bonsai=BonsaiSettings(url=_require_env("BONSAI_URL")),
         summary=SummarySettings(
             endpoint=_require_env("N8N_SUMMARY_ENDPOINT"),
             auth_token=_optional_env("N8N_SUMMARY_AUTH_TOKEN"),
@@ -80,14 +83,23 @@ def get_settings() -> Settings:
             max_retries=int(_optional_env("SCRAPER_MAX_RETRIES") or 3),
             throttle_seconds=float(_optional_env("SCRAPER_THROTTLE_SECONDS") or 1.5),
         ),
+        qdrant=QdrantSettings(
+            url=_require_env("QDRANT_URL"),
+            api_key=_optional_env("QDRANT_API_KEY"),
+            articles_collection=_optional_env("QDRANT_COLLECTION_ARTICLES")
+            or (_optional_env("QDRANT_COLLECTION_PREFIX") or "") + "articles",
+            chunks_collection=_optional_env("QDRANT_COLLECTION_CHUNKS")
+            or (_optional_env("QDRANT_COLLECTION_PREFIX") or "") + "chunks",
+            timeout=float(_optional_env("QDRANT_TIMEOUT") or 30),
+        ),
     )
 
 
 __all__ = [
     "OpenAISettings",
-    "BonsaiSettings",
     "SummarySettings",
     "ScraperSettings",
+    "QdrantSettings",
     "Settings",
     "get_settings",
 ]

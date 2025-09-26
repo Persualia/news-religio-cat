@@ -24,7 +24,7 @@
 
 ## Technology choices (confirmed)
 
-* **OpenSearch 2.6.0 (Bonsai.io)** with **k-NN (HNSW)** for ANN vector search.
+* **Qdrant Cloud** (HNSW) for ANN vector search with payload filtering.
 * **Python 3.10** (usar entorno virtual `.venv`).
 * **openai** API:
 
@@ -32,122 +32,27 @@
   * Chat: `gpt-4.1-mini` (summaries)
 * **GitHub Actions** (scheduled, once per day) to run the ingestion pipeline.
 
-> Rationale: OpenSearch 2.x provides true ANN for low-latency similarity; Bonsai manages the cluster. GitHub Actions offers a free/cheap scheduler. OpenAI models are cost-effective and simple to integrate.
+> Rationale: Qdrant Cloud offers low-latency ANN with managed scaling. GitHub Actions provides a simple scheduler. OpenAI models remain cost-effective and easy to integrate.
 
 ---
 
 ## Data model
 
-We keep it **minimal and purposeful**. Two indices:
+Two Qdrant collections keep storage lean:
 
-### 1) `articles-YYYY.MM` (one doc per article)
+### 1) `articles`
 
-Fields (all lowercase keys):
+* Point ID: deterministic SHA1 of the canonical URL.
+* Vector: mean of that article's chunk embeddings (1536 dims).
+* Payload: `site`, `base_url`, `url`, `lang`, `author`, `title`, `description`, full `content`, `published_at` / `indexed_at` (ISO) and `published_at_ts` / `indexed_at_ts` (epoch), plus `doc_id`.
 
-* `site` *(keyword)* — **Source identifier** from our websites list (not the article’s domain).
-* `url` *(keyword, unique)* — Canonical article URL.
-* `base_url` *(keyword)* — URL base del scraper (punto de entrada).
-* `lang` *(keyword)* — e.g., `ca`, `es`, `en` (detected or provided).
-* `author` *(keyword, nullable)*.
-* `published_at` *(date, nullable)* — As parsed; may be missing.
-* `indexed_at` *(date)* — Ingestion time (UTC ISO8601).
-* `title` *(text, analyzer by language)* — Also vectorized if available.
-* `description` *(text, analyzer by language, nullable)* — Also vectorized if available.
-* `content` *(text, analyzer by language)* — Full plain-text content (HTML stripped).
-* `search_text_short` *(text)* — `title + description` vía `copy_to`, pensado para BM25 de alta precisión.
-* `search_text` *(text)* — `title + description + content` vía `copy_to`, usado para recall general.
+### 2) `chunks`
 
-> **IDs & idempotency**: `_id = sha1(url)` so re-runs update the same doc. No extra synthetic IDs needed.
+* Point ID: `<article_id>:<chunk_ix>`.
+* Vector: embedding of the chunk (1536 dims).
+* Payload: inherits article metadata (`article_id`, `site`, `lang`, `author`, etc.) plus `chunk_ix`, chunk `content`, and timestamps.
 
-### 2) `chunks-YYYY.MM` (one doc per content chunk — supports RAG)
-
-* Inherits a subset of article fields for filtering: `site`, `url`, `lang`, `author`, `published_at`, `indexed_at`.
-* `chunk_ix` *(integer)* — Order within the article.
-* `content` *(text)* — The chunk text.
-* `content_vec` *(knn\_vector\[1536])* — Embedding of the chunk.
-* (Optional) `title_vec`, `description_vec` only if we later prove value. **Do not create now.**
-
-> Why a separate `chunks` index? Vector search performs best on granular units; we can still show article-level metadata via `url` join in the app. Keeping `articles` clean avoids duplication and simplifies non-vector queries.
-
----
-
-## OpenSearch settings & mappings
-
-### Common index template
-
-* 1 shard (start simple), 1 replica (after ingestion; can be 0 during bulk load if plan allows).
-* Monthly indices with alias `articles-live` / `chunks-live`.
-* Language analyzers: start with a simple Spanish analyzer; content in Catalan also benefits from standard/Spanish. We can add `ca` analyzer later if needed.
-
-```jsonc
-// Template for articles-*
-{
-  "settings": {
-    "number_of_shards": 1,
-    "number_of_replicas": 1,
-    "refresh_interval": "1s",
-    "analysis": {
-      "analyzer": {
-        "es_std": { "type": "standard", "stopwords": "_spanish_" }
-      }
-    }
-  },
-  "mappings": {
-    "properties": {
-      "site":         { "type": "keyword" },
-      "url":          { "type": "keyword" },
-      "lang":         { "type": "keyword" },
-      "author":       { "type": "keyword" },
-      "published_at": { "type": "date" },
-      "indexed_at":   { "type": "date" },
-      "title":        { "type": "text", "analyzer": "es_std" },
-      "description":  { "type": "text", "analyzer": "es_std" },
-      "content":      { "type": "text", "analyzer": "es_std" }
-    }
-  }
-}
-```
-
-```jsonc
-// Template for chunks-*
-{
-  "settings": {
-    "number_of_shards": 1,
-    "number_of_replicas": 1,
-    "refresh_interval": "1s",
-    "knn": true,
-    "analysis": {
-      "analyzer": {
-        "es_std": { "type": "standard", "stopwords": "_spanish_" }
-      }
-    }
-  },
-  "mappings": {
-    "properties": {
-      "site":         { "type": "keyword" },
-      "url":          { "type": "keyword" },
-      "lang":         { "type": "keyword" },
-      "author":       { "type": "keyword" },
-      "published_at": { "type": "date" },
-      "indexed_at":   { "type": "date" },
-      "chunk_ix":     { "type": "integer" },
-      "content":      { "type": "text", "analyzer": "es_std" },
-      "content_vec": {
-        "type": "knn_vector",
-        "dimension": 1536,
-        "method": {
-          "name": "hnsw",
-          "space_type": "cosinesimil",
-          "engine": "nmslib",
-          "parameters": { "m": 16, "ef_construction": 128 }
-        }
-      }
-    }
-  }
-}
-```
-
-> Sorting by recency: include `published_at` and `indexed_at`; queries can `sort: [{"published_at":"desc"}]` or fall back to `indexed_at` when missing.
+> Chunk-level retrieval powers semantic search while article points provide dedupe + "latest" views.
 
 ---
 
@@ -157,7 +62,7 @@ Fields (all lowercase keys):
 news-religio-cat/
 ├─ src/
 │  ├─ config.py              # env, constants
-│  ├─ opensearch_client.py   # client factory, template/alias helpers
+│  ├─ vector_client.py       # Qdrant client factory
 │  ├─ embeddings.py          # OpenAI embeddings
 │  ├─ summarizer.py          # OpenAI chat summary (system+user)
 │  ├─ chunking.py            # chunk_text(text, max_tokens, overlap)
@@ -187,16 +92,18 @@ news-religio-cat/
 ## Environment (.env)
 
 ```
-BONSAI_URL=https://USER:PASSWORD@XXXXX.bonsaisearch.net
 OPENAI_API_KEY=sk-...
 N8N_SUMMARY_ENDPOINT=https://example.com/webhook/news-summary
 SUMMARY_TO=periodista@example.com    # optional metadata to send
 LANG_DEFAULT=es
 CHUNK_MAX_TOKENS=800
 CHUNK_OVERLAP=120
+QDRANT_URL=https://YOUR-ID.eu-central-1-0.aws.cloud.qdrant.io
+QDRANT_API_KEY=xxxxxxxxxxxxxxxx
+QDRANT_COLLECTION_PREFIX=news_
 ```
 
-> `BONSAI_URL` contains credentials. In code, split into host/user/pass. Never commit real `.env`.
+> `QDRANT_URL` and `QDRANT_API_KEY` configure the managed vector store. Never commit real secrets.
 
 ---
 
@@ -213,8 +120,8 @@ CHUNK_OVERLAP=120
 ## Logging & dry-run
 
 * Los logs se imprimen por consola con cabecera y resumen final; puedes ajustar la verbosidad con `--log-level` (`DEBUG`, `INFO`, etc.).
-* Ejecuta `PYTHONPATH=src python scripts/run_daily.py --dry-run --log-level DEBUG` para inspeccionar los documentos generados (se muestran como JSON multilínea) sin tocar OpenSearch ni OpenAI.
-* Usa `--no-index` para ejecutar scraping + resumen (+ embeddings opcionales) sin escribir en OpenSearch; útil para probar integraciones como n8n.
+* Ejecuta `PYTHONPATH=src python scripts/run_daily.py --dry-run --log-level DEBUG` para inspeccionar los documentos generados (se muestran como JSON multilínea) sin tocar Qdrant ni OpenAI.
+* Usa `--no-index` para ejecutar scraping + resumen (+ embeddings opcionales) sin escribir en Qdrant; útil para probar integraciones como n8n.
 * En modo normal (sin `--dry-run`/`--no-index`) el pipeline indexa datos y genera resumen final.
 
 ---
@@ -252,7 +159,7 @@ CHUNK_OVERLAP=120
 
 * Model: `text-embedding-3-small` (1536-D).
 * Vectorize: **content chunks** (mandatory). Optionally title/description later if we see gains.
-* Normalization: not required for cosine in OpenSearch; keep raw vector from API.
+* Normalization: not required for cosine in Qdrant; keep raw vector from API.
 
 ---
 
@@ -318,9 +225,10 @@ jobs:
           pip install -r requirements.txt
       - name: Run pipeline
         env:
-          BONSAI_URL: ${{ secrets.BONSAI_URL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           N8N_SUMMARY_ENDPOINT: ${{ secrets.N8N_SUMMARY_ENDPOINT }}
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
         run: |
           python scripts/run_daily.py
 ```
@@ -330,7 +238,7 @@ jobs:
 ## Requirements (minimal)
 
 ```
-opensearch-py==2.6.*
+qdrant-client==1.11.*
 httpx==0.27.*
 beautifulsoup4==4.12.*
 python-dotenv==1.0.*
@@ -398,21 +306,21 @@ def chunk_text(text: str, max_tokens=800, overlap=120):
     return [" ".join(words[i:i+max_tokens]) for i in range(0, len(words), step) if words[i:i+max_tokens]]
 ```
 
-**`src/opensearch_client.py`**
+**`src/vector_client.py`**
 
 ```python
-import os
-from urllib.parse import urlparse
-from opensearchpy import OpenSearch
+from functools import lru_cache
 
-BONSAI_URL = os.getenv("BONSAI_URL")
-_u = urlparse(BONSAI_URL)
+from qdrant_client import QdrantClient
 
-client = OpenSearch(
-    hosts=[{"host": _u.hostname, "port": 443}],
-    http_auth=(_u.username, _u.password),
-    use_ssl=True, verify_certs=True, scheme="https",
-)
+from config import get_settings
+
+
+@lru_cache(maxsize=1)
+def get_client() -> QdrantClient:
+    settings = get_settings()
+    q = settings.qdrant
+    return QdrantClient(url=q.url, api_key=q.api_key, timeout=q.timeout)
 ```
 
 **`scripts/run_daily.py`**

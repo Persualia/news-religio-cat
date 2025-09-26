@@ -29,8 +29,8 @@
       "intent": "search_articles",
       "topK": 5,
       "keywords": "Salesians Comunicació",
-      "semantic": false,
-      "mode": "lexical",
+      "semantic": true,
+      "mode": "hybrid",
       "filters": {
         "author": [
           "Salesians Comunicació"
@@ -47,11 +47,7 @@
           "description"
         ]
       },
-      "need_summary": false,
-      "sort": {
-        "by": "published_at",
-        "order": "desc"
-      }
+      "need_summary": false
     },
     "query_text": "Salesians Comunicació",
     "fields": [
@@ -63,80 +59,47 @@
       "description"
     ],
     "top_k": 5,
-    "semantic": false,
-    "mode": "lexical"
+    "requires_embedding": true
   },
-  "dsl": {
-    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
-    "body": {
-      "size": 5,
-      "query": {
-        "bool": {
-          "must": [
-            {
-              "terms": {
-                "author.keyword": [
-                  "Salesians Comunicació"
-                ]
-              }
-            }
-          ],
-          "should": [
-            {
-              "multi_match": {
-                "query": "Salesians Comunicació",
-                "fields": [
-                  "search_text_short^3",
-                  "title^4",
-                  "description^2",
-                  "content"
-                ],
-                "type": "best_fields",
-                "operator": "and"
-              }
-            }
-          ],
-          "minimum_should_match": 1
-        }
-      },
-      "sort": [
-        {
-          "published_at": {
-            "order": "desc",
-            "unmapped_type": "date"
-          }
-        }
-      ],
-      "_source": [
-        "title",
-        "url",
-        "published_at",
-        "site",
-        "author",
-        "description"
-      ]
-    },
+  "search": {
     "intent": "search_articles",
-    "target": "articles_lexical",
-    "index_name": "articles-live"
-  },
-  "opensearch_response": {
-    "took": 1,
-    "timed_out": false,
-    "_shards": {
-      "total": 1,
-      "successful": 1,
-      "skipped": 0,
-      "failed": 0
-    },
-    "hits": {
-      "total": {
-        "value": 0,
-        "relation": "eq"
+    "hits": [
+      {
+        "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+        "vector_score": 0.4515013,
+        "recency_weight": 0.5224106352928951,
+        "combined_score": 0.4763195673525133,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "description": "Compromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora",
+          "indexed_at": "2025-09-26T09:38:20Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
       },
-      "max_score": null,
-      "hits": []
-    }
-  },
-  "fallback": "semantic_disabled_due_to_missing_knn"
+      {
+        "id": "41014754-2986-5cb1-bdaa-95e297115c4b",
+        "vector_score": 0.31419688,
+        "recency_weight": 0.5224106352928951,
+        "combined_score": 0.3870716943525133,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Processó Magna Mariana a Huelva amb la participació de Maria Auxiliadora",
+          "url": "https://salesianos.info/blog/processo-magna-mariana-a-huelva-amb-la-participacio-de-maria-auxiliadora/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "description": "La ciutat de Huelva va viure durant la jornada del 20 de setembre de 2025 un esdeveniment històric amb la celebració de la processó Magna Mariana, emmarcada l'any Jubilar.",
+          "indexed_at": "2025-09-26T09:40:03Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879603
+        }
+      }
+    ]
+  }
 }

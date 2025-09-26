@@ -28,8 +28,8 @@
       "intent": "search_articles",
       "topK": 5,
       "keywords": "cròniques d’esdeveniments",
-      "semantic": false,
-      "mode": "lexical",
+      "semantic": true,
+      "mode": "hybrid",
       "filters": {
         "date_from": "2025-09-01",
         "date_to": "2025-09-20"
@@ -45,11 +45,7 @@
           "description"
         ]
       },
-      "need_summary": false,
-      "sort": {
-        "by": "published_at",
-        "order": "desc"
-      }
+      "need_summary": false
     },
     "query_text": "cròniques d’esdeveniments",
     "fields": [
@@ -61,81 +57,101 @@
       "description"
     ],
     "top_k": 5,
-    "semantic": false,
-    "mode": "lexical"
+    "requires_embedding": true
   },
-  "dsl": {
-    "url": "https://persualia-search-7928681425.eu-west-1.bonsaisearch.net:443/articles-live/_search",
-    "body": {
-      "size": 5,
-      "query": {
-        "bool": {
-          "must": [
-            {
-              "range": {
-                "published_at": {
-                  "gte": "2025-09-01",
-                  "lte": "2025-09-20"
-                }
-              }
-            }
-          ],
-          "should": [
-            {
-              "multi_match": {
-                "query": "cròniques d’esdeveniments",
-                "fields": [
-                  "search_text_short^3",
-                  "title^4",
-                  "description^2",
-                  "content"
-                ],
-                "type": "best_fields",
-                "operator": "and"
-              }
-            }
-          ],
-          "minimum_should_match": 1
-        }
-      },
-      "sort": [
-        {
-          "published_at": {
-            "order": "desc",
-            "unmapped_type": "date"
-          }
-        }
-      ],
-      "_source": [
-        "title",
-        "url",
-        "published_at",
-        "site",
-        "author",
-        "description"
-      ]
-    },
+  "search": {
     "intent": "search_articles",
-    "target": "articles_lexical",
-    "index_name": "articles-live"
-  },
-  "opensearch_response": {
-    "took": 1,
-    "timed_out": false,
-    "_shards": {
-      "total": 1,
-      "successful": 1,
-      "skipped": 0,
-      "failed": 0
-    },
-    "hits": {
-      "total": {
-        "value": 0,
-        "relation": "eq"
+    "hits": [
+      {
+        "id": "c4b6dbd8-8491-97ed-28c0-180f293d2dce",
+        "vector_score": 0.38022837,
+        "recency_weight": 0.0008098390547102711,
+        "combined_score": 0.2474318841691486,
+        "timestamp": 1757548800,
+        "payload": {
+          "title": "El desig de donar la benvinguda a tothom",
+          "url": "https://jesuites.net/ca/noticia/el-desig-de-donar-la-benvinguda-tothom",
+          "published_at": "2025-09-11T00:00:00Z",
+          "site": "jesuites",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:39:34Z",
+          "published_at_ts": 1757548800,
+          "indexed_at_ts": 1758879574
+        }
       },
-      "max_score": null,
-      "hits": []
-    }
-  },
-  "fallback": "semantic_disabled_due_to_missing_knn"
+      {
+        "id": "a3b96f0b-8b72-a0cf-b3b9-8bd5f3019270",
+        "vector_score": 0.29208332,
+        "recency_weight": 0.005142157469488064,
+        "combined_score": 0.1916539131143208,
+        "timestamp": 1757894400,
+        "payload": {
+          "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
+          "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
+          "published_at": "2025-09-15T00:00:00Z",
+          "site": "jesuites",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:39:32Z",
+          "published_at_ts": 1757894400,
+          "indexed_at_ts": 1758879572
+        }
+      },
+      {
+        "id": "9e8d1d15-c2f5-52e9-8111-f9a8d63ac3e7",
+        "vector_score": 0.28095368,
+        "recency_weight": 0.01295742487536433,
+        "combined_score": 0.18715499070637753,
+        "timestamp": 1758067200,
+        "payload": {
+          "title": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad",
+          "url": "https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la",
+          "published_at": "2025-09-17T00:00:00Z",
+          "site": "jesuites",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:38:08Z",
+          "published_at_ts": 1758067200,
+          "indexed_at_ts": 1758879488
+        }
+      },
+      {
+        "id": "ab262f31-7baf-0ac8-43af-8f213673c6b7",
+        "vector_score": 0.28206778,
+        "recency_weight": 0.008162666176451491,
+        "combined_score": 0.18620099016175803,
+        "timestamp": 1757980800,
+        "payload": {
+          "title": "Publicació del segon volum sobre la història dels jesuïtes a Barcelona",
+          "url": "https://jesuites.net/ca/noticia/publicacio-del-segon-volum-sobre-la-historia-dels-jesuites-barcelona",
+          "published_at": "2025-09-16T00:00:00Z",
+          "site": "jesuites",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:39:30Z",
+          "published_at_ts": 1757980800,
+          "indexed_at_ts": 1758879570
+        }
+      },
+      {
+        "id": "4319952d-4f6a-74fc-a115-b1368e4ed1ec",
+        "vector_score": 0.2820935,
+        "recency_weight": 0.0008098390547102711,
+        "combined_score": 0.1836442186691486,
+        "timestamp": 1757548800,
+        "payload": {
+          "title": "Celebració de Sant Pere Claver a Verdú",
+          "url": "https://jesuites.net/ca/noticia/celebracio-de-sant-pere-claver-verdu",
+          "published_at": "2025-09-11T00:00:00Z",
+          "site": "jesuites",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:39:36Z",
+          "published_at_ts": 1757548800,
+          "indexed_at_ts": 1758879576
+        }
+      }
+    ]
+  }
 }

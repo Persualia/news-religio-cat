@@ -5,20 +5,25 @@ from dataclasses import dataclass
 from datetime import datetime
 import json
 import logging
-from typing import Callable, Iterable, Optional, Sequence
+from typing import Callable, Iterable, Optional, Sequence, TYPE_CHECKING
 import time
 
-from opensearchpy import OpenSearch
+from collections import defaultdict
+
+from vector_client import get_client
+
+if TYPE_CHECKING:  # pragma: no cover
+    from qdrant_client import QdrantClient
 
 from chunking import chunk_text
 from embeddings import embed_texts
 from models import Article, Chunk, url_to_id
-from opensearch_client import get_client
 from scraping import BaseScraper, instantiate_scrapers
 
-from .opensearch_ops import (
-    ensure_monthly_indices,
-    ensure_templates,
+from .qdrant_ops import (
+    ARTICLES_COLLECTION,
+    CHUNKS_COLLECTION,
+    ensure_collections,
     index_articles,
     index_chunks,
     find_existing_article_ids,
@@ -33,6 +38,19 @@ SummaryPoster = Callable[[str], object]
 logger = logging.getLogger(__name__)
 
 
+def _average_vector(vectors: Sequence[list[float]]) -> list[float]:
+    if not vectors:
+        return []
+    length = len(vectors)
+    if length == 1:
+        return list(vectors[0])
+    accum = [0.0] * len(vectors[0])
+    for vec in vectors:
+        for idx, value in enumerate(vec):
+            accum[idx] += value
+    return [value / length for value in accum]
+
+
 @dataclass
 class PipelineResult:
     articles_indexed: int
@@ -45,7 +63,7 @@ class DailyPipeline:
         self,
         *,
         scrapers: Optional[Sequence[BaseScraper]] = None,
-        client: Optional[OpenSearch] = None,
+        client: Optional["QdrantClient"] = None,
         embedder: Optional[Embedder] = None,
         summarizer: Optional[Summarizer] = None,
         summary_poster: Optional[SummaryPoster] = None,
@@ -76,30 +94,33 @@ class DailyPipeline:
             skip_indexing,
         )
 
-        client = None
+        client: Optional["QdrantClient"] = None
+        articles_collection = ARTICLES_COLLECTION
+        chunks_collection = CHUNKS_COLLECTION
+
         if not dry_run and not skip_indexing:
             client = self._client or get_client()
-            templates_ready = ensure_templates(client)
-            articles_index, chunks_index = ensure_monthly_indices(
-                client,
-                now=now,
-                use_templates=templates_ready,
+            ensure_collections(client)
+            logger.info(
+                "Qdrant collections ready: articles=%s chunks=%s",
+                articles_collection,
+                chunks_collection,
             )
         elif dry_run:
             logger.info("Running pipeline in dry-run mode (no indexing or OpenAI calls).")
-            articles_index = "articles-dry-run"
-            chunks_index = "chunks-dry-run"
+            articles_collection = "articles-dry-run"
+            chunks_collection = "chunks-dry-run"
         else:  # skip_indexing without dry_run
-            logger.info("OpenSearch indexing disabled by flag; skipping client setup.")
-            articles_index = "articles-skipped"
-            chunks_index = "chunks-skipped"
+            logger.info("Vector indexing disabled by flag; skipping Qdrant setup.")
+            articles_collection = "articles-skipped"
+            chunks_collection = "chunks-skipped"
 
         articles: list[Article] = []
         for scraper in self._scrapers:
             logger.debug("Scraping site %s", getattr(scraper, "site_id", type(scraper).__name__))
 
             if isinstance(scraper, BaseScraper):
-                # Phase 1: listing + precheck existing (when OS client available)
+                # Phase 1: listing + precheck existing (when vector store client available)
                 try:
                     listing_soup = scraper._get_soup(scraper.listing_url)
                     raw_urls = list(scraper.extract_article_urls(listing_soup))
@@ -171,16 +192,20 @@ class DailyPipeline:
                 summary="Dry run: summary not generated",
             )
 
-        if deduped_articles and client is not None:
-            index_articles(client, deduped_articles, index_name=articles_index)
-        elif skip_indexing and deduped_articles:
-            logger.info("Skipping article indexing (%d items) as requested.", len(deduped_articles))
-
-        chunk_inputs: list[tuple[Article, int, str]] = []
         chunk_docs: list[Chunk] = []
+        article_vectors: dict[str, list[float]] = {}
+
         if not skip_indexing:
+            chunk_inputs: list[tuple[Article, int, str]] = []
             for article in deduped_articles:
                 article_chunks = chunk_text(article.content)
+                if not article_chunks:
+                    fallback_parts = [article.title, article.description, article.content]
+                    fallback_text = "\n\n".join(part for part in fallback_parts if part)
+                    if not fallback_text:
+                        fallback_text = article.url
+                    article_chunks = [fallback_text]
+
                 if article_chunks:
                     enriched_first = "\n\n".join(
                         part
@@ -188,21 +213,46 @@ class DailyPipeline:
                         if part
                     )
                     article_chunks[0] = enriched_first
+
                 logger.debug("Generated %d chunk(s) for %s", len(article_chunks), article.url)
                 for ix, chunk in enumerate(article_chunks):
                     chunk_inputs.append((article, ix, chunk))
 
-            chunk_vectors = self._embedder([chunk for (_, _, chunk) in chunk_inputs]) if chunk_inputs else []
+            chunk_vectors = (
+                self._embedder([chunk for (_, _, chunk) in chunk_inputs]) if chunk_inputs else []
+            )
 
             chunk_docs = [
                 Chunk(article=article, chunk_ix=ix, content=chunk, content_vec=vector)
                 for (article, ix, chunk), vector in zip(chunk_inputs, chunk_vectors, strict=True)
             ]
 
-            if chunk_docs:
-                index_chunks(client, chunk_docs, index_name=chunks_index)
+            vectors_by_article: dict[str, list[list[float]]] = defaultdict(list)
+            for chunk_doc in chunk_docs:
+                vectors_by_article[chunk_doc.article.doc_id].append(chunk_doc.content_vec)
+            article_vectors = {}
+            for article in deduped_articles:
+                vectors = vectors_by_article.get(article.doc_id)
+                if vectors:
+                    article_vectors[article.doc_id] = _average_vector(vectors)
+
+            if client is not None and chunk_docs:
+                index_chunks(client, chunk_docs)
         else:
             logger.info("Skipping chunk embedding/indexing.")
+
+        if deduped_articles and client is not None:
+            if article_vectors:
+                logger.info(
+                    "Prepared vectors for %d/%d articles.",
+                    sum(1 for article in deduped_articles if article.doc_id in article_vectors),
+                    len(deduped_articles),
+                )
+                index_articles(client, deduped_articles, article_vectors)
+            else:
+                logger.info("No article vectors generated; indexing skipped for this run.")
+        elif skip_indexing and deduped_articles:
+            logger.info("Skipping article indexing (%d items) as requested.", len(deduped_articles))
 
         summary = self._summarizer(deduped_articles)
         try:
