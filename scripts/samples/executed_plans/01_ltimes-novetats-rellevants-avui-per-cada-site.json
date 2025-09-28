@@ -1,0 +1,29 @@
+{
+  "query": "Últimes novetats rellevants avui per cada site",
+  "plan": {
+    "intent": "latest_by_site",
+    "query": "",
+    "exact_phrase": false,
+    "topK": 0,
+    "per_site": 0,
+    "filters": {
+      "site": [
+        "jesuites",
+        "maristes",
+        "salesians"
+      ],
+      "base_url": [],
+      "url": [],
+      "lang": [],
+      "author": [],
+      "article_id": [],
+      "date_from": "2025-09-28",
+      "date_to": "2025-09-28"
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": {},
+    "context": null
+  }
+}

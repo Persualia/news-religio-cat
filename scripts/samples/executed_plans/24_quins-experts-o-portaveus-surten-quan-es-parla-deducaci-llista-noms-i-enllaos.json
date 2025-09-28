@@ -1,0 +1,162 @@
+{
+  "query": "Quins experts o portaveus surten quan es parla d’‘educació’? Llista noms i enllaços",
+  "plan": {
+    "intent": "search_chunks",
+    "query": "educació",
+    "exact_phrase": true,
+    "topK": 10,
+    "per_site": 0,
+    "filters": {
+      "site": [],
+      "base_url": [],
+      "url": [],
+      "lang": [],
+      "author": [],
+      "article_id": [],
+      "date_from": "",
+      "date_to": ""
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [
+      {
+        "id": "bd197d7f-a0c5-452b-efb6-d7a7a77260db",
+        "vector_score": 0.5214285,
+        "recency_weight": 0.004202745582657556,
+        "combined_score": 0.3403994859539301,
+        "timestamp": 1758067200,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la",
+          "content": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad\n\nAquest dimarts 16 de setembre, la seu de la Companyia de Jesús a Barcelona ha acollit la presentació de l’Informe Vermell de l’ONG jesuïta Entreculturas, en el marc de la campanya La Silla Roja i sota el lema “No podem retrocedir, l’educació és futur” . El document, disponible en línia , posa de manifest l’estancament i el retrocés en matèria educativa a escala mundial , quan falten només cinc anys per a l’assoliment dels Objectius de Desenvolupament Sostenible (ODS). L’informe es focalitza en l’ODS 4, que reclama garantir una educació inclusiva, equitativa i de qualitat per a tothom. Les conclusions són clares: el món no assolirà cap dels compromisos educatius fixats per al 2030 si no hi ha un canvi urgent de rumb. Actualment, hi ha 272 milions de nens i nenes fora de l’escola , i fins i tot si es complissin totes les fites previstes, encara 84 milions quedarien sense escolaritzar en la data límit. La delegada d’Entrecultures Catalunya, Elisabet Besó , va subratllar la urgència de revertir aquesta situació i va destacar, entre d’altres, el dèficit mundial de docents —es necessiten 44 milions de mestres addicionals abans del 2030— i l’impacte negatiu que encara arrossega el sistema educatiu arran de la pandèmia, agreujat per la reducció de la inversió pública en educació a molts països. El testimoni des del Txad: educació en temps d’adversitat La presentació va comptar amb la participació de Ralongar Minitaknde Casimir , membre de Fe y Alegría Txad , que va aportar una mirada en primera persona sobre els reptes que afronta el seu país en matèria educativa. Casimir va descriure un context marcat per la inestabilitat social i política , que amenaça la continuïtat dels projectes educatius i obliga moltes famílies a triar entre portar els fills a l’escola o garantir la supervivència quotidiana. Va posar èmfasi en la manca de recursos bàsics —infraestructures escolars precàries, absència de material educatiu i dèficit de professorat qualificat— que colpeja especialment les comunitats més vulnerables. El representant de Fe y Alegría Txad també va alertar sobre les greus barreres d’accés a l’educació per a les nenes , víctimes de discriminació, matrimonis forçats i violència sexual. Tot i això, va voler transmetre un missatge d’ esperança i resiliència , destacant que la tasca que desenvolupen les escoles de Fe y Alegría al territori dóna fruits i demostra que és possible transformar la realitat. Un dels elements que va remarcar com a clau és la participació activa de les comunitats locals . El ponent va explicar com Fe y Alegría posa al centre als membres de les comunitats, que s’impliquen en la construcció i gestió de l’escola, de tal manera que prenen consciència del valor que té l’educació per al futur dels seus fills i filles. Això permet reduir l’abandonament escolar. Per a Casimir, la visió de Fe y Alegría és clara: l’educació és motor de desenvolupament i una eina per fer front a l’adversitat . Per això va fer una crida als governs i institucions internacionals perquè converteixin l’educació en una autèntica prioritat: “No és només un dret fonamental, sinó també la clau per a la transformació social”.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-17T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:08.092325+00:00",
+          "published_at_ts": 1758067200,
+          "indexed_at_ts": 1758879488
+        }
+      },
+      {
+        "id": "50917f9a-7704-735f-c69c-b27c01bc5c70",
+        "vector_score": 0.3935027,
+        "recency_weight": 0.16944408406217443,
+        "combined_score": 0.31508218442176106,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "content": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife\n\nEl projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.\n\nLa Universitat de La Llacuna i el Cabildo de Tenerife van fer lliurament dels III Premis d’Aprenentatge-Servei, on el nostre centre, Salesians La Orotava, juntament amb l’ONG Bosco Global, la Universitat de La Llacuna (ULL) i Iriarte Centre Universitari Internacional va rebre el primer premi gràcies al projecte “Mans joves, cors compromesos”. La iniciativa destaca per la seva aposta per crear consciència i compromís social entre l’alumnat, fomentant la convivència i la igualtat entre cultures. Un projecte per a joves amb mirada transformadora El projecte ha estat desenvolupat per alumnat universitari de la ULL i de la Universitat Iriarte, en col·laboració amb Salesians La Orotava i Bosco Global. El seu objectiu principal ha estat formar a joves com a agents de canvi, capaços de compartir l’après amb tota la societat i d’impulsar una convivència respectuosa i solidària. Temes que construeixen una societat millor Al llarg del treball s’han abordat temes clau com: Conèixer millor l’adolescència i la joventut. Despertar la consciència social i el compromís ciutadà. Promoure la igualtat de gènere. Fomentar la convivència en la diversitat. Cuidar el planeta a través de l’educació ambiental. Apostar per una societat pacífica i justa, amb institucions democràtiques i inclusives. Aprenentatge-Servei: educar fent La metodologia emprada, l’Aprenentatge-Servei (ApS), combina l’adquisició de coneixements amb el compromís social. D’aquesta manera, els estudiants no només aprenen, sinó que també aporten valor a la comunitat, generant un impacte real en el seu entorn més pròxim. Un reconeixement que ens omple d’orgull Des de Salesians LaOrotava celebrem amb gran satisfacció aquest reconeixement, que suposa un impuls per a continuar treballant en projectes que reforcin l’educació en valors, la solidaritat i la convivència entre cultures.",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:40:01.741618+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879601
+        }
+      },
+      {
+        "id": "204b43da-a001-4b15-93e9-d4460f5d33a2",
+        "vector_score": 0.36346066,
+        "recency_weight": 0.16944408406217443,
+        "combined_score": 0.29555485842176105,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "content": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe\n\nCompromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora\n\nEl passat cap de setmana, prop de 80 animadors de les presències de Salesians i Salesianes de Canàries van participar en una enriquidora trobada formativa, emmarcat en l’Itinerari d’Educació en la Fe (IEF). Durant la jornada del dissabte, els assistents van aprofundir en la reflexió sobre l’acció educativa dels centres juvenils i el valor del Sistema Preventiu com a pilar de l’acompanyament pastoral. La formació es va completar a la tarda amb dos tallers pràctics que van oferir eines concretes per a l’animació pastoral en les seves realitats locals. A més, es van cuidar especialment els moments celebratius, que van ajudar a interioritzar el viscut: una adoració al Santíssim el dissabte a la nit i l’Eucaristia compartida el diumenge van posar el fermall espiritual a la trobada. Com a part de la programació, també es van presentar les campanyes pastorals de les dues inspectories: Protagonistes de la història, per part dels Salesians, i Confia, de les Salesianes, marcant un horitzó pastoral comú per a aquest nou curs. Programació local i pròxims trobades a l’octubre A nivell inspectorial, aquestes setmanes s’està avançant en la programació local de l’Itinerari d’Educació en la Fe, peça clau del projecte pastoral salesià. El mes d’octubre arribarà carregat de noves propostes formatives: a Catalunya, la Comunitat Valenciana i la Regió de Múrcia se celebraran jornades per a animadors de l’IEF; a Extremadura tindrà lloc una trobada específica de formació; i a Andalusia s’iniciaran les primeres convivències dirigides als nivells inicials de l’itinerari infantil. Tot això demostra el compromís conjunt d’animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora, fidel a l’estil de Don Bosco i de Mare Mazzarello.",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:20.135275+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
+      },
+      {
+        "id": "deb3b4a2-8274-d302-9f96-317f4a88aa72",
+        "vector_score": 0.3647231,
+        "recency_weight": 3.279427419770618e-14,
+        "combined_score": 0.2370700150000115,
+        "timestamp": 1753285077,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/trobada-dequips-directius-les-avellanes-celebrem",
+          "content": "Trobada d'equips directius a les Avellanes: celebrem!\n\nUn any més, el Monestir de les Avellanes ha tornat a ser l’escenari de la Trobada d’equips directius de les escoles i de les obres socials maristes de Catalunya. Els dies 7 i 8 de juliol, els equips de les obres i de serveis centrals van tenir ocasió de compartir un espai a finals de curs que va servir per mirar enrere cap al curs que acaba i il·lusionar-nos amb el vinent. També va servir per agrair la feina feta a les persones que deixen responsabilitats als equips i per encoratjar les persones que comencen. La trobada la va obrir el germà Lluís Serra , encara aleshores president del Patronat de les fundacions Maristes de Catalunya, posant la vista en l’essencial de la nostra missió i centrant el focus en la importància de la tradició. Una tradició que, en el nostre cas, arrela en el fundador, Marcel·lí Champagnat , amb un projecte destinat a l’educació humana i cristiana dels infants i joves que ens són confiats, especialment els més desatesos. Durant la trobada, l’equip Missió de Serveis centrals ens va avançar el lema educatiu del curs vinent, que compartirem a tot Europa, però que encara no es pot desvelar fins a l’inici de curs. Un lema que serà festiu i que ens convidarà a gaudir del moment present, a aprofundir en la generositat, i a agrair tot el que vivim. Hi va haver espai per valorar el pla estratègic que acaba, per començar a somiar en el següent, per presentar el pla de formació del curs vinent, per explicar iniciatives de comunicació del futur i per donar pinzellades del camí del laïcat a la nostra Província. El germà Gabriel Villa-Real , provincial de L’Hermitage, ens va apropar a la realitat de la Província, amb l’explicació del Capítol provincial que s’acabava de celebrar, i amb informació sobre la beatificació del G. Licarió ( mártir marista que va ser assassinat durant la Setmana Tràgica, el 1909), que va tenir lloc el 12 de juliol. Finalment, un dels punts forts de la trobada va ser la dinàmica Bridge, amb Ferran Ramon Cortès, una eina que va engescar els equips perquè ens ajuda a descubrir el perfil relacional dels companys i companyes que treballen amb nosaltres. En definitiva, moment per compartir, per celebrar, i per desitjar-nos un bon estiu. Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-23T15:37:57+00:00",
+          "indexed_at": "2025-09-26T09:39:46.588615+00:00",
+          "published_at_ts": 1753285077,
+          "indexed_at_ts": 1758879586
+        }
+      },
+      {
+        "id": "d7280d32-c2d9-e399-dc38-62b2d4583745",
+        "vector_score": 0.36047804,
+        "recency_weight": 1.9411976680668768e-14,
+        "combined_score": 0.2343107260000068,
+        "timestamp": 1753187035,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista",
+          "content": "Un estiu amb cor marista!\n\nQuan el curs s’acaba s’obren noves maneres d’aprendre i de créixer. L’estiu ens convida a viure experiències plenes de sentit! És el cas del voluntariat a Grècia, que un any més organitzen des de Maristes Rubí amb alumnat de batxillerat. O del Camí de Sant Jaume, que continua sent una proposta de creixement profund per als joves de Maristes Valldemia , Maristes Montserrat i Maristes Sants-Les Corts . Són vivències que deixen empremta, fan créixer i transformen. També els educadors i educadores vivim moments especials. Aquest any La Travessa ha fet un pas simbòlic i emotiu: s'ha dut a terme a l’Hermitage, commemorant els 200 anys de la construcció de la nostra casa comuna. Una oportunitat única per reconnectar amb les arrels i amb el sentit profund de la missió marista. I, com sempre, l’estiu batega fort als moviments juvenils maristes, omplint de vida diversos racons d’Espanya, França, Grècia i les Illes Canàries. Campaments, rutes i camps de treball, com ara els del CMS a Algemesí o a Karcag, que han deixat una petjada inesborrable. Cor Obert ha fet per primera vegada el camí de Sant Jaume, vivint una ruta de fe, esforç i amistat. FAJMACOR ha convertit la vall de Boí en escenari d’aventura, creixement i convivència. Vivències de natura, autonomia i compromís que ens transformen per dins. Gràcies, agrupaments i associacions, per tanta passió i entrega! A l’agost la vida no s’atura, es multiplica. Catorze voluntàries de SED viatgen al Paraguai, Colòmbia i Tanzània per compartir experiències i construir vincles amb les comunitats d’acollida. A més, a Nàpols tindrà lloc la trobada Mar-Cha, que reuneix joves maristes de tot Europa i, per tancar el mes, una cita molt especial: la trobada de joves maristes de l’Hermitage, a la mateixa casa que ens inspira. Aquest estiu l’ Escola Mirall també continua formant persones compromeses: els cursos de monitors/es es fan a Barcelona, i els de directors/es, a Tarragona. Espais per créixer com a educadors i continuar construint una educació en el lleure amb qualitat! Un estiu viu, intens i ben compartit. Gràcies a totes les persones que ho feu possible... i que no s’aturi la màgia! Equip de Pastoral Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-22T12:23:55+00:00",
+          "indexed_at": "2025-09-26T09:39:50.853552+00:00",
+          "published_at_ts": 1753187035,
+          "indexed_at_ts": 1758879590
+        }
+      },
+      {
+        "id": "0c02d347-95df-74ed-540c-2185f6402dd1",
+        "vector_score": 0.33261415,
+        "recency_weight": 3.216304107055424e-14,
+        "combined_score": 0.21619919750001126,
+        "timestamp": 1753281443,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/un-cop-mes-el-monestir-de-les-avellanes-celebra-amb-exit-la-xiva-edicio-de-les-jornades",
+          "content": "Un cop més el Monestir de les Avellanes celebra amb èxit la XIVa edició de les Jornades d'Història\n\nEl 14 i 15 de juliol de 2025 van tenir lloc les XIVes Jornades d’Història del Monestir de les Avellanes (Història de l’Església i la religiositat). Enguany el tema escollit era “Negociar l’autoritat i el poder en l’Església medieval”. Per exposar-lo es va dissenyar un programa amb ponències i debats que aborden el tema de forma interdisciplinària, de la mà de professors universitaris o experts en aquest àmbit. En aquesta edició vam comptar amb 9 ponències i debats, que tractaven la qüestió des de l’òptica de la teologia, la filosofia, l’arqueologia, la història, l’art i la musicologia. El professors venien de 9 universitats o centres d’estudi diferents, a nivell de Catalunya, les Illes Balears, Castella-La Manxa, Madrid i França. En la secció de ponències i debats hi van arribar a participar 100 persones, entre inscrits al curs, professors i oients. La tipologia de participants és molt heterogènia, ja que l’objectiu principal de les Jornades és facilitar la transmissió del coneixement universitari a la societat. Les Jornades son també un curs certificat dins la Universitat d’Estiu de la UdL i curs de formació continuada reconegut pel Departament d’Educació. Per altra banda, el programa de les Jornades conté un conjunt d’activitats culturals de divulgació científica, que tenen per objecte transmetre aquest coneixement per canals alternatius, per arribar a un gruix més ampli de la societat. Les activitats van ser: 12è Sopar Medieval El sopar medieval és una activitat que se centra en l’arqueologia del gust, és a dir, en aproximar de forma experimental la gastronomia d’origen medieval. L’activitat és dissenyada per experts universitaris que fan la recerca i l'assessorament històric conjuntament amb el xef del Monestir de les Avellanes que ho elabora. En aquesta edició, celebrada al claustre, hi van participar 177 persones. El tema escollit va ser “l’opulència a la taula com a demostració de poder” i s’hi recreà un banquet ofert a Roma el juny de 1473 pel cardenal Pietro Riario en honor a Elionor d’Aragó (filla del rei Ferran I de Nàpols). Actuació teatral i musical El banquet medieval anava acompanyat de balls, actuacions artístiques i música. Per aquest motiu vam convidar a La Cremallera Teatre, grup de recreació de música i teatre medieval. Concert nocturn a l’església La música és un altre mitjà per fer arribar el coneixement. En aquesta edició es va dissenyar un concert únic, “Els cants de Maria”, a càrrec de Marga Mingote i Araceli Rosillo-Luque, que van fer una autèntica recerca i recreació de música medieval femenina a l’església del monestir. Hi assistiren unes 185 persones. Visita guiada a patrimoni cultural religiós Les Jornades tenen aquest component vivencial i pràctic, i sempre intentem anar a veure patrimoni cultural de caràcter religiós. En aquesta ocasió vam anar a Santa Maria de Vallbona, com a autoritat monàstica femenina d’origen medieval. Agraïm a l’abadessa la rebuda i salutació inicial. Hi participaren 76 persones. Robert Porta, director i arxiver del Monestir de les Avellanes Tríptic de les Jornades d'Història Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-23T14:37:23+00:00",
+          "indexed_at": "2025-09-26T09:39:44.079463+00:00",
+          "published_at_ts": 1753281443,
+          "indexed_at_ts": 1758879584
+        }
+      },
+      {
+        "id": "c7a38dbb-9bdd-efdb-b488-7b277d8fd1a4",
+        "vector_score": 0.3211353,
+        "recency_weight": 0.0001654727383419673,
+        "combined_score": 0.2087958604584197,
+        "timestamp": 1757462400,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/emotiva-ofrena-floral-lermita-de-la-mare-de-deu-de-bellvitge",
+          "content": "Emotiva ofrena floral a l'Ermita de la Mare de Déu de Bellvitge\n\nEl passat 8 de setembre, en el marc de la Festa Major de Bellvitge, va tenir lloc la tradicional ofrena floral a la Mare de Déu de Bellvitge a la seva ermita. L’acte, sempre molt esperat per les entitats i veïns del barri, es va viure enguany amb un marcat caràcter especial: el comiat de la comunitat de jesuïtes després de 57 anys de presència ininterrompuda a Bellvitge. Més de mig segle de treball social, acompanyament espiritual i compromís amb la justícia social han deixat una empremta profunda en la història del barri. Tot i l’acomiadament de la comunitat de jesuïtes, la missió iniciada per la Companyia de Jesús, amb la col·laboració de moltes persones i entitats del barri, continuarà a través de l'escola Jesuïtes Bellvitge-Joan XXIII i de la Fundació La Vinya, projectes que mantenen viva l’aposta per l’educació integral i l’atenció a les persones més vulnerables. L’ofrena floral es va convertir així en un emotiu homenatge a aquesta trajectòria. Carles Marcet, jesuïta i fins ara rector de la parròquia de la Mare de Déu de Bellvitge, va expressar l’emoció del moment: \"Aquest any els jesuïtes marxem del barri i és l’última festa per a nosaltres. Així que té el component emotiu de poder-nos acomiadar del barri, de les entitats i totes aquestes persones amb les quals hem fet camí junts aquests anys\". La celebració va concloure amb una crida a l'esperança i al compromís, amb la confiança que la tasca iniciada continuarà amb força. El mateix Marcet, representant la comunitat de jesuïtes, va ser l’encarregat de pronunciar el pregó aquest any de la Festa Major, el passat 6 de setembre. En les seves paraules, va voler recordar tants companys que han compartit missió a Bellvitge des del 1968, amb especial menció a Natxo Velasco, traspassat el passat mes de juliol, i a Pepe Ituarte, pioners d’una tasca educativa i social que va donar fruits en el col·legi Joan XXIII i en La Vinya. En el pregó, Marcet va subratllar que la missió dels jesuïtes sempre ha estat guiada per «la defensa de la fe i la promoció de la justícia», remarcant que totes dues dimensions han de caminar juntes. També va animar els veïns a continuar “suant la samarreta” a favor del bé comú, recordant que el barri encara té reptes importants: l’accés a l’habitatge, la lluita contra el sensellarisme o la preservació de l’esperit d’acollida.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-10T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:39:38.033640+00:00",
+          "published_at_ts": 1757462400,
+          "indexed_at_ts": 1758879578
+        }
+      },
+      {
+        "id": "8f7b32df-e1a1-bc51-ae28-424762462160",
+        "vector_score": 0.3206596,
+        "recency_weight": 2.1787897531841504e-16,
+        "combined_score": 0.20842874000000008,
+        "timestamp": 1752347580,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+          "content": "“Un exemple d’amor i servei”: el germà marista Licarió ja és beat\n\n“La beatificació del germà Licarió és molt més que un reconeixement litúrgic. És la proclamació d’una vida senzilla i lliurada, viscuda amb humilitat, proximitat i amor incondicional pels infants i joves més vulnerables. És també un signe d’esperança per a tots aquells que creuen en l’educació com a camí de transformació social i espiritual.” Amb aquestes paraules el germà Provincial de L’Hermitage i del Districte d’Europa Centre-oest, Gabriel Villa-Real , ha obert la cerimònia de beatificació del germà suís Licarió, assassinat a Barcelona el 1909, durant la Setmana Tràgica. La cerimònia ha tingut lloc el dissabte 12 de juliol a la parròquia de Sant Francesc de Sales de Barcelona, adjacent al col·legi Maristes La Immaculada. Nascut a Suïssa amb el nom de François Benjamin May , el germà Licarió va ingressar als Germans Maristes amb només 18 anys. Conegut com a “pedagog del cor“, va exercir com a educador i director en diverses escoles de Catalunya i el País Basc, però és especialment recordat per la seva tasca al Patronat Obrer de Sant Josep, al barri del Poblenou de Barcelona, on va impulsar una escola gratuïta per a fills de famílies obreres. La celebració de beatificació ha estat presidida pel cardenal Marcello Semeraro , prefecte del Dicasteri per a les Causes dels Sants, i concelebrada per l’arquebisbe de Barcelona, el cardenal Joan Josep Omella , els bisbes auxiliars Javier Vilanova i David Abadías , i l’arquebisbe Joan-Enric Vives , bisbe emèrit d’Urgell. En l’homilia el cardenal Semeraro , ha destacat que “ per al germà Licarió, educar era un acte d’amor i servei” i ha destacat la “ coherència de la seva vida i de la seva vocació marista ”. Ha estat el cardenal arquebisbe de Barcelona, Monsenyor Joan Josep Omella , qui ha iniciat el ritus de beatificació, fent la sol·licitud al cardenal Semeraro, representant del papa Lleó XIV en l’esdeveniment. Ha estat el moment en què s’ha descobert un quadre del nou beat i s’han dipositat les seves relíquies, unes cartes que Licarió va enviar a la seva família i que ha conservat Odile , la vídua d’un renebot, de més de 90 anys, que ha vingut des de Suïssa per ser present a la celebració. També des de Suïssa s’hi han fet presents una delegació de 15 persones més, entre autoritats locals del Valais, la zona on va néixer Licarió, i famíliars seus. Per la seva part, el Superior general dels Maristes, Ernesto Sánchez, arribat de Roma, ha tingut un record per altres màrtirs maristes d’arreu del món i ens ha convidat a “reflexionar sobre el missatge d’entrega incondicional dels nostres germans”. Així mateix, ha demanat al beat Licarió que animi els Maristes de Champagnat “a respondre amb alegria i entrega a la nostra vocació, vivint la nostra espiritualitat profundament i la nostra missió amb una entrega més grans als infants i als joves”. La cerimònia ha comptat amb la presència de Ramon Espadaler , conseller de Justícia de la Generalitat de Catalunya, del director general d’Afers Religiosos, Ramon Bassas , del tercer tinent d’Alcaldia de l’Ajuntament de Barcelona, Albert Batlle , del cònsol general de Suïssa a Barcelona, Othmar Christian Hardegger , i d’ Ivan Pera , comissionat de Religió de l’Ajuntament de Barcelona. Ubuntu , grup musical sorgit dels Maristes, ha estat l’encarregat de la banda sonora de l’esdeveniment i ha estrenat de manera pública la cançó “Germà Licarió”: “ entregant a Déu la vida, regalant el que tu ets sempre amb bondat”. La cerimònia també ha comptat amb la presència del postulador de la causa del germà Licarió, el germà Guillermo Villarreal , i dels vicepostuladors Mariano Santamaría i Antonio Martínez Estaún , que han rebut un obsequi en reconeixement a la seva tasca investigadora, que ha possibilitat el procés fins arribar al dia d’avui. Recollint una altra vegada les paraules del germà Gabriel Villa-Real , “ el germà Licarió va fer de la seva vocació una resposta d’amor. Enmig de dificultats socials i persecucions, va sembrar pau, confiança i fraternitat. La seva pedagogia del cor, inspirada en sant Marcel·lí Champagnat, continua viva en cada escola marista que educa amb amor i servei. ” Des d’avui tenim un nou beat de qui seguir l’exemple. >>> Consulta el dossier de premsa sobre la cerimònia de beatificació del germà Licarió Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-12T19:13:00+00:00",
+          "indexed_at": "2025-09-26T09:39:56.167540+00:00",
+          "published_at_ts": 1752347580,
+          "indexed_at_ts": 1758879596
+        }
+      }
+    ],
+    "context": null
+  }
+}

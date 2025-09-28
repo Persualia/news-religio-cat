@@ -1,0 +1,29 @@
+{
+  "query": "Referències que parlin de ‘vocació salesiana’ en anglès",
+  "plan": {
+    "intent": "search_chunks",
+    "query": "vocació salesiana",
+    "exact_phrase": false,
+    "topK": 0,
+    "per_site": 0,
+    "filters": {
+      "site": [
+        "salesians"
+      ],
+      "base_url": [],
+      "url": [],
+      "lang": [
+        "en"
+      ],
+      "author": [],
+      "article_id": [],
+      "date_from": "",
+      "date_to": ""
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [],
+    "context": null
+  }
+}

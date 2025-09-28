@@ -1,0 +1,126 @@
+{
+  "query": "Resumeix aquests enllaços i contrasta punts clau: https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/ i https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+  "plan": {
+    "intent": "compare_viewpoints",
+    "query": "Gaza",
+    "exact_phrase": false,
+    "topK": 0,
+    "per_site": 0,
+    "filters": {
+      "site": [
+        "salesians",
+        "jesuites"
+      ],
+      "base_url": [],
+      "url": [
+        "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+        "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza"
+      ],
+      "lang": [
+        "ca"
+      ],
+      "author": [],
+      "article_id": [],
+      "date_from": "",
+      "date_to": ""
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": {
+      "salesians": [
+        {
+          "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
+          "vector_score": 0.43717504,
+          "recency_weight": 0.16944045911054437,
+          "combined_score": 0.3434679366886906,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
+            "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+            "site": "salesians",
+            "author": "Confederació Espanyola de Religiosos",
+            "published_at": "2025-09-25T00:00:00Z",
+            "indexed_at": "2025-09-26T09:38:16Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879496
+          }
+        }
+      ],
+      "jesuites": [
+        {
+          "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
+          "vector_score": 0.38971204,
+          "recency_weight": 0.10674080056861318,
+          "combined_score": 0.2906721061990146,
+          "timestamp": 1758672000,
+          "payload": {
+            "title": "Davant el genocidi a la Franja de Gaza",
+            "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+            "site": "jesuites",
+            "author": null,
+            "published_at": "2025-09-24T00:00:00Z",
+            "indexed_at": "2025-09-26T09:38:04Z",
+            "published_at_ts": 1758672000,
+            "indexed_at_ts": 1758879484
+          }
+        }
+      ]
+    },
+    "context": {
+      "total_chunks": 2,
+      "total_tokens": 1282,
+      "unique_sites": [
+        "salesians"
+      ],
+      "articles": [
+        {
+          "article_id": "def8a06c7d64e6f89ec5860cbb265a9b1da31f04",
+          "site": "salesians",
+          "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+          "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
+          "description": "La Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.",
+          "author": "Confederació Espanyola de Religiosos",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at": "2025-09-26T09:38:16.783189+00:00",
+          "indexed_at_ts": 1758879496,
+          "best_score": 0.3434679366886906,
+          "best_recency": 0.16944045911054437,
+          "chunks": [
+            {
+              "chunk_id": "92660c4b-154e-07d6-6fe4-54341025cf6c",
+              "chunk_ix": 0,
+              "score": 0.3434679366886906,
+              "vector_score": 0.43717504,
+              "recency_weight": 0.16944045911054437,
+              "token_count": 641,
+              "content": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza\n\nLa Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.\n\nDavant el genocidi que es viu en la Franja de Gaza, els consagrats i consagrades d’Espanya elevem la nostra veu per a exigir el cessament immediat d’accions que provoquin fam, destrucció i mort de civils innocents, i demandar l’accés sense restriccions de l’ajuda humanitària. “No puc veure morir al nen” (Gn 21,15). Aquest crit antic, pronunciat per Agar en el desert, ressona avui amb força entre moltes mares i pares del món. Les informacions i testimoniatges que arriben des de Gaza descriuen escenes de fam, col·lapse sanitari, desplaçament massiu i víctimes entre bebès, nens i nenes, dones embarassades, ancians i persones vulnerables. Davant aquesta realitat, el deure moral i humanitari és clar: protegir la vida, garantir l’assistència urgent i respectar el Dret Internacional Humanitari. Denunciem la imposició de restriccions que impedeixen l’arribada d’aliments, medicines i combustible, i condemnem els atacs indiscriminats que han causat destrucció, morts i mutilacions entre la població civil. Demanem a les autoritats competents que actuïn amb determinació per a obrir corredors humanitaris segurs i garantir la protecció de periodistes, personal sanitari, cooperants i població civil. Cuidar al més feble i defensar la vida No es tracta de prendre postura partidista, sinó de recordar l’obligació bàsica de tota comunitat humana: cuidar al més feble i defensar la vida. Per això secundem i ens sumem als comunicats i crides de diferents institucions religioses, organitzacions humanitàries i organismes internacionals que exigeixen el respecte del Dret Internacional i l’entrada d’ajuda a tota la població de Gaza. Exigim, a més: Que es permeti immediatament l’entrada de tota l’ajuda humanitària necessària per a evitar morts per inanició i col·lapse sanitari. El cessament de bombardejos sobre zones civils i la protecció d’instal·lacions sanitàries, religioses i de refugiats. El respecte i la plena aplicació del Dret Internacional Humanitari i dels drets humans. Que la comunitat internacional redobli els seus esforços diplomàtics i humanitaris per a posar fi al sofriment i avançar cap a solucions justes i duradores. Com recull l’Escriptura —“Què et passa, Agar? No temis, perquè Déu ha sentit la veu del noi…” (Gn 21,17-18)— fem una crida a la compassió i a l’acció: que les nostres mans es converteixin en auxili efectiu i no en indiferència.",
+              "site": "salesians",
+              "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+              "published_at": "2025-09-25T00:00:00+00:00",
+              "published_at_ts": 1758758400,
+              "indexed_at": "2025-09-26T09:38:16.783189+00:00",
+              "indexed_at_ts": 1758879496
+            },
+            {
+              "chunk_id": "92660c4b-154e-07d6-6fe4-54341025cf6c",
+              "chunk_ix": 0,
+              "score": 0.3434679366886906,
+              "vector_score": 0.43717504,
+              "recency_weight": 0.16944045911054437,
+              "token_count": 641,
+              "content": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza\n\nLa Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.\n\nDavant el genocidi que es viu en la Franja de Gaza, els consagrats i consagrades d’Espanya elevem la nostra veu per a exigir el cessament immediat d’accions que provoquin fam, destrucció i mort de civils innocents, i demandar l’accés sense restriccions de l’ajuda humanitària. “No puc veure morir al nen” (Gn 21,15). Aquest crit antic, pronunciat per Agar en el desert, ressona avui amb força entre moltes mares i pares del món. Les informacions i testimoniatges que arriben des de Gaza descriuen escenes de fam, col·lapse sanitari, desplaçament massiu i víctimes entre bebès, nens i nenes, dones embarassades, ancians i persones vulnerables. Davant aquesta realitat, el deure moral i humanitari és clar: protegir la vida, garantir l’assistència urgent i respectar el Dret Internacional Humanitari. Denunciem la imposició de restriccions que impedeixen l’arribada d’aliments, medicines i combustible, i condemnem els atacs indiscriminats que han causat destrucció, morts i mutilacions entre la població civil. Demanem a les autoritats competents que actuïn amb determinació per a obrir corredors humanitaris segurs i garantir la protecció de periodistes, personal sanitari, cooperants i població civil. Cuidar al més feble i defensar la vida No es tracta de prendre postura partidista, sinó de recordar l’obligació bàsica de tota comunitat humana: cuidar al més feble i defensar la vida. Per això secundem i ens sumem als comunicats i crides de diferents institucions religioses, organitzacions humanitàries i organismes internacionals que exigeixen el respecte del Dret Internacional i l’entrada d’ajuda a tota la població de Gaza. Exigim, a més: Que es permeti immediatament l’entrada de tota l’ajuda humanitària necessària per a evitar morts per inanició i col·lapse sanitari. El cessament de bombardejos sobre zones civils i la protecció d’instal·lacions sanitàries, religioses i de refugiats. El respecte i la plena aplicació del Dret Internacional Humanitari i dels drets humans. Que la comunitat internacional redobli els seus esforços diplomàtics i humanitaris per a posar fi al sofriment i avançar cap a solucions justes i duradores. Com recull l’Escriptura —“Què et passa, Agar? No temis, perquè Déu ha sentit la veu del noi…” (Gn 21,17-18)— fem una crida a la compassió i a l’acció: que les nostres mans es converteixin en auxili efectiu i no en indiferència.",
+              "site": "salesians",
+              "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+              "published_at": "2025-09-25T00:00:00+00:00",
+              "published_at_ts": 1758758400,
+              "indexed_at": "2025-09-26T09:38:16.783189+00:00",
+              "indexed_at_ts": 1758879496
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

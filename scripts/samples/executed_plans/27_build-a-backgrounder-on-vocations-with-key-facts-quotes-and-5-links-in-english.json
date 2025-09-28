@@ -1,0 +1,31 @@
+{
+  "query": "Build a backgrounder on ‘vocations’ with key facts, quotes, and 5 links (in English)",
+  "plan": {
+    "intent": "backgrounder",
+    "query": "vocations",
+    "exact_phrase": false,
+    "topK": 5,
+    "per_site": 0,
+    "filters": {
+      "site": [
+        "jesuites",
+        "maristes",
+        "salesians"
+      ],
+      "base_url": [],
+      "url": [],
+      "lang": [
+        "en"
+      ],
+      "author": [],
+      "article_id": [],
+      "date_from": "",
+      "date_to": ""
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [],
+    "context": null
+  }
+}

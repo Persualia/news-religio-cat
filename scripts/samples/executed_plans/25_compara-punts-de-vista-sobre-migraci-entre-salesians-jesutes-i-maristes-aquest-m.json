@@ -1,0 +1,646 @@
+{
+  "query": "Compara punts de vista sobre ‘migració’ entre salesians, jesuïtes i maristes aquest mes; amb cites",
+  "plan": {
+    "intent": "compare_viewpoints",
+    "query": "migració",
+    "exact_phrase": false,
+    "topK": 0,
+    "per_site": 0,
+    "filters": {
+      "site": [
+        "salesians",
+        "jesuites",
+        "maristes"
+      ],
+      "base_url": [],
+      "url": [],
+      "lang": [],
+      "author": [],
+      "article_id": [],
+      "date_from": "2025-09-01",
+      "date_to": "2025-09-28"
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": {
+      "salesians": [
+        {
+          "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+          "vector_score": 0.2669847,
+          "recency_weight": 0.16944317781699658,
+          "combined_score": 0.23284516723594884,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+            "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+            "site": "salesians",
+            "author": "Comunicació CEPSS",
+            "published_at": "2025-09-25T00:00:00Z",
+            "indexed_at": "2025-09-26T09:40:00Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879600
+          }
+        },
+        {
+          "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
+          "vector_score": 0.23365267,
+          "recency_weight": 0.16944317781699658,
+          "combined_score": 0.21117934773594882,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
+            "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+            "site": "salesians",
+            "author": "Confederació Espanyola de Religiosos",
+            "published_at": "2025-09-25T00:00:00Z",
+            "indexed_at": "2025-09-26T09:38:16Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879496
+          }
+        },
+        {
+          "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+          "vector_score": 0.22836848,
+          "recency_weight": 0.16944317781699658,
+          "combined_score": 0.20774462423594883,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+            "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+            "site": "salesians",
+            "author": "Salesians Comunicació",
+            "published_at": "2025-09-25T00:00:00Z",
+            "indexed_at": "2025-09-26T09:38:20Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879500
+          }
+        },
+        {
+          "id": "41014754-2986-5cb1-bdaa-95e297115c4b",
+          "vector_score": 0.18604219,
+          "recency_weight": 0.16944317781699658,
+          "combined_score": 0.1802325357359488,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "Processó Magna Mariana a Huelva amb la participació de Maria Auxiliadora",
+            "url": "https://salesianos.info/blog/processo-magna-mariana-a-huelva-amb-la-participacio-de-maria-auxiliadora/",
+            "site": "salesians",
+            "author": "Salesians Comunicació",
+            "published_at": "2025-09-25T00:00:00Z",
+            "indexed_at": "2025-09-26T09:40:03Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879603
+          }
+        },
+        {
+          "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
+          "vector_score": 0.17090848,
+          "recency_weight": 0.16944317781699658,
+          "combined_score": 0.1703956242359488,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+            "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+            "site": "salesians",
+            "author": "Diari de Cadis",
+            "published_at": "2025-09-25T00:00:00Z",
+            "indexed_at": "2025-09-26T09:38:18Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879498
+          }
+        },
+        {
+          "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
+          "vector_score": 0.1697928,
+          "recency_weight": 0.16944317781699658,
+          "combined_score": 0.1696704322359488,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+            "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+            "site": "salesians",
+            "author": "Salesians La Orotava",
+            "published_at": "2025-09-25T00:00:00Z",
+            "indexed_at": "2025-09-26T09:40:01Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879601
+          }
+        },
+        {
+          "id": "1c4b2b17-7831-f084-3724-748367d1b90d",
+          "vector_score": 0.13261099,
+          "recency_weight": 0.16944317781699658,
+          "combined_score": 0.14550225573594883,
+          "timestamp": 1758758400,
+          "payload": {
+            "title": "Juicio sumarísimo",
+            "url": "https://salesianos.info/blog/juicio-sumarisimo/",
+            "site": "salesians",
+            "author": "Josep Lluís Burguera",
+            "published_at": "2025-09-25T00:00:00Z",
+            "indexed_at": "2025-09-26T09:40:05Z",
+            "published_at_ts": 1758758400,
+            "indexed_at_ts": 1758879605
+          }
+        },
+        {
+          "id": "95b5f2e6-d3ea-311c-aa5f-8158cfa7fc4f",
+          "vector_score": 0.14006715,
+          "recency_weight": 0.10674251324635702,
+          "combined_score": 0.12840352713622497,
+          "timestamp": 1758672000,
+          "payload": {
+            "title": "Entre la espera y la esperanza. El Jubileo 2025, una oportunidad",
+            "url": "https://salesianos.info/blog/entre-la-espera-y-la-esperanza-el-jubileo-2025-una-oportunidad/",
+            "site": "salesians",
+            "author": "José Luis Guzón",
+            "published_at": "2025-09-24T00:00:00Z",
+            "indexed_at": "2025-09-26T09:40:06Z",
+            "published_at_ts": 1758672000,
+            "indexed_at_ts": 1758879606
+          }
+        },
+        {
+          "id": "be032452-5ec0-64a5-2e5e-1cf2b4f1fcc9",
+          "vector_score": 0.14603856,
+          "recency_weight": 0.04236079445424913,
+          "combined_score": 0.1097513420589872,
+          "timestamp": 1758499200,
+          "payload": {
+            "title": "Testigos y no hacedores",
+            "url": "https://salesianos.info/blog/testigos-y-no-hacedores/",
+            "site": "salesians",
+            "author": "Borja Pérez",
+            "published_at": "2025-09-22T00:00:00Z",
+            "indexed_at": "2025-09-26T09:40:08Z",
+            "published_at_ts": 1758499200,
+            "indexed_at_ts": 1758879608
+          }
+        }
+      ],
+      "jesuites": [
+        {
+          "id": "c4b6dbd8-8491-97ed-28c0-180f293d2dce",
+          "vector_score": 0.29081124,
+          "recency_weight": 0.0002626701940581394,
+          "combined_score": 0.18911924056792037,
+          "timestamp": 1757548800,
+          "payload": {
+            "title": "El desig de donar la benvinguda a tothom",
+            "url": "https://jesuites.net/ca/noticia/el-desig-de-donar-la-benvinguda-tothom",
+            "site": "jesuites",
+            "author": null,
+            "published_at": "2025-09-11T00:00:00Z",
+            "indexed_at": "2025-09-26T09:39:34Z",
+            "published_at_ts": 1757548800,
+            "indexed_at_ts": 1758879574
+          }
+        },
+        {
+          "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
+          "vector_score": 0.22222903,
+          "recency_weight": 0.10674251324635702,
+          "combined_score": 0.18180874913622494,
+          "timestamp": 1758672000,
+          "payload": {
+            "title": "Davant el genocidi a la Franja de Gaza",
+            "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+            "site": "jesuites",
+            "author": null,
+            "published_at": "2025-09-24T00:00:00Z",
+            "indexed_at": "2025-09-26T09:38:04Z",
+            "published_at_ts": 1758672000,
+            "indexed_at_ts": 1758879484
+          }
+        },
+        {
+          "id": "0c217ff1-8862-1b02-38d4-86fcca094ece",
+          "vector_score": 0.26320004,
+          "recency_weight": 0.026685628311589247,
+          "combined_score": 0.18041999590905627,
+          "timestamp": 1758412800,
+          "payload": {
+            "title": "El Provincial presenta a Catalunya el nou Projecte Apostòlic",
+            "url": "https://jesuites.net/ca/noticia/el-provincial-presenta-catalunya-el-nou-projecte-apostolic",
+            "site": "jesuites",
+            "author": null,
+            "published_at": "2025-09-21T00:00:00Z",
+            "indexed_at": "2025-09-26T09:38:06Z",
+            "published_at_ts": 1758412800,
+            "indexed_at_ts": 1758879486
+          }
+        },
+        {
+          "id": "9e8d1d15-c2f5-52e9-8111-f9a8d63ac3e7",
+          "vector_score": 0.25419456,
+          "recency_weight": 0.004202723104930232,
+          "combined_score": 0.16669741708672559,
+          "timestamp": 1758067200,
+          "payload": {
+            "title": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad",
+            "url": "https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la",
+            "site": "jesuites",
+            "author": null,
+            "published_at": "2025-09-17T00:00:00Z",
+            "indexed_at": "2025-09-26T09:38:08Z",
+            "published_at_ts": 1758067200,
+            "indexed_at_ts": 1758879488
+          }
+        },
+        {
+          "id": "364281c2-a95d-23e8-69f3-b1d71916fab9",
+          "vector_score": 0.2282659,
+          "recency_weight": 0.00016547185333691064,
+          "combined_score": 0.14843075014866794,
+          "timestamp": 1757462400,
+          "payload": {
+            "title": "Emotiva ofrena floral a l'Ermita de la Mare de Déu de Bellvitge",
+            "url": "https://jesuites.net/ca/noticia/emotiva-ofrena-floral-lermita-de-la-mare-de-deu-de-bellvitge",
+            "site": "jesuites",
+            "author": null,
+            "published_at": "2025-09-10T00:00:00Z",
+            "indexed_at": "2025-09-26T09:39:38Z",
+            "published_at_ts": 1757462400,
+            "indexed_at_ts": 1758879578
+          }
+        },
+        {
+          "id": "a3b96f0b-8b72-a0cf-b3b9-8bd5f3019270",
+          "vector_score": 0.20609343,
+          "recency_weight": 0.001667851769474326,
+          "combined_score": 0.13454447761931604,
+          "timestamp": 1757894400,
+          "payload": {
+            "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
+            "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
+            "site": "jesuites",
+            "author": null,
+            "published_at": "2025-09-15T00:00:00Z",
+            "indexed_at": "2025-09-26T09:39:32Z",
+            "published_at_ts": 1757894400,
+            "indexed_at_ts": 1758879572
+          }
+        },
+        {
+          "id": "e559aaba-80c8-30f7-0738-ad3a53f263e7",
+          "vector_score": 0.19361666,
+          "recency_weight": 4.0719037340681887e-07,
+          "combined_score": 0.1258509715166307,
+          "timestamp": 1756339200,
+          "payload": {
+            "title": "Ha mort a El Salvador el jesuïta català Rafael de Sivatte",
+            "url": "https://jesuites.net/ca/noticia/ha-mort-el-salvador-el-jesuita-catala-rafael-de-sivatte",
+            "site": "jesuites",
+            "author": null,
+            "published_at": "2025-08-28T00:00:00Z",
+            "indexed_at": "2025-09-26T09:39:39Z",
+            "published_at_ts": 1756339200,
+            "indexed_at_ts": 1758879579
+          }
+        },
+        {
+          "id": "4319952d-4f6a-74fc-a115-b1368e4ed1ec",
+          "vector_score": 0.18519026,
+          "recency_weight": 0.0002626701940581394,
+          "combined_score": 0.12046560356792035,
+          "timestamp": 1757548800,
+          "payload": {
+            "title": "Celebració de Sant Pere Claver a Verdú",
+            "url": "https://jesuites.net/ca/noticia/celebracio-de-sant-pere-claver-verdu",
+            "site": "jesuites",
+            "author": null,
+            "published_at": "2025-09-11T00:00:00Z",
+            "indexed_at": "2025-09-26T09:39:36Z",
+            "published_at_ts": 1757548800,
+            "indexed_at_ts": 1758879576
+          }
+        },
+        {
+          "id": "ab262f31-7baf-0ac8-43af-8f213673c6b7",
+          "vector_score": 0.16358665,
+          "recency_weight": 0.002647549653390571,
+          "combined_score": 0.1072579648786867,
+          "timestamp": 1757980800,
+          "payload": {
+            "title": "Publicació del segon volum sobre la història dels jesuïtes a Barcelona",
+            "url": "https://jesuites.net/ca/noticia/publicacio-del-segon-volum-sobre-la-historia-dels-jesuites-barcelona",
+            "site": "jesuites",
+            "author": null,
+            "published_at": "2025-09-16T00:00:00Z",
+            "indexed_at": "2025-09-26T09:39:30Z",
+            "published_at_ts": 1757980800,
+            "indexed_at_ts": 1758879570
+          }
+        }
+      ],
+      "maristes": [
+        {
+          "id": "f4bb4e73-9431-13e0-aa3d-5763870a24a6",
+          "vector_score": 0.28725728,
+          "recency_weight": 1.9411769037382594e-14,
+          "combined_score": 0.1867172320000068,
+          "timestamp": 1753187035,
+          "payload": {
+            "title": "Un estiu amb cor marista!",
+            "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista",
+            "site": "maristes",
+            "author": null,
+            "published_at": "2025-07-22T12:23:55Z",
+            "indexed_at": "2025-09-26T09:39:50Z",
+            "published_at_ts": 1753187035,
+            "indexed_at_ts": 1758879590
+          }
+        },
+        {
+          "id": "09392261-e4a5-f138-5688-7a8e538641f3",
+          "vector_score": 0.28184164,
+          "recency_weight": 4.506841725092102e-14,
+          "combined_score": 0.18319706600001578,
+          "timestamp": 1753344523,
+          "payload": {
+            "title": "La Travessa 2025: Expedició L’Hermitage",
+            "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
+            "site": "maristes",
+            "author": null,
+            "published_at": "2025-07-24T08:08:43Z",
+            "indexed_at": "2025-09-26T09:38:14Z",
+            "published_at_ts": 1753344523,
+            "indexed_at_ts": 1758879494
+          }
+        },
+        {
+          "id": "56519aba-4a7a-a282-8285-272b6904113a",
+          "vector_score": 0.26140904,
+          "recency_weight": 5.1226047751293454e-14,
+          "combined_score": 0.16991587600001792,
+          "timestamp": 1753368468,
+          "payload": {
+            "title": "Nova etapa i nous somnis!",
+            "url": "https://www.maristes.cat/noticies/nova-etapa-i-nous-somnis",
+            "site": "maristes",
+            "author": null,
+            "published_at": "2025-07-24T14:47:48Z",
+            "indexed_at": "2025-09-26T09:39:42Z",
+            "published_at_ts": 1753368468,
+            "indexed_at_ts": 1758879582
+          }
+        },
+        {
+          "id": "28443df6-da99-37c1-efc0-d32d80274ee8",
+          "vector_score": 0.25482824,
+          "recency_weight": 3.279392340855308e-14,
+          "combined_score": 0.16563835600001148,
+          "timestamp": 1753285077,
+          "payload": {
+            "title": "Trobada d'equips directius a les Avellanes: celebrem!",
+            "url": "https://www.maristes.cat/noticies/trobada-dequips-directius-les-avellanes-celebrem",
+            "site": "maristes",
+            "author": null,
+            "published_at": "2025-07-23T15:37:57Z",
+            "indexed_at": "2025-09-26T09:39:46Z",
+            "published_at_ts": 1753285077,
+            "indexed_at_ts": 1758879586
+          }
+        },
+        {
+          "id": "df95bdab-2304-c1ff-b29a-c95914b8521f",
+          "vector_score": 0.24612114,
+          "recency_weight": 1.847646036822109e-15,
+          "combined_score": 0.15997874100000065,
+          "timestamp": 1752747280,
+          "payload": {
+            "title": "Tenim alguna cosa a celebrar?",
+            "url": "https://www.maristes.cat/noticies/tenim-alguna-cosa-celebrar",
+            "site": "maristes",
+            "author": null,
+            "published_at": "2025-07-17T10:14:40Z",
+            "indexed_at": "2025-09-26T09:39:52Z",
+            "published_at_ts": 1752747280,
+            "indexed_at_ts": 1758879592
+          }
+        },
+        {
+          "id": "6bfff01b-1ad1-d870-23b2-dea5ef22bebd",
+          "vector_score": 0.24214663,
+          "recency_weight": 2.867930978728993e-14,
+          "combined_score": 0.15739530950001004,
+          "timestamp": 1753260010,
+          "payload": {
+            "title": "Viu l'Ecosilenci: una experiència personal de silenci i natura",
+            "url": "https://www.maristes.cat/noticies/viu-lecosilenci-una-experiencia-personal-de-silenci-i-natura",
+            "site": "maristes",
+            "author": null,
+            "published_at": "2025-07-23T08:40:10Z",
+            "indexed_at": "2025-09-26T09:39:48Z",
+            "published_at_ts": 1753260010,
+            "indexed_at_ts": 1758879588
+          }
+        },
+        {
+          "id": "8e5943c9-bb34-4461-e7d6-8b0c57ca750f",
+          "vector_score": 0.24044237,
+          "recency_weight": 5.077482658145694e-16,
+          "combined_score": 0.15628754050000015,
+          "timestamp": 1752505770,
+          "payload": {
+            "title": "Relleu a la direcció general de la Fundació Champagnat-Maristes Catalunya",
+            "url": "https://www.maristes.cat/noticies/relleu-la-direccio-general-de-la-fundacio-champagnat-maristes-catalunya",
+            "site": "maristes",
+            "author": null,
+            "published_at": "2025-07-14T15:09:30Z",
+            "indexed_at": "2025-09-26T09:39:54Z",
+            "published_at_ts": 1752505770,
+            "indexed_at_ts": 1758879594
+          }
+        },
+        {
+          "id": "45abed9b-c0aa-2a97-e4d5-4b6bb7f19c1c",
+          "vector_score": 0.23620322,
+          "recency_weight": 2.1787664474141343e-16,
+          "combined_score": 0.1535320930000001,
+          "timestamp": 1752347580,
+          "payload": {
+            "title": "“Un exemple d’amor i servei”: el germà marista Licarió ja és beat",
+            "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+            "site": "maristes",
+            "author": null,
+            "published_at": "2025-07-12T19:13:00Z",
+            "indexed_at": "2025-09-26T09:39:56Z",
+            "published_at_ts": 1752347580,
+            "indexed_at_ts": 1758879596
+          }
+        },
+        {
+          "id": "4dd112f5-2f72-187a-6dc3-bfba87818f42",
+          "vector_score": 0.22477521,
+          "recency_weight": 4.770623682724943e-13,
+          "combined_score": 0.14610388650016698,
+          "timestamp": 1753785680,
+          "payload": {
+            "title": "El Camaleó es fa un lloc a l'Arxiu Històric Ciutat de Badalona",
+            "url": "https://www.maristes.cat/noticies/el-camaleo-es-fa-un-lloc-larxiu-historic-ciutat-de-badalona",
+            "site": "maristes",
+            "author": null,
+            "published_at": "2025-07-29T10:41:20Z",
+            "indexed_at": "2025-09-26T09:38:12Z",
+            "published_at_ts": 1753785680,
+            "indexed_at_ts": 1758879492
+          }
+        },
+        {
+          "id": "a6600a9b-b2dc-4afd-5d55-8f9d14502a29",
+          "vector_score": 0.20630136,
+          "recency_weight": 3.216269703348625e-14,
+          "combined_score": 0.13409588400001127,
+          "timestamp": 1753281443,
+          "payload": {
+            "title": "Un cop més el Monestir de les Avellanes celebra amb èxit la XIVa edició de les Jornades d'Història",
+            "url": "https://www.maristes.cat/noticies/un-cop-mes-el-monestir-de-les-avellanes-celebra-amb-exit-la-xiva-edicio-de-les-jornades",
+            "site": "maristes",
+            "author": null,
+            "published_at": "2025-07-23T14:37:23Z",
+            "indexed_at": "2025-09-26T09:39:44Z",
+            "published_at_ts": 1753281443,
+            "indexed_at_ts": 1758879584
+          }
+        }
+      ]
+    },
+    "context": {
+      "total_chunks": 4,
+      "total_tokens": 1784,
+      "unique_sites": [
+        "jesuites",
+        "maristes",
+        "salesians"
+      ],
+      "articles": [
+        {
+          "article_id": "d6e5cde69b58a00dc338fc0e1a8e226d14a6f7b8",
+          "site": "salesians",
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+          "description": "El compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.",
+          "author": "Comunicació CEPSS",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at": "2025-09-26T09:40:00.059797+00:00",
+          "indexed_at_ts": 1758879600,
+          "best_score": 0.23284485005183297,
+          "best_recency": 0.16944227157666558,
+          "chunks": [
+            {
+              "chunk_id": "cfb591c0-26ff-a037-0198-291346b239e8",
+              "chunk_ix": 0,
+              "score": 0.23284485005183297,
+              "vector_score": 0.2669847,
+              "recency_weight": 0.16944227157666558,
+              "token_count": 591,
+              "content": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana. En cada escola, plataforma social, centre juvenil i obra pastoral, els Salesians treballem per garantir espais segurs, on cada nen, nena, adolescent i jove pugui créixer en confiança i plenitud. En aquesta línia, la Coordinadora Estatal de Plataformes Socials Salesianes (CEPSS) va participar en representació de la família salesiana en la jornada #”Hogarizar”: 10 anys de transformació del sistema de protecció de la infància: assoliments i reptes, organitzada per la Plataforma d’Infància (POI). La trobada va servir per a reflexionar sobre el camí recorregut des de l’aprovació de la Llei 26/2015 i els desafiaments pendents per a fer plenament efectiva la Llei orgànica de Protecció Integral a la Infància i l’Adolescència enfront de la Violència (LOPIVI). Una mirada de futur Durant la jornada, representants institucionals, acadèmics i socials van posar en relleu els avanços reeixits en aquesta dècada, així com la urgència de continuar enfortint la participació infantil, l’acompanyament a les famílies i la coordinació dels diferents sistemes de protecció. Es va subratllar també la importància que la infància estigui sempre en el centre, més enllà de colors polítics o realitats territorials. Un compromís salesià compartit La presència de CEPSS en aquesta trobada reforça el compromís de totes les obres salesianes amb la creació d’una cultura de protecció que travessa cada acció educativa i pastoral. Totes les entitats membre de la Coordinadora compten amb la certificació UNEIX 0070:2022 d’entorns segurs per a la infància, que avala que les nostres polítiques, protocols i canals de denúncia compleixen amb els estàndards més exigents en la matèria. Aquest compromís comú ens convida a seguir #”hogaritzant” cada espai educatiu salesià: fer d’ells un lloc de cura, confiança i seguretat, on la infància i la joventut puguin créixer, participar i somiar un futur amb esperança. Et convidem a veure el vídeo complet de la jornada aquí: Jornada #Hogarizar – 10 anys de transformació del sistema de protecció de la infància.",
+              "site": "salesians",
+              "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+              "published_at": "2025-09-25T00:00:00+00:00",
+              "published_at_ts": 1758758400,
+              "indexed_at": "2025-09-26T09:40:00.059797+00:00",
+              "indexed_at_ts": 1758879600
+            }
+          ]
+        },
+        {
+          "article_id": "02f7c7e79162370acc172eb2f9f8fb44a57abe86",
+          "site": "jesuites",
+          "url": "https://jesuites.net/ca/noticia/el-desig-de-donar-la-benvinguda-tothom",
+          "title": "El desig de donar la benvinguda a tothom",
+          "description": null,
+          "author": null,
+          "published_at": "2025-09-11T00:00:00+00:00",
+          "published_at_ts": 1757548800,
+          "indexed_at": "2025-09-26T09:39:34.228425+00:00",
+          "indexed_at_ts": 1758879574,
+          "best_score": 0.18911924007622272,
+          "best_recency": 0.00026266878920769564,
+          "chunks": [
+            {
+              "chunk_id": "8461e884-7731-ce7e-fe28-6ebcb7ee5e74",
+              "chunk_ix": 0,
+              "score": 0.18911924007622272,
+              "vector_score": 0.29081124,
+              "recency_weight": 0.00026266878920769564,
+              "token_count": 640,
+              "content": "El desig de donar la benvinguda a tothom\n\nEn el marc del Jubileu de l'Esperança, unes 1.500 persones del col·lectiu LGTBIQ+ d’arreu del món, acompanyats de familiars i amics, es van trobar a Roma entre el 4 i el 7 de setembre. Ho van fer agrupats en unes 70 organitzacions i van poder peregrinar creuant la Porta Santa de Sant Pere del Vaticà el dissabte 6 de setembre de 2025. Entre els objectius d’aquest event, construir comunitat i fer visible l’existència d’aquests grups, que volen compartir la seva experiència de fe i les seves vides. Hi va ser present el jesuïta català Josep Baquer, que compta amb experiència en l’acompanyament de persones LGTBIQ+. Una petita comunitat cristiana italiana, La Tenda di Gionata , havia somiat i treballat a fons perquè aquest moment pogués arribar. Amb ajuda de la GNRC (Global Network of Rainbow Catholics), van organitzar una vetlla de pregària i una eucaristia, totes dues a l’església del Gesù, temple dels jesuïtes a Roma. Moltes comunitats cristianes fa més de deu anys que treballen en xarxa per fer possible aquest moment. Dies abans, el papa Lleó XIV va rebre en audiència James Martin, jesuïta nord-americà que ha treballat activament en l’acompanyament pastoral a persones LGTBIQ+. “Vaig escoltar el mateix missatge del papa Lleó que vaig escoltar del papa Francesc, que és el desig de donar la benvinguda a tothom, incloses les persones LGBTQ”, va dir Martin després de la trobada. L'eucaristia prèvia a la peregrinació, el Gesù, va ser presidida pel bisbe Francesco Savino, vicepresident de la Conferència Espiscopal Italiana. Concelebraven uns trenta sacerdots, entre ells els jesuïtes James Martin, Pino Piva i Josep Baquer. Especialment emotiu va ser l'abraçada de Savino a James i Pino, i la seva homilia va ser interrompuda en dues ocasions pels aplaudiments dels fidels. El bisbe Savino va verbalitzar que havia rebut la bendició del sant Pare per oficiar la missa per als pelegrins LGTBIQ+. Des d'Espanya, hi van ser presents les comunitats cristianes LGBT Crismhom (Madrid) i Ichthys (Sevilla), a les quals es van unir uns 35 membres de CVX Espanya procedents de diverses ciutats. El testimoni de fe de les persones LGTBIQ+ Apropar-nos al testimoni de fe de les persones LGTBIQ+ ens mostra un camí recorregut amb sofriment i conflicte, però també amb resistència i aliances. En aquest línia, el centre d’estudis Cristianisme i Justícia va publicar el passat mes de maig el quadern Testimonis d’un Déu que no estranya . En ell, sis persones comparteixen amb generositat les seves històries de vida.",
+              "site": "jesuites",
+              "url": "https://jesuites.net/ca/noticia/el-desig-de-donar-la-benvinguda-tothom",
+              "published_at": "2025-09-11T00:00:00+00:00",
+              "published_at_ts": 1757548800,
+              "indexed_at": "2025-09-26T09:39:34.228425+00:00",
+              "indexed_at_ts": 1758879574
+            }
+          ]
+        },
+        {
+          "article_id": "f53bdef7b2b11abd1240cc4b212712c86f918042",
+          "site": "salesians",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+          "description": "Compromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at": "2025-09-26T09:38:20.135275+00:00",
+          "indexed_at_ts": 1758879500,
+          "best_score": 0.20774430705183297,
+          "best_recency": 0.16944227157666558,
+          "chunks": [
+            {
+              "chunk_id": "204b43da-a001-4b15-93e9-d4460f5d33a2",
+              "chunk_ix": 0,
+              "score": 0.20774430705183297,
+              "vector_score": 0.22836848,
+              "recency_weight": 0.16944227157666558,
+              "token_count": 503,
+              "content": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe\n\nCompromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora\n\nEl passat cap de setmana, prop de 80 animadors de les presències de Salesians i Salesianes de Canàries van participar en una enriquidora trobada formativa, emmarcat en l’Itinerari d’Educació en la Fe (IEF). Durant la jornada del dissabte, els assistents van aprofundir en la reflexió sobre l’acció educativa dels centres juvenils i el valor del Sistema Preventiu com a pilar de l’acompanyament pastoral. La formació es va completar a la tarda amb dos tallers pràctics que van oferir eines concretes per a l’animació pastoral en les seves realitats locals. A més, es van cuidar especialment els moments celebratius, que van ajudar a interioritzar el viscut: una adoració al Santíssim el dissabte a la nit i l’Eucaristia compartida el diumenge van posar el fermall espiritual a la trobada. Com a part de la programació, també es van presentar les campanyes pastorals de les dues inspectories: Protagonistes de la història, per part dels Salesians, i Confia, de les Salesianes, marcant un horitzó pastoral comú per a aquest nou curs. Programació local i pròxims trobades a l’octubre A nivell inspectorial, aquestes setmanes s’està avançant en la programació local de l’Itinerari d’Educació en la Fe, peça clau del projecte pastoral salesià. El mes d’octubre arribarà carregat de noves propostes formatives: a Catalunya, la Comunitat Valenciana i la Regió de Múrcia se celebraran jornades per a animadors de l’IEF; a Extremadura tindrà lloc una trobada específica de formació; i a Andalusia s’iniciaran les primeres convivències dirigides als nivells inicials de l’itinerari infantil. Tot això demostra el compromís conjunt d’animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora, fidel a l’estil de Don Bosco i de Mare Mazzarello.",
+              "site": "salesians",
+              "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+              "published_at": "2025-09-25T00:00:00+00:00",
+              "published_at_ts": 1758758400,
+              "indexed_at": "2025-09-26T09:38:20.135275+00:00",
+              "indexed_at_ts": 1758879500
+            }
+          ]
+        },
+        {
+          "article_id": "f7e23bd68dbce2fca3790d111ff4e27d59263e61",
+          "site": "maristes",
+          "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+          "title": "“Un exemple d’amor i servei”: el germà marista Licarió ja és beat",
+          "description": null,
+          "author": null,
+          "published_at": "2025-07-12T19:13:00+00:00",
+          "published_at_ts": 1752347580,
+          "indexed_at": "2025-09-26T09:39:56.167540+00:00",
+          "indexed_at_ts": 1758879596,
+          "best_score": 0.14852341400000008,
+          "best_recency": 2.1787664474141343e-16,
+          "chunks": [
+            {
+              "chunk_id": "e5eeb749-1a41-8118-bf7a-335762dc4fb8",
+              "chunk_ix": 1,
+              "score": 0.14852341400000008,
+              "vector_score": 0.22849756,
+              "recency_weight": 2.1787664474141343e-16,
+              "token_count": 50,
+              "content": "cada escola marista que educa amb amor i servei. ” Des d’avui tenim un nou beat de qui seguir l’exemple. >>> Consulta el dossier de premsa sobre la cerimònia de beatificació del germà Licarió Compartir",
+              "site": "maristes",
+              "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+              "published_at": "2025-07-12T19:13:00+00:00",
+              "published_at_ts": 1752347580,
+              "indexed_at": "2025-09-26T09:39:56.167540+00:00",
+              "indexed_at_ts": 1758879596
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

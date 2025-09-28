@@ -1,0 +1,370 @@
+{
+  "query": "Qui cita el Papa Francesc aquest mes i com el citen?",
+  "plan": {
+    "intent": "search_chunks",
+    "query": "Papa Francesc",
+    "exact_phrase": false,
+    "topK": 20,
+    "per_site": 0,
+    "filters": {
+      "site": [
+        "jesuites",
+        "maristes",
+        "salesians"
+      ],
+      "base_url": [],
+      "url": [],
+      "lang": [],
+      "author": [],
+      "article_id": [],
+      "date_from": "2025-09-01",
+      "date_to": "2025-09-28"
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [
+      {
+        "id": "74601465-ee42-ae74-ab52-11cab78de8f4",
+        "vector_score": 0.4748734,
+        "recency_weight": 0.0016678606897663271,
+        "combined_score": 0.3092514612414182,
+        "timestamp": 1757894400,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
+          "content": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona\n\nLa matinada d’aquest dilluns 15 de setembre ha mort a Sant Cugat el jesuïta Francesc Xammar, que ha estat, al llarg de la seva vida, un referent en la lluita contra les desigualtats i a favor dels drets humans i la justícia social, especialment amb la seva acció als barris populars de la ciutat de Tarragona i la seva implicació amb els Comitès Òscar Romero i les causes de les comunitats més pobres de l’Amèrica Llatina. Francesc Xammar va néixer a Barcelona l’any 1933. Era fill d’una família benestant. Però la seva vida va fer un gir fonamental. Fent de catequista a la perifèria barcelonina entra en contacte amb les famílies dels barris populars, la seva realitat i condicions de vida, i decideix fer-se sacerdot per poder estar al costat dels més necessitats. Entra a la Companyia de Jesús el 1950, s’ordena capellà el 1963 i fa els últims vots com a jesuïta el 1968. Va arribar a Tarragona l’any 1966 i es va instal·lar a la parròquia de Sant Josep Obrer, al barri de Torreforta, barri nascut de la immigració dels anys 50 i 60, al que Xammar es va sumar contribuint a construir barri i comunitat cristiana. El 1969, i sense deixar de treballar a Torreforta, es va traslladar al barri de la Floresta, on ja hi va residir fins a finals de l’any 2022. Va arribar a la ciutat amb una clara vocació de servei i durant més de sis dècades va treballar compromès amb la ciutat de Tarragona i molt especialment els sectors més vulnerables com a capellà, però també com a activista, líder veïnal i formant part del primer consistori democràtic, després de la dictadura, com a regidor (1979-1983). El Francesc Xammar també va ser el co-fundador i inspirador dels Comitès Òscar Romero, i durant llargs anys va mantenir un estret vincle amb les comunitats eclesials de base i les institucions de la Companyia de Jesús de diversos països de Centre Amèrica i Llatina Amèrica, fent estades regulars sobretot a Nicaragua. El 20 de desembre de 2023 va rebre el títol de fill adoptiu de la ciutat de Tarragona, en agraïment per la seva llarga i incansable tasca en favor de les persones més desfavorides, especialment als barris de ponent de la ciutat de Tarragona. A finals de l’any 2022 s’havia acomiadat de la parròquia i el barri de Torreforta. Ho va fer rebent el reconeixement i agraïment del món eclesial, institucional i veïnal pel seu acompanyament i presència a Torreforta i al barri de la Florida des del 1966. El llibre \"Francesc Xammar i Vidal: dignitat i compromís a la perifèria de Tarragona\" , dels periodistes Ricard Lahoz i Enric Garcia Jardí, glossa la seva vida i compromís. També recentment s’ha publicat La flama de la utopia , un recull de discursos, articles i entrevistes de Xammar.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-15T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:39:32.376419+00:00",
+          "published_at_ts": 1757894400,
+          "indexed_at_ts": 1758879572
+        }
+      },
+      {
+        "id": "e5eeb749-1a41-8118-bf7a-335762dc4fb8",
+        "vector_score": 0.42671815,
+        "recency_weight": 2.1787897531841504e-16,
+        "combined_score": 0.2773667975000001,
+        "timestamp": 1752347580,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+          "content": "cada escola marista que educa amb amor i servei. ” Des d’avui tenim un nou beat de qui seguir l’exemple. >>> Consulta el dossier de premsa sobre la cerimònia de beatificació del germà Licarió Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-12T19:13:00+00:00",
+          "indexed_at": "2025-09-26T09:39:56.167540+00:00",
+          "published_at_ts": 1752347580,
+          "indexed_at_ts": 1758879596
+        }
+      },
+      {
+        "id": "8f7b32df-e1a1-bc51-ae28-424762462160",
+        "vector_score": 0.42589316,
+        "recency_weight": 2.1787897531841504e-16,
+        "combined_score": 0.27683055400000006,
+        "timestamp": 1752347580,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+          "content": "“Un exemple d’amor i servei”: el germà marista Licarió ja és beat\n\n“La beatificació del germà Licarió és molt més que un reconeixement litúrgic. És la proclamació d’una vida senzilla i lliurada, viscuda amb humilitat, proximitat i amor incondicional pels infants i joves més vulnerables. És també un signe d’esperança per a tots aquells que creuen en l’educació com a camí de transformació social i espiritual.” Amb aquestes paraules el germà Provincial de L’Hermitage i del Districte d’Europa Centre-oest, Gabriel Villa-Real , ha obert la cerimònia de beatificació del germà suís Licarió, assassinat a Barcelona el 1909, durant la Setmana Tràgica. La cerimònia ha tingut lloc el dissabte 12 de juliol a la parròquia de Sant Francesc de Sales de Barcelona, adjacent al col·legi Maristes La Immaculada. Nascut a Suïssa amb el nom de François Benjamin May , el germà Licarió va ingressar als Germans Maristes amb només 18 anys. Conegut com a “pedagog del cor“, va exercir com a educador i director en diverses escoles de Catalunya i el País Basc, però és especialment recordat per la seva tasca al Patronat Obrer de Sant Josep, al barri del Poblenou de Barcelona, on va impulsar una escola gratuïta per a fills de famílies obreres. La celebració de beatificació ha estat presidida pel cardenal Marcello Semeraro , prefecte del Dicasteri per a les Causes dels Sants, i concelebrada per l’arquebisbe de Barcelona, el cardenal Joan Josep Omella , els bisbes auxiliars Javier Vilanova i David Abadías , i l’arquebisbe Joan-Enric Vives , bisbe emèrit d’Urgell. En l’homilia el cardenal Semeraro , ha destacat que “ per al germà Licarió, educar era un acte d’amor i servei” i ha destacat la “ coherència de la seva vida i de la seva vocació marista ”. Ha estat el cardenal arquebisbe de Barcelona, Monsenyor Joan Josep Omella , qui ha iniciat el ritus de beatificació, fent la sol·licitud al cardenal Semeraro, representant del papa Lleó XIV en l’esdeveniment. Ha estat el moment en què s’ha descobert un quadre del nou beat i s’han dipositat les seves relíquies, unes cartes que Licarió va enviar a la seva família i que ha conservat Odile , la vídua d’un renebot, de més de 90 anys, que ha vingut des de Suïssa per ser present a la celebració. També des de Suïssa s’hi han fet presents una delegació de 15 persones més, entre autoritats locals del Valais, la zona on va néixer Licarió, i famíliars seus. Per la seva part, el Superior general dels Maristes, Ernesto Sánchez, arribat de Roma, ha tingut un record per altres màrtirs maristes d’arreu del món i ens ha convidat a “reflexionar sobre el missatge d’entrega incondicional dels nostres germans”. Així mateix, ha demanat al beat Licarió que animi els Maristes de Champagnat “a respondre amb alegria i entrega a la nostra vocació, vivint la nostra espiritualitat profundament i la nostra missió amb una entrega més grans als infants i als joves”. La cerimònia ha comptat amb la presència de Ramon Espadaler , conseller de Justícia de la Generalitat de Catalunya, del director general d’Afers Religiosos, Ramon Bassas , del tercer tinent d’Alcaldia de l’Ajuntament de Barcelona, Albert Batlle , del cònsol general de Suïssa a Barcelona, Othmar Christian Hardegger , i d’ Ivan Pera , comissionat de Religió de l’Ajuntament de Barcelona. Ubuntu , grup musical sorgit dels Maristes, ha estat l’encarregat de la banda sonora de l’esdeveniment i ha estrenat de manera pública la cançó “Germà Licarió”: “ entregant a Déu la vida, regalant el que tu ets sempre amb bondat”. La cerimònia també ha comptat amb la presència del postulador de la causa del germà Licarió, el germà Guillermo Villarreal , i dels vicepostuladors Mariano Santamaría i Antonio Martínez Estaún , que han rebut un obsequi en reconeixement a la seva tasca investigadora, que ha possibilitat el procés fins arribar al dia d’avui. Recollint una altra vegada les paraules del germà Gabriel Villa-Real , “ el germà Licarió va fer de la seva vocació una resposta d’amor. Enmig de dificultats socials i persecucions, va sembrar pau, confiança i fraternitat. La seva pedagogia del cor, inspirada en sant Marcel·lí Champagnat, continua viva en cada escola marista que educa amb amor i servei. ” Des d’avui tenim un nou beat de qui seguir l’exemple. >>> Consulta el dossier de premsa sobre la cerimònia de beatificació del germà Licarió Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-12T19:13:00+00:00",
+          "indexed_at": "2025-09-26T09:39:56.167540+00:00",
+          "published_at_ts": 1752347580,
+          "indexed_at_ts": 1758879596
+        }
+      },
+      {
+        "id": "cfb591c0-26ff-a037-0198-291346b239e8",
+        "vector_score": 0.32749316,
+        "recency_weight": 0.16944408406217443,
+        "combined_score": 0.2721759834217611,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "content": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana. En cada escola, plataforma social, centre juvenil i obra pastoral, els Salesians treballem per garantir espais segurs, on cada nen, nena, adolescent i jove pugui créixer en confiança i plenitud. En aquesta línia, la Coordinadora Estatal de Plataformes Socials Salesianes (CEPSS) va participar en representació de la família salesiana en la jornada #”Hogarizar”: 10 anys de transformació del sistema de protecció de la infància: assoliments i reptes, organitzada per la Plataforma d’Infància (POI). La trobada va servir per a reflexionar sobre el camí recorregut des de l’aprovació de la Llei 26/2015 i els desafiaments pendents per a fer plenament efectiva la Llei orgànica de Protecció Integral a la Infància i l’Adolescència enfront de la Violència (LOPIVI). Una mirada de futur Durant la jornada, representants institucionals, acadèmics i socials van posar en relleu els avanços reeixits en aquesta dècada, així com la urgència de continuar enfortint la participació infantil, l’acompanyament a les famílies i la coordinació dels diferents sistemes de protecció. Es va subratllar també la importància que la infància estigui sempre en el centre, més enllà de colors polítics o realitats territorials. Un compromís salesià compartit La presència de CEPSS en aquesta trobada reforça el compromís de totes les obres salesianes amb la creació d’una cultura de protecció que travessa cada acció educativa i pastoral. Totes les entitats membre de la Coordinadora compten amb la certificació UNEIX 0070:2022 d’entorns segurs per a la infància, que avala que les nostres polítiques, protocols i canals de denúncia compleixen amb els estàndards més exigents en la matèria. Aquest compromís comú ens convida a seguir #”hogaritzant” cada espai educatiu salesià: fer d’ells un lloc de cura, confiança i seguretat, on la infància i la joventut puguin créixer, participar i somiar un futur amb esperança. Et convidem a veure el vídeo complet de la jornada aquí: Jornada #Hogarizar – 10 anys de transformació del sistema de protecció de la infància.",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:40:00.059797+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879600
+        }
+      },
+      {
+        "id": "dc1018cf-e05a-edd5-f0c7-4fcf7aa05386",
+        "vector_score": 0.304075,
+        "recency_weight": 0.16944408406217443,
+        "combined_score": 0.256954179421761,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+          "content": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval\n\nEl Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral\n\nEl Clúster Marítim Naval de Cadis en el marc de la seva Assemblea General i del seu desè aniversari, ha reconegut al col·legi Sant Ignasi Salesians de Cadis “per la seva contribució a la indústria naval, no sols formant als futurs professionals, sinó col·laborant amb el Clúster i empreses per adaptar la formació a les necessitats del mercat”. Aquest reconeixement s’ha produït en la tercera edició del lliurament de guardons a la contribució de persones i institucions en favor de la indústria naval, que des de l’any passat es diuen Premis José Antonio Rodríguez-Poch a l’impuls del sector naval, en memòria del mort director de Navantia en Badia de Cadis. El Clúster Marítim Naval de Cadis en el marc de la seva Assemblea General i del seu desè aniversari, ha reconegut al col·legi Sant Ignasi Salesians de Cadis “per la seva contribució a la indústria naval, no sols formant els futurs professionals, sinó col·laborant amb el Clúster i empreses a adaptar la formació a les necessitats del mercat”. Aquest reconeixement s’ha produït en la tercera edició del lliurament de guardons a la contribució de persones i institucions en favor de la indústria naval, que des de l’any passat es diuen Premis José Antonio Rodríguez-Poch a l’impuls del sector naval, en memòria del mort director de Navantia en Badia de Cadis.",
+          "site": "salesians",
+          "author": "Diari de Cadis",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:18.460536+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879498
+        }
+      },
+      {
+        "id": "204b43da-a001-4b15-93e9-d4460f5d33a2",
+        "vector_score": 0.29949716,
+        "recency_weight": 0.16944408406217443,
+        "combined_score": 0.25397858342176105,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "content": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe\n\nCompromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora\n\nEl passat cap de setmana, prop de 80 animadors de les presències de Salesians i Salesianes de Canàries van participar en una enriquidora trobada formativa, emmarcat en l’Itinerari d’Educació en la Fe (IEF). Durant la jornada del dissabte, els assistents van aprofundir en la reflexió sobre l’acció educativa dels centres juvenils i el valor del Sistema Preventiu com a pilar de l’acompanyament pastoral. La formació es va completar a la tarda amb dos tallers pràctics que van oferir eines concretes per a l’animació pastoral en les seves realitats locals. A més, es van cuidar especialment els moments celebratius, que van ajudar a interioritzar el viscut: una adoració al Santíssim el dissabte a la nit i l’Eucaristia compartida el diumenge van posar el fermall espiritual a la trobada. Com a part de la programació, també es van presentar les campanyes pastorals de les dues inspectories: Protagonistes de la història, per part dels Salesians, i Confia, de les Salesianes, marcant un horitzó pastoral comú per a aquest nou curs. Programació local i pròxims trobades a l’octubre A nivell inspectorial, aquestes setmanes s’està avançant en la programació local de l’Itinerari d’Educació en la Fe, peça clau del projecte pastoral salesià. El mes d’octubre arribarà carregat de noves propostes formatives: a Catalunya, la Comunitat Valenciana i la Regió de Múrcia se celebraran jornades per a animadors de l’IEF; a Extremadura tindrà lloc una trobada específica de formació; i a Andalusia s’iniciaran les primeres convivències dirigides als nivells inicials de l’itinerari infantil. Tot això demostra el compromís conjunt d’animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora, fidel a l’estil de Don Bosco i de Mare Mazzarello.",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:20.135275+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
+      },
+      {
+        "id": "8461e884-7731-ce7e-fe28-6ebcb7ee5e74",
+        "vector_score": 0.389146,
+        "recency_weight": 0.00026267159891609735,
+        "combined_score": 0.25303683505962066,
+        "timestamp": 1757548800,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/el-desig-de-donar-la-benvinguda-tothom",
+          "content": "El desig de donar la benvinguda a tothom\n\nEn el marc del Jubileu de l'Esperança, unes 1.500 persones del col·lectiu LGTBIQ+ d’arreu del món, acompanyats de familiars i amics, es van trobar a Roma entre el 4 i el 7 de setembre. Ho van fer agrupats en unes 70 organitzacions i van poder peregrinar creuant la Porta Santa de Sant Pere del Vaticà el dissabte 6 de setembre de 2025. Entre els objectius d’aquest event, construir comunitat i fer visible l’existència d’aquests grups, que volen compartir la seva experiència de fe i les seves vides. Hi va ser present el jesuïta català Josep Baquer, que compta amb experiència en l’acompanyament de persones LGTBIQ+. Una petita comunitat cristiana italiana, La Tenda di Gionata , havia somiat i treballat a fons perquè aquest moment pogués arribar. Amb ajuda de la GNRC (Global Network of Rainbow Catholics), van organitzar una vetlla de pregària i una eucaristia, totes dues a l’església del Gesù, temple dels jesuïtes a Roma. Moltes comunitats cristianes fa més de deu anys que treballen en xarxa per fer possible aquest moment. Dies abans, el papa Lleó XIV va rebre en audiència James Martin, jesuïta nord-americà que ha treballat activament en l’acompanyament pastoral a persones LGTBIQ+. “Vaig escoltar el mateix missatge del papa Lleó que vaig escoltar del papa Francesc, que és el desig de donar la benvinguda a tothom, incloses les persones LGBTQ”, va dir Martin després de la trobada. L'eucaristia prèvia a la peregrinació, el Gesù, va ser presidida pel bisbe Francesco Savino, vicepresident de la Conferència Espiscopal Italiana. Concelebraven uns trenta sacerdots, entre ells els jesuïtes James Martin, Pino Piva i Josep Baquer. Especialment emotiu va ser l'abraçada de Savino a James i Pino, i la seva homilia va ser interrompuda en dues ocasions pels aplaudiments dels fidels. El bisbe Savino va verbalitzar que havia rebut la bendició del sant Pare per oficiar la missa per als pelegrins LGTBIQ+. Des d'Espanya, hi van ser presents les comunitats cristianes LGBT Crismhom (Madrid) i Ichthys (Sevilla), a les quals es van unir uns 35 membres de CVX Espanya procedents de diverses ciutats. El testimoni de fe de les persones LGTBIQ+ Apropar-nos al testimoni de fe de les persones LGTBIQ+ ens mostra un camí recorregut amb sofriment i conflicte, però també amb resistència i aliances. En aquest línia, el centre d’estudis Cristianisme i Justícia va publicar el passat mes de maig el quadern Testimonis d’un Déu que no estranya . En ell, sis persones comparteixen amb generositat les seves històries de vida.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-11T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:39:34.228425+00:00",
+          "published_at_ts": 1757548800,
+          "indexed_at_ts": 1758879574
+        }
+      },
+      {
+        "id": "5a8af261-2b9d-f85b-12cc-2670570499fa",
+        "vector_score": 0.3712032,
+        "recency_weight": 0.026685771036261244,
+        "combined_score": 0.25062209986269146,
+        "timestamp": 1758412800,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/el-provincial-presenta-catalunya-el-nou-projecte-apostolic",
+          "content": "El Provincial presenta a Catalunya el nou Projecte Apostòlic\n\nAquest divendres 19 de setembre, el Provincial de la Companyia de Jesús a Espanya, Enric Puiggròs, va presentar el nou Projecte Apostòlic de la Província davant els membres del Consell de la Plataforma Apostòlica de Catalunya. L’acte, celebrat al centre Borja de Sant Cugat del Vallès, va aplegar unes quaranta persones responsables de les diferents obres de la Companyia a Catalunya, juntament amb altres participants convidats per a l’ocasió. Puiggròs va estar acompanyat de Benigno Álvarez, que des d’aquest curs exerceix el càrrec de soci, principal assistent del Provincial. Un procés de discerniment comunitari El Projecte Apostòlic és fruit d’un ampli procés de discerniment comunitari iniciat al setembre de 2024. Al llarg del curs passat s’hi han implicat jesuïtes, laiques i laics vinculats a les institucions de la Companyia, a través de consultes i trobades amb superiors locals, directors d’obres, delegats de sectors i plataformes apostòliques. També la Trobada de Província va estar dedicada a avançar en la seva elaboració. L’objectiu no és fer un catàleg exhaustiu de totes les activitats de la Companyia, sinó identificar els accents missionals prioritaris que han de guiar la vida i la missió dels jesuïtes a Espanya en els propers cinc anys. Quatre opcions fonamentals El document es vertebra al voltant de quatre opcions bàsiques: Ajudar a l’encontre amb Déu i a una fe que promogui la justícia, a través de la espiritualitat ignasiana i el testimoni comunitari. Renovar el compromís per la justícia socioambiental, nascuda de la fe i concretada en caminar al costat de les persones excloses i empobrides. Enfortir la col·laboració en la missió, tot aprofundint en les implicacions d’una Església sinodal, amb la participació activa de jesuïtes i laics. Discernir amb realisme les presències, estructures i mitjans apostòlics, amb llibertat i obertura a la novetat de Déu. A més, el Projecte recull els trets essencials de la tradició ignasiana: discerniment, col·laboració, missió compartida i recerca del “major bé” en cada context. Com a novetat, inclou una secció específica amb orientacions per a la vida religiosa dins la Companyia. Una dinàmica que empeny Durant la presentació, Enric Puiggròs va subratllar que el projecte, lluny de ser un corsé que ens apreti, és un instrument que recull allò que nosaltres mateixos hem identificat com a important. “L’hem d’entendre com una dinàmica que ens estira, que ens empeny”. El Provincial va destacar també la importància de la intersectorialitat (escoles, universitats, centres socials i pastorals treballant plegats) com a element clau per fer possible el Projecte, així com la necessitat d’arrelament local: “Les instàncies locals s’han de mobilitzar. Només es pot portar a terme des de llocs concrets”. Entre els elements transversals, es va remarcar la formació com a clau de la transformació personal i comunitària, el binomi fe-justícia com a nucli de l’evangeli i la missió, i la flexibilitat de les estructures com a mitjans al servei de la missió. Agraïment i esperança Després d’una estona de reflexió i treball en grups, els participants van tenir l’oportunitat de dialogar amb el Provincial. Les aportacions van coincidir a expressar agraïment i esperança per tot el que pot obrir aquest nou Projecte Apostòlic, percebut com una eina que ens fa sortir de l’àmbit directe de la nostra acció quotidiana, però que ens donarà un nou impuls i ens ajudarà a desenvolupar millor la nostra missió. Aquesta trobada del Consell de la Plataforma s’emmarca en les reunions regulars que permeten que les diverses iniciatives de la Companyia de Jesús a Catalunya treballin més conjuntament. A mig matí, a l’estona del descans, els participants van poder visitar el nou projecte d’hort, impulsat per la fundació Manresa que treballa iniciatives d’economia social i alguns membres del consell van poder endur-se les primeres cistelles de producte ecològic. Una iniciativa que és una concreció del compromís de la Companyia de Jesús amb l’ecologia integral.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-21T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:06.086686+00:00",
+          "published_at_ts": 1758412800,
+          "indexed_at_ts": 1758879486
+        }
+      },
+      {
+        "id": "50917f9a-7704-735f-c69c-b27c01bc5c70",
+        "vector_score": 0.29157004,
+        "recency_weight": 0.16944408406217443,
+        "combined_score": 0.24882595542176103,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "content": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife\n\nEl projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.\n\nLa Universitat de La Llacuna i el Cabildo de Tenerife van fer lliurament dels III Premis d’Aprenentatge-Servei, on el nostre centre, Salesians La Orotava, juntament amb l’ONG Bosco Global, la Universitat de La Llacuna (ULL) i Iriarte Centre Universitari Internacional va rebre el primer premi gràcies al projecte “Mans joves, cors compromesos”. La iniciativa destaca per la seva aposta per crear consciència i compromís social entre l’alumnat, fomentant la convivència i la igualtat entre cultures. Un projecte per a joves amb mirada transformadora El projecte ha estat desenvolupat per alumnat universitari de la ULL i de la Universitat Iriarte, en col·laboració amb Salesians La Orotava i Bosco Global. El seu objectiu principal ha estat formar a joves com a agents de canvi, capaços de compartir l’après amb tota la societat i d’impulsar una convivència respectuosa i solidària. Temes que construeixen una societat millor Al llarg del treball s’han abordat temes clau com: Conèixer millor l’adolescència i la joventut. Despertar la consciència social i el compromís ciutadà. Promoure la igualtat de gènere. Fomentar la convivència en la diversitat. Cuidar el planeta a través de l’educació ambiental. Apostar per una societat pacífica i justa, amb institucions democràtiques i inclusives. Aprenentatge-Servei: educar fent La metodologia emprada, l’Aprenentatge-Servei (ApS), combina l’adquisició de coneixements amb el compromís social. D’aquesta manera, els estudiants no només aprenen, sinó que també aporten valor a la comunitat, generant un impacte real en el seu entorn més pròxim. Un reconeixement que ens omple d’orgull Des de Salesians LaOrotava celebrem amb gran satisfacció aquest reconeixement, que suposa un impuls per a continuar treballant en projectes que reforcin l’educació en valors, la solidaritat i la convivència entre cultures.",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:40:01.741618+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879601
+        }
+      },
+      {
+        "id": "92660c4b-154e-07d6-6fe4-54341025cf6c",
+        "vector_score": 0.2867592,
+        "recency_weight": 0.16944408406217443,
+        "combined_score": 0.24569890942176104,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+          "content": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza\n\nLa Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.\n\nDavant el genocidi que es viu en la Franja de Gaza, els consagrats i consagrades d’Espanya elevem la nostra veu per a exigir el cessament immediat d’accions que provoquin fam, destrucció i mort de civils innocents, i demandar l’accés sense restriccions de l’ajuda humanitària. “No puc veure morir al nen” (Gn 21,15). Aquest crit antic, pronunciat per Agar en el desert, ressona avui amb força entre moltes mares i pares del món. Les informacions i testimoniatges que arriben des de Gaza descriuen escenes de fam, col·lapse sanitari, desplaçament massiu i víctimes entre bebès, nens i nenes, dones embarassades, ancians i persones vulnerables. Davant aquesta realitat, el deure moral i humanitari és clar: protegir la vida, garantir l’assistència urgent i respectar el Dret Internacional Humanitari. Denunciem la imposició de restriccions que impedeixen l’arribada d’aliments, medicines i combustible, i condemnem els atacs indiscriminats que han causat destrucció, morts i mutilacions entre la població civil. Demanem a les autoritats competents que actuïn amb determinació per a obrir corredors humanitaris segurs i garantir la protecció de periodistes, personal sanitari, cooperants i població civil. Cuidar al més feble i defensar la vida No es tracta de prendre postura partidista, sinó de recordar l’obligació bàsica de tota comunitat humana: cuidar al més feble i defensar la vida. Per això secundem i ens sumem als comunicats i crides de diferents institucions religioses, organitzacions humanitàries i organismes internacionals que exigeixen el respecte del Dret Internacional i l’entrada d’ajuda a tota la població de Gaza. Exigim, a més: Que es permeti immediatament l’entrada de tota l’ajuda humanitària necessària per a evitar morts per inanició i col·lapse sanitari. El cessament de bombardejos sobre zones civils i la protecció d’instal·lacions sanitàries, religioses i de refugiats. El respecte i la plena aplicació del Dret Internacional Humanitari i dels drets humans. Que la comunitat internacional redobli els seus esforços diplomàtics i humanitaris per a posar fi al sofriment i avançar cap a solucions justes i duradores. Com recull l’Escriptura —“Què et passa, Agar? No temis, perquè Déu ha sentit la veu del noi…” (Gn 21,17-18)— fem una crida a la compassió i a l’acció: que les nostres mans es converteixin en auxili efectiu i no en indiferència.",
+          "site": "salesians",
+          "author": "Confederació Espanyola de Religiosos",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:16.783189+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879496
+        }
+      },
+      {
+        "id": "deb3b4a2-8274-d302-9f96-317f4a88aa72",
+        "vector_score": 0.37677032,
+        "recency_weight": 3.279427419770618e-14,
+        "combined_score": 0.24490070800001149,
+        "timestamp": 1753285077,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/trobada-dequips-directius-les-avellanes-celebrem",
+          "content": "Trobada d'equips directius a les Avellanes: celebrem!\n\nUn any més, el Monestir de les Avellanes ha tornat a ser l’escenari de la Trobada d’equips directius de les escoles i de les obres socials maristes de Catalunya. Els dies 7 i 8 de juliol, els equips de les obres i de serveis centrals van tenir ocasió de compartir un espai a finals de curs que va servir per mirar enrere cap al curs que acaba i il·lusionar-nos amb el vinent. També va servir per agrair la feina feta a les persones que deixen responsabilitats als equips i per encoratjar les persones que comencen. La trobada la va obrir el germà Lluís Serra , encara aleshores president del Patronat de les fundacions Maristes de Catalunya, posant la vista en l’essencial de la nostra missió i centrant el focus en la importància de la tradició. Una tradició que, en el nostre cas, arrela en el fundador, Marcel·lí Champagnat , amb un projecte destinat a l’educació humana i cristiana dels infants i joves que ens són confiats, especialment els més desatesos. Durant la trobada, l’equip Missió de Serveis centrals ens va avançar el lema educatiu del curs vinent, que compartirem a tot Europa, però que encara no es pot desvelar fins a l’inici de curs. Un lema que serà festiu i que ens convidarà a gaudir del moment present, a aprofundir en la generositat, i a agrair tot el que vivim. Hi va haver espai per valorar el pla estratègic que acaba, per començar a somiar en el següent, per presentar el pla de formació del curs vinent, per explicar iniciatives de comunicació del futur i per donar pinzellades del camí del laïcat a la nostra Província. El germà Gabriel Villa-Real , provincial de L’Hermitage, ens va apropar a la realitat de la Província, amb l’explicació del Capítol provincial que s’acabava de celebrar, i amb informació sobre la beatificació del G. Licarió ( mártir marista que va ser assassinat durant la Setmana Tràgica, el 1909), que va tenir lloc el 12 de juliol. Finalment, un dels punts forts de la trobada va ser la dinàmica Bridge, amb Ferran Ramon Cortès, una eina que va engescar els equips perquè ens ajuda a descubrir el perfil relacional dels companys i companyes que treballen amb nosaltres. En definitiva, moment per compartir, per celebrar, i per desitjar-nos un bon estiu. Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-23T15:37:57+00:00",
+          "indexed_at": "2025-09-26T09:39:46.588615+00:00",
+          "published_at_ts": 1753285077,
+          "indexed_at_ts": 1758879586
+        }
+      },
+      {
+        "id": "4312a319-405e-b0a6-dc73-6e75a6ab6c63",
+        "vector_score": 0.36456785,
+        "recency_weight": 0.00026267159891609735,
+        "combined_score": 0.23706103755962066,
+        "timestamp": 1757548800,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/celebracio-de-sant-pere-claver-verdu",
+          "content": "Celebració de Sant Pere Claver a Verdú\n\nUn any més en la festivitat de Sant Pere Claver, el 9 de setembre, al poble de Verdú, on va néixer i créixer aquest sant jesuïta català, la celebració va tenir un to joiós i emotiu. L’eucaristia fou presidida pel delegat dels Jesuïtes a Catalunya, Pau Vidal, el rector de Tàrrega, Mn Joan Viladot i altres jesuïtes i preveres. L’homilia va anar a càrrec del jesuïta Rafa García Mora, recentment arribat de Bolívia, que va recordar com un 9 de setembre de fa 37 anys va ser ordenat a Bolívia, en una parròquia que porta el nom de Pere Claver. García Mora va ressaltar que la vida i testimoni del fill de Verdú ens encoratjava avui a viure una fe cristiana compromesa amb la justícia. A principis del segle XVII va marxar per ser missioner a Amèrica amb un desig molt diferent del que tenien altres, que hi anaven a fer fortuna, va dir: “Pere Claver havia entès l a paraula de Jesús d’una manera radical: servir als més pobres, els més oblidats, aquells que no tenen veu”. Així es trobà rebent als negres que arribaven a Cartagena d’Índies en vaixells negrers, carregats d’homes i dones arrencats de la seva terra d’Àfrica i tractats com a mercaderia. Pere Claver els guaria les ferides, els donava aigua i els acollia amb tendresa i dignitat. “El seu gest no era només caritat”, va destacar Rafa García Mora, “era un crit profètic contra un sistema que menyspreava la vida humana. En un món que justificava l’esclavitud”. I avui, va dir, ens trobem amb noves formes d’esclavitud que ens interpel·len i ens demanen treballar per ser instruments de llibertat i esperança. Tant a l’eucaristia com a l’acte posterior a la plaça de la vila, el poble va voler agrair els 153 anys de servei educatiu i de promoció humana i espiritual de les germanes Carmelites Vedrunes, que clouen una etapa tancant la comunitat de Verdú per l’avançada edat de les germanes i la falta de relleu. També es va fer la tradicional processó al Santuari, la veneració de la relíquia i tot seguit a la plaça un acte en reconeixement a les germanes vedrunes amb paraules de l’alcaldessa, Georgia Procter, de Mn. Viladot i del president dels Amics de Sant Pere Claver, David Tous. Les mateixes germanes van intervenir després per agrair tot allò que han pogut viure a Verdú tants anys i la gran acollida rebuda. La cobla va animar el ball de les sardanes per cloure un matí festiu en honor a Sant Pere Claver, el català universal, esclau dels esclaus negres. L’Associació d’Amics de Sant Pere Claver manté viva la memòria del fill de Verdú que encara avui ens esperona a comprometre’ns amb els més desfavorits. Coincidint amb aquesta festivitat, l'Asssociació d'Amics de Sant Pere Claver acaba de publicar el seu butlletí anual que podeu descarregar aquí .",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-11T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:39:36.124938+00:00",
+          "published_at_ts": 1757548800,
+          "indexed_at_ts": 1758879576
+        }
+      },
+      {
+        "id": "81a1ad25-3068-7d47-5561-573b6f9abbb8",
+        "vector_score": 0.34979653,
+        "recency_weight": 4.5068899337548085e-14,
+        "combined_score": 0.22736774450001576,
+        "timestamp": 1753344523,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
+          "content": "La Travessa 2025: Expedició L’Hermitage\n\nDesprés de la bona acollida de l’any passat, entre el 14 i el 18 de juliol hem viscut una nova edició de La Travessa , aquest cop seguint els camins al voltant de la casa de L’Hermitage, enguany que celebrem el bicentenari de la seva construcció. La Montse Francisco, de Maristes Girona , ens comparteix el seu testimoni: Riures i vida compartida a mans plenes M’hi vaig apuntar sense saber ben bé on em ficava. La Travessa: de què va? Va d’ADN marista! Per obtenir aquest codi només calen dos elements, i són a l’abast de tothom: humor i senzillesa. A L’Hermitage durant cinc dies ens hem despullat de l’oficialitat de les nostres professions i vocacions i cadascú ha triat la muda que li era més còmoda. Caminant entre boscos esplèndids, i tot descobrint espais recuperats pels que continuen mantenint encesa la flama de Marcel·lí a França, els dies s’han escolat entre rialles, converses franques i moments hilarants. Una experiència que ha amalgamat divuit ànimes, que marxen havent rebut el que assedega les ganes de viure: la generositat dels altres. La travessa a L’Hermitage ha estat un regal. Gràcies! Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-24T08:08:43+00:00",
+          "indexed_at": "2025-09-26T09:38:14.399508+00:00",
+          "published_at_ts": 1753344523,
+          "indexed_at_ts": 1758879494
+        }
+      },
+      {
+        "id": "c7a38dbb-9bdd-efdb-b488-7b277d8fd1a4",
+        "vector_score": 0.34965223,
+        "recency_weight": 0.0001654727383419673,
+        "combined_score": 0.2273318649584197,
+        "timestamp": 1757462400,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/emotiva-ofrena-floral-lermita-de-la-mare-de-deu-de-bellvitge",
+          "content": "Emotiva ofrena floral a l'Ermita de la Mare de Déu de Bellvitge\n\nEl passat 8 de setembre, en el marc de la Festa Major de Bellvitge, va tenir lloc la tradicional ofrena floral a la Mare de Déu de Bellvitge a la seva ermita. L’acte, sempre molt esperat per les entitats i veïns del barri, es va viure enguany amb un marcat caràcter especial: el comiat de la comunitat de jesuïtes després de 57 anys de presència ininterrompuda a Bellvitge. Més de mig segle de treball social, acompanyament espiritual i compromís amb la justícia social han deixat una empremta profunda en la història del barri. Tot i l’acomiadament de la comunitat de jesuïtes, la missió iniciada per la Companyia de Jesús, amb la col·laboració de moltes persones i entitats del barri, continuarà a través de l'escola Jesuïtes Bellvitge-Joan XXIII i de la Fundació La Vinya, projectes que mantenen viva l’aposta per l’educació integral i l’atenció a les persones més vulnerables. L’ofrena floral es va convertir així en un emotiu homenatge a aquesta trajectòria. Carles Marcet, jesuïta i fins ara rector de la parròquia de la Mare de Déu de Bellvitge, va expressar l’emoció del moment: \"Aquest any els jesuïtes marxem del barri i és l’última festa per a nosaltres. Així que té el component emotiu de poder-nos acomiadar del barri, de les entitats i totes aquestes persones amb les quals hem fet camí junts aquests anys\". La celebració va concloure amb una crida a l'esperança i al compromís, amb la confiança que la tasca iniciada continuarà amb força. El mateix Marcet, representant la comunitat de jesuïtes, va ser l’encarregat de pronunciar el pregó aquest any de la Festa Major, el passat 6 de setembre. En les seves paraules, va voler recordar tants companys que han compartit missió a Bellvitge des del 1968, amb especial menció a Natxo Velasco, traspassat el passat mes de juliol, i a Pepe Ituarte, pioners d’una tasca educativa i social que va donar fruits en el col·legi Joan XXIII i en La Vinya. En el pregó, Marcet va subratllar que la missió dels jesuïtes sempre ha estat guiada per «la defensa de la fe i la promoció de la justícia», remarcant que totes dues dimensions han de caminar juntes. També va animar els veïns a continuar “suant la samarreta” a favor del bé comú, recordant que el barri encara té reptes importants: l’accés a l’habitatge, la lluita contra el sensellarisme o la preservació de l’esperit d’acollida.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-10T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:39:38.033640+00:00",
+          "published_at_ts": 1757462400,
+          "indexed_at_ts": 1758879578
+        }
+      },
+      {
+        "id": "82f53d5c-4bc2-9f75-5073-018bb7daccf3",
+        "vector_score": 0.34902474,
+        "recency_weight": 7.984842390886566e-05,
+        "combined_score": 0.2268940279483681,
+        "timestamp": 1757326157,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/arrenca-les-filipines-el-xxiii-capitol-general",
+          "content": "Arrenca a les Filipines el XXIII Capítol general\n\nAvui, 8 de setembre, ha començat a Tagaytay, a les Filipines, el XXIIIè Capítol general, amb el lema “Llar per a tothom. Riu de Vida”. El Capítol, que s’allargarà fins al proper 8 d’octubre, ens convida a somiar el futur amb una mirada positiva i a actuar amb generositat per continuar mantenint viu el carisma marista. En total, són 81 germans i 16 convidats procedents de totes les Províncies i Regions maristes del món que prendran part al Capítol durant el mes que durarà la trobada. Els participants hauran de dur a terme un camí de discerniment que haurà de marcar els propers 8 anys de vida de l’Institut marista, Per part de la Província L’Hermitage hi participen els germans Gabriel Villa-Real (germà Provincial), Xavier Giné (Vicari Provincial), Emili Turú, Pere Ferré, Brendan Geary i Michael Schmalzl. El germà Ernesto Sánchez, Superior general, ha recordat en el missatge inicial que, tal com diuen les Constitucions maristes, “ Un Capítol general és una assemblea representativa de tot l’Institut. Expressa la participació de tots els germans en la vida i la missió de l’Institut, i la seva corresponsabilitat en el Govern. El Capítol exerceix l’autoritat suprema extraordinària ”. El missatge del germà Ernesto ha acabat dient “Tot l’Institut està pregant i pendent de nosaltres. Això ens anima i ens acompanya. Estem en comunió amb tots els germans i laics de l’Institut. Saludem tots els Maristes de Champagnat i Déu vulgui que continuem caminant junts per mantenir viu el somni de Sant Marcel·lí Champagnat” . Molt bon Capítol! Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-09-08T10:09:17+00:00",
+          "indexed_at": "2025-09-26T09:38:10.801568+00:00",
+          "published_at_ts": 1757326157,
+          "indexed_at_ts": 1758879490
+        }
+      },
+      {
+        "id": "ab9002e3-96c9-8295-994d-25e4abfc130b",
+        "vector_score": 0.34636515,
+        "recency_weight": 5.077536970824923e-16,
+        "combined_score": 0.22513734750000017,
+        "timestamp": 1752505770,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/relleu-la-direccio-general-de-la-fundacio-champagnat-maristes-catalunya",
+          "content": "Relleu a la direcció general de la Fundació Champagnat-Maristes Catalunya\n\nBenvolguts/des, Us comuniquem que el Patronat de la Fundació Champagnat, la Fundació Anna Ravell, la Fundació Escó i la resta d’entitats maristes de Catalunya ha nomenat, amb data de 14 de juliol del 2025, la senyora Montserrat Torices Girons directora general de les Fundacions, una responsabilitat que assumirà a partir del dia 21 de juliol del 2025. Montserrat Torices és llicenciada en Filologia Hispànica, té un postgrau superior en lideratge i coaching i fa 34 anys que està vinculada als Maristes. Ha ocupat diferents responsabilitats a la institució, entre les quals destaquen la direcció dels col·legis Maristes Champagnat de Badalona i Maristes La Immaculada de Barcelona. El darrer curs ha estat comissionada de nous projectes de les entitats maristes a Catalunya. El Patronat ha valorat de la nova direcció l’experiència, el coneixement del món educatiu i de la institució, i la identificació amb els valors maristes. Agraïm a Montserrat Torices la seva disponibilitat i el seu compromís amb el projecte marista a Catalunya. Així mateix, un agraïment també per a Loreto Rubio, directora general durant el darrer trienni, per la feina duta a terme. Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-14T15:09:30+00:00",
+          "indexed_at": "2025-09-26T09:39:54.537131+00:00",
+          "published_at_ts": 1752505770,
+          "indexed_at_ts": 1758879594
+        }
+      },
+      {
+        "id": "afbfee7a-1d99-7c60-c88f-9a741b432010",
+        "vector_score": 0.24363127,
+        "recency_weight": 0.16944408406217443,
+        "combined_score": 0.21766575492176105,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/processo-magna-mariana-a-huelva-amb-la-participacio-de-maria-auxiliadora/",
+          "content": "Processó Magna Mariana a Huelva amb la participació de Maria Auxiliadora\n\nLa ciutat de Huelva va viure durant la jornada del 20 de setembre de 2025 un esdeveniment històric amb la celebració de la processó Magna Mariana, emmarcada l'any Jubilar.\n\nVa ser una jornada de fe i devoció en la qual nombroses germandats i confraries van retre culte públic a la Mare de Déu pels carrers de Huelva. Aquest esdeveniment religiós va reunir milers de devots de diverses localitats i províncies andaluses i va tenir com a seu la capital de Huelva amb la devoció mariana en l’epicentre. Entre elles va estar la imatge de Maria Auxiliadora de La Palma del Condado, coronada des del passat 5 d’octubre de 2024 com a mostra de l’afecte d’aquesta terra a la Verge de Don Bosco. Des del 9 de novembre de 1961, quan la talla de Carlos Bravo Nogales arriba a la Palma procedent del Santuari de Consolació d’Utrera, el culte a Maria Auxiliadora a La Palma del Condado es va potenciar exponencialment amb l’arribada de la comunitat salesiana a la ciutat. La Palma va caminar en el cor de Huelva. Entre el murmuri d’oracions i l’aroma de l’encens, va avançar Maria Auxiliadora pels carrers de Huelva en la Magna Mariana Jubilar. El seu pas serè va ser reflex de fe, i cada mirada que es va alçar cap a Ella va portar amb si l’orgull d’un poble que batega unit en devoció. ”La Palma va caminar al costat de la seva Mare Auxiliadora, que va il·luminar amb la seva presència aquesta jornada històrica. Que la seva presència ens sostingui i la seva mirada ens ompli d’esperança”, compartien els devots durant aquesta jornada. ”L’Any Jubilar de l’Esperança ens ha regalat un dia històric ple de fe, devoció i emocions que quedaran gravades per sempre en el cor de La Palma i de Huelva. Un poble unit entorn de Maria, amb les seves devocions, vivint intensament aquest regal d’esperança i gràcia”.",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:40:03.418214+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879603
+        }
+      },
+      {
+        "id": "f137bb5a-5c57-91c8-8134-7941ec701ea7",
+        "vector_score": 0.3332284,
+        "recency_weight": 1.847665800672258e-15,
+        "combined_score": 0.21659846000000063,
+        "timestamp": 1752747280,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/tenim-alguna-cosa-celebrar",
+          "content": "Tenim alguna cosa a celebrar?\n\nQuan arriba el moment de valorar el final d’un curs, això sempre suposa l’esforç d’aturar-se a pensar per intentar discernir les fites assolides i els reptes pendents. La dificultat no rau tant en l’exercici memorístic en si mateix, sinó a destriar allò que vols explicar al teu entorn proper. Què els pot resultar més significatiu? Si aquest exercici, a més, coincideix amb el tancament d’un trienni i la revisió del nostre pla dels 1.000 Dies, s’entén que el repte és una mica més exigent. Si hagués de valorar aquests darrers 1.000 dies, en primer lloc voldria subratllar que l’Obra Social Maristes Catalunya ha assolit un punt de maduresa important. Hem crescut en obres, en projectes, en equips i en prestació de serveis, i ho hem fet atenent criteris de qualitat tècnica i eficàcia, eficiència i sostenibilitat en la gestió. En aquest sentit, val la pena destacar que s’han dedicat esforços importants a la reflexió sobre el nostre model d’acció social i a l'organització de l’estructura necessària per poder dur-lo a terme. D'altra banda, també destacaria el pas endavant que hem fet per ser referents en l’àmbit social i educatiu a Catalunya. En el nostre context intern hem coliderat projectes amb la xarxa d’escoles, enriquint-nos mútuament i posant en valor la nostra expertesa professional. En el context extern, hem estat mereixedors de la confiança d’administracions públiques i empreses privades per gestionar projectes d’alt impacte, com ara la coordinació del pla d’abordatge de la pobresa infantil de barris a Lleida, el projecte CODI (Competències Digitals per a la Infància) a tot el territori català o nombrosos projectes formatius amb les Cambres de Comerç, entre d’altres. En tercer lloc, també cal fer èmfasi en el paper central de les persones. Hi ha molta gent que, des de les seves diferents responsabilitats professionals, han acompanyat o acompanyen el bon desenvolupament de la missió institucional. Si bé és evident que els educadors socials (també els treballadors socials, psicòlegs, integradors, inseridors i prospectors laborals...) tenen un paper essencial, i des d’aquí els agraïm profundament el seu servei i l'estima amb què fan la seva feina, no hem d’oblidar l’univers de companys i companyes que ens ajuden a fer possible el somni de Marcel·lí: equips de comunicació, economia, laboral, comptabilitat, arxiu, qualitat, serveis, recepció, riscos laborals, pastoral, cooperació i desenvolupament, lleure, drets dels infants, innovació, formació, informàtica, etc. I també aquells que tenen la màxima responsabilitat en l'àmbit de la governança: des del consell provincial, passant pel patronat fins a arribar a l’Equip Directiu. Donant resposta a la pregunta que introdueix aquest article, m’atreveixo a dir que sí, que tenim moltes coses a celebrar! Sortim, doncs, a celebrar tota la bona tasca feta i, per sobre de tot, celebrem que encara tenim al davant molt bona feina per fer. Raúl García Milán, c oordinador de l'Obra Social Maristes Catalunya Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-17T10:14:40+00:00",
+          "indexed_at": "2025-09-26T09:39:52.547047+00:00",
+          "published_at_ts": 1752747280,
+          "indexed_at_ts": 1758879592
+        }
+      },
+      {
+        "id": "9ec52451-2696-7a10-f2b6-a843ca726a0e",
+        "vector_score": 0.32971507,
+        "recency_weight": 4.071925512124825e-07,
+        "combined_score": 0.21431493801739293,
+        "timestamp": 1756339200,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/ha-mort-el-salvador-el-jesuita-catala-rafael-de-sivatte",
+          "content": "Ha mort a El Salvador el jesuïta català Rafael de Sivatte\n\nAquest dijous 28 d'agost ha mort a El Salvador el jesuïta Rafael de Sivatte. Havia nascut a Barcelona el setembre de 1943 però ha passat els darrers 40 anys a El Salvador, on ha estat professor a la Universidad Centroamericana \"José Simeón Cañas\", la UCA, i ha acompanyat com a sacerdot diverses comunitats parroquials. Rafael de Sivatte, amb una vocació religiosa que sorgeix de la formació cristiana rebuda a la família i de la voluntat de servei als altres, va entrar a la Companyia de Jesús l’any 1960 i es va ordenar sacerdot el 1974. Va estudiar filosofia a Sant Cugat i a Berchmanskolleg (München), i de seguida comença a especialitzar-se en estudis bíblics, passant pel Pontifici Institut Bíblic de Jerusalem i el Pontifici Institut Bíblic de Roma. El doctorat en Teologia el fa a la Universitat Pontificia de Comillas, a Madrid. Als anys 80 va començar a viatjar a El Salvador, on va fer diverses estades per a col·laborar a la UCA. Allà va conviure amb la comunitat jesuïta de la UCA, que li va permetre conèixer i estimar el poble salvadorenc. L’any 1989, l’assassinat dels sis companys jesuïtes i dues treballadores de la universitat, va marcar la seva vida per sempre. Profundament afectat per aquella tragèdia, va tenir clar que el seu lloc en aquell moment era al costat del poble de El Salvador. El febrer de 1990 va ser destinat ja definitivament al país centreamericà i el 1994 es va nacionalitzar salvadorenc. Al llarg d’aquests anys a El Salvador ha combinat l’activitat acadèmica com a professor amb la tasca pastoral i d’acompanyament a comunitats parroquials com a sacerdot jesuïta. Però ha mantingut sempre un estret vincle amb Catalunya, viatjant cada any a Lleida i Barcelona per impartir xerrades i formacions a la Facultat de Teologia de Catalunya, al Centre Borja de Sant Cugat, a Cristianisme i Justícia, o a l’IREL (Institut de Recerca i Estudis Religiosos de Lleida), entre d’altres. Ha ocupat diversos càrrecs acadèmics a la UCA, com a membre de la Junta de Directors i cap del departament de Teologia. Però sempre ha destacat que més que la vida acadèmica, ha viscut veritablement la seva vocació en la transmissió del coneixement i sobretot en el servei a les comunitats i l’acompanyament humà i espiritual a moltes persones. “La meva feina a la universitat no tindria cap sentit sense el contacte que tinc amb les comunitats i amb els més pobres”, havia dit en diverses ocasions. També cal destacar la tasca que ha portat a terme per poder becar els estudis de joves de diverses comunitats rurals de El Salvador. És un projecte que ha materialitzat gràcies al suport rebut per part de comunitats cristianes de Lleida i en col·laboració amb la xarxa educativa Fe y Alegría. Aquestes beques han permès que aquests joves puguin construir un projecte de vida sense desarrelar-se, allunyant-los d’una possible migració forçada o de l’entrada a les maras o bandes violentes. En comunicar aquesta notícia , la Companyia de Jesús a El Salvador expressa el seu agraïment per la vida i entrega del P. Sivatte SJ amb aquestes paraules: \"En tots aquests anys caminant al costat del poble des de la seva missió, va recollir l’estimació d’estudiants, feligresos i companys que el recorden pel seu profund sentit d’amor i pertinença al territori en la seva missió de construcció del Regne\". Autor de diversos articles i publicacions, podem destacar Dios camina con los pobres. Introducción al Antiguo y Nuevo Testamento, UCA Editores, San Salvador, 1997 o La Biblia y el mundo de los pobres y excluidos, Centro Monseñor Romero, San Salvador, 2008.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-08-28T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:39:39.932398+00:00",
+          "published_at_ts": 1756339200,
+          "indexed_at_ts": 1758879579
+        }
+      },
+      {
+        "id": "67359ca4-ca22-800d-b65c-ca466710e329",
+        "vector_score": 0.32803753,
+        "recency_weight": 0.0026475638134714754,
+        "combined_score": 0.21415104183471503,
+        "timestamp": 1757980800,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/publicacio-del-segon-volum-sobre-la-historia-dels-jesuites-barcelona",
+          "content": "Publicació del segon volum sobre la història dels jesuïtes a Barcelona\n\nAcaba de veure la llum el segon volum de l’obra dedicada a la presència de la Companyia de Jesús a Barcelona. Aquest nou tom, publicat el 2025, abasta el període comprès entre 1910 i 1970 i ofereix una mirada profunda a aquesta etapa decisiva de la història recent: els anys previs a la proclamació de la Segona República, la dissolució de la Companyia a Espanya, la Guerra Civil, el nacionalcatolicisme i el tardofranquisme. S’hi analitzen els reptes que va viure la comunitat jesuïta en un context social, polític i religiós convuls, marcat per la repressió, la reconstrucció i la redefinició del paper de l’Església en la societat. L’edició impresa del segon volum es pot adquirir a la seu dels Jesuïtes a Catalunya, situada al carrer Roger de Llúria, 13, a Barcelona. Primer volum, ja disponible en línia Aquest volum complementa el primer, que ja està disponible en format digital i que Lluís Permanyer va qualificar en el seu pròleg com una “monografia impecable” sobre el conjunt que formen l’escola, l’església i la residència ubicades al carrer Casp, entre Pau Claris i Roger de Llúria. Aquest primer llibre ens acosta als orígens de la comunitat jesuïta a la ciutat durant el segle XIX: les dificultats per establir-se a Barcelona, els inicis del col·legi, la construcció de l’Església del Sagrat Cor o la creació de les Congregacions Marianes, entre altres fets històrics. L’autor ja està treballant en el tercer volum de l’obra, amb el qual completarà una aportació destacada per a aquells que desitgin conèixer amb detall la trajectòria dels jesuïtes a Barcelona i la seva petjada en la història de la ciutat.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-16T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:39:30.488633+00:00",
+          "published_at_ts": 1757980800,
+          "indexed_at_ts": 1758879570
+        }
+      }
+    ],
+    "context": null
+  }
+}

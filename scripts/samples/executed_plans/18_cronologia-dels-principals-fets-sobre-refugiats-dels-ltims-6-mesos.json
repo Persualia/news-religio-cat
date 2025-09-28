@@ -1,0 +1,469 @@
+{
+  "query": "Cronologia dels principals fets sobre ‘refugiats’ dels últims 6 mesos",
+  "plan": {
+    "intent": "backgrounder",
+    "query": "refugiats",
+    "exact_phrase": false,
+    "topK": 0,
+    "per_site": 0,
+    "filters": {
+      "site": [],
+      "base_url": [],
+      "url": [],
+      "lang": [],
+      "author": [],
+      "article_id": [],
+      "date_from": "2025-03-28",
+      "date_to": "2025-09-28"
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [
+      {
+        "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
+        "vector_score": 0.31701294,
+        "recency_weight": 0.1694477090913554,
+        "combined_score": 0.2653651091819744,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
+          "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+          "site": "salesians",
+          "author": "Confederació Espanyola de Religiosos",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:16Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879496
+        }
+      },
+      {
+        "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
+        "vector_score": 0.2797061,
+        "recency_weight": 0.10674536777033077,
+        "combined_score": 0.2191698437196158,
+        "timestamp": 1758672000,
+        "payload": {
+          "title": "Davant el genocidi a la Franja de Gaza",
+          "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-24T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:04Z",
+          "published_at_ts": 1758672000,
+          "indexed_at_ts": 1758879484
+        }
+      },
+      {
+        "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+        "vector_score": 0.19086552,
+        "recency_weight": 0.1694477090913554,
+        "combined_score": 0.1833692861819744,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:40:00Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879600
+        }
+      },
+      {
+        "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+        "vector_score": 0.16662541,
+        "recency_weight": 0.1694477090913554,
+        "combined_score": 0.16761321468197438,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:20Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
+      },
+      {
+        "id": "c4b6dbd8-8491-97ed-28c0-180f293d2dce",
+        "vector_score": 0.24478891,
+        "recency_weight": 0.0002626772184230656,
+        "combined_score": 0.1592047285264481,
+        "timestamp": 1757548800,
+        "payload": {
+          "title": "El desig de donar la benvinguda a tothom",
+          "url": "https://jesuites.net/ca/noticia/el-desig-de-donar-la-benvinguda-tothom",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-11T00:00:00Z",
+          "indexed_at": "2025-09-26T09:39:34Z",
+          "published_at_ts": 1757548800,
+          "indexed_at_ts": 1758879574
+        }
+      },
+      {
+        "id": "09392261-e4a5-f138-5688-7a8e538641f3",
+        "vector_score": 0.23876785,
+        "recency_weight": 4.506986352627242e-14,
+        "combined_score": 0.15519910250001578,
+        "timestamp": 1753344523,
+        "payload": {
+          "title": "La Travessa 2025: Expedició L’Hermitage",
+          "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-24T08:08:43Z",
+          "indexed_at": "2025-09-26T09:38:14Z",
+          "published_at_ts": 1753344523,
+          "indexed_at_ts": 1758879494
+        }
+      },
+      {
+        "id": "9e8d1d15-c2f5-52e9-8111-f9a8d63ac3e7",
+        "vector_score": 0.22252849,
+        "recency_weight": 0.004202835494769048,
+        "combined_score": 0.14611451092316918,
+        "timestamp": 1758067200,
+        "payload": {
+          "title": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad",
+          "url": "https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-17T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:08Z",
+          "published_at_ts": 1758067200,
+          "indexed_at_ts": 1758879488
+        }
+      },
+      {
+        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
+        "vector_score": 0.13127993,
+        "recency_weight": 0.1694477090913554,
+        "combined_score": 0.1446386526819744,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:40:01Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879601
+        }
+      },
+      {
+        "id": "f4bb4e73-9431-13e0-aa3d-5763870a24a6",
+        "vector_score": 0.21611139,
+        "recency_weight": 1.941239197390441e-14,
+        "combined_score": 0.1404724035000068,
+        "timestamp": 1753187035,
+        "payload": {
+          "title": "Un estiu amb cor marista!",
+          "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-22T12:23:55Z",
+          "indexed_at": "2025-09-26T09:39:50Z",
+          "published_at_ts": 1753187035,
+          "indexed_at_ts": 1758879590
+        }
+      },
+      {
+        "id": "95b5f2e6-d3ea-311c-aa5f-8158cfa7fc4f",
+        "vector_score": 0.1440123,
+        "recency_weight": 0.10674536777033077,
+        "combined_score": 0.13096887371961577,
+        "timestamp": 1758672000,
+        "payload": {
+          "title": "Entre la espera y la esperanza. El Jubileo 2025, una oportunidad",
+          "url": "https://salesianos.info/blog/entre-la-espera-y-la-esperanza-el-jubileo-2025-una-oportunidad/",
+          "site": "salesians",
+          "author": "José Luis Guzón",
+          "published_at": "2025-09-24T00:00:00Z",
+          "indexed_at": "2025-09-26T09:40:06Z",
+          "published_at_ts": 1758672000,
+          "indexed_at_ts": 1758879606
+        }
+      },
+      {
+        "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
+        "vector_score": 0.1002958,
+        "recency_weight": 0.1694477090913554,
+        "combined_score": 0.1244989681819744,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+          "site": "salesians",
+          "author": "Diari de Cadis",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:18Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879498
+        }
+      },
+      {
+        "id": "6bfff01b-1ad1-d870-23b2-dea5ef22bebd",
+        "vector_score": 0.18846425,
+        "recency_weight": 2.8680230125330655e-14,
+        "combined_score": 0.12250176250001003,
+        "timestamp": 1753260010,
+        "payload": {
+          "title": "Viu l'Ecosilenci: una experiència personal de silenci i natura",
+          "url": "https://www.maristes.cat/noticies/viu-lecosilenci-una-experiencia-personal-de-silenci-i-natura",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-23T08:40:10Z",
+          "indexed_at": "2025-09-26T09:39:48Z",
+          "published_at_ts": 1753260010,
+          "indexed_at_ts": 1758879588
+        }
+      },
+      {
+        "id": "1c4b2b17-7831-f084-3724-748367d1b90d",
+        "vector_score": 0.08170981,
+        "recency_weight": 0.1694477090913554,
+        "combined_score": 0.11241807468197437,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Juicio sumarísimo",
+          "url": "https://salesianos.info/blog/juicio-sumarisimo/",
+          "site": "salesians",
+          "author": "Josep Lluís Burguera",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:40:05Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879605
+        }
+      },
+      {
+        "id": "a3b96f0b-8b72-a0cf-b3b9-8bd5f3019270",
+        "vector_score": 0.17071658,
+        "recency_weight": 0.0016678963714114189,
+        "combined_score": 0.111549540729994,
+        "timestamp": 1757894400,
+        "payload": {
+          "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
+          "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-15T00:00:00Z",
+          "indexed_at": "2025-09-26T09:39:32Z",
+          "published_at_ts": 1757894400,
+          "indexed_at_ts": 1758879572
+        }
+      },
+      {
+        "id": "4dd112f5-2f72-187a-6dc3-bfba87818f42",
+        "vector_score": 0.17022832,
+        "recency_weight": 4.770776775197748e-13,
+        "combined_score": 0.11064840800016697,
+        "timestamp": 1753785680,
+        "payload": {
+          "title": "El Camaleó es fa un lloc a l'Arxiu Històric Ciutat de Badalona",
+          "url": "https://www.maristes.cat/noticies/el-camaleo-es-fa-un-lloc-larxiu-historic-ciutat-de-badalona",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-29T10:41:20Z",
+          "indexed_at": "2025-09-26T09:38:12Z",
+          "published_at_ts": 1753785680,
+          "indexed_at_ts": 1758879492
+        }
+      },
+      {
+        "id": "4319952d-4f6a-74fc-a115-b1368e4ed1ec",
+        "vector_score": 0.16076595,
+        "recency_weight": 0.0002626772184230656,
+        "combined_score": 0.10458980452644806,
+        "timestamp": 1757548800,
+        "payload": {
+          "title": "Celebració de Sant Pere Claver a Verdú",
+          "url": "https://jesuites.net/ca/noticia/celebracio-de-sant-pere-claver-verdu",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-11T00:00:00Z",
+          "indexed_at": "2025-09-26T09:39:36Z",
+          "published_at_ts": 1757548800,
+          "indexed_at_ts": 1758879576
+        }
+      },
+      {
+        "id": "28443df6-da99-37c1-efc0-d32d80274ee8",
+        "vector_score": 0.1566546,
+        "recency_weight": 3.2794975787269475e-14,
+        "combined_score": 0.10182549000001148,
+        "timestamp": 1753285077,
+        "payload": {
+          "title": "Trobada d'equips directius a les Avellanes: celebrem!",
+          "url": "https://www.maristes.cat/noticies/trobada-dequips-directius-les-avellanes-celebrem",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-23T15:37:57Z",
+          "indexed_at": "2025-09-26T09:39:46Z",
+          "published_at_ts": 1753285077,
+          "indexed_at_ts": 1758879586
+        }
+      },
+      {
+        "id": "0c217ff1-8862-1b02-38d4-86fcca094ece",
+        "vector_score": 0.14073741,
+        "recency_weight": 0.026686341942582698,
+        "combined_score": 0.10081953617990395,
+        "timestamp": 1758412800,
+        "payload": {
+          "title": "El Provincial presenta a Catalunya el nou Projecte Apostòlic",
+          "url": "https://jesuites.net/ca/noticia/el-provincial-presenta-catalunya-el-nou-projecte-apostolic",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-21T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:06Z",
+          "published_at_ts": 1758412800,
+          "indexed_at_ts": 1758879486
+        }
+      },
+      {
+        "id": "364281c2-a95d-23e8-69f3-b1d71916fab9",
+        "vector_score": 0.15015148,
+        "recency_weight": 0.00016547627840952667,
+        "combined_score": 0.09765637869744334,
+        "timestamp": 1757462400,
+        "payload": {
+          "title": "Emotiva ofrena floral a l'Ermita de la Mare de Déu de Bellvitge",
+          "url": "https://jesuites.net/ca/noticia/emotiva-ofrena-floral-lermita-de-la-mare-de-deu-de-bellvitge",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-10T00:00:00Z",
+          "indexed_at": "2025-09-26T09:39:38Z",
+          "published_at_ts": 1757462400,
+          "indexed_at_ts": 1758879578
+        }
+      },
+      {
+        "id": "e559aaba-80c8-30f7-0738-ad3a53f263e7",
+        "vector_score": 0.14210351,
+        "recency_weight": 4.0720126255161625e-07,
+        "combined_score": 0.09236742402044189,
+        "timestamp": 1756339200,
+        "payload": {
+          "title": "Ha mort a El Salvador el jesuïta català Rafael de Sivatte",
+          "url": "https://jesuites.net/ca/noticia/ha-mort-el-salvador-el-jesuita-catala-rafael-de-sivatte",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-08-28T00:00:00Z",
+          "indexed_at": "2025-09-26T09:39:39Z",
+          "published_at_ts": 1756339200,
+          "indexed_at_ts": 1758879579
+        }
+      }
+    ],
+    "context": {
+      "total_chunks": 3,
+      "total_tokens": 1694,
+      "unique_sites": [
+        "jesuites",
+        "maristes",
+        "salesians"
+      ],
+      "articles": [
+        {
+          "article_id": "def8a06c7d64e6f89ec5860cbb265a9b1da31f04",
+          "site": "salesians",
+          "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+          "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
+          "description": "La Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.",
+          "author": "Confederació Espanyola de Religiosos",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at": "2025-09-26T09:38:16.783189+00:00",
+          "indexed_at_ts": 1758879496,
+          "best_score": 0.2653651091819744,
+          "best_recency": 0.1694477090913554,
+          "chunks": [
+            {
+              "chunk_id": "92660c4b-154e-07d6-6fe4-54341025cf6c",
+              "chunk_ix": 0,
+              "score": 0.2653651091819744,
+              "vector_score": 0.31701294,
+              "recency_weight": 0.1694477090913554,
+              "token_count": 641,
+              "content": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza\n\nLa Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.\n\nDavant el genocidi que es viu en la Franja de Gaza, els consagrats i consagrades d’Espanya elevem la nostra veu per a exigir el cessament immediat d’accions que provoquin fam, destrucció i mort de civils innocents, i demandar l’accés sense restriccions de l’ajuda humanitària. “No puc veure morir al nen” (Gn 21,15). Aquest crit antic, pronunciat per Agar en el desert, ressona avui amb força entre moltes mares i pares del món. Les informacions i testimoniatges que arriben des de Gaza descriuen escenes de fam, col·lapse sanitari, desplaçament massiu i víctimes entre bebès, nens i nenes, dones embarassades, ancians i persones vulnerables. Davant aquesta realitat, el deure moral i humanitari és clar: protegir la vida, garantir l’assistència urgent i respectar el Dret Internacional Humanitari. Denunciem la imposició de restriccions que impedeixen l’arribada d’aliments, medicines i combustible, i condemnem els atacs indiscriminats que han causat destrucció, morts i mutilacions entre la població civil. Demanem a les autoritats competents que actuïn amb determinació per a obrir corredors humanitaris segurs i garantir la protecció de periodistes, personal sanitari, cooperants i població civil. Cuidar al més feble i defensar la vida No es tracta de prendre postura partidista, sinó de recordar l’obligació bàsica de tota comunitat humana: cuidar al més feble i defensar la vida. Per això secundem i ens sumem als comunicats i crides de diferents institucions religioses, organitzacions humanitàries i organismes internacionals que exigeixen el respecte del Dret Internacional i l’entrada d’ajuda a tota la població de Gaza. Exigim, a més: Que es permeti immediatament l’entrada de tota l’ajuda humanitària necessària per a evitar morts per inanició i col·lapse sanitari. El cessament de bombardejos sobre zones civils i la protecció d’instal·lacions sanitàries, religioses i de refugiats. El respecte i la plena aplicació del Dret Internacional Humanitari i dels drets humans. Que la comunitat internacional redobli els seus esforços diplomàtics i humanitaris per a posar fi al sofriment i avançar cap a solucions justes i duradores. Com recull l’Escriptura —“Què et passa, Agar? No temis, perquè Déu ha sentit la veu del noi…” (Gn 21,17-18)— fem una crida a la compassió i a l’acció: que les nostres mans es converteixin en auxili efectiu i no en indiferència.",
+              "site": "salesians",
+              "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+              "published_at": "2025-09-25T00:00:00+00:00",
+              "published_at_ts": 1758758400,
+              "indexed_at": "2025-09-26T09:38:16.783189+00:00",
+              "indexed_at_ts": 1758879496
+            }
+          ]
+        },
+        {
+          "article_id": "cd74ec2b3d3a2d1a2f71099ac50667dfa206ac85",
+          "site": "jesuites",
+          "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+          "title": "Davant el genocidi a la Franja de Gaza",
+          "description": null,
+          "author": null,
+          "published_at": "2025-09-24T00:00:00+00:00",
+          "published_at_ts": 1758672000,
+          "indexed_at": "2025-09-26T09:38:04.234183+00:00",
+          "indexed_at_ts": 1758879484,
+          "best_score": 0.2191698437196158,
+          "best_recency": 0.10674536777033077,
+          "chunks": [
+            {
+              "chunk_id": "daecb211-2830-d6ab-33f9-bbf7a8a4f1ff",
+              "chunk_ix": 0,
+              "score": 0.2191698437196158,
+              "vector_score": 0.2797061,
+              "recency_weight": 0.10674536777033077,
+              "token_count": 763,
+              "content": "Davant el genocidi a la Franja de Gaza\n\nEls Jesuïtes a Catalunya, amb la resta d’instituts i congregacions de vida religiosa que formem part de la Unió de Religiosos de Catalunya (URC), reiterem la denúncia del genocidi a Gaza, reclamem l’entrada sense restriccions d’ajuda humanitària i el respecte al Dret Humanitari Internacional, i fem una crida a la participació activa a les diverses accions convocades els propers dies. En el comunicat publicat aquest dimarts 23 de setembre, “la Unió de Religiosos de Catalunya (URC) vol expressar, una vegada més, el seu profund dolor i compromís davant la tragèdia humanitària que continua colpejant la Franja de Gaza. El passat 13 de juny, des de la nostra Assemblea, ja vam fer públic el nostre posicionament amb el comunicat “No al genocidi, Sí a la Pau” , on denunciàvem amb fermesa la violència, la destrucció i la desprotecció de les persones més vulnerables, especialment els infants. Reiterem avui aquell clam, que és més vigent que mai: no al genocidi, sí a la pau”. Ens sentim cridats a fer costat als qui pateixen i a denunciar amb claredat qualsevol forma de violència o opressió. “En aquesta mateixa línia”, continua el text, “acollim i ens fem nostres les paraules de la CONFER , la Conferència Espanyola de Religiosos, que recentment ha reclamat l’entrada immediata d’ajuda humanitària a Gaza i el respecte al Dret Internacional Humanitari. Davant les imatges de fam, hospitals col·lapsats, nens i nenes mutilats, mares desesperades i comunitats trencades pel dolor, no podem restar indiferents. Ens unim a totes les veus que, des de la fe i el compromís evangèlic, exigeixen l’alto el foc, la protecció de la població civil i l’obertura de corredors humanitaris”. Feliços els qui treballen per la pau, perquè seran anomenats fills de Déu (Mt 5,9). Aquesta és la nostra esperança, i també el nostre compromís. Accions per Gaza Per tot això ens adherim i animem a tothom a participar a l’acte “Cristians contra el genocidi de Gaza” , convocat per la Xarxa d’Entitats Cristianes, que aplega un ampli ventall d’organitzacions eclesials i laiques, i que tindrà lloc el proper dilluns 29 de setembre a les 19h a l’Església de Santa Anna de Barcelona. Serà un espai de denúncia, de pregària i de comunió amb les víctimes d’aquesta barbàrie. També us convidem a participar a la manifestació del proper 4 d’octubre , a les 12h, als Jardinets de Gràcia (Barcelona) amb el lema ‘Resistint al colonialisme, genocidi, apartheid i ocupació. Fi al comerç d’armes i a les relacions amb Israel’ convocada per diverses organitzacions, com la Comunitat Palestina de Catalunya, Prou Complicitat amb Israel, Plataforma Aturem les Guerres o Embargament d’Armes Ja! Junt amb aquesta crida a unir-nos a altres persones i col·lectius, des de la Companyia de Jesús a Catalunya, també animem a les nostres institucions: escoles, universitats, comunitats cristianes, entitats social,... a portar a terme accions per tal d’expressar de forma comunitària la denúncia de la violència i la nostra solidaritat amb les víctimes.",
+              "site": "jesuites",
+              "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+              "published_at": "2025-09-24T00:00:00+00:00",
+              "published_at_ts": 1758672000,
+              "indexed_at": "2025-09-26T09:38:04.234183+00:00",
+              "indexed_at_ts": 1758879484
+            }
+          ]
+        },
+        {
+          "article_id": "e6f01917dd9556c8039c2a4d73d69c53e44fdd7b",
+          "site": "maristes",
+          "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
+          "title": "La Travessa 2025: Expedició L’Hermitage",
+          "description": null,
+          "author": null,
+          "published_at": "2025-07-24T08:08:43+00:00",
+          "published_at_ts": 1753344523,
+          "indexed_at": "2025-09-26T09:38:14.399508+00:00",
+          "indexed_at_ts": 1758879494,
+          "best_score": 0.15519910250001578,
+          "best_recency": 4.506986352627242e-14,
+          "chunks": [
+            {
+              "chunk_id": "81a1ad25-3068-7d47-5561-573b6f9abbb8",
+              "chunk_ix": 0,
+              "score": 0.15519910250001578,
+              "vector_score": 0.23876785,
+              "recency_weight": 4.506986352627242e-14,
+              "token_count": 290,
+              "content": "La Travessa 2025: Expedició L’Hermitage\n\nDesprés de la bona acollida de l’any passat, entre el 14 i el 18 de juliol hem viscut una nova edició de La Travessa , aquest cop seguint els camins al voltant de la casa de L’Hermitage, enguany que celebrem el bicentenari de la seva construcció. La Montse Francisco, de Maristes Girona , ens comparteix el seu testimoni: Riures i vida compartida a mans plenes M’hi vaig apuntar sense saber ben bé on em ficava. La Travessa: de què va? Va d’ADN marista! Per obtenir aquest codi només calen dos elements, i són a l’abast de tothom: humor i senzillesa. A L’Hermitage durant cinc dies ens hem despullat de l’oficialitat de les nostres professions i vocacions i cadascú ha triat la muda que li era més còmoda. Caminant entre boscos esplèndids, i tot descobrint espais recuperats pels que continuen mantenint encesa la flama de Marcel·lí a França, els dies s’han escolat entre rialles, converses franques i moments hilarants. Una experiència que ha amalgamat divuit ànimes, que marxen havent rebut el que assedega les ganes de viure: la generositat dels altres. La travessa a L’Hermitage ha estat un regal. Gràcies! Compartir",
+              "site": "maristes",
+              "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
+              "published_at": "2025-07-24T08:08:43+00:00",
+              "published_at_ts": 1753344523,
+              "indexed_at": "2025-09-26T09:38:14.399508+00:00",
+              "indexed_at_ts": 1758879494
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

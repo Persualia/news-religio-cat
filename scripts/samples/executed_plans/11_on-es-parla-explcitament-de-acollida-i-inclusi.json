@@ -1,0 +1,196 @@
+{
+  "query": "On es parla explícitament de ‘acollida’ i ‘inclusió’",
+  "plan": {
+    "intent": "search_chunks",
+    "query": "acollida inclusió",
+    "exact_phrase": false,
+    "topK": 0,
+    "per_site": 0,
+    "filters": {
+      "site": [],
+      "base_url": [],
+      "url": [],
+      "lang": [],
+      "author": [],
+      "article_id": [],
+      "date_from": "",
+      "date_to": ""
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [
+      {
+        "id": "cfb591c0-26ff-a037-0198-291346b239e8",
+        "vector_score": 0.4318182,
+        "recency_weight": 0.16945133419808905,
+        "combined_score": 0.3399897969693312,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "content": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana. En cada escola, plataforma social, centre juvenil i obra pastoral, els Salesians treballem per garantir espais segurs, on cada nen, nena, adolescent i jove pugui créixer en confiança i plenitud. En aquesta línia, la Coordinadora Estatal de Plataformes Socials Salesianes (CEPSS) va participar en representació de la família salesiana en la jornada #”Hogarizar”: 10 anys de transformació del sistema de protecció de la infància: assoliments i reptes, organitzada per la Plataforma d’Infància (POI). La trobada va servir per a reflexionar sobre el camí recorregut des de l’aprovació de la Llei 26/2015 i els desafiaments pendents per a fer plenament efectiva la Llei orgànica de Protecció Integral a la Infància i l’Adolescència enfront de la Violència (LOPIVI). Una mirada de futur Durant la jornada, representants institucionals, acadèmics i socials van posar en relleu els avanços reeixits en aquesta dècada, així com la urgència de continuar enfortint la participació infantil, l’acompanyament a les famílies i la coordinació dels diferents sistemes de protecció. Es va subratllar també la importància que la infància estigui sempre en el centre, més enllà de colors polítics o realitats territorials. Un compromís salesià compartit La presència de CEPSS en aquesta trobada reforça el compromís de totes les obres salesianes amb la creació d’una cultura de protecció que travessa cada acció educativa i pastoral. Totes les entitats membre de la Coordinadora compten amb la certificació UNEIX 0070:2022 d’entorns segurs per a la infància, que avala que les nostres polítiques, protocols i canals de denúncia compleixen amb els estàndards més exigents en la matèria. Aquest compromís comú ens convida a seguir #”hogaritzant” cada espai educatiu salesià: fer d’ells un lloc de cura, confiança i seguretat, on la infància i la joventut puguin créixer, participar i somiar un futur amb esperança. Et convidem a veure el vídeo complet de la jornada aquí: Jornada #Hogarizar – 10 anys de transformació del sistema de protecció de la infància.",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:40:00.059797+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879600
+        }
+      },
+      {
+        "id": "204b43da-a001-4b15-93e9-d4460f5d33a2",
+        "vector_score": 0.3556459,
+        "recency_weight": 0.16945133419808905,
+        "combined_score": 0.2904778019693312,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "content": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe\n\nCompromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora\n\nEl passat cap de setmana, prop de 80 animadors de les presències de Salesians i Salesianes de Canàries van participar en una enriquidora trobada formativa, emmarcat en l’Itinerari d’Educació en la Fe (IEF). Durant la jornada del dissabte, els assistents van aprofundir en la reflexió sobre l’acció educativa dels centres juvenils i el valor del Sistema Preventiu com a pilar de l’acompanyament pastoral. La formació es va completar a la tarda amb dos tallers pràctics que van oferir eines concretes per a l’animació pastoral en les seves realitats locals. A més, es van cuidar especialment els moments celebratius, que van ajudar a interioritzar el viscut: una adoració al Santíssim el dissabte a la nit i l’Eucaristia compartida el diumenge van posar el fermall espiritual a la trobada. Com a part de la programació, també es van presentar les campanyes pastorals de les dues inspectories: Protagonistes de la història, per part dels Salesians, i Confia, de les Salesianes, marcant un horitzó pastoral comú per a aquest nou curs. Programació local i pròxims trobades a l’octubre A nivell inspectorial, aquestes setmanes s’està avançant en la programació local de l’Itinerari d’Educació en la Fe, peça clau del projecte pastoral salesià. El mes d’octubre arribarà carregat de noves propostes formatives: a Catalunya, la Comunitat Valenciana i la Regió de Múrcia se celebraran jornades per a animadors de l’IEF; a Extremadura tindrà lloc una trobada específica de formació; i a Andalusia s’iniciaran les primeres convivències dirigides als nivells inicials de l’itinerari infantil. Tot això demostra el compromís conjunt d’animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora, fidel a l’estil de Don Bosco i de Mare Mazzarello.",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:20.135275+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
+      },
+      {
+        "id": "50917f9a-7704-735f-c69c-b27c01bc5c70",
+        "vector_score": 0.34093636,
+        "recency_weight": 0.16945133419808905,
+        "combined_score": 0.2809166009693312,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "content": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife\n\nEl projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.\n\nLa Universitat de La Llacuna i el Cabildo de Tenerife van fer lliurament dels III Premis d’Aprenentatge-Servei, on el nostre centre, Salesians La Orotava, juntament amb l’ONG Bosco Global, la Universitat de La Llacuna (ULL) i Iriarte Centre Universitari Internacional va rebre el primer premi gràcies al projecte “Mans joves, cors compromesos”. La iniciativa destaca per la seva aposta per crear consciència i compromís social entre l’alumnat, fomentant la convivència i la igualtat entre cultures. Un projecte per a joves amb mirada transformadora El projecte ha estat desenvolupat per alumnat universitari de la ULL i de la Universitat Iriarte, en col·laboració amb Salesians La Orotava i Bosco Global. El seu objectiu principal ha estat formar a joves com a agents de canvi, capaços de compartir l’après amb tota la societat i d’impulsar una convivència respectuosa i solidària. Temes que construeixen una societat millor Al llarg del treball s’han abordat temes clau com: Conèixer millor l’adolescència i la joventut. Despertar la consciència social i el compromís ciutadà. Promoure la igualtat de gènere. Fomentar la convivència en la diversitat. Cuidar el planeta a través de l’educació ambiental. Apostar per una societat pacífica i justa, amb institucions democràtiques i inclusives. Aprenentatge-Servei: educar fent La metodologia emprada, l’Aprenentatge-Servei (ApS), combina l’adquisició de coneixements amb el compromís social. D’aquesta manera, els estudiants no només aprenen, sinó que també aporten valor a la comunitat, generant un impacte real en el seu entorn més pròxim. Un reconeixement que ens omple d’orgull Des de Salesians LaOrotava celebrem amb gran satisfacció aquest reconeixement, que suposa un impuls per a continuar treballant en projectes que reforcin l’educació en valors, la solidaritat i la convivència entre cultures.",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:40:01.741618+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879601
+        }
+      },
+      {
+        "id": "92660c4b-154e-07d6-6fe4-54341025cf6c",
+        "vector_score": 0.33534086,
+        "recency_weight": 0.16945133419808905,
+        "combined_score": 0.2772795259693312,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+          "content": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza\n\nLa Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.\n\nDavant el genocidi que es viu en la Franja de Gaza, els consagrats i consagrades d’Espanya elevem la nostra veu per a exigir el cessament immediat d’accions que provoquin fam, destrucció i mort de civils innocents, i demandar l’accés sense restriccions de l’ajuda humanitària. “No puc veure morir al nen” (Gn 21,15). Aquest crit antic, pronunciat per Agar en el desert, ressona avui amb força entre moltes mares i pares del món. Les informacions i testimoniatges que arriben des de Gaza descriuen escenes de fam, col·lapse sanitari, desplaçament massiu i víctimes entre bebès, nens i nenes, dones embarassades, ancians i persones vulnerables. Davant aquesta realitat, el deure moral i humanitari és clar: protegir la vida, garantir l’assistència urgent i respectar el Dret Internacional Humanitari. Denunciem la imposició de restriccions que impedeixen l’arribada d’aliments, medicines i combustible, i condemnem els atacs indiscriminats que han causat destrucció, morts i mutilacions entre la població civil. Demanem a les autoritats competents que actuïn amb determinació per a obrir corredors humanitaris segurs i garantir la protecció de periodistes, personal sanitari, cooperants i població civil. Cuidar al més feble i defensar la vida No es tracta de prendre postura partidista, sinó de recordar l’obligació bàsica de tota comunitat humana: cuidar al més feble i defensar la vida. Per això secundem i ens sumem als comunicats i crides de diferents institucions religioses, organitzacions humanitàries i organismes internacionals que exigeixen el respecte del Dret Internacional i l’entrada d’ajuda a tota la població de Gaza. Exigim, a més: Que es permeti immediatament l’entrada de tota l’ajuda humanitària necessària per a evitar morts per inanició i col·lapse sanitari. El cessament de bombardejos sobre zones civils i la protecció d’instal·lacions sanitàries, religioses i de refugiats. El respecte i la plena aplicació del Dret Internacional Humanitari i dels drets humans. Que la comunitat internacional redobli els seus esforços diplomàtics i humanitaris per a posar fi al sofriment i avançar cap a solucions justes i duradores. Com recull l’Escriptura —“Què et passa, Agar? No temis, perquè Déu ha sentit la veu del noi…” (Gn 21,17-18)— fem una crida a la compassió i a l’acció: que les nostres mans es converteixin en auxili efectiu i no en indiferència.",
+          "site": "salesians",
+          "author": "Confederació Espanyola de Religiosos",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:16.783189+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879496
+        }
+      },
+      {
+        "id": "5a8af261-2b9d-f85b-12cc-2670570499fa",
+        "vector_score": 0.40552685,
+        "recency_weight": 0.02668691286111792,
+        "combined_score": 0.27293287200139127,
+        "timestamp": 1758412800,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/el-provincial-presenta-catalunya-el-nou-projecte-apostolic",
+          "content": "El Provincial presenta a Catalunya el nou Projecte Apostòlic\n\nAquest divendres 19 de setembre, el Provincial de la Companyia de Jesús a Espanya, Enric Puiggròs, va presentar el nou Projecte Apostòlic de la Província davant els membres del Consell de la Plataforma Apostòlica de Catalunya. L’acte, celebrat al centre Borja de Sant Cugat del Vallès, va aplegar unes quaranta persones responsables de les diferents obres de la Companyia a Catalunya, juntament amb altres participants convidats per a l’ocasió. Puiggròs va estar acompanyat de Benigno Álvarez, que des d’aquest curs exerceix el càrrec de soci, principal assistent del Provincial. Un procés de discerniment comunitari El Projecte Apostòlic és fruit d’un ampli procés de discerniment comunitari iniciat al setembre de 2024. Al llarg del curs passat s’hi han implicat jesuïtes, laiques i laics vinculats a les institucions de la Companyia, a través de consultes i trobades amb superiors locals, directors d’obres, delegats de sectors i plataformes apostòliques. També la Trobada de Província va estar dedicada a avançar en la seva elaboració. L’objectiu no és fer un catàleg exhaustiu de totes les activitats de la Companyia, sinó identificar els accents missionals prioritaris que han de guiar la vida i la missió dels jesuïtes a Espanya en els propers cinc anys. Quatre opcions fonamentals El document es vertebra al voltant de quatre opcions bàsiques: Ajudar a l’encontre amb Déu i a una fe que promogui la justícia, a través de la espiritualitat ignasiana i el testimoni comunitari. Renovar el compromís per la justícia socioambiental, nascuda de la fe i concretada en caminar al costat de les persones excloses i empobrides. Enfortir la col·laboració en la missió, tot aprofundint en les implicacions d’una Església sinodal, amb la participació activa de jesuïtes i laics. Discernir amb realisme les presències, estructures i mitjans apostòlics, amb llibertat i obertura a la novetat de Déu. A més, el Projecte recull els trets essencials de la tradició ignasiana: discerniment, col·laboració, missió compartida i recerca del “major bé” en cada context. Com a novetat, inclou una secció específica amb orientacions per a la vida religiosa dins la Companyia. Una dinàmica que empeny Durant la presentació, Enric Puiggròs va subratllar que el projecte, lluny de ser un corsé que ens apreti, és un instrument que recull allò que nosaltres mateixos hem identificat com a important. “L’hem d’entendre com una dinàmica que ens estira, que ens empeny”. El Provincial va destacar també la importància de la intersectorialitat (escoles, universitats, centres socials i pastorals treballant plegats) com a element clau per fer possible el Projecte, així com la necessitat d’arrelament local: “Les instàncies locals s’han de mobilitzar. Només es pot portar a terme des de llocs concrets”. Entre els elements transversals, es va remarcar la formació com a clau de la transformació personal i comunitària, el binomi fe-justícia com a nucli de l’evangeli i la missió, i la flexibilitat de les estructures com a mitjans al servei de la missió. Agraïment i esperança Després d’una estona de reflexió i treball en grups, els participants van tenir l’oportunitat de dialogar amb el Provincial. Les aportacions van coincidir a expressar agraïment i esperança per tot el que pot obrir aquest nou Projecte Apostòlic, percebut com una eina que ens fa sortir de l’àmbit directe de la nostra acció quotidiana, però que ens donarà un nou impuls i ens ajudarà a desenvolupar millor la nostra missió. Aquesta trobada del Consell de la Plataforma s’emmarca en les reunions regulars que permeten que les diverses iniciatives de la Companyia de Jesús a Catalunya treballin més conjuntament. A mig matí, a l’estona del descans, els participants van poder visitar el nou projecte d’hort, impulsat per la fundació Manresa que treballa iniciatives d’economia social i alguns membres del consell van poder endur-se les primeres cistelles de producte ecològic. Una iniciativa que és una concreció del compromís de la Companyia de Jesús amb l’ecologia integral.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-21T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:06.086686+00:00",
+          "published_at_ts": 1758412800,
+          "indexed_at_ts": 1758879486
+        }
+      },
+      {
+        "id": "dc1018cf-e05a-edd5-f0c7-4fcf7aa05386",
+        "vector_score": 0.32175776,
+        "recency_weight": 0.16945133419808905,
+        "combined_score": 0.2684505109693312,
+        "timestamp": 1758758400,
+        "payload": {
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+          "content": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval\n\nEl Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral\n\nEl Clúster Marítim Naval de Cadis en el marc de la seva Assemblea General i del seu desè aniversari, ha reconegut al col·legi Sant Ignasi Salesians de Cadis “per la seva contribució a la indústria naval, no sols formant als futurs professionals, sinó col·laborant amb el Clúster i empreses per adaptar la formació a les necessitats del mercat”. Aquest reconeixement s’ha produït en la tercera edició del lliurament de guardons a la contribució de persones i institucions en favor de la indústria naval, que des de l’any passat es diuen Premis José Antonio Rodríguez-Poch a l’impuls del sector naval, en memòria del mort director de Navantia en Badia de Cadis. El Clúster Marítim Naval de Cadis en el marc de la seva Assemblea General i del seu desè aniversari, ha reconegut al col·legi Sant Ignasi Salesians de Cadis “per la seva contribució a la indústria naval, no sols formant els futurs professionals, sinó col·laborant amb el Clúster i empreses a adaptar la formació a les necessitats del mercat”. Aquest reconeixement s’ha produït en la tercera edició del lliurament de guardons a la contribució de persones i institucions en favor de la indústria naval, que des de l’any passat es diuen Premis José Antonio Rodríguez-Poch a l’impuls del sector naval, en memòria del mort director de Navantia en Badia de Cadis.",
+          "site": "salesians",
+          "author": "Diari de Cadis",
+          "published_at": "2025-09-25T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:18.460536+00:00",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879498
+        }
+      },
+      {
+        "id": "b02fa96c-ffbd-82b3-d744-43a9c68fb30a",
+        "vector_score": 0.4115247,
+        "recency_weight": 4.770878839575619e-13,
+        "combined_score": 0.267491055000167,
+        "timestamp": 1753785680,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/el-camaleo-es-fa-un-lloc-larxiu-historic-ciutat-de-badalona",
+          "content": "El Camaleó es fa un lloc a l'Arxiu Històric Ciutat de Badalona\n\nEstem molt contents d’anunciar que la revista El Camaleó s'ha incorporat a l’hemeroteca local de l’Arxiu Històric Ciutat de Badalona (AHBDN). Des d’avui ja s'hi pot trobar i consultar. És un document de l’Espai Polivalent de Badalona, projecte d’atenció comunitària de Càritas Diocesana de Barcelona. Aquesta publicació ha arribat a través de l’equip d’educadors i educadores del projecte, i és fruit de la col·laboració de diverses persones participants vinculades, de manera directa o indirecta, a l’Espai Polivalent. Aquesta implicació ha aportat a la revista una mirada transversal i diversa. El projecte va néixer l’any 2024 amb l’objectiu d’oferir una nova forma d’expressió i aprenentatge al grup de joves que participaven en l’espai. Van ser, de fet, les mateixes integrants del grup que van apostar per la creació d’una revista assumint totes les tasques editorials: des del disseny a la selecció de continguts, passant per la redacció de tota mena d’articles sobre diversos temes com els recursos de Badalona, les nacionalitats que hi conviuen a la ciutat o el turisme. Durant el curs de preparació de la primera edició, que inicialment es va batejar com a Polinoticias, les joves van visitar l’Arxiu Històric de la ciutat per conèixer de primera mà les publicacions que s’hi conserven i inspirar-se per donar forma a la seva proposta editorial. Des d’aleshores ja han vist la llum dues edicions, cadascuna amb el seu propi estil, nom i enfocament i, des d’avui mateix, ja les podeu trobar a l'arxiu corresponent. També hi ha col·laborat l’equip de Comunicació de Maristes Catalunya. Des de l'Espai Polivalent donem les gràcies a l’Arxiu Històric Ciutat de Badalona (AHBDN) per la confiança i la voluntat de compartir aquest projecte! Equip de l'Espai Polivalent de Badalona Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-29T10:41:20+00:00",
+          "indexed_at": "2025-09-26T09:38:12.429224+00:00",
+          "published_at_ts": 1753785680,
+          "indexed_at_ts": 1758879492
+        }
+      },
+      {
+        "id": "8461e884-7731-ce7e-fe28-6ebcb7ee5e74",
+        "vector_score": 0.4008997,
+        "recency_weight": 0.00026268283805025525,
+        "combined_score": 0.26067674399331764,
+        "timestamp": 1757548800,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/el-desig-de-donar-la-benvinguda-tothom",
+          "content": "El desig de donar la benvinguda a tothom\n\nEn el marc del Jubileu de l'Esperança, unes 1.500 persones del col·lectiu LGTBIQ+ d’arreu del món, acompanyats de familiars i amics, es van trobar a Roma entre el 4 i el 7 de setembre. Ho van fer agrupats en unes 70 organitzacions i van poder peregrinar creuant la Porta Santa de Sant Pere del Vaticà el dissabte 6 de setembre de 2025. Entre els objectius d’aquest event, construir comunitat i fer visible l’existència d’aquests grups, que volen compartir la seva experiència de fe i les seves vides. Hi va ser present el jesuïta català Josep Baquer, que compta amb experiència en l’acompanyament de persones LGTBIQ+. Una petita comunitat cristiana italiana, La Tenda di Gionata , havia somiat i treballat a fons perquè aquest moment pogués arribar. Amb ajuda de la GNRC (Global Network of Rainbow Catholics), van organitzar una vetlla de pregària i una eucaristia, totes dues a l’església del Gesù, temple dels jesuïtes a Roma. Moltes comunitats cristianes fa més de deu anys que treballen en xarxa per fer possible aquest moment. Dies abans, el papa Lleó XIV va rebre en audiència James Martin, jesuïta nord-americà que ha treballat activament en l’acompanyament pastoral a persones LGTBIQ+. “Vaig escoltar el mateix missatge del papa Lleó que vaig escoltar del papa Francesc, que és el desig de donar la benvinguda a tothom, incloses les persones LGBTQ”, va dir Martin després de la trobada. L'eucaristia prèvia a la peregrinació, el Gesù, va ser presidida pel bisbe Francesco Savino, vicepresident de la Conferència Espiscopal Italiana. Concelebraven uns trenta sacerdots, entre ells els jesuïtes James Martin, Pino Piva i Josep Baquer. Especialment emotiu va ser l'abraçada de Savino a James i Pino, i la seva homilia va ser interrompuda en dues ocasions pels aplaudiments dels fidels. El bisbe Savino va verbalitzar que havia rebut la bendició del sant Pare per oficiar la missa per als pelegrins LGTBIQ+. Des d'Espanya, hi van ser presents les comunitats cristianes LGBT Crismhom (Madrid) i Ichthys (Sevilla), a les quals es van unir uns 35 membres de CVX Espanya procedents de diverses ciutats. El testimoni de fe de les persones LGTBIQ+ Apropar-nos al testimoni de fe de les persones LGTBIQ+ ens mostra un camí recorregut amb sofriment i conflicte, però també amb resistència i aliances. En aquest línia, el centre d’estudis Cristianisme i Justícia va publicar el passat mes de maig el quadern Testimonis d’un Déu que no estranya . En ell, sis persones comparteixen amb generositat les seves històries de vida.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-11T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:39:34.228425+00:00",
+          "published_at_ts": 1757548800,
+          "indexed_at_ts": 1758879574
+        }
+      },
+      {
+        "id": "bd197d7f-a0c5-452b-efb6-d7a7a77260db",
+        "vector_score": 0.39852065,
+        "recency_weight": 0.004202925408804085,
+        "combined_score": 0.2605094463930814,
+        "timestamp": 1758067200,
+        "payload": {
+          "url": "https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la",
+          "content": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad\n\nAquest dimarts 16 de setembre, la seu de la Companyia de Jesús a Barcelona ha acollit la presentació de l’Informe Vermell de l’ONG jesuïta Entreculturas, en el marc de la campanya La Silla Roja i sota el lema “No podem retrocedir, l’educació és futur” . El document, disponible en línia , posa de manifest l’estancament i el retrocés en matèria educativa a escala mundial , quan falten només cinc anys per a l’assoliment dels Objectius de Desenvolupament Sostenible (ODS). L’informe es focalitza en l’ODS 4, que reclama garantir una educació inclusiva, equitativa i de qualitat per a tothom. Les conclusions són clares: el món no assolirà cap dels compromisos educatius fixats per al 2030 si no hi ha un canvi urgent de rumb. Actualment, hi ha 272 milions de nens i nenes fora de l’escola , i fins i tot si es complissin totes les fites previstes, encara 84 milions quedarien sense escolaritzar en la data límit. La delegada d’Entrecultures Catalunya, Elisabet Besó , va subratllar la urgència de revertir aquesta situació i va destacar, entre d’altres, el dèficit mundial de docents —es necessiten 44 milions de mestres addicionals abans del 2030— i l’impacte negatiu que encara arrossega el sistema educatiu arran de la pandèmia, agreujat per la reducció de la inversió pública en educació a molts països. El testimoni des del Txad: educació en temps d’adversitat La presentació va comptar amb la participació de Ralongar Minitaknde Casimir , membre de Fe y Alegría Txad , que va aportar una mirada en primera persona sobre els reptes que afronta el seu país en matèria educativa. Casimir va descriure un context marcat per la inestabilitat social i política , que amenaça la continuïtat dels projectes educatius i obliga moltes famílies a triar entre portar els fills a l’escola o garantir la supervivència quotidiana. Va posar èmfasi en la manca de recursos bàsics —infraestructures escolars precàries, absència de material educatiu i dèficit de professorat qualificat— que colpeja especialment les comunitats més vulnerables. El representant de Fe y Alegría Txad també va alertar sobre les greus barreres d’accés a l’educació per a les nenes , víctimes de discriminació, matrimonis forçats i violència sexual. Tot i això, va voler transmetre un missatge d’ esperança i resiliència , destacant que la tasca que desenvolupen les escoles de Fe y Alegría al territori dóna fruits i demostra que és possible transformar la realitat. Un dels elements que va remarcar com a clau és la participació activa de les comunitats locals . El ponent va explicar com Fe y Alegría posa al centre als membres de les comunitats, que s’impliquen en la construcció i gestió de l’escola, de tal manera que prenen consciència del valor que té l’educació per al futur dels seus fills i filles. Això permet reduir l’abandonament escolar. Per a Casimir, la visió de Fe y Alegría és clara: l’educació és motor de desenvolupament i una eina per fer front a l’adversitat . Per això va fer una crida als governs i institucions internacionals perquè converteixin l’educació en una autèntica prioritat: “No és només un dret fonamental, sinó també la clau per a la transformació social”.",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-17T00:00:00+00:00",
+          "indexed_at": "2025-09-26T09:38:08.092325+00:00",
+          "published_at_ts": 1758067200,
+          "indexed_at_ts": 1758879488
+        }
+      },
+      {
+        "id": "81a1ad25-3068-7d47-5561-573b6f9abbb8",
+        "vector_score": 0.39877635,
+        "recency_weight": 4.5070827735624286e-14,
+        "combined_score": 0.25920462750001577,
+        "timestamp": 1753344523,
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
+          "content": "La Travessa 2025: Expedició L’Hermitage\n\nDesprés de la bona acollida de l’any passat, entre el 14 i el 18 de juliol hem viscut una nova edició de La Travessa , aquest cop seguint els camins al voltant de la casa de L’Hermitage, enguany que celebrem el bicentenari de la seva construcció. La Montse Francisco, de Maristes Girona , ens comparteix el seu testimoni: Riures i vida compartida a mans plenes M’hi vaig apuntar sense saber ben bé on em ficava. La Travessa: de què va? Va d’ADN marista! Per obtenir aquest codi només calen dos elements, i són a l’abast de tothom: humor i senzillesa. A L’Hermitage durant cinc dies ens hem despullat de l’oficialitat de les nostres professions i vocacions i cadascú ha triat la muda que li era més còmoda. Caminant entre boscos esplèndids, i tot descobrint espais recuperats pels que continuen mantenint encesa la flama de Marcel·lí a França, els dies s’han escolat entre rialles, converses franques i moments hilarants. Una experiència que ha amalgamat divuit ànimes, que marxen havent rebut el que assedega les ganes de viure: la generositat dels altres. La travessa a L’Hermitage ha estat un regal. Gràcies! Compartir",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-24T08:08:43+00:00",
+          "indexed_at": "2025-09-26T09:38:14.399508+00:00",
+          "published_at_ts": 1753344523,
+          "indexed_at_ts": 1758879494
+        }
+      }
+    ],
+    "context": null
+  }
+}

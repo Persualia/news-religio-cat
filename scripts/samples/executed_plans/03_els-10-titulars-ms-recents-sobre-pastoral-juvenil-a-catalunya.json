@@ -1,0 +1,196 @@
+{
+  "query": "Els 10 titulars més recents sobre pastoral juvenil a Catalunya",
+  "plan": {
+    "intent": "search_articles",
+    "query": "pastoral juvenil Catalunya",
+    "exact_phrase": false,
+    "topK": 10,
+    "per_site": 0,
+    "filters": {
+      "site": [],
+      "base_url": [],
+      "url": [],
+      "lang": [],
+      "author": [],
+      "article_id": [],
+      "date_from": "2025-01-01",
+      "date_to": "2025-09-28"
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [
+      {
+        "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+        "vector_score": 0.49066573,
+        "recency_weight": 0.16945495938237706,
+        "combined_score": 0.378241960283832,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:20Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
+      },
+      {
+        "id": "0c217ff1-8862-1b02-38d4-86fcca094ece",
+        "vector_score": 0.5245191,
+        "recency_weight": 0.02668748379186719,
+        "combined_score": 0.35027803432715354,
+        "timestamp": 1758412800,
+        "payload": {
+          "title": "El Provincial presenta a Catalunya el nou Projecte Apostòlic",
+          "url": "https://jesuites.net/ca/noticia/el-provincial-presenta-catalunya-el-nou-projecte-apostolic",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-21T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:06Z",
+          "published_at_ts": 1758412800,
+          "indexed_at_ts": 1758879486
+        }
+      },
+      {
+        "id": "f4bb4e73-9431-13e0-aa3d-5763870a24a6",
+        "vector_score": 0.51078296,
+        "recency_weight": 1.9413222587029735e-14,
+        "combined_score": 0.3320089240000068,
+        "timestamp": 1753187035,
+        "payload": {
+          "title": "Un estiu amb cor marista!",
+          "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-22T12:23:55Z",
+          "indexed_at": "2025-09-26T09:39:50Z",
+          "published_at_ts": 1753187035,
+          "indexed_at_ts": 1758879590
+        }
+      },
+      {
+        "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+        "vector_score": 0.41654626,
+        "recency_weight": 0.16945495938237706,
+        "combined_score": 0.330064304783832,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:40:00Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879600
+        }
+      },
+      {
+        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
+        "vector_score": 0.39240986,
+        "recency_weight": 0.16945495938237706,
+        "combined_score": 0.31437564478383195,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:40:01Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879601
+        }
+      },
+      {
+        "id": "28443df6-da99-37c1-efc0-d32d80274ee8",
+        "vector_score": 0.48146266,
+        "recency_weight": 3.279637901142509e-14,
+        "combined_score": 0.3129507290000115,
+        "timestamp": 1753285077,
+        "payload": {
+          "title": "Trobada d'equips directius a les Avellanes: celebrem!",
+          "url": "https://www.maristes.cat/noticies/trobada-dequips-directius-les-avellanes-celebrem",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-23T15:37:57Z",
+          "indexed_at": "2025-09-26T09:39:46Z",
+          "published_at_ts": 1753285077,
+          "indexed_at_ts": 1758879586
+        }
+      },
+      {
+        "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
+        "vector_score": 0.387262,
+        "recency_weight": 0.10674993516746883,
+        "combined_score": 0.2890827773086141,
+        "timestamp": 1758672000,
+        "payload": {
+          "title": "Davant el genocidi a la Franja de Gaza",
+          "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+          "site": "jesuites",
+          "author": null,
+          "published_at": "2025-09-24T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:04Z",
+          "published_at_ts": 1758672000,
+          "indexed_at_ts": 1758879484
+        }
+      },
+      {
+        "id": "6bfff01b-1ad1-d870-23b2-dea5ef22bebd",
+        "vector_score": 0.44419762,
+        "recency_weight": 2.868145728866094e-14,
+        "combined_score": 0.28872845300001004,
+        "timestamp": 1753260010,
+        "payload": {
+          "title": "Viu l'Ecosilenci: una experiència personal de silenci i natura",
+          "url": "https://www.maristes.cat/noticies/viu-lecosilenci-una-experiencia-personal-de-silenci-i-natura",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-23T08:40:10Z",
+          "indexed_at": "2025-09-26T09:39:48Z",
+          "published_at_ts": 1753260010,
+          "indexed_at_ts": 1758879588
+        }
+      },
+      {
+        "id": "45abed9b-c0aa-2a97-e4d5-4b6bb7f19c1c",
+        "vector_score": 0.42641243,
+        "recency_weight": 2.1789295930395996e-16,
+        "combined_score": 0.27716807950000005,
+        "timestamp": 1752347580,
+        "payload": {
+          "title": "“Un exemple d’amor i servei”: el germà marista Licarió ja és beat",
+          "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-12T19:13:00Z",
+          "indexed_at": "2025-09-26T09:39:56Z",
+          "published_at_ts": 1752347580,
+          "indexed_at_ts": 1758879596
+        }
+      },
+      {
+        "id": "df95bdab-2304-c1ff-b29a-c95914b8521f",
+        "vector_score": 0.42568865,
+        "recency_weight": 1.847784388212936e-15,
+        "combined_score": 0.2766976225000007,
+        "timestamp": 1752747280,
+        "payload": {
+          "title": "Tenim alguna cosa a celebrar?",
+          "url": "https://www.maristes.cat/noticies/tenim-alguna-cosa-celebrar",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-17T10:14:40Z",
+          "indexed_at": "2025-09-26T09:39:52Z",
+          "published_at_ts": 1752747280,
+          "indexed_at_ts": 1758879592
+        }
+      }
+    ],
+    "context": null
+  }
+}

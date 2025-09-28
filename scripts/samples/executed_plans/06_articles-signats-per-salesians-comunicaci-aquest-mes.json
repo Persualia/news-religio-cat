@@ -1,0 +1,64 @@
+{
+  "query": "Articles signats per \"Salesians Comunicació\" aquest mes",
+  "plan": {
+    "intent": "filter_only_articles",
+    "query": "",
+    "exact_phrase": false,
+    "topK": 0,
+    "per_site": 0,
+    "filters": {
+      "site": [
+        "salesians"
+      ],
+      "base_url": [],
+      "url": [],
+      "lang": [],
+      "author": [
+        "Salesians Comunicació"
+      ],
+      "article_id": [],
+      "date_from": "2025-09-01",
+      "date_to": "2025-09-28"
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [
+      {
+        "id": "41014754-2986-5cb1-bdaa-95e297115c4b",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1758758400.0,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Processó Magna Mariana a Huelva amb la participació de Maria Auxiliadora",
+          "url": "https://salesianos.info/blog/processo-magna-mariana-a-huelva-amb-la-participacio-de-maria-auxiliadora/",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:40:03Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879603
+        }
+      },
+      {
+        "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1758758400.0,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:20Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
+      }
+    ],
+    "context": null
+  }
+}

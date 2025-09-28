@@ -1,0 +1,115 @@
+{
+  "query": "Dades clau i percentatges sobre ‘pastoral juvenil’ aquest any; dona enllaços",
+  "plan": {
+    "intent": "search_articles",
+    "query": "pastoral juvenil",
+    "exact_phrase": false,
+    "topK": 5,
+    "per_site": 0,
+    "filters": {
+      "site": [
+        "jesuites",
+        "maristes",
+        "salesians"
+      ],
+      "base_url": [],
+      "url": [],
+      "lang": [],
+      "author": [],
+      "article_id": [],
+      "date_from": "2025-01-01",
+      "date_to": "2025-09-28"
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [
+      {
+        "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+        "vector_score": 0.38979858,
+        "recency_weight": 0.16943955288475399,
+        "combined_score": 0.3126729205096639,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:38:20Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
+      },
+      {
+        "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+        "vector_score": 0.33510426,
+        "recency_weight": 0.16943955288475399,
+        "combined_score": 0.2771216125096639,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:40:00Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879600
+        }
+      },
+      {
+        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
+        "vector_score": 0.29667154,
+        "recency_weight": 0.16943955288475399,
+        "combined_score": 0.25214034450966394,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "published_at": "2025-09-25T00:00:00Z",
+          "indexed_at": "2025-09-26T09:40:01Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879601
+        }
+      },
+      {
+        "id": "f4bb4e73-9431-13e0-aa3d-5763870a24a6",
+        "vector_score": 0.3854051,
+        "recency_weight": 1.9411457576617976e-14,
+        "combined_score": 0.2505133150000068,
+        "timestamp": 1753187035,
+        "payload": {
+          "title": "Un estiu amb cor marista!",
+          "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-22T12:23:55Z",
+          "indexed_at": "2025-09-26T09:39:50Z",
+          "published_at_ts": 1753187035,
+          "indexed_at_ts": 1758879590
+        }
+      },
+      {
+        "id": "95b5f2e6-d3ea-311c-aa5f-8158cfa7fc4f",
+        "vector_score": 0.3214532,
+        "recency_weight": 0.10674022968213859,
+        "combined_score": 0.24630366038874849,
+        "timestamp": 1758672000,
+        "payload": {
+          "title": "Entre la espera y la esperanza. El Jubileo 2025, una oportunidad",
+          "url": "https://salesianos.info/blog/entre-la-espera-y-la-esperanza-el-jubileo-2025-una-oportunidad/",
+          "site": "salesians",
+          "author": "José Luis Guzón",
+          "published_at": "2025-09-24T00:00:00Z",
+          "indexed_at": "2025-09-26T09:40:06Z",
+          "published_at_ts": 1758672000,
+          "indexed_at_ts": 1758879606
+        }
+      }
+    ],
+    "context": null
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "query": "Notícies del domini maristes.cat de la darrera setmana",
+  "plan": {
+    "intent": "filter_only_articles",
+    "query": "",
+    "exact_phrase": false,
+    "topK": 0,
+    "per_site": 0,
+    "filters": {
+      "site": [
+        "maristes"
+      ],
+      "base_url": [
+        "https://www.maristes.cat"
+      ],
+      "url": [],
+      "lang": [],
+      "author": [],
+      "article_id": [],
+      "date_from": "2025-09-21",
+      "date_to": "2025-09-28"
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [
+      {
+        "id": "2e680950-d7ef-8568-fdbc-4dac4cc8ae02",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1757326157.0,
+        "timestamp": 1757326157,
+        "payload": {
+          "title": "Arrenca a les Filipines el XXIII Capítol general",
+          "url": "https://www.maristes.cat/noticies/arrenca-les-filipines-el-xxiii-capitol-general",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-09-08T10:09:17Z",
+          "indexed_at": "2025-09-26T09:38:10Z",
+          "published_at_ts": 1757326157,
+          "indexed_at_ts": 1758879490
+        }
+      },
+      {
+        "id": "4dd112f5-2f72-187a-6dc3-bfba87818f42",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1753785680.0,
+        "timestamp": 1753785680,
+        "payload": {
+          "title": "El Camaleó es fa un lloc a l'Arxiu Històric Ciutat de Badalona",
+          "url": "https://www.maristes.cat/noticies/el-camaleo-es-fa-un-lloc-larxiu-historic-ciutat-de-badalona",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-29T10:41:20Z",
+          "indexed_at": "2025-09-26T09:38:12Z",
+          "published_at_ts": 1753785680,
+          "indexed_at_ts": 1758879492
+        }
+      },
+      {
+        "id": "56519aba-4a7a-a282-8285-272b6904113a",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1753368468.0,
+        "timestamp": 1753368468,
+        "payload": {
+          "title": "Nova etapa i nous somnis!",
+          "url": "https://www.maristes.cat/noticies/nova-etapa-i-nous-somnis",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-24T14:47:48Z",
+          "indexed_at": "2025-09-26T09:39:42Z",
+          "published_at_ts": 1753368468,
+          "indexed_at_ts": 1758879582
+        }
+      },
+      {
+        "id": "09392261-e4a5-f138-5688-7a8e538641f3",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1753344523.0,
+        "timestamp": 1753344523,
+        "payload": {
+          "title": "La Travessa 2025: Expedició L’Hermitage",
+          "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-24T08:08:43Z",
+          "indexed_at": "2025-09-26T09:38:14Z",
+          "published_at_ts": 1753344523,
+          "indexed_at_ts": 1758879494
+        }
+      },
+      {
+        "id": "28443df6-da99-37c1-efc0-d32d80274ee8",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1753285077.0,
+        "timestamp": 1753285077,
+        "payload": {
+          "title": "Trobada d'equips directius a les Avellanes: celebrem!",
+          "url": "https://www.maristes.cat/noticies/trobada-dequips-directius-les-avellanes-celebrem",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-23T15:37:57Z",
+          "indexed_at": "2025-09-26T09:39:46Z",
+          "published_at_ts": 1753285077,
+          "indexed_at_ts": 1758879586
+        }
+      },
+      {
+        "id": "a6600a9b-b2dc-4afd-5d55-8f9d14502a29",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1753281443.0,
+        "timestamp": 1753281443,
+        "payload": {
+          "title": "Un cop més el Monestir de les Avellanes celebra amb èxit la XIVa edició de les Jornades d'Història",
+          "url": "https://www.maristes.cat/noticies/un-cop-mes-el-monestir-de-les-avellanes-celebra-amb-exit-la-xiva-edicio-de-les-jornades",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-23T14:37:23Z",
+          "indexed_at": "2025-09-26T09:39:44Z",
+          "published_at_ts": 1753281443,
+          "indexed_at_ts": 1758879584
+        }
+      },
+      {
+        "id": "6bfff01b-1ad1-d870-23b2-dea5ef22bebd",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1753260010.0,
+        "timestamp": 1753260010,
+        "payload": {
+          "title": "Viu l'Ecosilenci: una experiència personal de silenci i natura",
+          "url": "https://www.maristes.cat/noticies/viu-lecosilenci-una-experiencia-personal-de-silenci-i-natura",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-23T08:40:10Z",
+          "indexed_at": "2025-09-26T09:39:48Z",
+          "published_at_ts": 1753260010,
+          "indexed_at_ts": 1758879588
+        }
+      },
+      {
+        "id": "f4bb4e73-9431-13e0-aa3d-5763870a24a6",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1753187035.0,
+        "timestamp": 1753187035,
+        "payload": {
+          "title": "Un estiu amb cor marista!",
+          "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-22T12:23:55Z",
+          "indexed_at": "2025-09-26T09:39:50Z",
+          "published_at_ts": 1753187035,
+          "indexed_at_ts": 1758879590
+        }
+      },
+      {
+        "id": "df95bdab-2304-c1ff-b29a-c95914b8521f",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1752747280.0,
+        "timestamp": 1752747280,
+        "payload": {
+          "title": "Tenim alguna cosa a celebrar?",
+          "url": "https://www.maristes.cat/noticies/tenim-alguna-cosa-celebrar",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-17T10:14:40Z",
+          "indexed_at": "2025-09-26T09:39:52Z",
+          "published_at_ts": 1752747280,
+          "indexed_at_ts": 1758879592
+        }
+      },
+      {
+        "id": "8e5943c9-bb34-4461-e7d6-8b0c57ca750f",
+        "vector_score": 0.0,
+        "recency_weight": 0.0,
+        "combined_score": 1752505770.0,
+        "timestamp": 1752505770,
+        "payload": {
+          "title": "Relleu a la direcció general de la Fundació Champagnat-Maristes Catalunya",
+          "url": "https://www.maristes.cat/noticies/relleu-la-direccio-general-de-la-fundacio-champagnat-maristes-catalunya",
+          "site": "maristes",
+          "author": null,
+          "published_at": "2025-07-14T15:09:30Z",
+          "indexed_at": "2025-09-26T09:39:54Z",
+          "published_at_ts": 1752505770,
+          "indexed_at_ts": 1758879594
+        }
+      }
+    ],
+    "context": null
+  }
+}

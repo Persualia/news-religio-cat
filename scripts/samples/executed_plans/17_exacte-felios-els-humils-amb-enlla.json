@@ -1,0 +1,25 @@
+{
+  "query": "Exacte: \"Feliços els humils\" amb enllaç",
+  "plan": {
+    "intent": "search_chunks",
+    "query": "Feliços humils",
+    "exact_phrase": true,
+    "topK": 0,
+    "per_site": 0,
+    "filters": {
+      "site": [],
+      "base_url": [],
+      "url": [],
+      "lang": [],
+      "author": [],
+      "article_id": [],
+      "date_from": "",
+      "date_to": ""
+    }
+  },
+  "status": "ok",
+  "results": {
+    "data": [],
+    "context": null
+  }
+}
