@@ -3,7 +3,6 @@
   "plan": {
     "intent": "search_articles",
     "topK": 5,
-    "keywords": "Salesians Comunicació",
     "semantic": true,
     "mode": "hybrid",
     "filters": {
@@ -22,13 +21,13 @@
         "description"
       ]
     },
-    "need_summary": false
+    "need_summary": false,
+    "need_context": false
   },
   "prepared": {
     "plan": {
       "intent": "search_articles",
       "topK": 5,
-      "keywords": "Salesians Comunicació",
       "semantic": true,
       "mode": "hybrid",
       "filters": {
@@ -47,9 +46,10 @@
           "description"
         ]
       },
-      "need_summary": false
+      "need_summary": false,
+      "need_context": false
     },
-    "query_text": "Salesians Comunicació",
+    "query_text": "notícies rellevants",
     "fields": [
       "title",
       "url",
@@ -66,9 +66,9 @@
     "hits": [
       {
         "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
-        "vector_score": 0.4515013,
-        "recency_weight": 0.5224106352928951,
-        "combined_score": 0.4763195673525133,
+        "vector_score": 0.26140538,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.31959938927014064,
         "timestamp": 1758758400,
         "payload": {
           "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
@@ -84,9 +84,9 @@
       },
       {
         "id": "41014754-2986-5cb1-bdaa-95e297115c4b",
-        "vector_score": 0.31419688,
-        "recency_weight": 0.5224106352928951,
-        "combined_score": 0.3870716943525133,
+        "vector_score": 0.2100262,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.28620292227014066,
         "timestamp": 1758758400,
         "payload": {
           "title": "Processó Magna Mariana a Huelva amb la participació de Maria Auxiliadora",

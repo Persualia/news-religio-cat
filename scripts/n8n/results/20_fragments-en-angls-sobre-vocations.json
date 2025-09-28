@@ -1,7 +1,7 @@
 {
-  "query": "Què hi ha de vocations (en anglès) als nostres portals?",
+  "query": "Fragments en anglès sobre “vocations”",
   "plan": {
-    "intent": "search_articles",
+    "intent": "search_chunks",
     "topK": 5,
     "keywords": "vocations",
     "semantic": true,
@@ -12,21 +12,23 @@
       ]
     },
     "return": {
-      "index": "articles",
+      "index": "chunks",
       "fields": [
-        "title",
         "url",
+        "content",
+        "chunk_ix",
         "published_at",
         "site",
-        "author",
-        "description"
+        "lang",
+        "author"
       ]
     },
-    "need_summary": false
+    "need_summary": false,
+    "need_context": false
   },
   "prepared": {
     "plan": {
-      "intent": "search_articles",
+      "intent": "search_chunks",
       "topK": 5,
       "keywords": "vocations",
       "semantic": true,
@@ -37,32 +39,35 @@
         ]
       },
       "return": {
-        "index": "articles",
+        "index": "chunks",
         "fields": [
-          "title",
           "url",
+          "content",
+          "chunk_ix",
           "published_at",
           "site",
-          "author",
-          "description"
+          "lang",
+          "author"
         ]
       },
-      "need_summary": false
+      "need_summary": false,
+      "need_context": false
     },
     "query_text": "vocations",
     "fields": [
-      "title",
       "url",
+      "content",
+      "chunk_ix",
       "published_at",
       "site",
-      "author",
-      "description"
+      "lang",
+      "author"
     ],
     "top_k": 5,
     "requires_embedding": true
   },
   "search": {
-    "intent": "search_articles",
+    "intent": "search_chunks",
     "hits": []
   }
 }

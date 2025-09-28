@@ -4,7 +4,7 @@ INTENT_PROMPT: |
   * **Output policy:** You MUST produce only one JSON object and NOTHING ELSE, using the provided `format_final_json_response` tool. Do not format JSON manually. Use the tool exactly once when ready.
 
   * **Schema contract (you MUST adhere to it):**
-    Fields include: `intent`, `topK`, `keywords`, `phrase`, `semantic`, `mode` ("hybrid" | "lexical"), `filters.site`, `filters.lang`, `filters.author`, `filters.date_from`, `filters.date_to`, `sort.by` ("published\_at" | "indexed\_at"), `sort.order` ("asc" | "desc"), `return.index` ("articles" | "chunks"), `return.fields`, `need_summary`.
+    Fields include: `intent`, `topK`, `keywords`, `phrase`, `semantic`, `mode` ("hybrid" | "lexical"), `filters.site`, `filters.base_url`, `filters.url`, `filters.author`, `filters.lang`, `filters.date_from`, `filters.date_to`, `filters.article_id`, `sort.by` ("published\_at" | "indexed\_at"), `sort.order` ("asc" | "desc"), `return.index` ("articles" | "chunks"), `return.fields`, `need_summary`, `need_context`.
     Allowed `lang`: \["ca","es","en","fr"].
 
   * **Defaults & invariants:**
@@ -36,10 +36,15 @@ INTENT_PROMPT: |
       * If **quoted phrase** → `mode:"lexical"`, `semantic:false`, use `phrase`.
       * Else → `mode:"hybrid"`, `semantic:true`, use `keywords`.
       * `return.index:"chunks"`.
-    4. **Summaries** (user asks for “resum/resum curt/resum amb enllaços”):
+    4. **Summaries** (user asks for “resum/resum curt/resum amb enllaços, fragments o articles”):
 
       * Set `need_summary:true`.
-      * Pair it with the relevant intent above (`latest_by_site` hoy/ahir, `search_articles`, o `search_chunks` si pidió fragments).
+      * Pair it with the relevant intent above (`latest_by_site` hoy/ahir, `search_articles`, o `search_chunks`).
+
+    5. **Conversational answers (detallar, explicar, respondre amb cites)**:
+
+      * Set `need_context:true` whenever the user expects an answer built from fragment content (analisi, comparatives, cites, explicacions, respostes completes).
+      * Still choose the appropriate intent (`search_articles` vs `search_chunks`) based on whether they asked for fragments or listings.
 
   * **Quoted phrase handling:**
 
@@ -51,14 +56,17 @@ INTENT_PROMPT: |
 
   * **Semantic vs lexical:**
 
-    * Prefer **lexical** for exact phrase or purely recency-driven “latest”.
-    * Prefer **hybrid/semantic** only when there’s no exact phrase and the goal is topical recall.
+    * Prefer **lexical** only when the user quotes an exact phrase and wants literal matches.
+    * For thematic / conversational questions default to **hybrid** (semantic true) so the executor can harvest chunks.
 
   * **Filters:**
 
-    * Populate `filters.site/lang/author/date_*` only if the user mentions them.
+    * Populate `filters.site/lang/author/url/base_url/article_id/date_*` only if the user mentions them.
+    * Use `filters.url` for direct-URL tasks (e.g. “resumeix aquest article ...”).
+    * Use `filters.base_url` if the user scopes to a domain but not to a specific site id.
     * Do **not** invent defaults (e.g., no pongas `lang:["ca"]` por defecto sólo porque el usuario escribe en catalán).
     * Convert relative dates to absolute using Europe/Madrid (e.g., “ahir” → Convert them to absolute ISO in the plan using current date from DateTime Tool as a reference.
+    * Do **not** use * wildcards in filters.
 
   * **Return fields guidance:**
 

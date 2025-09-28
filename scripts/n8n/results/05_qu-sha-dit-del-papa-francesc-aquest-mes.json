@@ -1,0 +1,302 @@
+{
+  "query": "Què s’ha dit del Papa Francesc aquest mes?",
+  "plan": {
+    "intent": "search_articles",
+    "topK": 5,
+    "keywords": "Papa Francesc",
+    "semantic": true,
+    "mode": "hybrid",
+    "filters": {
+      "date_from": "2025-09-01",
+      "date_to": "2025-09-26"
+    },
+    "sort": {
+      "by": "published_at",
+      "order": "desc"
+    },
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "need_summary": false,
+    "need_context": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "Papa Francesc",
+      "semantic": true,
+      "mode": "hybrid",
+      "filters": {
+        "date_from": "2025-09-01",
+        "date_to": "2025-09-26"
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false,
+      "need_context": false
+    },
+    "query_text": "Papa Francesc",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site",
+      "author",
+      "description"
+    ],
+    "top_k": 5,
+    "requires_embedding": true
+  },
+  "search": {
+    "intent": "search_articles",
+    "hits": [
+      {
+        "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+        "vector_score": 0.32749316,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.3625564462701406,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "description": "El compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.",
+          "indexed_at": "2025-09-26T09:40:00Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879600
+        }
+      },
+      {
+        "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
+        "vector_score": 0.304075,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.3473346422701406,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Diari de Cadis",
+          "description": "El Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral",
+          "indexed_at": "2025-09-26T09:38:18Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879498
+        }
+      },
+      {
+        "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+        "vector_score": 0.29949716,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.3443590462701406,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "description": "Compromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora",
+          "indexed_at": "2025-09-26T09:38:20Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
+      },
+      {
+        "id": "a3b96f0b-8b72-a0cf-b3b9-8bd5f3019270",
+        "vector_score": 0.4748734,
+        "recency_weight": 0.004209651931773358,
+        "combined_score": 0.3101410881761207,
+        "timestamp": 1757894400,
+        "payload": {
+          "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
+          "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
+          "published_at": "2025-09-15T00:00:00Z",
+          "site": "jesuites",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:39:32Z",
+          "published_at_ts": 1757894400,
+          "indexed_at_ts": 1758879572
+        }
+      },
+      {
+        "id": "45abed9b-c0aa-2a97-e4d5-4b6bb7f19c1c",
+        "vector_score": 0.44893953,
+        "recency_weight": 5.499228172770629e-16,
+        "combined_score": 0.29181069450000013,
+        "timestamp": 1752347580,
+        "payload": {
+          "title": "“Un exemple d’amor i servei”: el germà marista Licarió ja és beat",
+          "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+          "published_at": "2025-07-12T19:13:00Z",
+          "site": "maristes",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:39:56Z",
+          "published_at_ts": 1752347580,
+          "indexed_at_ts": 1758879596
+        }
+      }
+    ]
+  },
+  "context": {
+    "total_chunks": 4,
+    "total_tokens": 1711,
+    "unique_sites": [
+      "jesuites",
+      "maristes",
+      "salesians"
+    ],
+    "articles": [
+      {
+        "article_id": "d6e5cde69b58a00dc338fc0e1a8e226d14a6f7b8",
+        "site": "salesians",
+        "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+        "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+        "description": "El compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.",
+        "author": "Comunicació CEPSS",
+        "published_at": "2025-09-25T00:00:00+00:00",
+        "published_at_ts": 1758758400,
+        "indexed_at": "2025-09-26T09:40:00.059797+00:00",
+        "indexed_at_ts": 1758879600,
+        "best_score": 0.3625564462701406,
+        "best_recency": 0.4276739779146875,
+        "chunks": [
+          {
+            "chunk_id": "cfb591c0-26ff-a037-0198-291346b239e8",
+            "chunk_ix": 0,
+            "score": 0.3625564462701406,
+            "vector_score": 0.32749316,
+            "recency_weight": 0.4276739779146875,
+            "token_count": 591,
+            "content": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana. En cada escola, plataforma social, centre juvenil i obra pastoral, els Salesians treballem per garantir espais segurs, on cada nen, nena, adolescent i jove pugui créixer en confiança i plenitud. En aquesta línia, la Coordinadora Estatal de Plataformes Socials Salesianes (CEPSS) va participar en representació de la família salesiana en la jornada #”Hogarizar”: 10 anys de transformació del sistema de protecció de la infància: assoliments i reptes, organitzada per la Plataforma d’Infància (POI). La trobada va servir per a reflexionar sobre el camí recorregut des de l’aprovació de la Llei 26/2015 i els desafiaments pendents per a fer plenament efectiva la Llei orgànica de Protecció Integral a la Infància i l’Adolescència enfront de la Violència (LOPIVI). Una mirada de futur Durant la jornada, representants institucionals, acadèmics i socials van posar en relleu els avanços reeixits en aquesta dècada, així com la urgència de continuar enfortint la participació infantil, l’acompanyament a les famílies i la coordinació dels diferents sistemes de protecció. Es va subratllar també la importància que la infància estigui sempre en el centre, més enllà de colors polítics o realitats territorials. Un compromís salesià compartit La presència de CEPSS en aquesta trobada reforça el compromís de totes les obres salesianes amb la creació d’una cultura de protecció que travessa cada acció educativa i pastoral. Totes les entitats membre de la Coordinadora compten amb la certificació UNEIX 0070:2022 d’entorns segurs per a la infància, que avala que les nostres polítiques, protocols i canals de denúncia compleixen amb els estàndards més exigents en la matèria. Aquest compromís comú ens convida a seguir #”hogaritzant” cada espai educatiu salesià: fer d’ells un lloc de cura, confiança i seguretat, on la infància i la joventut puguin créixer, participar i somiar un futur amb esperança. Et convidem a veure el vídeo complet de la jornada aquí: Jornada #Hogarizar – 10 anys de transformació del sistema de protecció de la infància.",
+            "site": "salesians",
+            "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+            "published_at": "2025-09-25T00:00:00+00:00",
+            "published_at_ts": 1758758400,
+            "indexed_at": "2025-09-26T09:40:00.059797+00:00",
+            "indexed_at_ts": 1758879600
+          }
+        ]
+      },
+      {
+        "article_id": "b212d9a1c6278aacf340b632fdf71ef01729a634",
+        "site": "jesuites",
+        "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
+        "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
+        "description": null,
+        "author": null,
+        "published_at": "2025-09-15T00:00:00+00:00",
+        "published_at_ts": 1757894400,
+        "indexed_at": "2025-09-26T09:39:32.376419+00:00",
+        "indexed_at_ts": 1758879572,
+        "best_score": 0.3101410881761207,
+        "best_recency": 0.004209651931773358,
+        "chunks": [
+          {
+            "chunk_id": "74601465-ee42-ae74-ab52-11cab78de8f4",
+            "chunk_ix": 0,
+            "score": 0.3101410881761207,
+            "vector_score": 0.4748734,
+            "recency_weight": 0.004209651931773358,
+            "token_count": 697,
+            "content": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona\n\nLa matinada d’aquest dilluns 15 de setembre ha mort a Sant Cugat el jesuïta Francesc Xammar, que ha estat, al llarg de la seva vida, un referent en la lluita contra les desigualtats i a favor dels drets humans i la justícia social, especialment amb la seva acció als barris populars de la ciutat de Tarragona i la seva implicació amb els Comitès Òscar Romero i les causes de les comunitats més pobres de l’Amèrica Llatina. Francesc Xammar va néixer a Barcelona l’any 1933. Era fill d’una família benestant. Però la seva vida va fer un gir fonamental. Fent de catequista a la perifèria barcelonina entra en contacte amb les famílies dels barris populars, la seva realitat i condicions de vida, i decideix fer-se sacerdot per poder estar al costat dels més necessitats. Entra a la Companyia de Jesús el 1950, s’ordena capellà el 1963 i fa els últims vots com a jesuïta el 1968. Va arribar a Tarragona l’any 1966 i es va instal·lar a la parròquia de Sant Josep Obrer, al barri de Torreforta, barri nascut de la immigració dels anys 50 i 60, al que Xammar es va sumar contribuint a construir barri i comunitat cristiana. El 1969, i sense deixar de treballar a Torreforta, es va traslladar al barri de la Floresta, on ja hi va residir fins a finals de l’any 2022. Va arribar a la ciutat amb una clara vocació de servei i durant més de sis dècades va treballar compromès amb la ciutat de Tarragona i molt especialment els sectors més vulnerables com a capellà, però també com a activista, líder veïnal i formant part del primer consistori democràtic, després de la dictadura, com a regidor (1979-1983). El Francesc Xammar també va ser el co-fundador i inspirador dels Comitès Òscar Romero, i durant llargs anys va mantenir un estret vincle amb les comunitats eclesials de base i les institucions de la Companyia de Jesús de diversos països de Centre Amèrica i Llatina Amèrica, fent estades regulars sobretot a Nicaragua. El 20 de desembre de 2023 va rebre el títol de fill adoptiu de la ciutat de Tarragona, en agraïment per la seva llarga i incansable tasca en favor de les persones més desfavorides, especialment als barris de ponent de la ciutat de Tarragona. A finals de l’any 2022 s’havia acomiadat de la parròquia i el barri de Torreforta. Ho va fer rebent el reconeixement i agraïment del món eclesial, institucional i veïnal pel seu acompanyament i presència a Torreforta i al barri de la Florida des del 1966. El llibre \"Francesc Xammar i Vidal: dignitat i compromís a la perifèria de Tarragona\" , dels periodistes Ricard Lahoz i Enric Garcia Jardí, glossa la seva vida i compromís. També recentment s’ha publicat La flama de la utopia , un recull de discursos, articles i entrevistes de Xammar.",
+            "site": "jesuites",
+            "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
+            "published_at": "2025-09-15T00:00:00+00:00",
+            "published_at_ts": 1757894400,
+            "indexed_at": "2025-09-26T09:39:32.376419+00:00",
+            "indexed_at_ts": 1758879572
+          }
+        ]
+      },
+      {
+        "article_id": "ec8276a54e27900865b4c163de54666f56d2f1ef",
+        "site": "salesians",
+        "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+        "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+        "description": "El Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral",
+        "author": "Diari de Cadis",
+        "published_at": "2025-09-25T00:00:00+00:00",
+        "published_at_ts": 1758758400,
+        "indexed_at": "2025-09-26T09:38:18.460536+00:00",
+        "indexed_at_ts": 1758879498,
+        "best_score": 0.3473346422701406,
+        "best_recency": 0.4276739779146875,
+        "chunks": [
+          {
+            "chunk_id": "dc1018cf-e05a-edd5-f0c7-4fcf7aa05386",
+            "chunk_ix": 0,
+            "score": 0.3473346422701406,
+            "vector_score": 0.304075,
+            "recency_weight": 0.4276739779146875,
+            "token_count": 373,
+            "content": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval\n\nEl Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral\n\nEl Clúster Marítim Naval de Cadis en el marc de la seva Assemblea General i del seu desè aniversari, ha reconegut al col·legi Sant Ignasi Salesians de Cadis “per la seva contribució a la indústria naval, no sols formant als futurs professionals, sinó col·laborant amb el Clúster i empreses per adaptar la formació a les necessitats del mercat”. Aquest reconeixement s’ha produït en la tercera edició del lliurament de guardons a la contribució de persones i institucions en favor de la indústria naval, que des de l’any passat es diuen Premis José Antonio Rodríguez-Poch a l’impuls del sector naval, en memòria del mort director de Navantia en Badia de Cadis. El Clúster Marítim Naval de Cadis en el marc de la seva Assemblea General i del seu desè aniversari, ha reconegut al col·legi Sant Ignasi Salesians de Cadis “per la seva contribució a la indústria naval, no sols formant els futurs professionals, sinó col·laborant amb el Clúster i empreses a adaptar la formació a les necessitats del mercat”. Aquest reconeixement s’ha produït en la tercera edició del lliurament de guardons a la contribució de persones i institucions en favor de la indústria naval, que des de l’any passat es diuen Premis José Antonio Rodríguez-Poch a l’impuls del sector naval, en memòria del mort director de Navantia en Badia de Cadis.",
+            "site": "salesians",
+            "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+            "published_at": "2025-09-25T00:00:00+00:00",
+            "published_at_ts": 1758758400,
+            "indexed_at": "2025-09-26T09:38:18.460536+00:00",
+            "indexed_at_ts": 1758879498
+          }
+        ]
+      },
+      {
+        "article_id": "f7e23bd68dbce2fca3790d111ff4e27d59263e61",
+        "site": "maristes",
+        "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+        "title": "“Un exemple d’amor i servei”: el germà marista Licarió ja és beat",
+        "description": null,
+        "author": null,
+        "published_at": "2025-07-12T19:13:00+00:00",
+        "published_at_ts": 1752347580,
+        "indexed_at": "2025-09-26T09:39:56.167540+00:00",
+        "indexed_at_ts": 1758879596,
+        "best_score": 0.2773667975000002,
+        "best_recency": 5.499228172770629e-16,
+        "chunks": [
+          {
+            "chunk_id": "e5eeb749-1a41-8118-bf7a-335762dc4fb8",
+            "chunk_ix": 1,
+            "score": 0.2773667975000002,
+            "vector_score": 0.42671815,
+            "recency_weight": 5.499228172770629e-16,
+            "token_count": 50,
+            "content": "cada escola marista que educa amb amor i servei. ” Des d’avui tenim un nou beat de qui seguir l’exemple. >>> Consulta el dossier de premsa sobre la cerimònia de beatificació del germà Licarió Compartir",
+            "site": "maristes",
+            "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+            "published_at": "2025-07-12T19:13:00+00:00",
+            "published_at_ts": 1752347580,
+            "indexed_at": "2025-09-26T09:39:56.167540+00:00",
+            "indexed_at_ts": 1758879596
+          }
+        ]
+      }
+    ]
+  }
+}

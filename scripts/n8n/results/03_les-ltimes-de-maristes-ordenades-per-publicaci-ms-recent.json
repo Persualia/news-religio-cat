@@ -24,7 +24,8 @@
         "description"
       ]
     },
-    "need_summary": false
+    "need_summary": false,
+    "need_context": false
   },
   "prepared": {
     "plan": {
@@ -51,7 +52,8 @@
           "description"
         ]
       },
-      "need_summary": false
+      "need_summary": false,
+      "need_context": false
     },
     "query_text": "notícies rellevants",
     "fields": [
@@ -72,8 +74,8 @@
         {
           "id": "2e680950-d7ef-8568-fdbc-4dac4cc8ae02",
           "vector_score": 0.0,
-          "recency_weight": 0.000246179535226859,
-          "combined_score": 0.000246179535226859,
+          "recency_weight": 0.0002015360599476134,
+          "combined_score": 0.0002015360599476134,
           "timestamp": 1757326157,
           "payload": {
             "title": "Arrenca a les Filipines el XXIII Capítol general",
@@ -90,8 +92,8 @@
         {
           "id": "4dd112f5-2f72-187a-6dc3-bfba87818f42",
           "vector_score": 0.0,
-          "recency_weight": 1.4708399065035153e-12,
-          "combined_score": 1.4708399065035153e-12,
+          "recency_weight": 1.2041101600800012e-12,
+          "combined_score": 1.2041101600800012e-12,
           "timestamp": 1753785680,
           "payload": {
             "title": "El Camaleó es fa un lloc a l'Arxiu Històric Ciutat de Badalona",
@@ -108,8 +110,8 @@
         {
           "id": "56519aba-4a7a-a282-8285-272b6904113a",
           "vector_score": 0.0,
-          "recency_weight": 1.5793598551462553e-13,
-          "combined_score": 1.5793598551462553e-13,
+          "recency_weight": 1.2929505377134258e-13,
+          "combined_score": 1.2929505377134258e-13,
           "timestamp": 1753368468,
           "payload": {
             "title": "Nova etapa i nous somnis!",
@@ -126,8 +128,8 @@
         {
           "id": "09392261-e4a5-f138-5688-7a8e538641f3",
           "vector_score": 0.0,
-          "recency_weight": 1.3895127979942216e-13,
-          "combined_score": 1.3895127979942216e-13,
+          "recency_weight": 1.1375313317432426e-13,
+          "combined_score": 1.1375313317432426e-13,
           "timestamp": 1753344523,
           "payload": {
             "title": "La Travessa 2025: Expedició L’Hermitage",
@@ -144,8 +146,8 @@
         {
           "id": "28443df6-da99-37c1-efc0-d32d80274ee8",
           "vector_score": 0.0,
-          "recency_weight": 1.0110755835716768e-13,
-          "combined_score": 1.0110755835716768e-13,
+          "recency_weight": 8.277218869330172e-14,
+          "combined_score": 8.277218869330172e-14,
           "timestamp": 1753285077,
           "payload": {
             "title": "Trobada d'equips directius a les Avellanes: celebrem!",

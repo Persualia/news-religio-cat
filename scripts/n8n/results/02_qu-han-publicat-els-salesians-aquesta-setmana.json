@@ -7,9 +7,7 @@
     "filters": {
       "site": [
         "salesians"
-      ],
-      "date_from": "2025-09-18",
-      "date_to": "2025-09-25"
+      ]
     },
     "sort": {
       "by": "published_at",
@@ -26,7 +24,8 @@
         "description"
       ]
     },
-    "need_summary": false
+    "need_summary": false,
+    "need_context": false
   },
   "prepared": {
     "plan": {
@@ -36,9 +35,7 @@
       "filters": {
         "site": [
           "salesians"
-        ],
-        "date_from": "2025-09-18",
-        "date_to": "2025-09-25"
+        ]
       },
       "sort": {
         "by": "published_at",
@@ -55,7 +52,8 @@
           "description"
         ]
       },
-      "need_summary": false
+      "need_summary": false,
+      "need_context": false
     },
     "query_text": "notícies rellevants",
     "fields": [
@@ -76,8 +74,8 @@
         {
           "id": "1c4b2b17-7831-f084-3724-748367d1b90d",
           "vector_score": 0.0,
-          "recency_weight": 0.5224106352928951,
-          "combined_score": 0.5224106352928951,
+          "recency_weight": 0.4276739779146875,
+          "combined_score": 0.4276739779146875,
           "timestamp": 1758758400,
           "payload": {
             "title": "Juicio sumarísimo",
@@ -94,8 +92,8 @@
         {
           "id": "41014754-2986-5cb1-bdaa-95e297115c4b",
           "vector_score": 0.0,
-          "recency_weight": 0.5224106352928951,
-          "combined_score": 0.5224106352928951,
+          "recency_weight": 0.4276739779146875,
+          "combined_score": 0.4276739779146875,
           "timestamp": 1758758400,
           "payload": {
             "title": "Processó Magna Mariana a Huelva amb la participació de Maria Auxiliadora",
@@ -112,8 +110,8 @@
         {
           "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
           "vector_score": 0.0,
-          "recency_weight": 0.5224106352928951,
-          "combined_score": 0.5224106352928951,
+          "recency_weight": 0.4276739779146875,
+          "combined_score": 0.4276739779146875,
           "timestamp": 1758758400,
           "payload": {
             "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
@@ -130,8 +128,8 @@
         {
           "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
           "vector_score": 0.0,
-          "recency_weight": 0.5224106352928951,
-          "combined_score": 0.5224106352928951,
+          "recency_weight": 0.4276739779146875,
+          "combined_score": 0.4276739779146875,
           "timestamp": 1758758400,
           "payload": {
             "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
@@ -148,8 +146,8 @@
         {
           "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
           "vector_score": 0.0,
-          "recency_weight": 0.5224106352928951,
-          "combined_score": 0.5224106352928951,
+          "recency_weight": 0.4276739779146875,
+          "combined_score": 0.4276739779146875,
           "timestamp": 1758758400,
           "payload": {
             "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",

@@ -1,0 +1,71 @@
+{
+  "query": "Resumeix aquest article i contrasta’l amb altres del mateix tema: https://www.maristes.cat/noticies/espiritualitat-vocacio-missio-vida-comunitaria-governanca-i-lideratge-les-crides-del-xxiii",
+  "plan": {
+    "intent": "search_chunks",
+    "topK": 5,
+    "semantic": false,
+    "mode": "lexical",
+    "filters": {
+      "url": [
+        "https://www.maristes.cat/noticies/espiritualitat-vocacio-missio-vida-comunitaria-governanca-i-lideratge-les-crides-del-xxiii"
+      ]
+    },
+    "return": {
+      "index": "chunks",
+      "fields": [
+        "url",
+        "content",
+        "chunk_ix",
+        "published_at",
+        "site",
+        "lang",
+        "author"
+      ]
+    },
+    "need_summary": true,
+    "need_context": true
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_chunks",
+      "topK": 5,
+      "semantic": false,
+      "mode": "lexical",
+      "filters": {
+        "url": [
+          "https://www.maristes.cat/noticies/espiritualitat-vocacio-missio-vida-comunitaria-governanca-i-lideratge-les-crides-del-xxiii"
+        ]
+      },
+      "return": {
+        "index": "chunks",
+        "fields": [
+          "url",
+          "content",
+          "chunk_ix",
+          "published_at",
+          "site",
+          "lang",
+          "author"
+        ]
+      },
+      "need_summary": true,
+      "need_context": true
+    },
+    "query_text": "notícies rellevants",
+    "fields": [
+      "url",
+      "content",
+      "chunk_ix",
+      "published_at",
+      "site",
+      "lang",
+      "author"
+    ],
+    "top_k": 5,
+    "requires_embedding": true
+  },
+  "search": {
+    "intent": "search_chunks",
+    "hits": []
+  }
+}

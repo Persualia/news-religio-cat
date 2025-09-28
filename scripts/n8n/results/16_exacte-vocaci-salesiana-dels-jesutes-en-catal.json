@@ -1,0 +1,76 @@
+{
+  "query": "Exacte: “vocació salesiana” dels jesuïtes en català",
+  "plan": {
+    "intent": "search_articles",
+    "topK": 5,
+    "phrase": "vocació salesiana",
+    "semantic": false,
+    "mode": "lexical",
+    "filters": {
+      "site": [
+        "jesuïtes"
+      ],
+      "lang": [
+        "ca"
+      ]
+    },
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "need_summary": false,
+    "need_context": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_articles",
+      "topK": 5,
+      "phrase": "vocació salesiana",
+      "semantic": false,
+      "mode": "lexical",
+      "filters": {
+        "site": [
+          "jesuïtes"
+        ],
+        "lang": [
+          "ca"
+        ]
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false,
+      "need_context": false
+    },
+    "query_text": "vocació salesiana",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site",
+      "author",
+      "description"
+    ],
+    "top_k": 5,
+    "requires_embedding": true
+  },
+  "search": {
+    "intent": "search_articles",
+    "hits": []
+  }
+}

@@ -17,7 +17,8 @@
         "description"
       ]
     },
-    "need_summary": false
+    "need_summary": false,
+    "need_context": false
   },
   "prepared": {
     "plan": {
@@ -38,6 +39,7 @@
         ]
       },
       "need_summary": false,
+      "need_context": false,
       "filters": {}
     },
     "query_text": "Feliços els humils",
@@ -58,8 +60,8 @@
       {
         "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
         "vector_score": 0.37715623,
-        "recency_weight": 0.5224106352928951,
-        "combined_score": 0.4279952718525133,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.39483744177014063,
         "timestamp": 1758758400,
         "payload": {
           "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
@@ -76,8 +78,8 @@
       {
         "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
         "vector_score": 0.3696108,
-        "recency_weight": 0.5224106352928951,
-        "combined_score": 0.4230907423525133,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.3899329122701406,
         "timestamp": 1758758400,
         "payload": {
           "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
@@ -94,8 +96,8 @@
       {
         "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
         "vector_score": 0.3594923,
-        "recency_weight": 0.5224106352928951,
-        "combined_score": 0.4165137173525133,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.3833558872701406,
         "timestamp": 1758758400,
         "payload": {
           "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
@@ -112,8 +114,8 @@
       {
         "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
         "vector_score": 0.37159005,
-        "recency_weight": 0.32909807804723606,
-        "combined_score": 0.3567178598165326,
+        "recency_weight": 0.26941772363349503,
+        "combined_score": 0.33582973577172326,
         "timestamp": 1758672000,
         "payload": {
           "title": "Davant el genocidi a la Franja de Gaza",
@@ -130,8 +132,8 @@
       {
         "id": "df95bdab-2304-c1ff-b29a-c95914b8521f",
         "vector_score": 0.48163605,
-        "recency_weight": 5.696512038649764e-15,
-        "combined_score": 0.313063432500002,
+        "recency_weight": 4.663476964710589e-15,
+        "combined_score": 0.3130634325000016,
         "timestamp": 1752747280,
         "payload": {
           "title": "Tenim alguna cosa a celebrar?",

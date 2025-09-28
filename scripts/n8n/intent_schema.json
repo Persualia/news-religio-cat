@@ -8,7 +8,7 @@
   "properties": {
     "intent": {
       "type": "string",
-      "enum": ["search_articles", "search_chunks", "latest_by_site", "summarize"],
+      "enum": ["search_articles", "search_chunks", "latest_by_site"],
       "description": "Tipo de acción a realizar."
     },
     "topK": { "type": "integer", "minimum": 1, "maximum": 50, "default": 5 },
@@ -26,7 +26,19 @@
       "properties": {
         "site": {
           "type": "array",
-          "items": { "type": "string", "enum": ["salesians", "jesuites", "maristes"] },
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "base_url": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "url": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" },
           "minItems": 1,
           "uniqueItems": true
         },
@@ -37,6 +49,12 @@
           "uniqueItems": true
         },
         "author": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "article_id": {
           "type": "array",
           "items": { "type": "string", "minLength": 1 },
           "minItems": 1,
@@ -75,7 +93,8 @@
         }
       }
     },
-    "need_summary": { "type": "boolean", "default": false }
+    "need_summary": { "type": "boolean", "default": false },
+    "need_context": { "type": "boolean", "default": false }
   },
   "allOf": [
     {

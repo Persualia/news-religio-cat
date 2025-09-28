@@ -1,0 +1,286 @@
+{
+  "query": "Quines iniciatives de pau han proposat els maristes aquest trimestre?",
+  "plan": {
+    "intent": "search_articles",
+    "topK": 5,
+    "keywords": "iniciatives de pau maristes trimestre",
+    "semantic": true,
+    "mode": "hybrid",
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "need_summary": false,
+    "need_context": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "iniciatives de pau maristes trimestre",
+      "semantic": true,
+      "mode": "hybrid",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false,
+      "need_context": false,
+      "filters": {}
+    },
+    "query_text": "iniciatives de pau maristes trimestre",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site",
+      "author",
+      "description"
+    ],
+    "top_k": 5,
+    "requires_embedding": true
+  },
+  "search": {
+    "intent": "search_articles",
+    "hits": [
+      {
+        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
+        "vector_score": 0.39248073,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.40479836677014064,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "description": "El projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.",
+          "indexed_at": "2025-09-26T09:40:01Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879601
+        }
+      },
+      {
+        "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+        "vector_score": 0.34103495,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.3713586097701406,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "description": "Compromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora",
+          "indexed_at": "2025-09-26T09:38:20Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
+      },
+      {
+        "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
+        "vector_score": 0.29002827,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.3382042677701406,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Diari de Cadis",
+          "description": "El Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral",
+          "indexed_at": "2025-09-26T09:38:18Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879498
+        }
+      },
+      {
+        "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+        "vector_score": 0.28155395,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.33269595977014066,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "description": "El compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.",
+          "indexed_at": "2025-09-26T09:40:00Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879600
+        }
+      },
+      {
+        "id": "f4bb4e73-9431-13e0-aa3d-5763870a24a6",
+        "vector_score": 0.49716502,
+        "recency_weight": 4.899549802613671e-14,
+        "combined_score": 0.3231572630000172,
+        "timestamp": 1753187035,
+        "payload": {
+          "title": "Un estiu amb cor marista!",
+          "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista",
+          "published_at": "2025-07-22T12:23:55Z",
+          "site": "maristes",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:39:50Z",
+          "published_at_ts": 1753187035,
+          "indexed_at_ts": 1758879590
+        }
+      }
+    ]
+  },
+  "context": {
+    "total_chunks": 4,
+    "total_tokens": 1628,
+    "unique_sites": [
+      "maristes",
+      "salesians"
+    ],
+    "articles": [
+      {
+        "article_id": "84b7e3763baa60e435fe33a9c82757eb857fce40",
+        "site": "salesians",
+        "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+        "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+        "description": "El projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.",
+        "author": "Salesians La Orotava",
+        "published_at": "2025-09-25T00:00:00+00:00",
+        "published_at_ts": 1758758400,
+        "indexed_at": "2025-09-26T09:40:01.741618+00:00",
+        "indexed_at_ts": 1758879601,
+        "best_score": 0.40479836677014064,
+        "best_recency": 0.4276739779146875,
+        "chunks": [
+          {
+            "chunk_id": "50917f9a-7704-735f-c69c-b27c01bc5c70",
+            "chunk_ix": 0,
+            "score": 0.40479836677014064,
+            "vector_score": 0.39248073,
+            "recency_weight": 0.4276739779146875,
+            "token_count": 524,
+            "content": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife\n\nEl projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.\n\nLa Universitat de La Llacuna i el Cabildo de Tenerife van fer lliurament dels III Premis d’Aprenentatge-Servei, on el nostre centre, Salesians La Orotava, juntament amb l’ONG Bosco Global, la Universitat de La Llacuna (ULL) i Iriarte Centre Universitari Internacional va rebre el primer premi gràcies al projecte “Mans joves, cors compromesos”. La iniciativa destaca per la seva aposta per crear consciència i compromís social entre l’alumnat, fomentant la convivència i la igualtat entre cultures. Un projecte per a joves amb mirada transformadora El projecte ha estat desenvolupat per alumnat universitari de la ULL i de la Universitat Iriarte, en col·laboració amb Salesians La Orotava i Bosco Global. El seu objectiu principal ha estat formar a joves com a agents de canvi, capaços de compartir l’après amb tota la societat i d’impulsar una convivència respectuosa i solidària. Temes que construeixen una societat millor Al llarg del treball s’han abordat temes clau com: Conèixer millor l’adolescència i la joventut. Despertar la consciència social i el compromís ciutadà. Promoure la igualtat de gènere. Fomentar la convivència en la diversitat. Cuidar el planeta a través de l’educació ambiental. Apostar per una societat pacífica i justa, amb institucions democràtiques i inclusives. Aprenentatge-Servei: educar fent La metodologia emprada, l’Aprenentatge-Servei (ApS), combina l’adquisició de coneixements amb el compromís social. D’aquesta manera, els estudiants no només aprenen, sinó que també aporten valor a la comunitat, generant un impacte real en el seu entorn més pròxim. Un reconeixement que ens omple d’orgull Des de Salesians LaOrotava celebrem amb gran satisfacció aquest reconeixement, que suposa un impuls per a continuar treballant en projectes que reforcin l’educació en valors, la solidaritat i la convivència entre cultures.",
+            "site": "salesians",
+            "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+            "published_at": "2025-09-25T00:00:00+00:00",
+            "published_at_ts": 1758758400,
+            "indexed_at": "2025-09-26T09:40:01.741618+00:00",
+            "indexed_at_ts": 1758879601
+          }
+        ]
+      },
+      {
+        "article_id": "3024a0c4a9c05d4024adf2215ab910f5626e6026",
+        "site": "maristes",
+        "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista",
+        "title": "Un estiu amb cor marista!",
+        "description": null,
+        "author": null,
+        "published_at": "2025-07-22T12:23:55+00:00",
+        "published_at_ts": 1753187035,
+        "indexed_at": "2025-09-26T09:39:50.853552+00:00",
+        "indexed_at_ts": 1758879590,
+        "best_score": 0.3231572630000172,
+        "best_recency": 4.899549802613671e-14,
+        "chunks": [
+          {
+            "chunk_id": "d7280d32-c2d9-e399-dc38-62b2d4583745",
+            "chunk_ix": 0,
+            "score": 0.3231572630000172,
+            "vector_score": 0.49716502,
+            "recency_weight": 4.899549802613671e-14,
+            "token_count": 551,
+            "content": "Un estiu amb cor marista!\n\nQuan el curs s’acaba s’obren noves maneres d’aprendre i de créixer. L’estiu ens convida a viure experiències plenes de sentit! És el cas del voluntariat a Grècia, que un any més organitzen des de Maristes Rubí amb alumnat de batxillerat. O del Camí de Sant Jaume, que continua sent una proposta de creixement profund per als joves de Maristes Valldemia , Maristes Montserrat i Maristes Sants-Les Corts . Són vivències que deixen empremta, fan créixer i transformen. També els educadors i educadores vivim moments especials. Aquest any La Travessa ha fet un pas simbòlic i emotiu: s'ha dut a terme a l’Hermitage, commemorant els 200 anys de la construcció de la nostra casa comuna. Una oportunitat única per reconnectar amb les arrels i amb el sentit profund de la missió marista. I, com sempre, l’estiu batega fort als moviments juvenils maristes, omplint de vida diversos racons d’Espanya, França, Grècia i les Illes Canàries. Campaments, rutes i camps de treball, com ara els del CMS a Algemesí o a Karcag, que han deixat una petjada inesborrable. Cor Obert ha fet per primera vegada el camí de Sant Jaume, vivint una ruta de fe, esforç i amistat. FAJMACOR ha convertit la vall de Boí en escenari d’aventura, creixement i convivència. Vivències de natura, autonomia i compromís que ens transformen per dins. Gràcies, agrupaments i associacions, per tanta passió i entrega! A l’agost la vida no s’atura, es multiplica. Catorze voluntàries de SED viatgen al Paraguai, Colòmbia i Tanzània per compartir experiències i construir vincles amb les comunitats d’acollida. A més, a Nàpols tindrà lloc la trobada Mar-Cha, que reuneix joves maristes de tot Europa i, per tancar el mes, una cita molt especial: la trobada de joves maristes de l’Hermitage, a la mateixa casa que ens inspira. Aquest estiu l’ Escola Mirall també continua formant persones compromeses: els cursos de monitors/es es fan a Barcelona, i els de directors/es, a Tarragona. Espais per créixer com a educadors i continuar construint una educació en el lleure amb qualitat! Un estiu viu, intens i ben compartit. Gràcies a totes les persones que ho feu possible... i que no s’aturi la màgia! Equip de Pastoral Compartir",
+            "site": "maristes",
+            "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista",
+            "published_at": "2025-07-22T12:23:55+00:00",
+            "published_at_ts": 1753187035,
+            "indexed_at": "2025-09-26T09:39:50.853552+00:00",
+            "indexed_at_ts": 1758879590
+          }
+        ]
+      },
+      {
+        "article_id": "f53bdef7b2b11abd1240cc4b212712c86f918042",
+        "site": "salesians",
+        "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+        "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+        "description": "Compromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora",
+        "author": "Salesians Comunicació",
+        "published_at": "2025-09-25T00:00:00+00:00",
+        "published_at_ts": 1758758400,
+        "indexed_at": "2025-09-26T09:38:20.135275+00:00",
+        "indexed_at_ts": 1758879500,
+        "best_score": 0.3713586097701406,
+        "best_recency": 0.4276739779146875,
+        "chunks": [
+          {
+            "chunk_id": "204b43da-a001-4b15-93e9-d4460f5d33a2",
+            "chunk_ix": 0,
+            "score": 0.3713586097701406,
+            "vector_score": 0.34103495,
+            "recency_weight": 0.4276739779146875,
+            "token_count": 503,
+            "content": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe\n\nCompromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora\n\nEl passat cap de setmana, prop de 80 animadors de les presències de Salesians i Salesianes de Canàries van participar en una enriquidora trobada formativa, emmarcat en l’Itinerari d’Educació en la Fe (IEF). Durant la jornada del dissabte, els assistents van aprofundir en la reflexió sobre l’acció educativa dels centres juvenils i el valor del Sistema Preventiu com a pilar de l’acompanyament pastoral. La formació es va completar a la tarda amb dos tallers pràctics que van oferir eines concretes per a l’animació pastoral en les seves realitats locals. A més, es van cuidar especialment els moments celebratius, que van ajudar a interioritzar el viscut: una adoració al Santíssim el dissabte a la nit i l’Eucaristia compartida el diumenge van posar el fermall espiritual a la trobada. Com a part de la programació, també es van presentar les campanyes pastorals de les dues inspectories: Protagonistes de la història, per part dels Salesians, i Confia, de les Salesianes, marcant un horitzó pastoral comú per a aquest nou curs. Programació local i pròxims trobades a l’octubre A nivell inspectorial, aquestes setmanes s’està avançant en la programació local de l’Itinerari d’Educació en la Fe, peça clau del projecte pastoral salesià. El mes d’octubre arribarà carregat de noves propostes formatives: a Catalunya, la Comunitat Valenciana i la Regió de Múrcia se celebraran jornades per a animadors de l’IEF; a Extremadura tindrà lloc una trobada específica de formació; i a Andalusia s’iniciaran les primeres convivències dirigides als nivells inicials de l’itinerari infantil. Tot això demostra el compromís conjunt d’animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora, fidel a l’estil de Don Bosco i de Mare Mazzarello.",
+            "site": "salesians",
+            "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+            "published_at": "2025-09-25T00:00:00+00:00",
+            "published_at_ts": 1758758400,
+            "indexed_at": "2025-09-26T09:38:20.135275+00:00",
+            "indexed_at_ts": 1758879500
+          }
+        ]
+      },
+      {
+        "article_id": "f7e23bd68dbce2fca3790d111ff4e27d59263e61",
+        "site": "maristes",
+        "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+        "title": "“Un exemple d’amor i servei”: el germà marista Licarió ja és beat",
+        "description": null,
+        "author": null,
+        "published_at": "2025-07-12T19:13:00+00:00",
+        "published_at_ts": 1752347580,
+        "indexed_at": "2025-09-26T09:39:56.167540+00:00",
+        "indexed_at_ts": 1758879596,
+        "best_score": 0.26503074000000015,
+        "best_recency": 5.499228172770629e-16,
+        "chunks": [
+          {
+            "chunk_id": "e5eeb749-1a41-8118-bf7a-335762dc4fb8",
+            "chunk_ix": 1,
+            "score": 0.26503074000000015,
+            "vector_score": 0.4077396,
+            "recency_weight": 5.499228172770629e-16,
+            "token_count": 50,
+            "content": "cada escola marista que educa amb amor i servei. ” Des d’avui tenim un nou beat de qui seguir l’exemple. >>> Consulta el dossier de premsa sobre la cerimònia de beatificació del germà Licarió Compartir",
+            "site": "maristes",
+            "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
+            "published_at": "2025-07-12T19:13:00+00:00",
+            "published_at_ts": 1752347580,
+            "indexed_at": "2025-09-26T09:39:56.167540+00:00",
+            "indexed_at_ts": 1758879596
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -20,6 +20,10 @@ for candidate in (ROOT, ROOT / "src"):
         sys.path.insert(0, path_str)
 
 from src.vector_client import get_client  # noqa: E402
+from src.search.context_builder import (  # noqa: E402
+    ChatContext,
+    build_chat_context,
+)
 from src.search.qdrant_search import (  # noqa: E402
     SearchResult,
     latest_by_site,
@@ -147,6 +151,9 @@ def prepare_plan(raw: Dict[str, Any]) -> PreparedPlan:
             normalized_filters[key] = value
     plan["filters"] = normalized_filters
 
+    plan["need_summary"] = bool(plan.get("need_summary"))
+    plan["need_context"] = bool(plan.get("need_context"))
+
     requires_embedding = intent in {"search_articles", "search_chunks"}
 
     return PreparedPlan(
@@ -179,6 +186,124 @@ def serialize_result(result: SearchResult, fields: Sequence[str]) -> Dict[str, A
         "timestamp": payload_ts,
         "payload": payload,
     }
+
+
+_QUESTION_TRIGGERS = (
+    "explica",
+    "explica'm",
+    "explica'm",
+    "resum",
+    "resumeix",
+    "resume",
+    "resumidament",
+    "respon",
+    "contesta",
+    "detalla",
+    "analitza",
+    "analiza",
+    "compara",
+    "descriu",
+    "descríbeme",
+    "què",
+    "que ",
+    "quina",
+    "quines",
+    "quins",
+    "per què",
+    "perque",
+    "por qué",
+    "porque",
+    "cita",
+    "argumenta",
+)
+
+
+def should_build_context(raw_query: str, prepared: PreparedPlan) -> bool:
+    if prepared.intent == "search_chunks":
+        return True
+    if prepared.intent != "search_articles":
+        return False
+    if prepared.plan.get("need_context"):
+        return True
+    plan_return = prepared.plan.get("return") or {}
+    if plan_return.get("index") == "chunks":
+        return True
+    if prepared.plan.get("need_summary"):
+        return True
+    lowered = (raw_query or "").lower()
+    if "?" in raw_query:
+        return True
+    return any(trigger in lowered for trigger in _QUESTION_TRIGGERS)
+
+
+def serialize_chat_context(context: ChatContext) -> Dict[str, Any]:
+    return {
+        "total_chunks": context.total_chunks,
+        "total_tokens": context.total_tokens,
+        "unique_sites": context.unique_sites,
+        "articles": [
+            {
+                "article_id": article.article_id,
+                "site": article.site,
+                "url": article.url,
+                "title": article.title,
+                "description": article.description,
+                "author": article.author,
+                "published_at": article.published_at,
+                "published_at_ts": article.published_at_ts,
+                "indexed_at": article.indexed_at,
+                "indexed_at_ts": article.indexed_at_ts,
+                "best_score": article.best_score,
+                "best_recency": article.best_recency,
+                "chunks": [
+                    {
+                        "chunk_id": chunk.chunk_id,
+                        "chunk_ix": chunk.chunk_ix,
+                        "score": chunk.score,
+                        "vector_score": chunk.vector_score,
+                        "recency_weight": chunk.recency_weight,
+                        "token_count": chunk.token_count,
+                        "content": chunk.content,
+                        "site": chunk.site,
+                        "url": chunk.url,
+                        "published_at": chunk.published_at,
+                        "published_at_ts": chunk.published_at_ts,
+                        "indexed_at": chunk.indexed_at,
+                        "indexed_at_ts": chunk.indexed_at_ts,
+                    }
+                    for chunk in article.chunks
+                ],
+            }
+            for article in context.articles
+        ],
+    }
+
+
+def maybe_build_context(
+    *,
+    query: str,
+    prepared: PreparedPlan,
+    embedding: Optional[List[float]],
+    qdrant_client: Any,
+    now: datetime,
+) -> Optional[Dict[str, Any]]:
+    if embedding is None:
+        return None
+    if not should_build_context(query, prepared):
+        return None
+
+    context = build_chat_context(
+        qdrant_client,
+        embedding,
+        filters=prepared.plan.get("filters"),
+        now=now,
+        chunk_limit=max(prepared.top_k * 3, 12),
+        per_article=3,
+        article_limit=max(prepared.top_k, 6),
+    )
+    if not context.articles:
+        return None
+    return serialize_chat_context(context)
 
 
 def maybe_get_embedding(client: OpenAI, text: str) -> List[float]:
@@ -380,6 +505,16 @@ def main() -> None:
             },
             "search": search_output,
         }
+
+        context_payload = maybe_build_context(
+            query=query,
+            prepared=prepared,
+            embedding=embedding,
+            qdrant_client=qdrant_client,
+            now=now,
+        )
+        if context_payload:
+            record["context"] = context_payload
 
         output_path.write_text(json.dumps(record, indent=2, ensure_ascii=False))
         summary_rows.append(

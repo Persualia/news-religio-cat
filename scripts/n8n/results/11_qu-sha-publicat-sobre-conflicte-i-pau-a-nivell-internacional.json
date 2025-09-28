@@ -1,0 +1,255 @@
+{
+  "query": "Què s’ha publicat sobre conflicte i pau a nivell internacional?",
+  "plan": {
+    "intent": "search_articles",
+    "topK": 5,
+    "keywords": "conflicte pau internacional",
+    "semantic": true,
+    "mode": "hybrid",
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "need_summary": false,
+    "need_context": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_articles",
+      "topK": 5,
+      "keywords": "conflicte pau internacional",
+      "semantic": true,
+      "mode": "hybrid",
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": false,
+      "need_context": false,
+      "filters": {}
+    },
+    "query_text": "conflicte pau internacional",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site",
+      "author",
+      "description"
+    ],
+    "top_k": 5,
+    "requires_embedding": true
+  },
+  "search": {
+    "intent": "search_articles",
+    "hits": [
+      {
+        "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
+        "vector_score": 0.2523381,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.31370565727014066,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
+          "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Confederació Espanyola de Religiosos",
+          "description": "La Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.",
+          "indexed_at": "2025-09-26T09:38:16Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879496
+        }
+      },
+      {
+        "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+        "vector_score": 0.18180045,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.2678561847701406,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "description": "El compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.",
+          "indexed_at": "2025-09-26T09:40:00Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879600
+        }
+      },
+      {
+        "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
+        "vector_score": 0.2447955,
+        "recency_weight": 0.26941772363349503,
+        "combined_score": 0.2534132782717232,
+        "timestamp": 1758672000,
+        "payload": {
+          "title": "Davant el genocidi a la Franja de Gaza",
+          "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+          "published_at": "2025-09-24T00:00:00Z",
+          "site": "jesuites",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:38:04Z",
+          "published_at_ts": 1758672000,
+          "indexed_at_ts": 1758879484
+        }
+      },
+      {
+        "id": "1c4b2b17-7831-f084-3724-748367d1b90d",
+        "vector_score": 0.13840139,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.23964679577014064,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Juicio sumarísimo",
+          "url": "https://salesianos.info/blog/juicio-sumarisimo/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Josep Lluís Burguera",
+          "description": null,
+          "indexed_at": "2025-09-26T09:40:05Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879605
+        }
+      },
+      {
+        "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
+        "vector_score": 0.120957196,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.2283080696701406,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Diari de Cadis",
+          "description": "El Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral",
+          "indexed_at": "2025-09-26T09:38:18Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879498
+        }
+      }
+    ]
+  },
+  "context": {
+    "total_chunks": 3,
+    "total_tokens": 1777,
+    "unique_sites": [
+      "jesuites",
+      "salesians"
+    ],
+    "articles": [
+      {
+        "article_id": "def8a06c7d64e6f89ec5860cbb265a9b1da31f04",
+        "site": "salesians",
+        "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+        "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
+        "description": "La Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.",
+        "author": "Confederació Espanyola de Religiosos",
+        "published_at": "2025-09-25T00:00:00+00:00",
+        "published_at_ts": 1758758400,
+        "indexed_at": "2025-09-26T09:38:16.783189+00:00",
+        "indexed_at_ts": 1758879496,
+        "best_score": 0.31370565727014066,
+        "best_recency": 0.4276739779146875,
+        "chunks": [
+          {
+            "chunk_id": "92660c4b-154e-07d6-6fe4-54341025cf6c",
+            "chunk_ix": 0,
+            "score": 0.31370565727014066,
+            "vector_score": 0.2523381,
+            "recency_weight": 0.4276739779146875,
+            "token_count": 641,
+            "content": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza\n\nLa Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.\n\nDavant el genocidi que es viu en la Franja de Gaza, els consagrats i consagrades d’Espanya elevem la nostra veu per a exigir el cessament immediat d’accions que provoquin fam, destrucció i mort de civils innocents, i demandar l’accés sense restriccions de l’ajuda humanitària. “No puc veure morir al nen” (Gn 21,15). Aquest crit antic, pronunciat per Agar en el desert, ressona avui amb força entre moltes mares i pares del món. Les informacions i testimoniatges que arriben des de Gaza descriuen escenes de fam, col·lapse sanitari, desplaçament massiu i víctimes entre bebès, nens i nenes, dones embarassades, ancians i persones vulnerables. Davant aquesta realitat, el deure moral i humanitari és clar: protegir la vida, garantir l’assistència urgent i respectar el Dret Internacional Humanitari. Denunciem la imposició de restriccions que impedeixen l’arribada d’aliments, medicines i combustible, i condemnem els atacs indiscriminats que han causat destrucció, morts i mutilacions entre la població civil. Demanem a les autoritats competents que actuïn amb determinació per a obrir corredors humanitaris segurs i garantir la protecció de periodistes, personal sanitari, cooperants i població civil. Cuidar al més feble i defensar la vida No es tracta de prendre postura partidista, sinó de recordar l’obligació bàsica de tota comunitat humana: cuidar al més feble i defensar la vida. Per això secundem i ens sumem als comunicats i crides de diferents institucions religioses, organitzacions humanitàries i organismes internacionals que exigeixen el respecte del Dret Internacional i l’entrada d’ajuda a tota la població de Gaza. Exigim, a més: Que es permeti immediatament l’entrada de tota l’ajuda humanitària necessària per a evitar morts per inanició i col·lapse sanitari. El cessament de bombardejos sobre zones civils i la protecció d’instal·lacions sanitàries, religioses i de refugiats. El respecte i la plena aplicació del Dret Internacional Humanitari i dels drets humans. Que la comunitat internacional redobli els seus esforços diplomàtics i humanitaris per a posar fi al sofriment i avançar cap a solucions justes i duradores. Com recull l’Escriptura —“Què et passa, Agar? No temis, perquè Déu ha sentit la veu del noi…” (Gn 21,17-18)— fem una crida a la compassió i a l’acció: que les nostres mans es converteixin en auxili efectiu i no en indiferència.",
+            "site": "salesians",
+            "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+            "published_at": "2025-09-25T00:00:00+00:00",
+            "published_at_ts": 1758758400,
+            "indexed_at": "2025-09-26T09:38:16.783189+00:00",
+            "indexed_at_ts": 1758879496
+          }
+        ]
+      },
+      {
+        "article_id": "cd74ec2b3d3a2d1a2f71099ac50667dfa206ac85",
+        "site": "jesuites",
+        "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+        "title": "Davant el genocidi a la Franja de Gaza",
+        "description": null,
+        "author": null,
+        "published_at": "2025-09-24T00:00:00+00:00",
+        "published_at_ts": 1758672000,
+        "indexed_at": "2025-09-26T09:38:04.234183+00:00",
+        "indexed_at_ts": 1758879484,
+        "best_score": 0.2534132782717232,
+        "best_recency": 0.26941772363349503,
+        "chunks": [
+          {
+            "chunk_id": "daecb211-2830-d6ab-33f9-bbf7a8a4f1ff",
+            "chunk_ix": 0,
+            "score": 0.2534132782717232,
+            "vector_score": 0.2447955,
+            "recency_weight": 0.26941772363349503,
+            "token_count": 763,
+            "content": "Davant el genocidi a la Franja de Gaza\n\nEls Jesuïtes a Catalunya, amb la resta d’instituts i congregacions de vida religiosa que formem part de la Unió de Religiosos de Catalunya (URC), reiterem la denúncia del genocidi a Gaza, reclamem l’entrada sense restriccions d’ajuda humanitària i el respecte al Dret Humanitari Internacional, i fem una crida a la participació activa a les diverses accions convocades els propers dies. En el comunicat publicat aquest dimarts 23 de setembre, “la Unió de Religiosos de Catalunya (URC) vol expressar, una vegada més, el seu profund dolor i compromís davant la tragèdia humanitària que continua colpejant la Franja de Gaza. El passat 13 de juny, des de la nostra Assemblea, ja vam fer públic el nostre posicionament amb el comunicat “No al genocidi, Sí a la Pau” , on denunciàvem amb fermesa la violència, la destrucció i la desprotecció de les persones més vulnerables, especialment els infants. Reiterem avui aquell clam, que és més vigent que mai: no al genocidi, sí a la pau”. Ens sentim cridats a fer costat als qui pateixen i a denunciar amb claredat qualsevol forma de violència o opressió. “En aquesta mateixa línia”, continua el text, “acollim i ens fem nostres les paraules de la CONFER , la Conferència Espanyola de Religiosos, que recentment ha reclamat l’entrada immediata d’ajuda humanitària a Gaza i el respecte al Dret Internacional Humanitari. Davant les imatges de fam, hospitals col·lapsats, nens i nenes mutilats, mares desesperades i comunitats trencades pel dolor, no podem restar indiferents. Ens unim a totes les veus que, des de la fe i el compromís evangèlic, exigeixen l’alto el foc, la protecció de la població civil i l’obertura de corredors humanitaris”. Feliços els qui treballen per la pau, perquè seran anomenats fills de Déu (Mt 5,9). Aquesta és la nostra esperança, i també el nostre compromís. Accions per Gaza Per tot això ens adherim i animem a tothom a participar a l’acte “Cristians contra el genocidi de Gaza” , convocat per la Xarxa d’Entitats Cristianes, que aplega un ampli ventall d’organitzacions eclesials i laiques, i que tindrà lloc el proper dilluns 29 de setembre a les 19h a l’Església de Santa Anna de Barcelona. Serà un espai de denúncia, de pregària i de comunió amb les víctimes d’aquesta barbàrie. També us convidem a participar a la manifestació del proper 4 d’octubre , a les 12h, als Jardinets de Gràcia (Barcelona) amb el lema ‘Resistint al colonialisme, genocidi, apartheid i ocupació. Fi al comerç d’armes i a les relacions amb Israel’ convocada per diverses organitzacions, com la Comunitat Palestina de Catalunya, Prou Complicitat amb Israel, Plataforma Aturem les Guerres o Embargament d’Armes Ja! Junt amb aquesta crida a unir-nos a altres persones i col·lectius, des de la Companyia de Jesús a Catalunya, també animem a les nostres institucions: escoles, universitats, comunitats cristianes, entitats social,... a portar a terme accions per tal d’expressar de forma comunitària la denúncia de la violència i la nostra solidaritat amb les víctimes.",
+            "site": "jesuites",
+            "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
+            "published_at": "2025-09-24T00:00:00+00:00",
+            "published_at_ts": 1758672000,
+            "indexed_at": "2025-09-26T09:38:04.234183+00:00",
+            "indexed_at_ts": 1758879484
+          }
+        ]
+      },
+      {
+        "article_id": "ec8276a54e27900865b4c163de54666f56d2f1ef",
+        "site": "salesians",
+        "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+        "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+        "description": "El Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral",
+        "author": "Diari de Cadis",
+        "published_at": "2025-09-25T00:00:00+00:00",
+        "published_at_ts": 1758758400,
+        "indexed_at": "2025-09-26T09:38:18.460536+00:00",
+        "indexed_at_ts": 1758879498,
+        "best_score": 0.2283080696701406,
+        "best_recency": 0.4276739779146875,
+        "chunks": [
+          {
+            "chunk_id": "dc1018cf-e05a-edd5-f0c7-4fcf7aa05386",
+            "chunk_ix": 0,
+            "score": 0.2283080696701406,
+            "vector_score": 0.120957196,
+            "recency_weight": 0.4276739779146875,
+            "token_count": 373,
+            "content": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval\n\nEl Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral\n\nEl Clúster Marítim Naval de Cadis en el marc de la seva Assemblea General i del seu desè aniversari, ha reconegut al col·legi Sant Ignasi Salesians de Cadis “per la seva contribució a la indústria naval, no sols formant als futurs professionals, sinó col·laborant amb el Clúster i empreses per adaptar la formació a les necessitats del mercat”. Aquest reconeixement s’ha produït en la tercera edició del lliurament de guardons a la contribució de persones i institucions en favor de la indústria naval, que des de l’any passat es diuen Premis José Antonio Rodríguez-Poch a l’impuls del sector naval, en memòria del mort director de Navantia en Badia de Cadis. El Clúster Marítim Naval de Cadis en el marc de la seva Assemblea General i del seu desè aniversari, ha reconegut al col·legi Sant Ignasi Salesians de Cadis “per la seva contribució a la indústria naval, no sols formant els futurs professionals, sinó col·laborant amb el Clúster i empreses a adaptar la formació a les necessitats del mercat”. Aquest reconeixement s’ha produït en la tercera edició del lliurament de guardons a la contribució de persones i institucions en favor de la indústria naval, que des de l’any passat es diuen Premis José Antonio Rodríguez-Poch a l’impuls del sector naval, en memòria del mort director de Navantia en Badia de Cadis.",
+            "site": "salesians",
+            "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+            "published_at": "2025-09-25T00:00:00+00:00",
+            "published_at_ts": 1758758400,
+            "indexed_at": "2025-09-26T09:38:18.460536+00:00",
+            "indexed_at_ts": 1758879498
+          }
+        ]
+      }
+    ]
+  }
+}

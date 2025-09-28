@@ -1,17 +1,18 @@
 {
-  "query": "Últimes notícies de l’església a Catalunya avui",
+  "query": "Compara què han publicat salesians i jesuïtes sobre educació la darrera setmana",
   "plan": {
     "intent": "latest_by_site",
     "topK": 5,
-    "keywords": "església Catalunya",
+    "keywords": "educació",
     "semantic": true,
     "mode": "hybrid",
     "filters": {
       "site": [
         "salesians",
-        "jesuites",
-        "maristes"
-      ]
+        "jesuites"
+      ],
+      "date_from": "2025-09-19",
+      "date_to": "2025-09-26"
     },
     "sort": {
       "by": "published_at",
@@ -35,15 +36,16 @@
     "plan": {
       "intent": "latest_by_site",
       "topK": 5,
-      "keywords": "església Catalunya",
+      "keywords": "educació",
       "semantic": true,
       "mode": "hybrid",
       "filters": {
         "site": [
           "salesians",
-          "jesuites",
-          "maristes"
-        ]
+          "jesuites"
+        ],
+        "date_from": "2025-09-19",
+        "date_to": "2025-09-26"
       },
       "sort": {
         "by": "published_at",
@@ -63,7 +65,7 @@
       "need_summary": false,
       "need_context": false
     },
-    "query_text": "església Catalunya",
+    "query_text": "educació",
     "fields": [
       "title",
       "url",
@@ -259,98 +261,6 @@
             "indexed_at": "2025-09-26T09:39:32Z",
             "published_at_ts": 1757894400,
             "indexed_at_ts": 1758879572
-          }
-        }
-      ],
-      "maristes": [
-        {
-          "id": "2e680950-d7ef-8568-fdbc-4dac4cc8ae02",
-          "vector_score": 0.0,
-          "recency_weight": 0.0002015360599476134,
-          "combined_score": 0.0002015360599476134,
-          "timestamp": 1757326157,
-          "payload": {
-            "title": "Arrenca a les Filipines el XXIII Capítol general",
-            "url": "https://www.maristes.cat/noticies/arrenca-les-filipines-el-xxiii-capitol-general",
-            "published_at": "2025-09-08T10:09:17Z",
-            "site": "maristes",
-            "author": null,
-            "description": null,
-            "indexed_at": "2025-09-26T09:38:10Z",
-            "published_at_ts": 1757326157,
-            "indexed_at_ts": 1758879490
-          }
-        },
-        {
-          "id": "4dd112f5-2f72-187a-6dc3-bfba87818f42",
-          "vector_score": 0.0,
-          "recency_weight": 1.2041101600800012e-12,
-          "combined_score": 1.2041101600800012e-12,
-          "timestamp": 1753785680,
-          "payload": {
-            "title": "El Camaleó es fa un lloc a l'Arxiu Històric Ciutat de Badalona",
-            "url": "https://www.maristes.cat/noticies/el-camaleo-es-fa-un-lloc-larxiu-historic-ciutat-de-badalona",
-            "published_at": "2025-07-29T10:41:20Z",
-            "site": "maristes",
-            "author": null,
-            "description": null,
-            "indexed_at": "2025-09-26T09:38:12Z",
-            "published_at_ts": 1753785680,
-            "indexed_at_ts": 1758879492
-          }
-        },
-        {
-          "id": "56519aba-4a7a-a282-8285-272b6904113a",
-          "vector_score": 0.0,
-          "recency_weight": 1.2929505377134258e-13,
-          "combined_score": 1.2929505377134258e-13,
-          "timestamp": 1753368468,
-          "payload": {
-            "title": "Nova etapa i nous somnis!",
-            "url": "https://www.maristes.cat/noticies/nova-etapa-i-nous-somnis",
-            "published_at": "2025-07-24T14:47:48Z",
-            "site": "maristes",
-            "author": null,
-            "description": null,
-            "indexed_at": "2025-09-26T09:39:42Z",
-            "published_at_ts": 1753368468,
-            "indexed_at_ts": 1758879582
-          }
-        },
-        {
-          "id": "09392261-e4a5-f138-5688-7a8e538641f3",
-          "vector_score": 0.0,
-          "recency_weight": 1.1375313317432426e-13,
-          "combined_score": 1.1375313317432426e-13,
-          "timestamp": 1753344523,
-          "payload": {
-            "title": "La Travessa 2025: Expedició L’Hermitage",
-            "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
-            "published_at": "2025-07-24T08:08:43Z",
-            "site": "maristes",
-            "author": null,
-            "description": null,
-            "indexed_at": "2025-09-26T09:38:14Z",
-            "published_at_ts": 1753344523,
-            "indexed_at_ts": 1758879494
-          }
-        },
-        {
-          "id": "28443df6-da99-37c1-efc0-d32d80274ee8",
-          "vector_score": 0.0,
-          "recency_weight": 8.277218869330172e-14,
-          "combined_score": 8.277218869330172e-14,
-          "timestamp": 1753285077,
-          "payload": {
-            "title": "Trobada d'equips directius a les Avellanes: celebrem!",
-            "url": "https://www.maristes.cat/noticies/trobada-dequips-directius-les-avellanes-celebrem",
-            "published_at": "2025-07-23T15:37:57Z",
-            "site": "maristes",
-            "author": null,
-            "description": null,
-            "indexed_at": "2025-09-26T09:39:46Z",
-            "published_at_ts": 1753285077,
-            "indexed_at_ts": 1758879586
           }
         }
       ]

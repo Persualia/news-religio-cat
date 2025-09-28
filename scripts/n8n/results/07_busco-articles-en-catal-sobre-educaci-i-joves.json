@@ -1,18 +1,15 @@
 {
-  "query": "Resum final en català de tot el que s’ha publicat avui sobre vocació amb enllaços.",
+  "query": "Busco articles en català sobre educació i joves",
   "plan": {
     "intent": "search_articles",
     "topK": 5,
-    "keywords": "vocació",
+    "keywords": "educació joves",
     "semantic": true,
     "mode": "hybrid",
     "filters": {
-      "date_from": "2025-09-25",
-      "date_to": "2025-09-25"
-    },
-    "sort": {
-      "by": "published_at",
-      "order": "desc"
+      "lang": [
+        "ca"
+      ]
     },
     "return": {
       "index": "articles",
@@ -25,22 +22,20 @@
         "description"
       ]
     },
-    "need_summary": true
+    "need_summary": false,
+    "need_context": false
   },
   "prepared": {
     "plan": {
       "intent": "search_articles",
       "topK": 5,
-      "keywords": "vocació",
+      "keywords": "educació joves",
       "semantic": true,
       "mode": "hybrid",
       "filters": {
-        "date_from": "2025-09-25",
-        "date_to": "2025-09-25"
-      },
-      "sort": {
-        "by": "published_at",
-        "order": "desc"
+        "lang": [
+          "ca"
+        ]
       },
       "return": {
         "index": "articles",
@@ -53,9 +48,10 @@
           "description"
         ]
       },
-      "need_summary": true
+      "need_summary": false,
+      "need_context": false
     },
-    "query_text": "vocació",
+    "query_text": "educació joves",
     "fields": [
       "title",
       "url",
@@ -71,10 +67,28 @@
     "intent": "search_articles",
     "hits": [
       {
+        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
+        "vector_score": 0.5147212,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.48425467227014063,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "description": "El projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.",
+          "indexed_at": "2025-09-26T09:40:01Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879601
+        }
+      },
+      {
         "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
-        "vector_score": 0.3089406,
-        "recency_weight": 0.5224106352928951,
-        "combined_score": 0.38365511235251326,
+        "vector_score": 0.48412192,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.46436514027014064,
         "timestamp": 1758758400,
         "payload": {
           "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
@@ -90,9 +104,9 @@
       },
       {
         "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
-        "vector_score": 0.3030117,
-        "recency_weight": 0.5224106352928951,
-        "combined_score": 0.37980132735251326,
+        "vector_score": 0.46917748,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.45465125427014064,
         "timestamp": 1758758400,
         "payload": {
           "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
@@ -107,46 +121,10 @@
         }
       },
       {
-        "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
-        "vector_score": 0.2996564,
-        "recency_weight": 0.5224106352928951,
-        "combined_score": 0.3776203823525133,
-        "timestamp": 1758758400,
-        "payload": {
-          "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
-          "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
-          "published_at": "2025-09-25T00:00:00Z",
-          "site": "salesians",
-          "author": "Confederació Espanyola de Religiosos",
-          "description": "La Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.",
-          "indexed_at": "2025-09-26T09:38:16Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879496
-        }
-      },
-      {
-        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
-        "vector_score": 0.29653186,
-        "recency_weight": 0.5224106352928951,
-        "combined_score": 0.37558943135251327,
-        "timestamp": 1758758400,
-        "payload": {
-          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
-          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
-          "published_at": "2025-09-25T00:00:00Z",
-          "site": "salesians",
-          "author": "Salesians La Orotava",
-          "description": "El projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.",
-          "indexed_at": "2025-09-26T09:40:01Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879601
-        }
-      },
-      {
         "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
-        "vector_score": 0.23861396,
-        "recency_weight": 0.5224106352928951,
-        "combined_score": 0.3379427963525133,
+        "vector_score": 0.3587582,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.38287872227014064,
         "timestamp": 1758758400,
         "payload": {
           "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
@@ -158,6 +136,24 @@
           "indexed_at": "2025-09-26T09:38:18Z",
           "published_at_ts": 1758758400,
           "indexed_at_ts": 1758879498
+        }
+      },
+      {
+        "id": "9e8d1d15-c2f5-52e9-8111-f9a8d63ac3e7",
+        "vector_score": 0.5516851,
+        "recency_weight": 0.01060765816314375,
+        "combined_score": 0.36230799535710034,
+        "timestamp": 1758067200,
+        "payload": {
+          "title": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad",
+          "url": "https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la",
+          "published_at": "2025-09-17T00:00:00Z",
+          "site": "jesuites",
+          "author": null,
+          "description": null,
+          "indexed_at": "2025-09-26T09:38:08Z",
+          "published_at_ts": 1758067200,
+          "indexed_at_ts": 1758879488
         }
       }
     ]

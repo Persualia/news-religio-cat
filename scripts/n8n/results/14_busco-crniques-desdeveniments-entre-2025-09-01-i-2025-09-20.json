@@ -1,5 +1,5 @@
 {
-  "query": "Busco cròniques d’esdeveniments amb data entre 2025-09-01 i 2025-09-20",
+  "query": "Busco cròniques d’esdeveniments entre 2025-09-01 i 2025-09-20",
   "plan": {
     "intent": "search_articles",
     "topK": 5,
@@ -9,6 +9,10 @@
     "filters": {
       "date_from": "2025-09-01",
       "date_to": "2025-09-20"
+    },
+    "sort": {
+      "by": "published_at",
+      "order": "desc"
     },
     "return": {
       "index": "articles",
@@ -21,7 +25,8 @@
         "description"
       ]
     },
-    "need_summary": false
+    "need_summary": false,
+    "need_context": false
   },
   "prepared": {
     "plan": {
@@ -34,6 +39,10 @@
         "date_from": "2025-09-01",
         "date_to": "2025-09-20"
       },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
       "return": {
         "index": "articles",
         "fields": [
@@ -45,7 +54,8 @@
           "description"
         ]
       },
-      "need_summary": false
+      "need_summary": false,
+      "need_context": false
     },
     "query_text": "cròniques d’esdeveniments",
     "fields": [
@@ -64,9 +74,9 @@
     "hits": [
       {
         "id": "c4b6dbd8-8491-97ed-28c0-180f293d2dce",
-        "vector_score": 0.38022837,
-        "recency_weight": 0.0008098390547102711,
-        "combined_score": 0.2474318841691486,
+        "vector_score": 0.38019308,
+        "recency_weight": 0.000662978635196484,
+        "combined_score": 0.24735754452231878,
         "timestamp": 1757548800,
         "payload": {
           "title": "El desig de donar la benvinguda a tothom",
@@ -82,9 +92,9 @@
       },
       {
         "id": "a3b96f0b-8b72-a0cf-b3b9-8bd5f3019270",
-        "vector_score": 0.29208332,
-        "recency_weight": 0.005142157469488064,
-        "combined_score": 0.1916539131143208,
+        "vector_score": 0.292048,
+        "recency_weight": 0.004209651931773358,
+        "combined_score": 0.19130457817612065,
         "timestamp": 1757894400,
         "payload": {
           "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
@@ -100,9 +110,9 @@
       },
       {
         "id": "9e8d1d15-c2f5-52e9-8111-f9a8d63ac3e7",
-        "vector_score": 0.28095368,
-        "recency_weight": 0.01295742487536433,
-        "combined_score": 0.18715499070637753,
+        "vector_score": 0.28089565,
+        "recency_weight": 0.01060765816314375,
+        "combined_score": 0.18629485285710032,
         "timestamp": 1758067200,
         "payload": {
           "title": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad",
@@ -118,9 +128,9 @@
       },
       {
         "id": "ab262f31-7baf-0ac8-43af-8f213673c6b7",
-        "vector_score": 0.28206778,
-        "recency_weight": 0.008162666176451491,
-        "combined_score": 0.18620099016175803,
+        "vector_score": 0.28207296,
+        "recency_weight": 0.006682405904916994,
+        "combined_score": 0.18568626606672095,
         "timestamp": 1757980800,
         "payload": {
           "title": "Publicació del segon volum sobre la història dels jesuïtes a Barcelona",
@@ -136,9 +146,9 @@
       },
       {
         "id": "4319952d-4f6a-74fc-a115-b1368e4ed1ec",
-        "vector_score": 0.2820935,
-        "recency_weight": 0.0008098390547102711,
-        "combined_score": 0.1836442186691486,
+        "vector_score": 0.28212404,
+        "recency_weight": 0.000662978635196484,
+        "combined_score": 0.18361266852231878,
         "timestamp": 1757548800,
         "payload": {
           "title": "Celebració de Sant Pere Claver a Verdú",

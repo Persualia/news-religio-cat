@@ -100,6 +100,9 @@ def _build_filter(filters: Mapping[str, Any] | None) -> qmodels.Filter | None:
     urls = _normalize_list(filters.get("url"))
     if urls:
         must.append(_filter_match_any("url", urls))
+    article_ids = _normalize_list(filters.get("article_id"))
+    if article_ids:
+        must.append(_filter_match_any("article_id", article_ids))
 
     date_from = filters.get("date_from")
     date_to = filters.get("date_to")

@@ -1,0 +1,249 @@
+{
+  "query": "Resum curt del més important publicat ahir",
+  "plan": {
+    "intent": "search_articles",
+    "topK": 5,
+    "semantic": false,
+    "filters": {
+      "date_from": "2025-09-25",
+      "date_to": "2025-09-25"
+    },
+    "sort": {
+      "by": "published_at",
+      "order": "desc"
+    },
+    "return": {
+      "index": "articles",
+      "fields": [
+        "title",
+        "url",
+        "published_at",
+        "site",
+        "author",
+        "description"
+      ]
+    },
+    "need_summary": true,
+    "need_context": false
+  },
+  "prepared": {
+    "plan": {
+      "intent": "search_articles",
+      "topK": 5,
+      "semantic": false,
+      "filters": {
+        "date_from": "2025-09-25",
+        "date_to": "2025-09-25"
+      },
+      "sort": {
+        "by": "published_at",
+        "order": "desc"
+      },
+      "return": {
+        "index": "articles",
+        "fields": [
+          "title",
+          "url",
+          "published_at",
+          "site",
+          "author",
+          "description"
+        ]
+      },
+      "need_summary": true,
+      "need_context": false
+    },
+    "query_text": "notícies rellevants",
+    "fields": [
+      "title",
+      "url",
+      "published_at",
+      "site",
+      "author",
+      "description"
+    ],
+    "top_k": 5,
+    "requires_embedding": true
+  },
+  "search": {
+    "intent": "search_articles",
+    "hits": [
+      {
+        "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+        "vector_score": 0.30910897,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.3506067227701406,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "description": "El compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.",
+          "indexed_at": "2025-09-26T09:40:00Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879600
+        }
+      },
+      {
+        "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
+        "vector_score": 0.28067094,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.33212200327014063,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
+          "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Confederació Espanyola de Religiosos",
+          "description": "La Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.",
+          "indexed_at": "2025-09-26T09:38:16Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879496
+        }
+      },
+      {
+        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
+        "vector_score": 0.26767048,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.3236717042701406,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "description": "El projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.",
+          "indexed_at": "2025-09-26T09:40:01Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879601
+        }
+      },
+      {
+        "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
+        "vector_score": 0.26148283,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.31964973177014067,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Diari de Cadis",
+          "description": "El Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral",
+          "indexed_at": "2025-09-26T09:38:18Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879498
+        }
+      },
+      {
+        "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+        "vector_score": 0.26140538,
+        "recency_weight": 0.4276739779146875,
+        "combined_score": 0.31959938927014064,
+        "timestamp": 1758758400,
+        "payload": {
+          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "published_at": "2025-09-25T00:00:00Z",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "description": "Compromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora",
+          "indexed_at": "2025-09-26T09:38:20Z",
+          "published_at_ts": 1758758400,
+          "indexed_at_ts": 1758879500
+        }
+      }
+    ]
+  },
+  "context": {
+    "total_chunks": 3,
+    "total_tokens": 1706,
+    "unique_sites": [
+      "salesians"
+    ],
+    "articles": [
+      {
+        "article_id": "d6e5cde69b58a00dc338fc0e1a8e226d14a6f7b8",
+        "site": "salesians",
+        "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+        "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+        "description": "El compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.",
+        "author": "Comunicació CEPSS",
+        "published_at": "2025-09-25T00:00:00+00:00",
+        "published_at_ts": 1758758400,
+        "indexed_at": "2025-09-26T09:40:00.059797+00:00",
+        "indexed_at_ts": 1758879600,
+        "best_score": 0.3506067227701406,
+        "best_recency": 0.4276739779146875,
+        "chunks": [
+          {
+            "chunk_id": "cfb591c0-26ff-a037-0198-291346b239e8",
+            "chunk_ix": 0,
+            "score": 0.3506067227701406,
+            "vector_score": 0.30910897,
+            "recency_weight": 0.4276739779146875,
+            "token_count": 591,
+            "content": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana. En cada escola, plataforma social, centre juvenil i obra pastoral, els Salesians treballem per garantir espais segurs, on cada nen, nena, adolescent i jove pugui créixer en confiança i plenitud. En aquesta línia, la Coordinadora Estatal de Plataformes Socials Salesianes (CEPSS) va participar en representació de la família salesiana en la jornada #”Hogarizar”: 10 anys de transformació del sistema de protecció de la infància: assoliments i reptes, organitzada per la Plataforma d’Infància (POI). La trobada va servir per a reflexionar sobre el camí recorregut des de l’aprovació de la Llei 26/2015 i els desafiaments pendents per a fer plenament efectiva la Llei orgànica de Protecció Integral a la Infància i l’Adolescència enfront de la Violència (LOPIVI). Una mirada de futur Durant la jornada, representants institucionals, acadèmics i socials van posar en relleu els avanços reeixits en aquesta dècada, així com la urgència de continuar enfortint la participació infantil, l’acompanyament a les famílies i la coordinació dels diferents sistemes de protecció. Es va subratllar també la importància que la infància estigui sempre en el centre, més enllà de colors polítics o realitats territorials. Un compromís salesià compartit La presència de CEPSS en aquesta trobada reforça el compromís de totes les obres salesianes amb la creació d’una cultura de protecció que travessa cada acció educativa i pastoral. Totes les entitats membre de la Coordinadora compten amb la certificació UNEIX 0070:2022 d’entorns segurs per a la infància, que avala que les nostres polítiques, protocols i canals de denúncia compleixen amb els estàndards més exigents en la matèria. Aquest compromís comú ens convida a seguir #”hogaritzant” cada espai educatiu salesià: fer d’ells un lloc de cura, confiança i seguretat, on la infància i la joventut puguin créixer, participar i somiar un futur amb esperança. Et convidem a veure el vídeo complet de la jornada aquí: Jornada #Hogarizar – 10 anys de transformació del sistema de protecció de la infància.",
+            "site": "salesians",
+            "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+            "published_at": "2025-09-25T00:00:00+00:00",
+            "published_at_ts": 1758758400,
+            "indexed_at": "2025-09-26T09:40:00.059797+00:00",
+            "indexed_at_ts": 1758879600
+          },
+          {
+            "chunk_id": "cfb591c0-26ff-a037-0198-291346b239e8",
+            "chunk_ix": 0,
+            "score": 0.3506067227701406,
+            "vector_score": 0.30910897,
+            "recency_weight": 0.4276739779146875,
+            "token_count": 591,
+            "content": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana. En cada escola, plataforma social, centre juvenil i obra pastoral, els Salesians treballem per garantir espais segurs, on cada nen, nena, adolescent i jove pugui créixer en confiança i plenitud. En aquesta línia, la Coordinadora Estatal de Plataformes Socials Salesianes (CEPSS) va participar en representació de la família salesiana en la jornada #”Hogarizar”: 10 anys de transformació del sistema de protecció de la infància: assoliments i reptes, organitzada per la Plataforma d’Infància (POI). La trobada va servir per a reflexionar sobre el camí recorregut des de l’aprovació de la Llei 26/2015 i els desafiaments pendents per a fer plenament efectiva la Llei orgànica de Protecció Integral a la Infància i l’Adolescència enfront de la Violència (LOPIVI). Una mirada de futur Durant la jornada, representants institucionals, acadèmics i socials van posar en relleu els avanços reeixits en aquesta dècada, així com la urgència de continuar enfortint la participació infantil, l’acompanyament a les famílies i la coordinació dels diferents sistemes de protecció. Es va subratllar també la importància que la infància estigui sempre en el centre, més enllà de colors polítics o realitats territorials. Un compromís salesià compartit La presència de CEPSS en aquesta trobada reforça el compromís de totes les obres salesianes amb la creació d’una cultura de protecció que travessa cada acció educativa i pastoral. Totes les entitats membre de la Coordinadora compten amb la certificació UNEIX 0070:2022 d’entorns segurs per a la infància, que avala que les nostres polítiques, protocols i canals de denúncia compleixen amb els estàndards més exigents en la matèria. Aquest compromís comú ens convida a seguir #”hogaritzant” cada espai educatiu salesià: fer d’ells un lloc de cura, confiança i seguretat, on la infància i la joventut puguin créixer, participar i somiar un futur amb esperança. Et convidem a veure el vídeo complet de la jornada aquí: Jornada #Hogarizar – 10 anys de transformació del sistema de protecció de la infància.",
+            "site": "salesians",
+            "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+            "published_at": "2025-09-25T00:00:00+00:00",
+            "published_at_ts": 1758758400,
+            "indexed_at": "2025-09-26T09:40:00.059797+00:00",
+            "indexed_at_ts": 1758879600
+          }
+        ]
+      },
+      {
+        "article_id": "84b7e3763baa60e435fe33a9c82757eb857fce40",
+        "site": "salesians",
+        "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+        "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+        "description": "El projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.",
+        "author": "Salesians La Orotava",
+        "published_at": "2025-09-25T00:00:00+00:00",
+        "published_at_ts": 1758758400,
+        "indexed_at": "2025-09-26T09:40:01.741618+00:00",
+        "indexed_at_ts": 1758879601,
+        "best_score": 0.3236717042701406,
+        "best_recency": 0.4276739779146875,
+        "chunks": [
+          {
+            "chunk_id": "50917f9a-7704-735f-c69c-b27c01bc5c70",
+            "chunk_ix": 0,
+            "score": 0.3236717042701406,
+            "vector_score": 0.26767048,
+            "recency_weight": 0.4276739779146875,
+            "token_count": 524,
+            "content": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife\n\nEl projecte “Mans joves, cors compromesos” rep el primer premi d'Aprenentatge Servei organitzat per la Universitat de La Llacuna i el Cabildo de Tenerife.\n\nLa Universitat de La Llacuna i el Cabildo de Tenerife van fer lliurament dels III Premis d’Aprenentatge-Servei, on el nostre centre, Salesians La Orotava, juntament amb l’ONG Bosco Global, la Universitat de La Llacuna (ULL) i Iriarte Centre Universitari Internacional va rebre el primer premi gràcies al projecte “Mans joves, cors compromesos”. La iniciativa destaca per la seva aposta per crear consciència i compromís social entre l’alumnat, fomentant la convivència i la igualtat entre cultures. Un projecte per a joves amb mirada transformadora El projecte ha estat desenvolupat per alumnat universitari de la ULL i de la Universitat Iriarte, en col·laboració amb Salesians La Orotava i Bosco Global. El seu objectiu principal ha estat formar a joves com a agents de canvi, capaços de compartir l’après amb tota la societat i d’impulsar una convivència respectuosa i solidària. Temes que construeixen una societat millor Al llarg del treball s’han abordat temes clau com: Conèixer millor l’adolescència i la joventut. Despertar la consciència social i el compromís ciutadà. Promoure la igualtat de gènere. Fomentar la convivència en la diversitat. Cuidar el planeta a través de l’educació ambiental. Apostar per una societat pacífica i justa, amb institucions democràtiques i inclusives. Aprenentatge-Servei: educar fent La metodologia emprada, l’Aprenentatge-Servei (ApS), combina l’adquisició de coneixements amb el compromís social. D’aquesta manera, els estudiants no només aprenen, sinó que també aporten valor a la comunitat, generant un impacte real en el seu entorn més pròxim. Un reconeixement que ens omple d’orgull Des de Salesians LaOrotava celebrem amb gran satisfacció aquest reconeixement, que suposa un impuls per a continuar treballant en projectes que reforcin l’educació en valors, la solidaritat i la convivència entre cultures.",
+            "site": "salesians",
+            "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+            "published_at": "2025-09-25T00:00:00+00:00",
+            "published_at_ts": 1758758400,
+            "indexed_at": "2025-09-26T09:40:01.741618+00:00",
+            "indexed_at_ts": 1758879601
+          }
+        ]
+      }
+    ]
+  }
+}
