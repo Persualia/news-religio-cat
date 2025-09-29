@@ -46,14 +46,36 @@ def slugify(text: str) -> str:
 
 
 def main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Execute one or more intent plans against Qdrant")
+    parser.add_argument("--index", type=int, default=None, help="Run only the plan at this 1-based index (from query_samples order)")
+    parser.add_argument("--query", type=str, default=None, help="Run only the plan whose key equals this query text")
+    args = parser.parse_args()
+
     load_dotenv()
     plans = load_plans(PLANS_PATH)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     qdrant_client, openai_client = ensure_clients()
 
+    # Build selection preserving original indices
+    all_items = list(plans.items())
+    selected: list[tuple[int, tuple[str, Dict[str, Any]]]]
+    if args.index is not None:
+        if args.index < 1 or args.index > len(all_items):
+            raise SystemExit(f"Index out of range: {args.index} (1..{len(all_items)})")
+        selected = [(args.index, all_items[args.index - 1])]
+    elif args.query is not None:
+        found_ix = next((i for i, (q, _) in enumerate(all_items) if q == args.query), None)
+        if found_ix is None:
+            raise SystemExit("Query not found in plans.json: " + args.query)
+        selected = [(found_ix + 1, all_items[found_ix])]
+    else:
+        selected = list(enumerate(all_items, start=1))
+
     summary = []
-    for idx, (query_text, plan) in enumerate(plans.items(), start=1):
+    for idx, (query_text, plan) in selected:
         print(f"[{idx}/{len(plans)}] Ejecutando: {query_text}")
         try:
             result = execute_plan(
@@ -72,11 +94,17 @@ def main() -> None:
 
         file_slug = f"{idx:02d}_{slugify(query_text)[:80]}"
         output_path = OUTPUT_DIR / f"{file_slug}.json"
+        # Extract Qdrant request details if available
+        qdrant_requests = []
+        if isinstance(result, dict) and isinstance(result.get("qdrant_requests"), list):
+            qdrant_requests = result.get("qdrant_requests") or []
+
         payload = {
             "query": query_text,
             "plan": plan,
             "status": status,
             "results": result,
+            "qdrant_requests": qdrant_requests,
         }
         if error:
             payload["error"] = error

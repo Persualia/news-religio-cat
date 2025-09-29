@@ -24,8 +24,8 @@
         "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
         "scores": {
           "vector": 0.451262,
-          "recency": 0.164361,
-          "combined": 0.350847
+          "recency": 0.129653,
+          "combined": 0.338699
         },
         "payload": {
           "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
@@ -39,8 +39,8 @@
         "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
         "scores": {
           "vector": 0.433367,
-          "recency": 0.103541,
-          "combined": 0.317928
+          "recency": 0.081676,
+          "combined": 0.310275
         },
         "payload": {
           "title": "Davant el genocidi a la Franja de Gaza",
@@ -53,8 +53,8 @@
         "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
         "scores": {
           "vector": 0.381456,
-          "recency": 0.164361,
-          "combined": 0.305472
+          "recency": 0.129653,
+          "combined": 0.293325
         },
         "payload": {
           "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
@@ -68,8 +68,8 @@
         "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
         "scores": {
           "vector": 0.339891,
-          "recency": 0.164361,
-          "combined": 0.278455
+          "recency": 0.129653,
+          "combined": 0.266308
         },
         "payload": {
           "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
@@ -83,8 +83,8 @@
         "id": "c4b6dbd8-8491-97ed-28c0-180f293d2dce",
         "scores": {
           "vector": 0.395504,
-          "recency": 0.000255,
-          "combined": 0.257166
+          "recency": 0.000201,
+          "combined": 0.257148
         },
         "payload": {
           "title": "El desig de donar la benvinguda a tothom",
@@ -111,8 +111,8 @@
         "id": "0c217ff1-8862-1b02-38d4-86fcca094ece",
         "scores": {
           "vector": 0.362854,
-          "recency": 0.025885,
-          "combined": 0.244915
+          "recency": 0.020419,
+          "combined": 0.243002
         },
         "payload": {
           "title": "El Provincial presenta a Catalunya el nou Projecte Apostòlic",
@@ -139,8 +139,8 @@
         "id": "9e8d1d15-c2f5-52e9-8111-f9a8d63ac3e7",
         "scores": {
           "vector": 0.368015,
-          "recency": 0.004077,
-          "combined": 0.240637
+          "recency": 0.003216,
+          "combined": 0.240335
         },
         "payload": {
           "title": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad",
@@ -153,29 +153,14 @@
         "id": "a3b96f0b-8b72-a0cf-b3b9-8bd5f3019270",
         "scores": {
           "vector": 0.363779,
-          "recency": 0.001618,
-          "combined": 0.237022
+          "recency": 0.001276,
+          "combined": 0.236903
         },
         "payload": {
           "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
           "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
           "site": "jesuites",
           "published_at": "2025-09-15T00:00:00Z"
-        }
-      },
-      {
-        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
-        "scores": {
-          "vector": 0.275929,
-          "recency": 0.164361,
-          "combined": 0.23688
-        },
-        "payload": {
-          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
-          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
-          "site": "salesians",
-          "author": "Salesians La Orotava",
-          "published_at": "2025-09-25T00:00:00Z"
         }
       },
       {
@@ -193,17 +178,17 @@
         }
       },
       {
-        "id": "41014754-2986-5cb1-bdaa-95e297115c4b",
+        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
         "scores": {
-          "vector": 0.26004,
-          "recency": 0.164361,
-          "combined": 0.226552
+          "vector": 0.275929,
+          "recency": 0.129653,
+          "combined": 0.224732
         },
         "payload": {
-          "title": "Processó Magna Mariana a Huelva amb la participació de Maria Auxiliadora",
-          "url": "https://salesianos.info/blog/processo-magna-mariana-a-huelva-amb-la-participacio-de-maria-auxiliadora/",
+          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
           "site": "salesians",
-          "author": "Salesians Comunicació",
+          "author": "Salesians La Orotava",
           "published_at": "2025-09-25T00:00:00Z"
         }
       },
@@ -236,21 +221,6 @@
         }
       },
       {
-        "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
-        "scores": {
-          "vector": 0.25319,
-          "recency": 0.164361,
-          "combined": 0.2221
-        },
-        "payload": {
-          "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
-          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
-          "site": "salesians",
-          "author": "Diari de Cadis",
-          "published_at": "2025-09-25T00:00:00Z"
-        }
-      },
-      {
         "id": "a6600a9b-b2dc-4afd-5d55-8f9d14502a29",
         "scores": {
           "vector": 0.341326,
@@ -279,17 +249,17 @@
         }
       },
       {
-        "id": "1c4b2b17-7831-f084-3724-748367d1b90d",
+        "id": "41014754-2986-5cb1-bdaa-95e297115c4b",
         "scores": {
-          "vector": 0.242892,
-          "recency": 0.164361,
-          "combined": 0.215406
+          "vector": 0.26004,
+          "recency": 0.129653,
+          "combined": 0.214405
         },
         "payload": {
-          "title": "Juicio sumarísimo",
-          "url": "https://salesianos.info/blog/juicio-sumarisimo/",
+          "title": "Processó Magna Mariana a Huelva amb la participació de Maria Auxiliadora",
+          "url": "https://salesianos.info/blog/processo-magna-mariana-a-huelva-amb-la-participacio-de-maria-auxiliadora/",
           "site": "salesians",
-          "author": "Josep Lluís Burguera",
+          "author": "Salesians Comunicació",
           "published_at": "2025-09-25T00:00:00Z"
         }
       },
@@ -297,14 +267,43 @@
         "id": "364281c2-a95d-23e8-69f3-b1d71916fab9",
         "scores": {
           "vector": 0.32813,
-          "recency": 0.000161,
-          "combined": 0.213341
+          "recency": 0.000127,
+          "combined": 0.213329
         },
         "payload": {
           "title": "Emotiva ofrena floral a l'Ermita de la Mare de Déu de Bellvitge",
           "url": "https://jesuites.net/ca/noticia/emotiva-ofrena-floral-lermita-de-la-mare-de-deu-de-bellvitge",
           "site": "jesuites",
           "published_at": "2025-09-10T00:00:00Z"
+        }
+      },
+      {
+        "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
+        "scores": {
+          "vector": 0.25319,
+          "recency": 0.129653,
+          "combined": 0.209952
+        },
+        "payload": {
+          "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+          "site": "salesians",
+          "author": "Diari de Cadis",
+          "published_at": "2025-09-25T00:00:00Z"
+        }
+      },
+      {
+        "id": "56519aba-4a7a-a282-8285-272b6904113a",
+        "scores": {
+          "vector": 0.322275,
+          "recency": 0.0,
+          "combined": 0.209479
+        },
+        "payload": {
+          "title": "Nova etapa i nous somnis!",
+          "url": "https://www.maristes.cat/noticies/nova-etapa-i-nous-somnis",
+          "site": "maristes",
+          "published_at": "2025-07-24T14:47:48Z"
         }
       }
     ],
@@ -328,8 +327,8 @@
           "chunks": [
             {
               "chunk_ix": 0,
-              "score": 0.350847,
-              "recency": 0.164361,
+              "score": 0.338699,
+              "recency": 0.129653,
               "snippet": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza La Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza. Davant el genocidi que es viu en la Franja de Gaza, els consagrats i consagrades d’Espanya elevem la nostra veu per a exigir e…"
             }
           ]
@@ -343,8 +342,8 @@
           "chunks": [
             {
               "chunk_ix": 0,
-              "score": 0.317928,
-              "recency": 0.103541,
+              "score": 0.310275,
+              "recency": 0.081676,
               "snippet": "Davant el genocidi a la Franja de Gaza Els Jesuïtes a Catalunya, amb la resta d’instituts i congregacions de vida religiosa que formem part de la Unió de Religiosos de Catalunya (URC), reiterem la denúncia del genocidi a Gaza, reclamem l’entrada sense restriccions d’ajuda humanitària i el respecte al Dret Humanitari In…"
             }
           ]
@@ -365,7 +364,222 @@
           ]
         }
       ]
-    }
+    },
+    "qdrant_requests": [
+      {
+        "method": "POST",
+        "url": "https://004fccc9-a4fe-4d90-a716-4622ab2354a9.eu-central-1-0.aws.cloud.qdrant.io/collections/articles/points/search",
+        "headers": {
+          "Content-Type": "application/json",
+          "api-key": "eyJh…GAM4"
+        },
+        "body": {
+          "limit": 80,
+          "with_payload": true,
+          "with_vectors": false,
+          "search_params": {
+            "hnsw_ef": 256,
+            "exact": false,
+            "indexed_only": false
+          },
+          "query_filter": {
+            "must": [
+              {
+                "should": [
+                  {
+                    "key": "published_at_ts",
+                    "range": {
+                      "gte": 1743120000.0,
+                      "lte": 1759103999.0
+                    }
+                  },
+                  {
+                    "key": "indexed_at_ts",
+                    "range": {
+                      "gte": 1743120000.0,
+                      "lte": 1759103999.0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "query_vector": {
+            "length": 1536,
+            "head": [
+              0.004401877988129854,
+              0.06394089758396149,
+              0.056335773319005966,
+              0.015137913636863232,
+              -0.026142608374357224,
+              0.008679759688675404,
+              0.021182745695114136,
+              0.016832534223794937
+            ]
+          }
+        }
+      },
+      {
+        "method": "POST",
+        "url": "https://004fccc9-a4fe-4d90-a716-4622ab2354a9.eu-central-1-0.aws.cloud.qdrant.io/collections/chunks/points/search",
+        "headers": {
+          "Content-Type": "application/json",
+          "api-key": "eyJh…GAM4"
+        },
+        "body": {
+          "limit": 1920,
+          "with_payload": true,
+          "with_vectors": false,
+          "search_params": {
+            "hnsw_ef": 256,
+            "exact": false,
+            "indexed_only": false
+          },
+          "query_filter": {
+            "must": [
+              {
+                "should": [
+                  {
+                    "key": "published_at_ts",
+                    "range": {
+                      "gte": 1743120000.0,
+                      "lte": 1759103999.0
+                    }
+                  },
+                  {
+                    "key": "indexed_at_ts",
+                    "range": {
+                      "gte": 1743120000.0,
+                      "lte": 1759103999.0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "query_vector": {
+            "length": 1536,
+            "head": [
+              0.004401877988129854,
+              0.06394089758396149,
+              0.056335773319005966,
+              0.015137913636863232,
+              -0.026142608374357224,
+              0.008679759688675404,
+              0.021182745695114136,
+              0.016832534223794937
+            ]
+          }
+        }
+      }
+    ]
   },
-  "agent_answer": "Aquí tens una cronologia resumida dels principals fets sobre refugiats dels últims 6 mesos (març a setembre 2025), basada en les notícies més rellevants trobades:\n\n- Final de setembre 2025: La CONFER (Conferència Espanyola de Religiosos) reclama la fi de la fam i demana l'entrada d'ajuda humanitària a la Franja de Gaza, davant l'emergència humanitària i el que consideren un genocidi a la regió. [La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza](https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/).\n\n- 24 de setembre 2025: Els Jesuïtes a Catalunya denuncien el genocidi a la Franja de Gaza, reclamen ajuda humanitària sense restriccions i el respecte al Dret Humanitari Internacional per protegir la població civil. [Davant el genocidi a la Franja de Gaza](https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza).\n\n- Entre altres accions i comunicats, al setembre 2025 diverses entitats religioses i socials han expressat la seva preocupació per la situació dels refugiats i han insistit en la necessitat d'ajuda i protecció.\n\nAquestes notícies són les més destacades relacionades amb refugiats i crisis humanitàries recents i donen una idea del context actual.\n\nSi vols, et puc ampliar la informació amb més detalls o buscar dades específiques sobre altres zones o temes relacionats amb refugiats."
+  "qdrant_requests": [
+    {
+      "method": "POST",
+      "url": "https://004fccc9-a4fe-4d90-a716-4622ab2354a9.eu-central-1-0.aws.cloud.qdrant.io/collections/articles/points/search",
+      "headers": {
+        "Content-Type": "application/json",
+        "api-key": "eyJh…GAM4"
+      },
+      "body": {
+        "limit": 80,
+        "with_payload": true,
+        "with_vectors": false,
+        "search_params": {
+          "hnsw_ef": 256,
+          "exact": false,
+          "indexed_only": false
+        },
+        "query_filter": {
+          "must": [
+            {
+              "should": [
+                {
+                  "key": "published_at_ts",
+                  "range": {
+                    "gte": 1743120000.0,
+                    "lte": 1759103999.0
+                  }
+                },
+                {
+                  "key": "indexed_at_ts",
+                  "range": {
+                    "gte": 1743120000.0,
+                    "lte": 1759103999.0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "query_vector": {
+          "length": 1536,
+          "head": [
+            0.004401877988129854,
+            0.06394089758396149,
+            0.056335773319005966,
+            0.015137913636863232,
+            -0.026142608374357224,
+            0.008679759688675404,
+            0.021182745695114136,
+            0.016832534223794937
+          ]
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "url": "https://004fccc9-a4fe-4d90-a716-4622ab2354a9.eu-central-1-0.aws.cloud.qdrant.io/collections/chunks/points/search",
+      "headers": {
+        "Content-Type": "application/json",
+        "api-key": "eyJh…GAM4"
+      },
+      "body": {
+        "limit": 1920,
+        "with_payload": true,
+        "with_vectors": false,
+        "search_params": {
+          "hnsw_ef": 256,
+          "exact": false,
+          "indexed_only": false
+        },
+        "query_filter": {
+          "must": [
+            {
+              "should": [
+                {
+                  "key": "published_at_ts",
+                  "range": {
+                    "gte": 1743120000.0,
+                    "lte": 1759103999.0
+                  }
+                },
+                {
+                  "key": "indexed_at_ts",
+                  "range": {
+                    "gte": 1743120000.0,
+                    "lte": 1759103999.0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "query_vector": {
+          "length": 1536,
+          "head": [
+            0.004401877988129854,
+            0.06394089758396149,
+            0.056335773319005966,
+            0.015137913636863232,
+            -0.026142608374357224,
+            0.008679759688675404,
+            0.021182745695114136,
+            0.016832534223794937
+          ]
+        }
+      }
+    }
+  ]
 }

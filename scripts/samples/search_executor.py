@@ -23,6 +23,7 @@ for candidate in (ROOT, ROOT / "src"):
 from openai import OpenAI
 
 from src.vector_client import get_client
+from src.config import get_settings
 from src.search.qdrant_search import (
     SearchResult,
     latest_by_site,
@@ -271,6 +272,127 @@ def ensure_clients(qdrant_client=None, openai_client=None):
     return qdrant_client, openai_client
 
 
+def _model_to_json(obj):
+    # Best-effort pydantic v2/v1 to JSON-like dict
+    if obj is None:
+        return None
+    for attr in ("model_dump", "dict"):
+        fn = getattr(obj, attr, None)
+        if callable(fn):
+            try:
+                return fn(exclude_none=True)
+            except TypeError:
+                try:
+                    return fn()
+                except Exception:  # noqa: BLE001
+                    pass
+    try:
+        return json.loads(json.dumps(obj))
+    except Exception:  # noqa: BLE001
+        return str(obj)
+
+
+class QdrantClientLogger:
+    """Thin wrapper to record Qdrant HTTP-equivalent requests made via SDK."""
+
+    def __init__(self, inner, base_url: str, api_key: str | None):
+        self._inner = inner
+        self._base_url = base_url.rstrip("/")
+        self._api_key = api_key or None
+        self.requests: list[dict[str, Any]] = []
+
+    def _mask(self, value: str) -> str:
+        if not value:
+            return value
+        if len(value) <= 8:
+            return "***"
+        return f"{value[:4]}…{value[-4:]}"
+
+    def _headers(self) -> dict[str, str]:
+        headers = {"Content-Type": "application/json"}
+        if self._api_key:
+            headers["api-key"] = self._mask(self._api_key)
+        return headers
+
+    # Intercepted methods
+    def search(
+        self,
+        *,
+        collection_name,
+        query_vector,
+        limit,
+        with_payload,
+        with_vectors,
+        search_params=None,
+        query_filter=None,
+        **kwargs,
+    ):
+        url = f"{self._base_url}/collections/{collection_name}/points/search"
+        body = {
+            "limit": int(limit) if isinstance(limit, (int, float)) else limit,
+            "with_payload": bool(with_payload),
+            "with_vectors": bool(with_vectors),
+            "search_params": _model_to_json(search_params),
+            "query_filter": _model_to_json(query_filter),
+            "query_vector": {
+                "length": len(query_vector) if hasattr(query_vector, "__len__") else None,
+                "head": list(query_vector)[:8] if query_vector is not None else None,
+            },
+        }
+        self.requests.append({
+            "method": "POST",
+            "url": url,
+            "headers": self._headers(),
+            "body": body,
+        })
+        return self._inner.search(
+            collection_name=collection_name,
+            query_vector=query_vector,
+            limit=limit,
+            with_payload=with_payload,
+            with_vectors=with_vectors,
+            search_params=search_params,
+            query_filter=query_filter,
+            **kwargs,
+        )
+
+    def scroll(
+        self,
+        *,
+        collection_name,
+        scroll_filter=None,
+        with_payload=True,
+        limit=None,
+        offset=None,
+        **kwargs,
+    ):
+        url = f"{self._base_url}/collections/{collection_name}/points/scroll"
+        body = {
+            "filter": _model_to_json(scroll_filter),
+            "with_payload": bool(with_payload),
+            "limit": int(limit) if isinstance(limit, (int, float)) else limit,
+            "offset": offset,
+        }
+        self.requests.append({
+            "method": "POST",
+            "url": url,
+            "headers": self._headers(),
+            "body": body,
+        })
+        return self._inner.scroll(
+            collection_name=collection_name,
+            scroll_filter=scroll_filter,
+            with_payload=with_payload,
+            limit=limit,
+            offset=offset,
+            **kwargs,
+        )
+
+    # Fallback for other attributes/methods
+    def __getattr__(self, name):  # pragma: no cover - passthrough
+        return getattr(self._inner, name)
+
+
 def get_embedding(client: OpenAI, text: str) -> List[float]:
     response = client.embeddings.create(
         model="text-embedding-3-small",
@@ -408,6 +530,10 @@ def execute_plan(
     openai_client=None,
 ) -> Dict[str, Any]:
     qdrant_client, openai_client = ensure_clients(qdrant_client, openai_client)
+    # Wrap Qdrant client to capture request metadata
+    settings = get_settings()
+    qlogger = QdrantClientLogger(qdrant_client, settings.qdrant.url, settings.qdrant.api_key)
+    qdrant_client = qlogger
 
     intent = str(plan.get("intent"))
     filters = sanitize_filters(plan.get("filters", {}))
