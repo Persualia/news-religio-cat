@@ -22,90 +22,80 @@
     "data": [
       {
         "id": "cfb591c0-26ff-a037-0198-291346b239e8",
-        "vector_score": 0.24316698,
-        "recency_weight": 0.16944952163502808,
-        "combined_score": 0.2173658695722598,
-        "timestamp": 1758758400,
+        "scores": {
+          "vector": 0.283925,
+          "recency": 0.164362,
+          "combined": 0.242078
+        },
         "payload": {
           "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
           "content": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana.\n\nEl compromís amb la protecció de la infància i de les persones més vulnerables forma part essencial de la missió salesiana. En cada escola, plataforma social, centre juvenil i obra pastoral, els Salesians treballem per garantir espais segurs, on cada nen, nena, adolescent i jove pugui créixer en confiança i plenitud. En aquesta línia, la Coordinadora Estatal de Plataformes Socials Salesianes (CEPSS) va participar en representació de la família salesiana en la jornada #”Hogarizar”: 10 anys de transformació del sistema de protecció de la infància: assoliments i reptes, organitzada per la Plataforma d’Infància (POI). La trobada va servir per a reflexionar sobre el camí recorregut des de l’aprovació de la Llei 26/2015 i els desafiaments pendents per a fer plenament efectiva la Llei orgànica de Protecció Integral a la Infància i l’Adolescència enfront de la Violència (LOPIVI). Una mirada de futur Durant la jornada, representants institucionals, acadèmics i socials van posar en relleu els avanços reeixits en aquesta dècada, així com la urgència de continuar enfortint la participació infantil, l’acompanyament a les famílies i la coordinació dels diferents sistemes de protecció. Es va subratllar també la importància que la infància estigui sempre en el centre, més enllà de colors polítics o realitats territorials. Un compromís salesià compartit La presència de CEPSS en aquesta trobada reforça el compromís de totes les obres salesianes amb la creació d’una cultura de protecció que travessa cada acció educativa i pastoral. Totes les entitats membre de la Coordinadora compten amb la certificació UNEIX 0070:2022 d’entorns segurs per a la infància, que avala que les nostres polítiques, protocols i canals de denúncia compleixen amb els estàndards més exigents en la matèria. Aquest compromís comú ens convida a seguir #”hogaritzant” cada espai educatiu salesià: fer d’ells un lloc de cura, confiança i seguretat, on la infància i la joventut puguin créixer, participar i somiar un futur amb esperança. Et convidem a veure el vídeo complet de la jornada aquí: Jornada #Hogarizar – 10 anys de transformació del sistema de protecció de la infància.",
           "site": "salesians",
           "author": "Comunicació CEPSS",
-          "published_at": "2025-09-25T00:00:00+00:00",
-          "indexed_at": "2025-09-26T09:40:00.059797+00:00",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879600
-        }
-      },
-      {
-        "id": "204b43da-a001-4b15-93e9-d4460f5d33a2",
-        "vector_score": 0.23776942,
-        "recency_weight": 0.16944952163502808,
-        "combined_score": 0.21385745557225982,
-        "timestamp": 1758758400,
-        "payload": {
-          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
-          "content": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe\n\nCompromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora\n\nEl passat cap de setmana, prop de 80 animadors de les presències de Salesians i Salesianes de Canàries van participar en una enriquidora trobada formativa, emmarcat en l’Itinerari d’Educació en la Fe (IEF). Durant la jornada del dissabte, els assistents van aprofundir en la reflexió sobre l’acció educativa dels centres juvenils i el valor del Sistema Preventiu com a pilar de l’acompanyament pastoral. La formació es va completar a la tarda amb dos tallers pràctics que van oferir eines concretes per a l’animació pastoral en les seves realitats locals. A més, es van cuidar especialment els moments celebratius, que van ajudar a interioritzar el viscut: una adoració al Santíssim el dissabte a la nit i l’Eucaristia compartida el diumenge van posar el fermall espiritual a la trobada. Com a part de la programació, també es van presentar les campanyes pastorals de les dues inspectories: Protagonistes de la història, per part dels Salesians, i Confia, de les Salesianes, marcant un horitzó pastoral comú per a aquest nou curs. Programació local i pròxims trobades a l’octubre A nivell inspectorial, aquestes setmanes s’està avançant en la programació local de l’Itinerari d’Educació en la Fe, peça clau del projecte pastoral salesià. El mes d’octubre arribarà carregat de noves propostes formatives: a Catalunya, la Comunitat Valenciana i la Regió de Múrcia se celebraran jornades per a animadors de l’IEF; a Extremadura tindrà lloc una trobada específica de formació; i a Andalusia s’iniciaran les primeres convivències dirigides als nivells inicials de l’itinerari infantil. Tot això demostra el compromís conjunt d’animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora, fidel a l’estil de Don Bosco i de Mare Mazzarello.",
-          "site": "salesians",
-          "author": "Salesians Comunicació",
-          "published_at": "2025-09-25T00:00:00+00:00",
-          "indexed_at": "2025-09-26T09:38:20.135275+00:00",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879500
+          "published_at": "2025-09-25T00:00:00+00:00"
         }
       },
       {
         "id": "92660c4b-154e-07d6-6fe4-54341025cf6c",
-        "vector_score": 0.23764677,
-        "recency_weight": 0.16944952163502808,
-        "combined_score": 0.21377773307225983,
-        "timestamp": 1758758400,
+        "scores": {
+          "vector": 0.256203,
+          "recency": 0.164362,
+          "combined": 0.224058
+        },
         "payload": {
           "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
           "content": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza\n\nLa Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.\n\nDavant el genocidi que es viu en la Franja de Gaza, els consagrats i consagrades d’Espanya elevem la nostra veu per a exigir el cessament immediat d’accions que provoquin fam, destrucció i mort de civils innocents, i demandar l’accés sense restriccions de l’ajuda humanitària. “No puc veure morir al nen” (Gn 21,15). Aquest crit antic, pronunciat per Agar en el desert, ressona avui amb força entre moltes mares i pares del món. Les informacions i testimoniatges que arriben des de Gaza descriuen escenes de fam, col·lapse sanitari, desplaçament massiu i víctimes entre bebès, nens i nenes, dones embarassades, ancians i persones vulnerables. Davant aquesta realitat, el deure moral i humanitari és clar: protegir la vida, garantir l’assistència urgent i respectar el Dret Internacional Humanitari. Denunciem la imposició de restriccions que impedeixen l’arribada d’aliments, medicines i combustible, i condemnem els atacs indiscriminats que han causat destrucció, morts i mutilacions entre la població civil. Demanem a les autoritats competents que actuïn amb determinació per a obrir corredors humanitaris segurs i garantir la protecció de periodistes, personal sanitari, cooperants i població civil. Cuidar al més feble i defensar la vida No es tracta de prendre postura partidista, sinó de recordar l’obligació bàsica de tota comunitat humana: cuidar al més feble i defensar la vida. Per això secundem i ens sumem als comunicats i crides de diferents institucions religioses, organitzacions humanitàries i organismes internacionals que exigeixen el respecte del Dret Internacional i l’entrada d’ajuda a tota la població de Gaza. Exigim, a més: Que es permeti immediatament l’entrada de tota l’ajuda humanitària necessària per a evitar morts per inanició i col·lapse sanitari. El cessament de bombardejos sobre zones civils i la protecció d’instal·lacions sanitàries, religioses i de refugiats. El respecte i la plena aplicació del Dret Internacional Humanitari i dels drets humans. Que la comunitat internacional redobli els seus esforços diplomàtics i humanitaris per a posar fi al sofriment i avançar cap a solucions justes i duradores. Com recull l’Escriptura —“Què et passa, Agar? No temis, perquè Déu ha sentit la veu del noi…” (Gn 21,17-18)— fem una crida a la compassió i a l’acció: que les nostres mans es converteixin en auxili efectiu i no en indiferència.",
           "site": "salesians",
           "author": "Confederació Espanyola de Religiosos",
-          "published_at": "2025-09-25T00:00:00+00:00",
-          "indexed_at": "2025-09-26T09:38:16.783189+00:00",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879496
+          "published_at": "2025-09-25T00:00:00+00:00"
         }
       },
       {
-        "id": "daecb211-2830-d6ab-33f9-bbf7a8a4f1ff",
-        "vector_score": 0.215649,
-        "recency_weight": 0.10674650960129431,
-        "combined_score": 0.177533128360453,
-        "timestamp": 1758672000,
+        "id": "204b43da-a001-4b15-93e9-d4460f5d33a2",
+        "scores": {
+          "vector": 0.231275,
+          "recency": 0.164362,
+          "combined": 0.207855
+        },
         "payload": {
-          "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
-          "content": "Davant el genocidi a la Franja de Gaza\n\nEls Jesuïtes a Catalunya, amb la resta d’instituts i congregacions de vida religiosa que formem part de la Unió de Religiosos de Catalunya (URC), reiterem la denúncia del genocidi a Gaza, reclamem l’entrada sense restriccions d’ajuda humanitària i el respecte al Dret Humanitari Internacional, i fem una crida a la participació activa a les diverses accions convocades els propers dies. En el comunicat publicat aquest dimarts 23 de setembre, “la Unió de Religiosos de Catalunya (URC) vol expressar, una vegada més, el seu profund dolor i compromís davant la tragèdia humanitària que continua colpejant la Franja de Gaza. El passat 13 de juny, des de la nostra Assemblea, ja vam fer públic el nostre posicionament amb el comunicat “No al genocidi, Sí a la Pau” , on denunciàvem amb fermesa la violència, la destrucció i la desprotecció de les persones més vulnerables, especialment els infants. Reiterem avui aquell clam, que és més vigent que mai: no al genocidi, sí a la pau”. Ens sentim cridats a fer costat als qui pateixen i a denunciar amb claredat qualsevol forma de violència o opressió. “En aquesta mateixa línia”, continua el text, “acollim i ens fem nostres les paraules de la CONFER , la Conferència Espanyola de Religiosos, que recentment ha reclamat l’entrada immediata d’ajuda humanitària a Gaza i el respecte al Dret Internacional Humanitari. Davant les imatges de fam, hospitals col·lapsats, nens i nenes mutilats, mares desesperades i comunitats trencades pel dolor, no podem restar indiferents. Ens unim a totes les veus que, des de la fe i el compromís evangèlic, exigeixen l’alto el foc, la protecció de la població civil i l’obertura de corredors humanitaris”. Feliços els qui treballen per la pau, perquè seran anomenats fills de Déu (Mt 5,9). Aquesta és la nostra esperança, i també el nostre compromís. Accions per Gaza Per tot això ens adherim i animem a tothom a participar a l’acte “Cristians contra el genocidi de Gaza” , convocat per la Xarxa d’Entitats Cristianes, que aplega un ampli ventall d’organitzacions eclesials i laiques, i que tindrà lloc el proper dilluns 29 de setembre a les 19h a l’Església de Santa Anna de Barcelona. Serà un espai de denúncia, de pregària i de comunió amb les víctimes d’aquesta barbàrie. També us convidem a participar a la manifestació del proper 4 d’octubre , a les 12h, als Jardinets de Gràcia (Barcelona) amb el lema ‘Resistint al colonialisme, genocidi, apartheid i ocupació. Fi al comerç d’armes i a les relacions amb Israel’ convocada per diverses organitzacions, com la Comunitat Palestina de Catalunya, Prou Complicitat amb Israel, Plataforma Aturem les Guerres o Embargament d’Armes Ja! Junt amb aquesta crida a unir-nos a altres persones i col·lectius, des de la Companyia de Jesús a Catalunya, també animem a les nostres institucions: escoles, universitats, comunitats cristianes, entitats social,... a portar a terme accions per tal d’expressar de forma comunitària la denúncia de la violència i la nostra solidaritat amb les víctimes.",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-24T00:00:00+00:00",
-          "indexed_at": "2025-09-26T09:38:04.234183+00:00",
-          "published_at_ts": 1758672000,
-          "indexed_at_ts": 1758879484
-        }
-      },
-      {
-        "id": "314220d7-2d88-168c-d9a3-01e42eee6c35",
-        "vector_score": 0.17086077,
-        "recency_weight": 0.16944952163502808,
-        "combined_score": 0.17036683307225983,
-        "timestamp": 1758758400,
-        "payload": {
-          "url": "https://salesianos.info/blog/juicio-sumarisimo/",
-          "content": "Juicio sumarísimo\n\nUna y otra vez oímos recitar en estos casos, una letanía de acusaciones contra el maléfico poder que películas de cine y programas televisivos violentos tendrían sobre personas particularmente vulnerables, en especial jóvenes y adolescentes. Notemos, sin embargo, que el discurso se diluye como por ensalmo cuando las escenas de violencia nos muestran escenarios bélicos como los de la guerra de Ucrania, el genocidio de Gaza. No hay Facultad de Ciencias de la Información ni estudioso de la imagen que se precie, que no haya intentado un estudio sobre la relación entre medios de comunicación y violencia. Sin embargo, los resultados en este campo son constantes: verifican la imposibilidad de establecer una relación mecánica entre violencia e imagen audiovisual. Esto no significa, desde luego, que películas o series y programas de no ficción violentos sean inocentes en los mecanismos desencadenantes o justificadores de las conductas violentas. El actual auge de las redes sociales hace más complejo el diagnóstico, puesto que ahora en la ecuación entran en juego factores como la híper multiplicidad de emisores o los algoritmos del sistema que favorecen el ensimismamiento en la recepción de los mensajes, sean imágenes audiovisuales o textos, dado que el usuario queda inclinado a seguir y seleccionar aquellos mensajes que son más armónicos con su forma de pensar y, por ende, tiende a evitar otros que le puedan producir lo que se llama “disonancia cognitiva”. El pensador transalpino Ítalo Calvino reservaba una de sus “Seis propuestas para el próximo milenio” (el siglo XXI) a la “Multiplicidad”. “¿Qué somos nosotros -se preguntaba- sino una combinación de experiencias, de informaciones, de lecturas e imaginaciones? Cada vida es una enciclopedia, una biblioteca, un inventario de objetos… donde todo puede ser continuamente remezclado y reordenado en todos los modos posibles”. De manera que, volviendo al tema que nos ocupa, no se trata de condenar al cine y a la televisión, ni siquiera a las redes sociales, tras un juicio sumarísimo como los causantes o inductores de todas las violencias que nos afligen. La realidad y la vida se empeñan en ser complejas, tozudamente complejas.",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "content": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe\n\nCompromís conjunt d'animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora\n\nEl passat cap de setmana, prop de 80 animadors de les presències de Salesians i Salesianes de Canàries van participar en una enriquidora trobada formativa, emmarcat en l’Itinerari d’Educació en la Fe (IEF). Durant la jornada del dissabte, els assistents van aprofundir en la reflexió sobre l’acció educativa dels centres juvenils i el valor del Sistema Preventiu com a pilar de l’acompanyament pastoral. La formació es va completar a la tarda amb dos tallers pràctics que van oferir eines concretes per a l’animació pastoral en les seves realitats locals. A més, es van cuidar especialment els moments celebratius, que van ajudar a interioritzar el viscut: una adoració al Santíssim el dissabte a la nit i l’Eucaristia compartida el diumenge van posar el fermall espiritual a la trobada. Com a part de la programació, també es van presentar les campanyes pastorals de les dues inspectories: Protagonistes de la història, per part dels Salesians, i Confia, de les Salesianes, marcant un horitzó pastoral comú per a aquest nou curs. Programació local i pròxims trobades a l’octubre A nivell inspectorial, aquestes setmanes s’està avançant en la programació local de l’Itinerari d’Educació en la Fe, peça clau del projecte pastoral salesià. El mes d’octubre arribarà carregat de noves propostes formatives: a Catalunya, la Comunitat Valenciana i la Regió de Múrcia se celebraran jornades per a animadors de l’IEF; a Extremadura tindrà lloc una trobada específica de formació; i a Andalusia s’iniciaran les primeres convivències dirigides als nivells inicials de l’itinerari infantil. Tot això demostra el compromís conjunt d’animadors i comunitats educatives a continuar oferint una pastoral juvenil viva, actual i profundament evangelitzadora, fidel a l’estil de Don Bosco i de Mare Mazzarello.",
           "site": "salesians",
-          "author": "Josep Lluís Burguera",
-          "published_at": "2025-09-25T00:00:00+00:00",
-          "indexed_at": "2025-09-26T09:40:05.088736+00:00",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879605
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00+00:00"
+        }
+      },
+      {
+        "id": "dc1018cf-e05a-edd5-f0c7-4fcf7aa05386",
+        "scores": {
+          "vector": 0.226173,
+          "recency": 0.164362,
+          "combined": 0.204539
+        },
+        "payload": {
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+          "content": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval\n\nEl Clúster Marítim Naval valora l'adaptació dels estudis a les necessitats del mercat laboral\n\nEl Clúster Marítim Naval de Cadis en el marc de la seva Assemblea General i del seu desè aniversari, ha reconegut al col·legi Sant Ignasi Salesians de Cadis “per la seva contribució a la indústria naval, no sols formant als futurs professionals, sinó col·laborant amb el Clúster i empreses per adaptar la formació a les necessitats del mercat”. Aquest reconeixement s’ha produït en la tercera edició del lliurament de guardons a la contribució de persones i institucions en favor de la indústria naval, que des de l’any passat es diuen Premis José Antonio Rodríguez-Poch a l’impuls del sector naval, en memòria del mort director de Navantia en Badia de Cadis. El Clúster Marítim Naval de Cadis en el marc de la seva Assemblea General i del seu desè aniversari, ha reconegut al col·legi Sant Ignasi Salesians de Cadis “per la seva contribució a la indústria naval, no sols formant els futurs professionals, sinó col·laborant amb el Clúster i empreses a adaptar la formació a les necessitats del mercat”. Aquest reconeixement s’ha produït en la tercera edició del lliurament de guardons a la contribució de persones i institucions en favor de la indústria naval, que des de l’any passat es diuen Premis José Antonio Rodríguez-Poch a l’impuls del sector naval, en memòria del mort director de Navantia en Badia de Cadis.",
+          "site": "salesians",
+          "author": "Diari de Cadis",
+          "published_at": "2025-09-25T00:00:00+00:00"
+        }
+      },
+      {
+        "id": "81a1ad25-3068-7d47-5561-573b6f9abbb8",
+        "scores": {
+          "vector": 0.311966,
+          "recency": 0.0,
+          "combined": 0.202778
+        },
+        "payload": {
+          "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
+          "content": "La Travessa 2025: Expedició L’Hermitage\n\nDesprés de la bona acollida de l’any passat, entre el 14 i el 18 de juliol hem viscut una nova edició de La Travessa , aquest cop seguint els camins al voltant de la casa de L’Hermitage, enguany que celebrem el bicentenari de la seva construcció. La Montse Francisco, de Maristes Girona , ens comparteix el seu testimoni: Riures i vida compartida a mans plenes M’hi vaig apuntar sense saber ben bé on em ficava. La Travessa: de què va? Va d’ADN marista! Per obtenir aquest codi només calen dos elements, i són a l’abast de tothom: humor i senzillesa. A L’Hermitage durant cinc dies ens hem despullat de l’oficialitat de les nostres professions i vocacions i cadascú ha triat la muda que li era més còmoda. Caminant entre boscos esplèndids, i tot descobrint espais recuperats pels que continuen mantenint encesa la flama de Marcel·lí a França, els dies s’han escolat entre rialles, converses franques i moments hilarants. Una experiència que ha amalgamat divuit ànimes, que marxen havent rebut el que assedega les ganes de viure: la generositat dels altres. La travessa a L’Hermitage ha estat un regal. Gràcies! Compartir",
+          "site": "maristes",
+          "published_at": "2025-07-24T08:08:43+00:00"
         }
       }
     ],
     "context": null
-  }
+  },
+  "agent_answer": "Les causes que s'associen a la migració són diverses i es poden entendre a partir de diferents factors socials, econòmics i polítics. En els resultats trobats, no es donen causes específiques de migració de manera directa, però sí es relacionen situacions que poden intervenir en fenòmens migratoris, com la fam, la violència, la guerra, la inestabilitat política i la manca d'oportunitats educatives.\n\nAlgunes cites rellevants que poden relacionar-se amb les causes de la migració són:\n\n1. Sobre la fam i la crisi humanitària com a causa de desplaçaments forçats:\n   - \"Les informacions i testimoniatges que arriben des de Gaza descriuen escenes de fam, col·lapse sanitari, desplaçament massiu i víctimes entre bebès, nens i nenes, dones embarassades, ancians i persones vulnerables.\" (CONFER, des de el comunicat sobre la situació a Gaza)  \n   - \"Denunciem la imposició de restriccions que impedeixen l’arribada d’aliments, medicines i combustible, i condemnem els atacs indiscriminats que han causat destrucció, morts i mutilacions entre la població civil.\" (CONFER)\n\n2. Violència, genocidi i conflictes armats:\n   - \"Reiterem la denúncia del genocidi a Gaza... la violència, la destrucció i la desprotecció de les persones més vulnerables, especialment els infants.\" (Jesuïtes a Catalunya)  \n   - \"No al genocidi, sí a la pau... ens unim a totes les veus que, des de la fe i el compromís evangèlic, exigeixen l’alto el foc, la protecció de la població civil i l’obertura de corredors humanitaris.\" (Jesuïtes a Catalunya)\n\n3. Manca d'oportunitats educatives i situacions de vulnerabilitat social:\n   - \"La inestabilitat social i política... obliga moltes famílies a triar entre portar els fills a l’escola o garantir la supervivència quotidiana.\" (Informe Vermell d’Entrecultures Catalunya)  \n   - \"L’educació és motor de desenvolupament i una eina per fer front a l’adversitat.\" (Fe y Alegría Txad)\n\nAquestes cites posen en relleu que la migració sovint està vinculada a causes com la fam, la violència i la crisi social que afecten especialment a les persones més vulnerables, incloent-hi infants i famílies. També reflecteixen la manca de recursos bàsics i la recerca d’un futur millor com a motors per als fluxos migratoris.\n\nSi vols puc ajudar a buscar més informació específica sobre causes de migració. Vols que t'ho faciliti?"
 }

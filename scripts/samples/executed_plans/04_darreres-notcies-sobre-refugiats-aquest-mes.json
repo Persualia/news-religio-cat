@@ -22,175 +22,123 @@
     "data": [
       {
         "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
-        "vector_score": 0.317146,
-        "recency_weight": 0.16945405307903424,
-        "combined_score": 0.265453818577662,
-        "timestamp": 1758758400,
+        "scores": {
+          "vector": 0.422766,
+          "recency": 0.164366,
+          "combined": 0.332326
+        },
         "payload": {
           "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
           "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
           "site": "salesians",
           "author": "Confederació Espanyola de Religiosos",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:16Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879496
+          "published_at": "2025-09-25T00:00:00Z"
         }
       },
       {
         "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
-        "vector_score": 0.27982894,
-        "recency_weight": 0.10674936423213918,
-        "combined_score": 0.21925108848124872,
-        "timestamp": 1758672000,
+        "scores": {
+          "vector": 0.409462,
+          "recency": 0.103544,
+          "combined": 0.302391
+        },
         "payload": {
           "title": "Davant el genocidi a la Franja de Gaza",
           "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
           "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-24T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:04Z",
-          "published_at_ts": 1758672000,
-          "indexed_at_ts": 1758879484
+          "published_at": "2025-09-24T00:00:00Z"
         }
       },
       {
         "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
-        "vector_score": 0.19100454,
-        "recency_weight": 0.16945405307903424,
-        "combined_score": 0.183461869577662,
-        "timestamp": 1758758400,
+        "scores": {
+          "vector": 0.36449,
+          "recency": 0.164366,
+          "combined": 0.294447
+        },
         "payload": {
           "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
           "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
           "site": "salesians",
           "author": "Comunicació CEPSS",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:40:00Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879600
+          "published_at": "2025-09-25T00:00:00Z"
         }
       },
       {
         "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
-        "vector_score": 0.16676697,
-        "recency_weight": 0.16945405307903424,
-        "combined_score": 0.16770744907766197,
-        "timestamp": 1758758400,
+        "scores": {
+          "vector": 0.356883,
+          "recency": 0.164366,
+          "combined": 0.289502
+        },
         "payload": {
           "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
           "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
           "site": "salesians",
           "author": "Salesians Comunicació",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:20Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879500
-        }
-      },
-      {
-        "id": "c4b6dbd8-8491-97ed-28c0-180f293d2dce",
-        "vector_score": 0.24487808,
-        "recency_weight": 0.00026268705284954516,
-        "combined_score": 0.15926269246849734,
-        "timestamp": 1757548800,
-        "payload": {
-          "title": "El desig de donar la benvinguda a tothom",
-          "url": "https://jesuites.net/ca/noticia/el-desig-de-donar-la-benvinguda-tothom",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-11T00:00:00Z",
-          "indexed_at": "2025-09-26T09:39:34Z",
-          "published_at_ts": 1757548800,
-          "indexed_at_ts": 1758879574
-        }
-      },
-      {
-        "id": "09392261-e4a5-f138-5688-7a8e538641f3",
-        "vector_score": 0.2388345,
-        "recency_weight": 4.5071550906175303e-14,
-        "combined_score": 0.15524242500001578,
-        "timestamp": 1753344523,
-        "payload": {
-          "title": "La Travessa 2025: Expedició L’Hermitage",
-          "url": "https://www.maristes.cat/noticies/la-travessa-2025-expedicio-lhermitage",
-          "site": "maristes",
-          "author": null,
-          "published_at": "2025-07-24T08:08:43Z",
-          "indexed_at": "2025-09-26T09:38:14Z",
-          "published_at_ts": 1753344523,
-          "indexed_at_ts": 1758879494
+          "published_at": "2025-09-25T00:00:00Z"
         }
       },
       {
         "id": "9e8d1d15-c2f5-52e9-8111-f9a8d63ac3e7",
-        "vector_score": 0.22264674,
-        "recency_weight": 0.0042029928455927235,
-        "combined_score": 0.14619142849595745,
-        "timestamp": 1758067200,
+        "scores": {
+          "vector": 0.402566,
+          "recency": 0.004077,
+          "combined": 0.263095
+        },
         "payload": {
           "title": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad",
           "url": "https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la",
           "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-17T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:08Z",
-          "published_at_ts": 1758067200,
-          "indexed_at_ts": 1758879488
+          "published_at": "2025-09-17T00:00:00Z"
         }
       },
       {
         "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
-        "vector_score": 0.1314083,
-        "recency_weight": 0.16945405307903424,
-        "combined_score": 0.144724313577662,
-        "timestamp": 1758758400,
+        "scores": {
+          "vector": 0.303162,
+          "recency": 0.164366,
+          "combined": 0.254583
+        },
         "payload": {
           "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
           "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
           "site": "salesians",
           "author": "Salesians La Orotava",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:40:01Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879601
+          "published_at": "2025-09-25T00:00:00Z"
         }
       },
       {
-        "id": "f4bb4e73-9431-13e0-aa3d-5763870a24a6",
-        "vector_score": 0.21619484,
-        "recency_weight": 1.941311875844551e-14,
-        "combined_score": 0.1405266460000068,
-        "timestamp": 1753187035,
+        "id": "c4b6dbd8-8491-97ed-28c0-180f293d2dce",
+        "scores": {
+          "vector": 0.369634,
+          "recency": 0.000255,
+          "combined": 0.240351
+        },
         "payload": {
-          "title": "Un estiu amb cor marista!",
-          "url": "https://www.maristes.cat/noticies/un-estiu-amb-cor-marista",
-          "site": "maristes",
-          "author": null,
-          "published_at": "2025-07-22T12:23:55Z",
-          "indexed_at": "2025-09-26T09:39:50Z",
-          "published_at_ts": 1753187035,
-          "indexed_at_ts": 1758879590
+          "title": "El desig de donar la benvinguda a tothom",
+          "url": "https://jesuites.net/ca/noticia/el-desig-de-donar-la-benvinguda-tothom",
+          "site": "jesuites",
+          "published_at": "2025-09-11T00:00:00Z"
         }
       },
       {
-        "id": "95b5f2e6-d3ea-311c-aa5f-8158cfa7fc4f",
-        "vector_score": 0.14410019,
-        "recency_weight": 0.10674936423213918,
-        "combined_score": 0.1310274009812487,
-        "timestamp": 1758672000,
+        "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
+        "scores": {
+          "vector": 0.277884,
+          "recency": 0.164366,
+          "combined": 0.238153
+        },
         "payload": {
-          "title": "Entre la espera y la esperanza. El Jubileo 2025, una oportunidad",
-          "url": "https://salesianos.info/blog/entre-la-espera-y-la-esperanza-el-jubileo-2025-una-oportunidad/",
+          "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
           "site": "salesians",
-          "author": "José Luis Guzón",
-          "published_at": "2025-09-24T00:00:00Z",
-          "indexed_at": "2025-09-26T09:40:06Z",
-          "published_at_ts": 1758672000,
-          "indexed_at_ts": 1758879606
+          "author": "Diari de Cadis",
+          "published_at": "2025-09-25T00:00:00Z"
         }
       }
     ],
     "context": null
-  }
+  },
+  "agent_answer": "Aquest mes de setembre de 2025, hi ha diverses notícies rellevants sobre refugiats i la situació humanitària relacionada, especialment centrades en la crisi a la Franja de Gaza:\n\n1. La CONFER reclama la fi de la fam i la entrada d’ajuda humanitària a Gaza. Aquest article destaca la urgència d'atendre les necessitats bàsiques de la població afectada pel conflicte a Gaza. [Veure notícia](https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/)\n\n2. Un altre article titulat \"Davant el genocidi a la Franja de Gaza\" aborda la greu situació de violència i les seves conseqüències humanitàries. [Veure notícia](https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza)\n\n3. Més enllà de Gaza, també hi ha una alerta sobre el retrocés global en educació amb un focus en la situació al Txad, que pot tenir implicacions per a la població vulnerable, incloent refugiats. [Veure notícia](https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la)\n\nAquests textos reflecteixen el context i les preocupacions actuals sobre refugiats i persones desplaçades, especialment en zones de conflicte i emergència humanitària. Vols que t’ampliï informació sobre algun d’aquests temes o que busqui notícies en altres regions?"
 }

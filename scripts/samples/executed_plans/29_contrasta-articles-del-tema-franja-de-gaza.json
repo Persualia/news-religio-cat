@@ -22,172 +22,149 @@
     "data": [
       {
         "id": "fa39c736-6f78-d063-0a3a-d96910d1ee1a",
-        "vector_score": 0.34654683,
-        "recency_weight": 0.16944045911054437,
-        "combined_score": 0.28455960018869053,
-        "timestamp": 1758758400,
+        "scores": {
+          "vector": 0.489016,
+          "recency": 0.164356,
+          "combined": 0.375385
+        },
         "payload": {
           "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
           "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
           "site": "salesians",
           "author": "Confederació Espanyola de Religiosos",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:16Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879496
+          "published_at": "2025-09-25T00:00:00Z"
         }
       },
       {
         "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
-        "vector_score": 0.29655948,
-        "recency_weight": 0.10674080056861318,
-        "combined_score": 0.2301229421990146,
-        "timestamp": 1758672000,
+        "scores": {
+          "vector": 0.431987,
+          "recency": 0.103538,
+          "combined": 0.31703
+        },
         "payload": {
           "title": "Davant el genocidi a la Franja de Gaza",
           "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
           "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-24T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:04Z",
-          "published_at_ts": 1758672000,
-          "indexed_at_ts": 1758879484
+          "published_at": "2025-09-24T00:00:00Z"
         }
       },
       {
         "id": "1c4b2b17-7831-f084-3724-748367d1b90d",
-        "vector_score": 0.13176441,
-        "recency_weight": 0.16944045911054437,
-        "combined_score": 0.14495102718869052,
-        "timestamp": 1758758400,
+        "scores": {
+          "vector": 0.300025,
+          "recency": 0.164356,
+          "combined": 0.252541
+        },
         "payload": {
           "title": "Juicio sumarísimo",
           "url": "https://salesianos.info/blog/juicio-sumarisimo/",
           "site": "salesians",
           "author": "Josep Lluís Burguera",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:40:05Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879605
-        }
-      },
-      {
-        "id": "a3b96f0b-8b72-a0cf-b3b9-8bd5f3019270",
-        "vector_score": 0.20444584,
-        "recency_weight": 0.0016678250088845814,
-        "combined_score": 0.1334735347531096,
-        "timestamp": 1757894400,
-        "payload": {
-          "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
-          "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-15T00:00:00Z",
-          "indexed_at": "2025-09-26T09:39:32Z",
-          "published_at_ts": 1757894400,
-          "indexed_at_ts": 1758879572
-        }
-      },
-      {
-        "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
-        "vector_score": 0.11056794,
-        "recency_weight": 0.16944045911054437,
-        "combined_score": 0.13117332168869053,
-        "timestamp": 1758758400,
-        "payload": {
-          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
-          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
-          "site": "salesians",
-          "author": "Salesians Comunicació",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:20Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879500
-        }
-      },
-      {
-        "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
-        "vector_score": 0.100862294,
-        "recency_weight": 0.16944045911054437,
-        "combined_score": 0.12486465178869052,
-        "timestamp": 1758758400,
-        "payload": {
-          "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
-          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
-          "site": "salesians",
-          "author": "Diari de Cadis",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:18Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879498
-        }
-      },
-      {
-        "id": "41014754-2986-5cb1-bdaa-95e297115c4b",
-        "vector_score": 0.095068604,
-        "recency_weight": 0.16944045911054437,
-        "combined_score": 0.12109875328869052,
-        "timestamp": 1758758400,
-        "payload": {
-          "title": "Processó Magna Mariana a Huelva amb la participació de Maria Auxiliadora",
-          "url": "https://salesianos.info/blog/processo-magna-mariana-a-huelva-amb-la-participacio-de-maria-auxiliadora/",
-          "site": "salesians",
-          "author": "Salesians Comunicació",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:40:03Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879603
-        }
-      },
-      {
-        "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
-        "vector_score": 0.09457976,
-        "recency_weight": 0.16944045911054437,
-        "combined_score": 0.12078100468869052,
-        "timestamp": 1758758400,
-        "payload": {
-          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
-          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
-          "site": "salesians",
-          "author": "Comunicació CEPSS",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:40:00Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879600
-        }
-      },
-      {
-        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
-        "vector_score": 0.09354254,
-        "recency_weight": 0.16944045911054437,
-        "combined_score": 0.12010681168869053,
-        "timestamp": 1758758400,
-        "payload": {
-          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
-          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
-          "site": "salesians",
-          "author": "Salesians La Orotava",
-          "published_at": "2025-09-25T00:00:00Z",
-          "indexed_at": "2025-09-26T09:40:01Z",
-          "published_at_ts": 1758758400,
-          "indexed_at_ts": 1758879601
+          "published_at": "2025-09-25T00:00:00Z"
         }
       },
       {
         "id": "95b5f2e6-d3ea-311c-aa5f-8158cfa7fc4f",
-        "vector_score": 0.11585434,
-        "recency_weight": 0.10674080056861318,
-        "combined_score": 0.11266460119901461,
-        "timestamp": 1758672000,
+        "scores": {
+          "vector": 0.21587,
+          "recency": 0.103538,
+          "combined": 0.176553
+        },
         "payload": {
           "title": "Entre la espera y la esperanza. El Jubileo 2025, una oportunidad",
           "url": "https://salesianos.info/blog/entre-la-espera-y-la-esperanza-el-jubileo-2025-una-oportunidad/",
           "site": "salesians",
           "author": "José Luis Guzón",
-          "published_at": "2025-09-24T00:00:00Z",
-          "indexed_at": "2025-09-26T09:40:06Z",
-          "published_at_ts": 1758672000,
-          "indexed_at_ts": 1758879606
+          "published_at": "2025-09-24T00:00:00Z"
+        }
+      },
+      {
+        "id": "bed89b02-590a-51f9-040b-1675b7f2bec0",
+        "scores": {
+          "vector": 0.171626,
+          "recency": 0.164356,
+          "combined": 0.169081
+        },
+        "payload": {
+          "title": "#”Hogarizar”: 10 anys de transformació del sistema de protecció a la infància",
+          "url": "https://salesianos.info/blog/hogarizar-10-anys-de-transformacio-del-sistema-de-proteccio-a-la-infancia/",
+          "site": "salesians",
+          "author": "Comunicació CEPSS",
+          "published_at": "2025-09-25T00:00:00Z"
+        }
+      },
+      {
+        "id": "9e8d1d15-c2f5-52e9-8111-f9a8d63ac3e7",
+        "scores": {
+          "vector": 0.254374,
+          "recency": 0.004077,
+          "combined": 0.16677
+        },
+        "payload": {
+          "title": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad",
+          "url": "https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la",
+          "site": "jesuites",
+          "published_at": "2025-09-17T00:00:00Z"
+        }
+      },
+      {
+        "id": "c55304d8-d05c-3975-6174-01cfb67f0f65",
+        "scores": {
+          "vector": 0.162944,
+          "recency": 0.164356,
+          "combined": 0.163438
+        },
+        "payload": {
+          "title": "Salesians La Orotava rep el primer premi d’Aprenentatge-Servei del Cabildo de Tenerife",
+          "url": "https://salesianos.info/blog/salesians-la-orotava-rep-el-primer-premi-daprenentatge-servei-del-cabildo-de-tenerife/",
+          "site": "salesians",
+          "author": "Salesians La Orotava",
+          "published_at": "2025-09-25T00:00:00Z"
+        }
+      },
+      {
+        "id": "83cffff4-bdd6-f52b-6f7c-3cef0ee5edf4",
+        "scores": {
+          "vector": 0.143286,
+          "recency": 0.164356,
+          "combined": 0.150661
+        },
+        "payload": {
+          "title": "Salesians Cadis, premiat per la contribució de la seva FP a la indústria naval",
+          "url": "https://salesianos.info/blog/salesians-cadis-premiat-per-la-contribucio-de-la-seva-fp-a-la-industria-naval/",
+          "site": "salesians",
+          "author": "Diari de Cadis",
+          "published_at": "2025-09-25T00:00:00Z"
+        }
+      },
+      {
+        "id": "8d269155-7925-78b4-7860-fc4a2dbf8ee7",
+        "scores": {
+          "vector": 0.134389,
+          "recency": 0.164356,
+          "combined": 0.144877
+        },
+        "payload": {
+          "title": "Animadors salesians es formen per a acompanyar l’Itinerari d’Educació en la Fe",
+          "url": "https://salesianos.info/blog/animadors-salesians-es-formen-per-a-acompanyar-litinerari-deducacio-en-la-fe/",
+          "site": "salesians",
+          "author": "Salesians Comunicació",
+          "published_at": "2025-09-25T00:00:00Z"
+        }
+      },
+      {
+        "id": "a3b96f0b-8b72-a0cf-b3b9-8bd5f3019270",
+        "scores": {
+          "vector": 0.218427,
+          "recency": 0.001618,
+          "combined": 0.142544
+        },
+        "payload": {
+          "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
+          "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
+          "site": "jesuites",
+          "published_at": "2025-09-15T00:00:00Z"
         }
       }
     ],
@@ -201,161 +178,85 @@
       ],
       "articles": [
         {
-          "article_id": "def8a06c7d64e6f89ec5860cbb265a9b1da31f04",
+          "id": "def8a06c7d64e6f89ec5860cbb265a9b1da31f04",
           "site": "salesians",
           "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
           "title": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza",
           "description": "La Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.",
           "author": "Confederació Espanyola de Religiosos",
           "published_at": "2025-09-25T00:00:00+00:00",
-          "published_at_ts": 1758758400,
-          "indexed_at": "2025-09-26T09:38:16.783189+00:00",
-          "indexed_at_ts": 1758879496,
-          "best_score": 0.2845592830096639,
-          "best_recency": 0.16943955288475399,
           "chunks": [
             {
-              "chunk_id": "92660c4b-154e-07d6-6fe4-54341025cf6c",
               "chunk_ix": 0,
-              "score": 0.2845592830096639,
-              "vector_score": 0.34654683,
-              "recency_weight": 0.16943955288475399,
-              "token_count": 641,
-              "content": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza\n\nLa Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza.\n\nDavant el genocidi que es viu en la Franja de Gaza, els consagrats i consagrades d’Espanya elevem la nostra veu per a exigir el cessament immediat d’accions que provoquin fam, destrucció i mort de civils innocents, i demandar l’accés sense restriccions de l’ajuda humanitària. “No puc veure morir al nen” (Gn 21,15). Aquest crit antic, pronunciat per Agar en el desert, ressona avui amb força entre moltes mares i pares del món. Les informacions i testimoniatges que arriben des de Gaza descriuen escenes de fam, col·lapse sanitari, desplaçament massiu i víctimes entre bebès, nens i nenes, dones embarassades, ancians i persones vulnerables. Davant aquesta realitat, el deure moral i humanitari és clar: protegir la vida, garantir l’assistència urgent i respectar el Dret Internacional Humanitari. Denunciem la imposició de restriccions que impedeixen l’arribada d’aliments, medicines i combustible, i condemnem els atacs indiscriminats que han causat destrucció, morts i mutilacions entre la població civil. Demanem a les autoritats competents que actuïn amb determinació per a obrir corredors humanitaris segurs i garantir la protecció de periodistes, personal sanitari, cooperants i població civil. Cuidar al més feble i defensar la vida No es tracta de prendre postura partidista, sinó de recordar l’obligació bàsica de tota comunitat humana: cuidar al més feble i defensar la vida. Per això secundem i ens sumem als comunicats i crides de diferents institucions religioses, organitzacions humanitàries i organismes internacionals que exigeixen el respecte del Dret Internacional i l’entrada d’ajuda a tota la població de Gaza. Exigim, a més: Que es permeti immediatament l’entrada de tota l’ajuda humanitària necessària per a evitar morts per inanició i col·lapse sanitari. El cessament de bombardejos sobre zones civils i la protecció d’instal·lacions sanitàries, religioses i de refugiats. El respecte i la plena aplicació del Dret Internacional Humanitari i dels drets humans. Que la comunitat internacional redobli els seus esforços diplomàtics i humanitaris per a posar fi al sofriment i avançar cap a solucions justes i duradores. Com recull l’Escriptura —“Què et passa, Agar? No temis, perquè Déu ha sentit la veu del noi…” (Gn 21,17-18)— fem una crida a la compassió i a l’acció: que les nostres mans es converteixin en auxili efectiu i no en indiferència.",
-              "site": "salesians",
-              "url": "https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/",
-              "published_at": "2025-09-25T00:00:00+00:00",
-              "published_at_ts": 1758758400,
-              "indexed_at": "2025-09-26T09:38:16.783189+00:00",
-              "indexed_at_ts": 1758879496
+              "score": 0.375385,
+              "recency": 0.164356,
+              "snippet": "La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza La Conferència Espanyola de Religiosos ha emès el següent comunicat davant l'emergència humanitària que es viuen a Gaza. Davant el genocidi que es viu en la Franja de Gaza, els consagrats i consagrades d’Espanya elevem la nostra veu per a exigir e…"
             }
           ]
         },
         {
-          "article_id": "cd74ec2b3d3a2d1a2f71099ac50667dfa206ac85",
+          "id": "cd74ec2b3d3a2d1a2f71099ac50667dfa206ac85",
           "site": "jesuites",
           "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
           "title": "Davant el genocidi a la Franja de Gaza",
-          "description": null,
-          "author": null,
           "published_at": "2025-09-24T00:00:00+00:00",
-          "published_at_ts": 1758672000,
-          "indexed_at": "2025-09-26T09:38:04.234183+00:00",
-          "indexed_at_ts": 1758879484,
-          "best_score": 0.2301227423887485,
-          "best_recency": 0.10674022968213859,
           "chunks": [
             {
-              "chunk_id": "daecb211-2830-d6ab-33f9-bbf7a8a4f1ff",
               "chunk_ix": 0,
-              "score": 0.2301227423887485,
-              "vector_score": 0.29655948,
-              "recency_weight": 0.10674022968213859,
-              "token_count": 763,
-              "content": "Davant el genocidi a la Franja de Gaza\n\nEls Jesuïtes a Catalunya, amb la resta d’instituts i congregacions de vida religiosa que formem part de la Unió de Religiosos de Catalunya (URC), reiterem la denúncia del genocidi a Gaza, reclamem l’entrada sense restriccions d’ajuda humanitària i el respecte al Dret Humanitari Internacional, i fem una crida a la participació activa a les diverses accions convocades els propers dies. En el comunicat publicat aquest dimarts 23 de setembre, “la Unió de Religiosos de Catalunya (URC) vol expressar, una vegada més, el seu profund dolor i compromís davant la tragèdia humanitària que continua colpejant la Franja de Gaza. El passat 13 de juny, des de la nostra Assemblea, ja vam fer públic el nostre posicionament amb el comunicat “No al genocidi, Sí a la Pau” , on denunciàvem amb fermesa la violència, la destrucció i la desprotecció de les persones més vulnerables, especialment els infants. Reiterem avui aquell clam, que és més vigent que mai: no al genocidi, sí a la pau”. Ens sentim cridats a fer costat als qui pateixen i a denunciar amb claredat qualsevol forma de violència o opressió. “En aquesta mateixa línia”, continua el text, “acollim i ens fem nostres les paraules de la CONFER , la Conferència Espanyola de Religiosos, que recentment ha reclamat l’entrada immediata d’ajuda humanitària a Gaza i el respecte al Dret Internacional Humanitari. Davant les imatges de fam, hospitals col·lapsats, nens i nenes mutilats, mares desesperades i comunitats trencades pel dolor, no podem restar indiferents. Ens unim a totes les veus que, des de la fe i el compromís evangèlic, exigeixen l’alto el foc, la protecció de la població civil i l’obertura de corredors humanitaris”. Feliços els qui treballen per la pau, perquè seran anomenats fills de Déu (Mt 5,9). Aquesta és la nostra esperança, i també el nostre compromís. Accions per Gaza Per tot això ens adherim i animem a tothom a participar a l’acte “Cristians contra el genocidi de Gaza” , convocat per la Xarxa d’Entitats Cristianes, que aplega un ampli ventall d’organitzacions eclesials i laiques, i que tindrà lloc el proper dilluns 29 de setembre a les 19h a l’Església de Santa Anna de Barcelona. Serà un espai de denúncia, de pregària i de comunió amb les víctimes d’aquesta barbàrie. També us convidem a participar a la manifestació del proper 4 d’octubre , a les 12h, als Jardinets de Gràcia (Barcelona) amb el lema ‘Resistint al colonialisme, genocidi, apartheid i ocupació. Fi al comerç d’armes i a les relacions amb Israel’ convocada per diverses organitzacions, com la Comunitat Palestina de Catalunya, Prou Complicitat amb Israel, Plataforma Aturem les Guerres o Embargament d’Armes Ja! Junt amb aquesta crida a unir-nos a altres persones i col·lectius, des de la Companyia de Jesús a Catalunya, també animem a les nostres institucions: escoles, universitats, comunitats cristianes, entitats social,... a portar a terme accions per tal d’expressar de forma comunitària la denúncia de la violència i la nostra solidaritat amb les víctimes.",
-              "site": "jesuites",
-              "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
-              "published_at": "2025-09-24T00:00:00+00:00",
-              "published_at_ts": 1758672000,
-              "indexed_at": "2025-09-26T09:38:04.234183+00:00",
-              "indexed_at_ts": 1758879484
+              "score": 0.31703,
+              "recency": 0.103538,
+              "snippet": "Davant el genocidi a la Franja de Gaza Els Jesuïtes a Catalunya, amb la resta d’instituts i congregacions de vida religiosa que formem part de la Unió de Religiosos de Catalunya (URC), reiterem la denúncia del genocidi a Gaza, reclamem l’entrada sense restriccions d’ajuda humanitària i el respecte al Dret Humanitari In…"
             }
           ]
         },
         {
-          "article_id": "8c8b8b252500e6c8f15a8ca056d3d9c6660aa7e9",
+          "id": "8c8b8b252500e6c8f15a8ca056d3d9c6660aa7e9",
           "site": "salesians",
           "url": "https://salesianos.info/blog/entre-la-espera-y-la-esperanza-el-jubileo-2025-una-oportunidad/",
           "title": "Entre la espera y la esperanza. El Jubileo 2025, una oportunidad",
-          "description": null,
           "author": "José Luis Guzón",
           "published_at": "2025-09-24T00:00:00+00:00",
-          "published_at_ts": 1758672000,
-          "indexed_at": "2025-09-26T09:40:06.758356+00:00",
-          "indexed_at_ts": 1758879606,
-          "best_score": 0.1321467798887485,
-          "best_recency": 0.10674022968213859,
           "chunks": [
             {
-              "chunk_id": "9e1f0bc7-d12c-4acd-540b-456da5ad19f9",
               "chunk_ix": 1,
-              "score": 0.1321467798887485,
-              "vector_score": 0.14582723,
-              "recency_weight": 0.10674022968213859,
-              "token_count": 145,
-              "content": "luz, sino algo que hay que conquistar luchando contra lo falso, contra lo que no debería existir. Su sitio no es lo que ha sido, sino el futuro. A la verdad es esencial un núcleo utópico y mesiánico. La verdad debe sacarnos de la existencia que hemos llegado a calar como falsa” (p. 105). Que seamos capaces de imbuirnos de esperanza para construir la paz en nuestros ambientes y que siempre tengamos la convicción de que celebramos el Jubileo para llenarnos de júbilo, y seguir sembrando todos estos valores entre los jóvenes destinatarios, los migrantes, los más desfavorecidos.",
-              "site": "salesians",
-              "url": "https://salesianos.info/blog/entre-la-espera-y-la-esperanza-el-jubileo-2025-una-oportunidad/",
-              "published_at": "2025-09-24T00:00:00+00:00",
-              "published_at_ts": 1758672000,
-              "indexed_at": "2025-09-26T09:40:06.758356+00:00",
-              "indexed_at_ts": 1758879606
+              "score": 0.184341,
+              "recency": 0.103538,
+              "snippet": "luz, sino algo que hay que conquistar luchando contra lo falso, contra lo que no debería existir. Su sitio no es lo que ha sido, sino el futuro. A la verdad es esencial un núcleo utópico y mesiánico. La verdad debe sacarnos de la existencia que hemos llegado a calar como falsa” (p. 105). Que seamos capaces de imbuirnos…"
             }
           ]
         },
         {
-          "article_id": "f7e23bd68dbce2fca3790d111ff4e27d59263e61",
+          "id": "f7e23bd68dbce2fca3790d111ff4e27d59263e61",
           "site": "maristes",
           "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
           "title": "“Un exemple d’amor i servei”: el germà marista Licarió ja és beat",
-          "description": null,
-          "author": null,
           "published_at": "2025-07-12T19:13:00+00:00",
-          "published_at_ts": 1752347580,
-          "indexed_at": "2025-09-26T09:39:56.167540+00:00",
-          "indexed_at_ts": 1758879596,
-          "best_score": 0.09177188800000008,
-          "best_recency": 2.178731489226535e-16,
           "chunks": [
             {
-              "chunk_id": "e5eeb749-1a41-8118-bf7a-335762dc4fb8",
               "chunk_ix": 1,
-              "score": 0.09177188800000008,
-              "vector_score": 0.14118752,
-              "recency_weight": 2.178731489226535e-16,
-              "token_count": 50,
-              "content": "cada escola marista que educa amb amor i servei. ” Des d’avui tenim un nou beat de qui seguir l’exemple. >>> Consulta el dossier de premsa sobre la cerimònia de beatificació del germà Licarió Compartir",
-              "site": "maristes",
-              "url": "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
-              "published_at": "2025-07-12T19:13:00+00:00",
-              "published_at_ts": 1752347580,
-              "indexed_at": "2025-09-26T09:39:56.167540+00:00",
-              "indexed_at_ts": 1758879596
+              "score": 0.102838,
+              "recency": 0.0,
+              "snippet": "cada escola marista que educa amb amor i servei. ” Des d’avui tenim un nou beat de qui seguir l’exemple. >>> Consulta el dossier de premsa sobre la cerimònia de beatificació del germà Licarió Compartir"
             }
           ]
         },
         {
-          "article_id": "d8fe95a9061a2a515e88a81d692636edbdde46a0",
+          "id": "d8fe95a9061a2a515e88a81d692636edbdde46a0",
           "site": "maristes",
           "url": "https://www.maristes.cat/noticies/nova-etapa-i-nous-somnis",
           "title": "Nova etapa i nous somnis!",
-          "description": null,
-          "author": null,
           "published_at": "2025-07-24T14:47:48+00:00",
-          "published_at_ts": 1753368468,
-          "indexed_at": "2025-09-26T09:39:42.101816+00:00",
-          "indexed_at_ts": 1758879582,
-          "best_score": 0.04962917050001793,
-          "best_recency": 5.122522583217983e-14,
           "chunks": [
             {
-              "chunk_id": "b9945c1c-f8e8-2453-c0b4-acd1d9a6c36c",
               "chunk_ix": 0,
-              "score": 0.04962917050001793,
-              "vector_score": 0.07635257,
-              "recency_weight": 5.122522583217983e-14,
-              "token_count": 182,
-              "content": "Nova etapa i nous somnis!\n\nEl curs ja s'ha acabat i ho hem celebrat amb totes les graduacions finals! Canvis d'etapa a sisè de Primària, quart d'ESO però, sobretot, a segon de Batxillerat! Hem viscut i compartit molts bons moments en aquests anys. Hem après, crescut, fet camí junts. Les classes, les activitats, les tutories... vincles que perduraran en el temps. Ara arriba el moment de fer nous passos, reflexionar, decidir i somiar en gran! A continuació podreu veure les imatges d'aquests darrers dies. Memòries que ens faran somriure, records amb els amics, els claustres, els equips directius... Gràcies a tothom per fer pinya i formar part d'aquesta gran família. Que tingueu molta sort en tot el que emprengueu! Compartir",
-              "site": "maristes",
-              "url": "https://www.maristes.cat/noticies/nova-etapa-i-nous-somnis",
-              "published_at": "2025-07-24T14:47:48+00:00",
-              "published_at_ts": 1753368468,
-              "indexed_at": "2025-09-26T09:39:42.101816+00:00",
-              "indexed_at_ts": 1758879582
+              "score": 0.071364,
+              "recency": 0.0,
+              "snippet": "Nova etapa i nous somnis! El curs ja s'ha acabat i ho hem celebrat amb totes les graduacions finals! Canvis d'etapa a sisè de Primària, quart d'ESO però, sobretot, a segon de Batxillerat! Hem viscut i compartit molts bons moments en aquests anys. Hem après, crescut, fet camí junts. Les classes, les activitats, les tuto…"
             }
           ]
         }
       ]
     }
-  }
+  },
+  "agent_answer": "He encontrado varios artículos recientes que abordan el tema de la Franja de Gaza desde una perspectiva principalmente humanitaria y de denuncia de la situación actual:\n\n1. La CONFER (Conferencia Española de Religiosos) ha emitido un comunicado reclamando el fin del hambre y la entrada de ayuda humanitaria en Gaza, en respuesta a la emergencia humanitaria que se vive allí. Denuncian el genocidio en la Franja de Gaza y exigen medidas urgentes para aliviar la crisis [La CONFER reclama la fi de la fam i l’entrada d’ajuda humanitària a Gaza](https://salesianos.info/blog/la-confer-reclama-la-fi-de-la-fam-i-lentrada-dajuda-humanitaria-a-gaza/).\n\n2. Los Jesuitas en Cataluña, a través de la Unión de Religiosos de Cataluña, también denuncian el \"genocidio\" en Gaza, reclamando la entrada sin restricciones de ayuda humanitaria y el respeto al Derecho Humanitario Internacional [Davant el genocidi a la Franja de Gaza](https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza).\n\nAmbos textos coinciden en la gravedad de la situación humanitaria actual y la denuncia de acciones que califican de genocidio, con un enfoque en la necesidad urgente de ayuda y respeto a los derechos humanos.\n\nNo he encontrado diversidad de perspectivas en estos artículos, ya que provienen de fuentes religiosas que comparten una postura común de denuncia y reivindicación humanitaria.\n\nSi deseas, puedo buscar información complementaria con otros enfoques (políticos, geoestratégicos, sociales) para ofrecer un contraste más amplio de puntos de vista sobre la Franja de Gaza. ¿Quieres que amplíe la búsqueda con ese criterio?"
 }

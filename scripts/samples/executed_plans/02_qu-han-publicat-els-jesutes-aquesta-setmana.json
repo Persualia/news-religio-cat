@@ -24,158 +24,20 @@
     "data": [
       {
         "id": "16894afe-62c1-b38a-bfa0-7678bb0a8d60",
-        "vector_score": 0.0,
-        "recency_weight": 0.0,
-        "combined_score": 1758672000.0,
-        "timestamp": 1758672000,
+        "scores": {
+          "vector": 0.0,
+          "recency": 0.0,
+          "combined": 1758672000.0
+        },
         "payload": {
           "title": "Davant el genocidi a la Franja de Gaza",
           "url": "https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza",
           "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-24T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:04Z",
-          "published_at_ts": 1758672000,
-          "indexed_at_ts": 1758879484
-        }
-      },
-      {
-        "id": "0c217ff1-8862-1b02-38d4-86fcca094ece",
-        "vector_score": 0.0,
-        "recency_weight": 0.0,
-        "combined_score": 1758412800.0,
-        "timestamp": 1758412800,
-        "payload": {
-          "title": "El Provincial presenta a Catalunya el nou Projecte Apostòlic",
-          "url": "https://jesuites.net/ca/noticia/el-provincial-presenta-catalunya-el-nou-projecte-apostolic",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-21T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:06Z",
-          "published_at_ts": 1758412800,
-          "indexed_at_ts": 1758879486
-        }
-      },
-      {
-        "id": "9e8d1d15-c2f5-52e9-8111-f9a8d63ac3e7",
-        "vector_score": 0.0,
-        "recency_weight": 0.0,
-        "combined_score": 1758067200.0,
-        "timestamp": 1758067200,
-        "payload": {
-          "title": "Entrecultures Catalunya alerta del retrocés global en educació i posa el focus en la situació al Txad",
-          "url": "https://jesuites.net/ca/noticia/entrecultures-catalunya-alerta-del-retroces-global-en-educacio-i-posa-el-focus-en-la",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-17T00:00:00Z",
-          "indexed_at": "2025-09-26T09:38:08Z",
-          "published_at_ts": 1758067200,
-          "indexed_at_ts": 1758879488
-        }
-      },
-      {
-        "id": "ab262f31-7baf-0ac8-43af-8f213673c6b7",
-        "vector_score": 0.0,
-        "recency_weight": 0.0,
-        "combined_score": 1757980800.0,
-        "timestamp": 1757980800,
-        "payload": {
-          "title": "Publicació del segon volum sobre la història dels jesuïtes a Barcelona",
-          "url": "https://jesuites.net/ca/noticia/publicacio-del-segon-volum-sobre-la-historia-dels-jesuites-barcelona",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-16T00:00:00Z",
-          "indexed_at": "2025-09-26T09:39:30Z",
-          "published_at_ts": 1757980800,
-          "indexed_at_ts": 1758879570
-        }
-      },
-      {
-        "id": "a3b96f0b-8b72-a0cf-b3b9-8bd5f3019270",
-        "vector_score": 0.0,
-        "recency_weight": 0.0,
-        "combined_score": 1757894400.0,
-        "timestamp": 1757894400,
-        "payload": {
-          "title": "Ha mort Francesc Xammar, jesuïta referent en la lluita contra les desigualtats a Tarragona",
-          "url": "https://jesuites.net/ca/noticia/ha-mort-francesc-xammar-jesuita-referent-en-la-lluita-contra-les-desigualtats-tarragona",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-15T00:00:00Z",
-          "indexed_at": "2025-09-26T09:39:32Z",
-          "published_at_ts": 1757894400,
-          "indexed_at_ts": 1758879572
-        }
-      },
-      {
-        "id": "4319952d-4f6a-74fc-a115-b1368e4ed1ec",
-        "vector_score": 0.0,
-        "recency_weight": 0.0,
-        "combined_score": 1757548800.0,
-        "timestamp": 1757548800,
-        "payload": {
-          "title": "Celebració de Sant Pere Claver a Verdú",
-          "url": "https://jesuites.net/ca/noticia/celebracio-de-sant-pere-claver-verdu",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-11T00:00:00Z",
-          "indexed_at": "2025-09-26T09:39:36Z",
-          "published_at_ts": 1757548800,
-          "indexed_at_ts": 1758879576
-        }
-      },
-      {
-        "id": "c4b6dbd8-8491-97ed-28c0-180f293d2dce",
-        "vector_score": 0.0,
-        "recency_weight": 0.0,
-        "combined_score": 1757548800.0,
-        "timestamp": 1757548800,
-        "payload": {
-          "title": "El desig de donar la benvinguda a tothom",
-          "url": "https://jesuites.net/ca/noticia/el-desig-de-donar-la-benvinguda-tothom",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-11T00:00:00Z",
-          "indexed_at": "2025-09-26T09:39:34Z",
-          "published_at_ts": 1757548800,
-          "indexed_at_ts": 1758879574
-        }
-      },
-      {
-        "id": "364281c2-a95d-23e8-69f3-b1d71916fab9",
-        "vector_score": 0.0,
-        "recency_weight": 0.0,
-        "combined_score": 1757462400.0,
-        "timestamp": 1757462400,
-        "payload": {
-          "title": "Emotiva ofrena floral a l'Ermita de la Mare de Déu de Bellvitge",
-          "url": "https://jesuites.net/ca/noticia/emotiva-ofrena-floral-lermita-de-la-mare-de-deu-de-bellvitge",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-09-10T00:00:00Z",
-          "indexed_at": "2025-09-26T09:39:38Z",
-          "published_at_ts": 1757462400,
-          "indexed_at_ts": 1758879578
-        }
-      },
-      {
-        "id": "e559aaba-80c8-30f7-0738-ad3a53f263e7",
-        "vector_score": 0.0,
-        "recency_weight": 0.0,
-        "combined_score": 1756339200.0,
-        "timestamp": 1756339200,
-        "payload": {
-          "title": "Ha mort a El Salvador el jesuïta català Rafael de Sivatte",
-          "url": "https://jesuites.net/ca/noticia/ha-mort-el-salvador-el-jesuita-catala-rafael-de-sivatte",
-          "site": "jesuites",
-          "author": null,
-          "published_at": "2025-08-28T00:00:00Z",
-          "indexed_at": "2025-09-26T09:39:39Z",
-          "published_at_ts": 1756339200,
-          "indexed_at_ts": 1758879579
+          "published_at": "2025-09-24T00:00:00Z"
         }
       }
     ],
     "context": null
-  }
+  },
+  "agent_answer": "Aquesta setmana, els jesuïtes han publicat un article titulat \"Davant el genocidi a la Franja de Gaza\" el 24 de setembre de 2025. Pots llegir-lo sencer a la seva web aquí: [Davant el genocidi a la Franja de Gaza](https://jesuites.net/ca/noticia/davant-el-genocidi-la-franja-de-gaza). \n\nSi vols més informació o altres publicacions, puc ajudar-te a buscar més detalls."
 }
