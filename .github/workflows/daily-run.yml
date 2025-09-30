@@ -28,4 +28,6 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           BONSAI_URL: ${{ secrets.BONSAI_URL }}
           N8N_SUMMARY_ENDPOINT: ${{ secrets.N8N_SUMMARY_ENDPOINT }}
+          QDRANT_URL: ${{ secrets.QDRANT_URL }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
         run: python scripts/run_daily.py
