@@ -1,4 +1,3 @@
-from datetime import datetime, timezone
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -13,58 +12,24 @@ def load_fixture(name: str) -> BeautifulSoup:
     return BeautifulSoup(html, "lxml")
 
 
-def test_extract_article_urls():
+def test_extract_items_from_listing():
     scraper = MaristesScraper()
     soup = load_fixture("maristes_listing.html")
-    urls = list(scraper.extract_article_urls(soup))
-    assert urls == [
-        "https://www.maristes.cat/noticies/primera-noticia/",
-        "https://www.maristes.cat/noticies/segona-noticia/",
+    items = list(scraper.extract_items(soup))
+
+    assert [item.title for item in items] == ["Primera notícia", "Segona notícia"]
+    assert [item.url for item in items] == [
+        "https://www.maristes.cat/noticies/primera-noticia",
+        "https://www.maristes.cat/noticies/segona-noticia",
     ]
+    assert all(item.summary == item.url for item in items)
+    assert all(item.source == "maristes" for item in items)
 
 
-def test_parse_article_success_with_elementor_heading():
+def test_extract_items_sets_metadata():
     scraper = MaristesScraper()
-    soup = load_fixture("maristes_article.html")
-    article = scraper.parse_article(
-        soup,
-        "https://www.maristes.cat/noticies/un-exemple-damor-i-servei-el-germa-marista-licario-ja-es-beat",
-    )
+    soup = load_fixture("maristes_listing.html")
+    item = list(scraper.extract_items(soup))[0]
 
-    assert article.site == "maristes"
-    assert article.base_url == scraper.base_url
-    assert article.lang == "ca"
-    assert article.title == "“Un exemple d’amor i servei”: el germà marista Licarió ja és beat"
-    assert "Primer paràgraf" in article.content
-    assert article.description is None
-    assert article.author is None
-    assert article.published_at == datetime(2024, 9, 3, 8, 0, tzinfo=timezone.utc)
-
-
-def test_parse_article_fallback_title_from_meta():
-    scraper = MaristesScraper()
-    soup = BeautifulSoup(
-        """
-        <html lang='ca'>
-          <head>
-            <meta charset='utf-8' />
-            <meta property='og:title' content='Relleu a la direcció general de la Fundació Champagnat-Maristes Catalunya' />
-          </head>
-          <body>
-            <div class='field-item even' property='dc:title'>
-              <span>Relleu a la direcció general de la Fundació Champagnat-Maristes Catalunya</span>
-            </div>
-            <article>
-              <div class='elementor-widget-theme-post-content'>
-                <p>Text sense capçalera principal.</p>
-              </div>
-            </article>
-          </body>
-        </html>
-        """,
-        "lxml",
-    )
-    article = scraper.parse_article(soup, "https://www.maristes.cat/noticies/relleu-la-direccio-general-de-la-fundacio-champagnat-maristes-catalunya")
-
-    assert article.title == "Relleu a la direcció general de la Fundació Champagnat-Maristes Catalunya"
-    assert article.content.startswith("Text sense capçalera")
+    assert item.metadata["base_url"] == scraper.base_url
+    assert item.metadata["lang"] == scraper.default_lang

@@ -1,164 +1,131 @@
 from datetime import datetime, timezone
-from unittest.mock import Mock
 
-import pytest
-
-from models import Article
-from pipeline.ingestion import DailyPipeline
+from models import NewsItem
+from pipeline.ingestion import PipelineResult, TrelloPipeline
 
 
 class StubScraper:
-    def __init__(self, article: Article) -> None:
-        self._article = article
-        self.site_id = article.site
+    def __init__(self, site_id: str, items: list[NewsItem]) -> None:
+        self.site_id = site_id
+        self._items = items
 
-    def scrape(self, limit=None):  # noqa: D401
-        """Return a deterministic list of articles for testing."""
-        return [self._article]
-
-
-@pytest.fixture(autouse=True)
-def patch_pipeline(monkeypatch):
-    mocks = {
-        "ensure_collections": Mock(),
-        "index_articles": Mock(),
-        "index_chunks": Mock(),
-        "post_summary": Mock(),
-        "find_existing_article_ids": Mock(return_value=set()),
-    }
-    monkeypatch.setattr("pipeline.ingestion.ensure_collections", mocks["ensure_collections"])
-    monkeypatch.setattr("pipeline.ingestion.index_articles", mocks["index_articles"])
-    monkeypatch.setattr("pipeline.ingestion.index_chunks", mocks["index_chunks"])
-    monkeypatch.setattr("pipeline.ingestion.post_summary", mocks["post_summary"])
-    monkeypatch.setattr("pipeline.ingestion.find_existing_article_ids", mocks["find_existing_article_ids"])
-    return mocks
+    def scrape(self, limit=None):
+        if limit is not None:
+            return self._items[:limit]
+        return list(self._items)
 
 
-def test_pipeline_run_success(patch_pipeline):
-    article = Article(
-        site="salesians",
-        url="https://example.com/news/1",
-        base_url="https://example.com",
-        lang="ca",
-        title="Títol",
-        content="Contingut de prova amb informació rellevant.",
-        published_at=datetime(2024, 5, 12, tzinfo=timezone.utc),
+class StubSheets:
+    def __init__(self, existing: set[str] | None = None) -> None:
+        self._existing = set(existing or [])
+        self.appended: list = []
+
+    def fetch_existing_ids(self) -> set[str]:
+        return set(self._existing)
+
+    def append_records(self, records):
+        self.appended.extend(records)
+        self._existing.update(record.doc_id for record in records)
+
+
+class StubTrello:
+    def __init__(self) -> None:
+        self.created: list[NewsItem] = []
+
+    def create_card(self, item: NewsItem) -> str:
+        self.created.append(item)
+        return f"card-{len(self.created)}"
+
+
+class StubSlack:
+    def __init__(self) -> None:
+        self.messages: list[str] = []
+
+    def notify(self, message: str) -> None:
+        self.messages.append(message)
+
+
+def _news_item(url: str, source: str = "salesians") -> NewsItem:
+    return NewsItem(
+        source=source,
+        title=f"Title for {url}",
+        url=url,
+        author="Author",
+        published_at=datetime(2024, 5, 1, tzinfo=timezone.utc),
+        metadata={"lang": "ca", "base_url": "https://example.com"},
     )
 
-    embedder = Mock(return_value=[[0.1, 0.2, 0.3]])
-    summarizer = Mock(return_value="Resum de prova")
-    summary_poster = Mock()
 
-    pipeline = DailyPipeline(
-        scrapers=[StubScraper(article)],
-        client=Mock(),
-        embedder=embedder,
-        summarizer=summarizer,
-        summary_poster=summary_poster,
-    )
+def test_pipeline_creates_cards_for_new_items():
+    items = [_news_item("https://example.com/a"), _news_item("https://example.com/b")]
+    scrapers = [StubScraper("salesians", items)]
+    sheets = StubSheets(existing=set())
+    trello = StubTrello()
+    slack = StubSlack()
 
+    pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
+    result: PipelineResult = pipeline.run()
+
+    assert result.new_items == 2
+    assert len(trello.created) == 2
+    assert len(sheets.appended) == 2
+    assert not slack.messages
+
+
+def test_pipeline_skips_existing_ids():
+    existing = {_news_item("https://example.com/a").doc_id}
+    items = [
+        _news_item("https://example.com/a"),
+        _news_item("https://example.com/b"),
+    ]
+    scrapers = [StubScraper("salesians", items)]
+    sheets = StubSheets(existing=existing)
+    trello = StubTrello()
+    slack = StubSlack()
+
+    pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
     result = pipeline.run()
 
-    assert result.articles_indexed == 1
-    assert result.chunks_indexed == 1
-    assert result.summary == "Resum de prova"
-    embedder.assert_called_once()
-    summarizer.assert_called_once()
-    summary_poster.assert_called_once_with("Resum de prova")
-    patch_pipeline["ensure_collections"].assert_called_once()
-    patch_pipeline["index_articles"].assert_called_once()
-    patch_pipeline["index_chunks"].assert_called_once()
+    assert result.new_items == 1
+    assert result.skipped_existing == 1
+    assert len(trello.created) == 1
+    assert len(sheets.appended) == 1
 
 
-def test_pipeline_run_handles_summary_post_failure(patch_pipeline):
-    article = Article(
-        site="salesians",
-        url="https://example.com/news/1",
-        base_url="https://example.com",
-        lang="ca",
-        title="Títol",
-        content="Contingut curt",
-    )
+def test_pipeline_dry_run_avoids_side_effects():
+    items = [_news_item("https://example.com/a")]
+    scrapers = [StubScraper("salesians", items)]
+    sheets = StubSheets()
+    trello = StubTrello()
+    slack = StubSlack()
 
-    embedder = Mock(return_value=[[0.1]])
-    summarizer = Mock(return_value="Resum de prova")
-    summary_poster = Mock(side_effect=RuntimeError("n8n down"))
-
-    pipeline = DailyPipeline(
-        scrapers=[StubScraper(article)],
-        client=Mock(),
-        embedder=embedder,
-        summarizer=summarizer,
-        summary_poster=summary_poster,
-    )
-
-    result = pipeline.run()
-
-    assert result.summary == "Resum de prova"
-    summary_poster.assert_called_once()
-
-
-def test_pipeline_dry_run_skips_external_calls(patch_pipeline):
-    article = Article(
-        site="salesians",
-        url="https://example.com/news/1",
-        base_url="https://example.com",
-        lang="ca",
-        title="Títol",
-        content="Contingut curt",
-    )
-
-    embedder = Mock(return_value=[[0.1]])
-    summarizer = Mock()
-    summary_poster = Mock()
-
-    pipeline = DailyPipeline(
-        scrapers=[StubScraper(article)],
-        client=Mock(),
-        embedder=embedder,
-        summarizer=summarizer,
-        summary_poster=summary_poster,
-    )
-
+    pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
     result = pipeline.run(dry_run=True)
 
-    assert result.summary == "Dry run: summary not generated"
-    embedder.assert_not_called()
-    summarizer.assert_not_called()
-    summary_poster.assert_not_called()
-    patch_pipeline["ensure_collections"].assert_not_called()
-    patch_pipeline["index_articles"].assert_not_called()
-    patch_pipeline["index_chunks"].assert_not_called()
+    assert result.dry_run is True
+    assert result.new_items == 1
+    assert not trello.created
+    assert not sheets.appended
+    assert not slack.messages
 
 
-def test_pipeline_skip_indexing_calls_summary(patch_pipeline):
-    article = Article(
-        site="salesians",
-        url="https://example.com/news/1",
-        base_url="https://example.com",
-        lang="ca",
-        title="Títol",
-        content="Contingut curt",
-    )
+def test_pipeline_notifies_when_scraper_returns_no_items():
+    class EmptyScraper(StubScraper):
+        def scrape(self, limit=None):
+            from scraping.base import ScraperNoArticlesError
 
-    embedder = Mock(return_value=[[0.1]])
-    summarizer = Mock(return_value="Resum de prova")
-    summary_poster = Mock()
+            raise ScraperNoArticlesError(self.site_id)
 
-    pipeline = DailyPipeline(
-        scrapers=[StubScraper(article)],
-        client=Mock(),
-        embedder=embedder,
-        summarizer=summarizer,
-        summary_poster=summary_poster,
-    )
+    scrapers = [EmptyScraper("jesuites", [])]
+    sheets = StubSheets()
+    trello = StubTrello()
+    slack = StubSlack()
 
-    result = pipeline.run(skip_indexing=True)
+    pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
+    result = pipeline.run()
 
-    assert result.summary == "Resum de prova"
-    assert result.articles_indexed == 0
-    assert result.chunks_indexed == 0
-    summary_poster.assert_called_once()
-    patch_pipeline["ensure_collections"].assert_not_called()
-    patch_pipeline["index_articles"].assert_not_called()
-    patch_pipeline["index_chunks"].assert_not_called()
+    assert result.new_items == 0
+    assert result.alerts_sent == 1
+    assert slack.messages
+    assert not trello.created
+    assert not sheets.appended

@@ -1,4 +1,4 @@
-"""Pipeline utilities for the daily ingestion job."""
-from .ingestion import DailyPipeline, PipelineResult
+"""Pipeline utilities for the Trello ingestion job."""
+from .ingestion import PipelineResult, TrelloPipeline
 
-__all__ = ["DailyPipeline", "PipelineResult"]
+__all__ = ["PipelineResult", "TrelloPipeline"]

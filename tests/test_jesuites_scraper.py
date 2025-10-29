@@ -1,4 +1,3 @@
-from datetime import datetime, timezone
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -13,29 +12,27 @@ def load_fixture(name: str) -> BeautifulSoup:
     return BeautifulSoup(html, "lxml")
 
 
-def test_extract_article_urls():
+def test_extract_items_from_listing():
     scraper = JesuitesScraper()
     soup = load_fixture("jesuites_listing.html")
-    urls = list(scraper.extract_article_urls(soup))
-    assert urls == [
-        "/ca/noticia/primera-noticia",
+    items = list(scraper.extract_items(soup))
+
+    assert [item.title for item in items] == [
+        "Primera notícia",
+        "Segona notícia",
+    ]
+    assert [item.url for item in items] == [
+        "https://jesuites.net/ca/noticia/primera-noticia",
         "https://jesuites.net/ca/noticia/segona-noticia",
     ]
+    assert all(item.summary == item.url for item in items)
+    assert all(item.source == "jesuites" for item in items)
 
 
-def test_parse_article_success():
+def test_extract_items_sets_metadata():
     scraper = JesuitesScraper()
-    soup = load_fixture("jesuites_article.html")
-    article = scraper.parse_article(
-        soup,
-        "https://jesuites.net/ca/noticia/el-provincial-presenta-catalunya-el-nou-projecte-apostolic",
-    )
+    soup = load_fixture("jesuites_listing.html")
+    item = list(scraper.extract_items(soup))[0]
 
-    assert article.site == "jesuites"
-    assert article.base_url == scraper.base_url
-    assert article.lang == "ca"
-    assert article.title == "El Provincial presenta a Catalunya el nou Projecte Apostòlic"
-    assert "Impulsar la missió compartida amb laics" in article.content
-    assert article.description is None
-    assert article.author is None
-    assert article.published_at == datetime(2025, 9, 21, tzinfo=timezone.utc)
+    assert item.metadata["base_url"] == scraper.base_url
+    assert item.metadata["lang"] == scraper.default_lang

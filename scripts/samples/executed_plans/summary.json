@@ -1,9 +1,0 @@
-[
-  {
-    "query": "Cronologia dels principals fets sobre ‘refugiats’ dels últims 6 mesos",
-    "intent": "backgrounder",
-    "status": "ok",
-    "result_file": "scripts/samples/executed_plans/18_cronologia-dels-principals-fets-sobre-refugiats-dels-ltims-6-mesos.json",
-    "error": null
-  }
-]

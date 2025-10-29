@@ -9,9 +9,17 @@ if str(SRC) not in sys.path:
 
 
 def pytest_configure():
-    os.environ.setdefault("OPENAI_API_KEY", "test-key")
-    os.environ.setdefault("BONSAI_URL", "https://user:pass@example.com")
-    os.environ.setdefault("N8N_SUMMARY_ENDPOINT", "https://example.com/webhook")
+    os.environ.setdefault("TRELLO_KEY", "test-trello-key")
+    os.environ.setdefault("TRELLO_TOKEN", "test-trello-token")
+    os.environ.setdefault("TRELLO_BOARD_ID", "test-board")
+    os.environ.setdefault("TRELLO_LIST_ID", "test-list")
+    os.environ.setdefault("GOOGLE_PROJECT_ID", "test-project")
+    os.environ.setdefault("GOOGLE_CLIENT_EMAIL", "test@example.com")
+    os.environ.setdefault(
+        "GOOGLE_PRIVATE_KEY",
+        "-----BEGIN PRIVATE KEY-----\nTEST\n-----END PRIVATE KEY-----\n",
+    )
+    os.environ.setdefault("GOOGLE_SHEET_ID", "test-sheet")
 
 
 __all__ = []

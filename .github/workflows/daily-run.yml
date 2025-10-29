@@ -25,9 +25,25 @@ jobs:
 
       - name: Run daily ingestion pipeline
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          BONSAI_URL: ${{ secrets.BONSAI_URL }}
-          N8N_SUMMARY_ENDPOINT: ${{ secrets.N8N_SUMMARY_ENDPOINT }}
-          QDRANT_URL: ${{ secrets.QDRANT_URL }}
-          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+          TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
+          TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
+          TRELLO_BOARD_ID: ${{ secrets.TRELLO_BOARD_ID }}
+          TRELLO_LIST_ID: ${{ secrets.TRELLO_LIST_ID }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
+          GOOGLE_CLIENT_EMAIL: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
+          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+          GOOGLE_PRIVATE_KEY_ID: ${{ secrets.GOOGLE_PRIVATE_KEY_ID }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_TOKEN_URI: ${{ secrets.GOOGLE_TOKEN_URI }}
+          GOOGLE_AUTH_URI: ${{ secrets.GOOGLE_AUTH_URI }}
+          GOOGLE_AUTH_PROVIDER_X509_CERT_URL: ${{ secrets.GOOGLE_AUTH_PROVIDER_X509_CERT_URL }}
+          GOOGLE_CLIENT_X509_CERT_URL: ${{ secrets.GOOGLE_CLIENT_X509_CERT_URL }}
+          GOOGLE_UNIVERSE_DOMAIN: ${{ secrets.GOOGLE_UNIVERSE_DOMAIN }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_SHEET_WORKSHEET: ${{ secrets.GOOGLE_SHEET_WORKSHEET }}
+          SCRAPER_USER_AGENT: ${{ secrets.SCRAPER_USER_AGENT }}
+          SCRAPER_REQUEST_TIMEOUT: ${{ secrets.SCRAPER_REQUEST_TIMEOUT }}
+          SCRAPER_MAX_RETRIES: ${{ secrets.SCRAPER_MAX_RETRIES }}
+          SCRAPER_THROTTLE_SECONDS: ${{ secrets.SCRAPER_THROTTLE_SECONDS }}
         run: python scripts/run_daily.py

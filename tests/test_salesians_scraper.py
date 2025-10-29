@@ -1,4 +1,3 @@
-from datetime import datetime, timezone
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -13,31 +12,23 @@ def load_fixture(name: str) -> BeautifulSoup:
     return BeautifulSoup(html, "lxml")
 
 
-def test_extract_article_urls():
+def test_extract_items_from_listing():
     scraper = SalesiansScraper()
     soup = load_fixture("salesians_listing.html")
-    urls = list(scraper.extract_article_urls(soup))
-    assert urls == [
-        "https://salesianos.info/blog/primera-noticia/",
-        "https://salesianos.info/blog/segona-noticia/",
+    items = list(scraper.extract_items(soup))
+    assert [item.title for item in items] == ["Primera", "Segona"]
+    assert [item.url for item in items] == [
+        "https://salesianos.info/blog/primera-noticia",
+        "https://salesianos.info/blog/segona-noticia",
     ]
+    assert all(item.summary == item.url for item in items)
+    assert all(item.source == "salesians" for item in items)
 
 
-def test_parse_article_success():
+def test_extract_items_sets_metadata():
     scraper = SalesiansScraper()
-    soup = load_fixture("salesians_article.html")
-    article = scraper.parse_article(
-        soup,
-        "https://www.salesians.cat/noticia/primera-noticia/",
-    )
-    assert article.site == "salesians"
-    assert article.base_url == scraper.base_url
-    assert article.lang == "ca"
-    assert article.title == "Celebració de la comunitat salesiana"
-    assert "Primer paràgraf" in article.content
-    assert (
-        article.description
-        == "El passat 12 de setembre, els Salesians Cooperadors (SSCC) van llançar oficialment el seu projecte d'animació per a la Regió Ibèrica en el curs 2025-2026, proposant el lema “Feliços els humils”."
-    )
-    assert article.author == "Salesians Comunicació"
-    assert article.published_at == datetime(2025, 9, 15, tzinfo=timezone.utc)
+    soup = load_fixture("salesians_listing.html")
+    item = list(scraper.extract_items(soup))[0]
+
+    assert item.metadata["base_url"] == scraper.base_url
+    assert item.metadata["lang"] == scraper.default_lang

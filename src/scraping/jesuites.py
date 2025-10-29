@@ -6,7 +6,7 @@ from typing import Iterable
 
 from bs4 import BeautifulSoup
 
-from models import Article
+from models import NewsItem, utcnow
 
 from .base import BaseScraper
 
@@ -17,82 +17,39 @@ class JesuitesScraper(BaseScraper):
     listing_url = "https://jesuites.net/ca/totes-les-noticies"
     default_lang = "ca"
 
-    def extract_article_urls(self, listing_soup: BeautifulSoup) -> Iterable[str]:
+    def extract_items(self, listing_soup: BeautifulSoup) -> Iterable[NewsItem]:
         seen: set[str] = set()
+        items: list[NewsItem] = []
         for node in listing_soup.select(".gva-view-grid .node--type-noticia"):
             anchor = node.select_one(".post-title a[href]")
             if not anchor:
                 continue
             href = anchor.get("href", "").strip()
-            if not href or href in seen:
+            if not href:
                 continue
-            seen.add(href)
-            yield href
+            normalized = self._normalize_url(href)
+            if normalized in seen:
+                continue
+            seen.add(normalized)
 
-    def parse_article(self, article_soup: BeautifulSoup, url: str) -> Article:
-        article_node = article_soup.select_one("article.node--type-noticia") or article_soup
+            title = anchor.get_text(strip=True)
+            published_at = _extract_published_at(node)
 
-        title_tag = article_node.select_one("h1.post-title") or article_node.find("h1")
-        if not title_tag:
-            raise ValueError("Missing title in article page")
-        title = title_tag.get_text(strip=True)
+            metadata: dict[str, str] = {"base_url": self.base_url, "lang": self.default_lang}
+            if published_at:
+                metadata["published_at"] = _format_iso(published_at)
 
-        content_container = article_node.select_one(".node__content") or article_node
-        paragraphs: list[str] = []
-        for element in content_container.find_all(["p", "li"]):
-            text = element.get_text(" ", strip=True)
-            if text:
-                paragraphs.append(text)
-        content = "\n\n".join(paragraphs)
-        if not content:
-            raise ValueError("Article content empty")
-
-        description = _extract_description(article_soup)
-
-        sample_text = " ".join(paragraphs[:5])
-        if description:
-            sample_text = f"{description} {sample_text}".strip()
-        lang = BaseScraper.detect_language(article_soup, [sample_text or content], self.default_lang)
-
-        published_at = _extract_published_at(article_node, article_soup)
-        author = _extract_author(article_node, article_soup)
-
-        return Article(
-            site=self.site_id,
-            url=url,
-            base_url=self.base_url,
-            lang=lang,
-            title=title,
-            content=content,
-            description=description,
-            author=author,
-            published_at=published_at,
-        )
-
-
-def _extract_description(article_soup: BeautifulSoup) -> str | None:
-    meta = article_soup.find("meta", attrs={"property": "og:description"}) or article_soup.find(
-        "meta", attrs={"name": "description"}
-    )
-    if meta:
-        content = meta.get("content", "").strip()
-        if content:
-            return content
-    return None
-
-
-def _extract_author(article_node: BeautifulSoup, article_soup: BeautifulSoup) -> str | None:
-    author_tag = article_node.select_one(".post-author")
-    if author_tag:
-        author_text = author_tag.get_text(strip=True)
-        if author_text:
-            return author_text
-    meta = article_soup.find("meta", attrs={"name": "author"})
-    if meta:
-        content = meta.get("content", "").strip()
-        if content:
-            return content
-    return None
+            items.append(
+                NewsItem(
+                    source=self.site_id,
+                    title=title,
+                    url=normalized,
+                    summary=normalized,
+                    published_at=published_at or utcnow(),
+                    metadata=metadata,
+                )
+            )
+        return items
 
 
 _MONTH_MAP = {
@@ -125,18 +82,19 @@ _MONTH_MAP = {
 }
 
 
-def _extract_published_at(article_node: BeautifulSoup, article_soup: BeautifulSoup) -> datetime | None:
-    date_tag = article_node.select_one(".post-meta .post-created")
+def _extract_published_at(article_node: BeautifulSoup) -> datetime | None:
+    date_tag = article_node.select_one(".post-created")
     if date_tag:
         parsed = _parse_date(date_tag.get_text(strip=True))
         if parsed:
             return parsed
-    meta = article_soup.find("meta", attrs={"property": "article:published_time"})
-    if meta:
-        parsed = _parse_date(meta.get("content", ""))
-        if parsed:
-            return parsed
     return None
+
+
+def _format_iso(value: datetime) -> str:
+    if value.tzinfo is None:
+        value = value.replace(tzinfo=timezone.utc)
+    return value.astimezone(timezone.utc).isoformat()
 
 
 def _parse_date(value: str) -> datetime | None:
