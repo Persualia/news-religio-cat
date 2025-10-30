@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime, timezone
 import logging
 from typing import Optional, Sequence
 
@@ -11,6 +12,8 @@ from scraping import BaseScraper, instantiate_scrapers
 from scraping.base import ScraperNoArticlesError
 
 logger = logging.getLogger(__name__)
+
+MAX_SHEET_ROWS = 800
 
 
 @dataclass(slots=True)
@@ -56,7 +59,6 @@ class TrelloPipeline:
         new_items = 0
         skipped_existing = 0
         alerts_sent = 0
-        ingest_date = utcnow().date().isoformat()
 
         for scraper in self._scrapers:
             logger.info("Processing source: %s", scraper.site_id)
@@ -104,16 +106,18 @@ class TrelloPipeline:
 
                 records_to_append.append(
                     SheetRecord(
-                        date=ingest_date,
+                        date=_resolve_item_date(item),
                         doc_id=item.doc_id,
                         source=item.source,
                         title=item.title,
+                        url=item.url,
                     )
                 )
 
         if not dry_run and records_to_append:
             logger.info("Persisting %d new records to Google Sheets.", len(records_to_append))
             self._sheets.append_records(records_to_append)
+            self._sheets.trim_to_limit(MAX_SHEET_ROWS)
 
         logger.info(
             "Pipeline completed: sources=%d, total=%d, new=%d, skipped=%d, alerts=%d",
@@ -132,6 +136,15 @@ class TrelloPipeline:
             alerts_sent=alerts_sent,
             dry_run=dry_run,
         )
+
+
+def _resolve_item_date(item: NewsItem) -> str:
+    candidate: datetime | None = item.published_at or item.retrieved_at
+    if candidate is None:
+        candidate = utcnow()
+    if candidate.tzinfo is None:
+        candidate = candidate.replace(tzinfo=timezone.utc)
+    return candidate.astimezone(timezone.utc).date().isoformat()
 
 
 __all__ = ["TrelloPipeline", "PipelineResult"]

@@ -19,6 +19,7 @@ class StubSheets:
     def __init__(self, existing: set[str] | None = None) -> None:
         self._existing = set(existing or [])
         self.appended: list = []
+        self.trimmed_to: int | None = None
 
     def fetch_existing_ids(self) -> set[str]:
         return set(self._existing)
@@ -26,6 +27,9 @@ class StubSheets:
     def append_records(self, records):
         self.appended.extend(records)
         self._existing.update(record.doc_id for record in records)
+
+    def trim_to_limit(self, max_rows: int) -> None:
+        self.trimmed_to = max_rows
 
 
 class StubTrello:
@@ -69,6 +73,7 @@ def test_pipeline_creates_cards_for_new_items():
     assert result.new_items == 2
     assert len(trello.created) == 2
     assert len(sheets.appended) == 2
+    assert sheets.trimmed_to == 800
     assert not slack.messages
 
 
@@ -90,6 +95,7 @@ def test_pipeline_skips_existing_ids():
     assert result.skipped_existing == 1
     assert len(trello.created) == 1
     assert len(sheets.appended) == 1
+    assert sheets.trimmed_to == 800
 
 
 def test_pipeline_dry_run_avoids_side_effects():
@@ -106,6 +112,7 @@ def test_pipeline_dry_run_avoids_side_effects():
     assert result.new_items == 1
     assert not trello.created
     assert not sheets.appended
+    assert sheets.trimmed_to is None
     assert not slack.messages
 
 
@@ -129,3 +136,4 @@ def test_pipeline_notifies_when_scraper_returns_no_items():
     assert slack.messages
     assert not trello.created
     assert not sheets.appended
+    assert sheets.trimmed_to is None

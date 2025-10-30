@@ -74,6 +74,7 @@ class SheetRecord:
     doc_id: str
     source: str
     title: str
+    url: str
 
 
 __all__ = ["NewsItem", "SheetRecord", "url_to_id", "utcnow"]

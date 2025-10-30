@@ -56,11 +56,37 @@ class GoogleSheetsRepository:
             return
 
         worksheet = self._ensure_worksheet()
-        rows = [[record.date, record.doc_id, record.source, record.title] for record in records]
+        rows = [[record.date, record.doc_id, record.source, record.title, record.url] for record in records]
         try:
             worksheet.append_rows(rows, value_input_option="USER_ENTERED")
         except gspread.GSpreadException as exc:  # pragma: no cover - defensive
             logger.error("Failed to append rows to Google Sheet: %s", exc)
+            raise
+
+    def trim_to_limit(self, max_rows: int) -> None:
+        if max_rows <= 0:
+            return
+
+        worksheet = self._ensure_worksheet()
+        try:
+            values = worksheet.col_values(1)
+        except gspread.GSpreadException as exc:  # pragma: no cover - defensive
+            logger.error("Failed to fetch rows for trimming: %s", exc)
+            raise
+
+        if not values:
+            return
+
+        data_rows = max(0, len(values) - 1)  # exclude header
+        if data_rows <= max_rows:
+            return
+
+        rows_to_remove = data_rows - max_rows
+        # Delete rows starting from 2 (keep header) up to the count of rows to remove.
+        try:
+            worksheet.delete_rows(2, rows_to_remove + 1)
+        except gspread.GSpreadException as exc:  # pragma: no cover - defensive
+            logger.error("Failed to delete excess rows from Google Sheet: %s", exc)
             raise
 
     # -- Internal helpers ------------------------------------------------
