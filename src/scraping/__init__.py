@@ -5,11 +5,13 @@ from typing import Iterable, Sequence, Type
 
 from .base import BaseScraper
 from .jesuites import JesuitesScraper
+from .lasalle import LaSalleScraper
 from .maristes import MaristesScraper
 from .salesians import SalesiansScraper
 
 _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
     JesuitesScraper.site_id: JesuitesScraper,
+    LaSalleScraper.site_id: LaSalleScraper,
     MaristesScraper.site_id: MaristesScraper,
     SalesiansScraper.site_id: SalesiansScraper,
 }
@@ -52,6 +54,7 @@ def instantiate_scrapers(site_ids: Sequence[str] | None = None) -> list[BaseScra
 __all__ = [
     "BaseScraper",
     "JesuitesScraper",
+    "LaSalleScraper",
     "MaristesScraper",
     "SalesiansScraper",
     "get_scraper_classes",
