@@ -1,5 +1,6 @@
-from config import SlackSettings
 from integrations.slack import SlackNotifier
+from config import SlackSettings
+from types import SimpleNamespace
 
 
 class _DummyResponse:
@@ -23,9 +24,11 @@ def test_notify_webhook_prefixes_albert(monkeypatch):
         return _DummyResponse()
 
     monkeypatch.setattr("integrations.slack.httpx.post", fake_post)
-    notifier = SlackNotifier(
-        SlackSettings(webhook_url="https://hooks.slack.test", bot_token=None, target_user=None)
+    dummy_settings = SimpleNamespace(
+        slack=SlackSettings(webhook_url="https://hooks.slack.test", bot_token=None, target_user=None)
     )
+    monkeypatch.setattr("integrations.slack.get_settings", lambda: dummy_settings)
+    notifier = SlackNotifier()
 
     notifier.notify("Incidència detectada")
 
@@ -47,9 +50,11 @@ def test_notify_api_targets_user(monkeypatch):
         return _DummyResponse()
 
     monkeypatch.setattr("integrations.slack.httpx.post", fake_post)
-    notifier = SlackNotifier(
-        SlackSettings(webhook_url=None, bot_token="xoxb-test", target_user="albert")
+    dummy_settings = SimpleNamespace(
+        slack=SlackSettings(webhook_url=None, bot_token="xoxb-test", target_user="albert")
     )
+    monkeypatch.setattr("integrations.slack.get_settings", lambda: dummy_settings)
+    notifier = SlackNotifier()
 
     notifier.notify("Missatge directe")
 

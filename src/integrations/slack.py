@@ -17,9 +17,8 @@ SLACK_CHAT_POST_MESSAGE_URL = "https://slack.com/api/chat.postMessage"
 class SlackNotifier:
     """Thin wrapper around Slack notifications."""
 
-    def __init__(self, settings: SlackSettings | None = None) -> None:
-        if settings is None:
-            settings = get_settings().slack
+    def __init__(self) -> None:
+        settings = get_settings().slack
         self._webhook_url: Optional[str] = settings.webhook_url
         self._bot_token: Optional[str] = settings.bot_token
         self._target_user: str = settings.target_user or DEFAULT_TARGET
