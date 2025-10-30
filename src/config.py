@@ -42,6 +42,8 @@ class TrelloSettings:
 @dataclass(frozen=True)
 class SlackSettings:
     webhook_url: Optional[str]
+    bot_token: Optional[str]
+    target_user: Optional[str]
 
 
 @dataclass(frozen=True)
@@ -94,6 +96,8 @@ def get_settings() -> Settings:
         ),
         slack=SlackSettings(
             webhook_url=_optional_env("SLACK_WEBHOOK_URL"),
+            bot_token=_optional_env("SLACK_BOT_TOKEN"),
+            target_user=_optional_env("SLACK_TARGET_USER"),
         ),
         google=GoogleSettings(
             project_id=_require_env("GOOGLE_PROJECT_ID"),
