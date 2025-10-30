@@ -14,6 +14,17 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 
 ---
 
+websites to scrape (initial)
+https://jesuites.net/ca/totes-les-noticies
+https://www.maristes.cat/noticies 
+https://lasalle.cat/actualitat/
+https://escolapia.cat/actualitat/
+https://www.salesians.cat/noticies/
+
+... more to come
+
+---
+
 ## Architecture
 
 | Component | Responsibility |
