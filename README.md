@@ -67,7 +67,7 @@ Configure the following variables in `.env` (loaded via `python-dotenv`):
 | `TRELLO_KEY` / `TRELLO_TOKEN` | Trello API key and token for the service account. |
 | `TRELLO_BOARD_ID` | Trello board that owns the target list. |
 | `TRELLO_LIST_ID` | Trello list where new cards will be created. |
-| `SLACK_WEBHOOK_URL` | Incoming webhook for alerts (optional; skips notifications when omitted). |
+| `SLACK_BOT_TOKEN` | Bot Token for alerts (optional; skips notifications when omitted). |
 | `GOOGLE_PROJECT_ID` | Google Cloud project for the service account. |
 | `GOOGLE_CLIENT_EMAIL` | Service account email. |
 | `GOOGLE_PRIVATE_KEY` | Private key; keep the literal `\n` sequences (handled by `config.py`). |
