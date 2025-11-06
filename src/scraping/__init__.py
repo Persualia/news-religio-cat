@@ -5,7 +5,18 @@ from typing import Iterable, Sequence, Type
 
 from .base import BaseScraper
 from .bisbatlleida import BisbatLleidaScraper
+from .bisbattarragona import BisbatTarragonaScraper
 from .bisbatsolsona import BisbatSolsonaScraper
+from .bisbatgirona import BisbatGironaScraper
+from .bisbatbarcelona import BisbatBarcelonaScraper
+from .bisbatsantfeliu import BisbatSantFeliuScraper
+from .bisbatterrassa import BisbatTerrassaScraper
+from .bisbatvic import BisbatVicScraper
+from .bisbattortosa import BisbatTortosaScraper
+from .sagradafamilia import SagradaFamiliaScraper
+from .santjoandedeu import SantJoanDeDeuScraper
+from .abadiamontserrat import AbadiaMontserratScraper
+from .peretarres import PeretarresScraper
 from .bisbaturgell import BisbatUrgellScraper
 from .claretians import ClaretiansScraper
 from .escolapia import EscolaPiaScraper
@@ -16,6 +27,17 @@ from .salesians import SalesiansScraper
 
 _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
     BisbatLleidaScraper.site_id: BisbatLleidaScraper,
+    BisbatTarragonaScraper.site_id: BisbatTarragonaScraper,
+    BisbatGironaScraper.site_id: BisbatGironaScraper,
+    BisbatBarcelonaScraper.site_id: BisbatBarcelonaScraper,
+    BisbatSantFeliuScraper.site_id: BisbatSantFeliuScraper,
+    BisbatTerrassaScraper.site_id: BisbatTerrassaScraper,
+    BisbatVicScraper.site_id: BisbatVicScraper,
+    BisbatTortosaScraper.site_id: BisbatTortosaScraper,
+    SagradaFamiliaScraper.site_id: SagradaFamiliaScraper,
+    SantJoanDeDeuScraper.site_id: SantJoanDeDeuScraper,
+    AbadiaMontserratScraper.site_id: AbadiaMontserratScraper,
+    PeretarresScraper.site_id: PeretarresScraper,
     BisbatSolsonaScraper.site_id: BisbatSolsonaScraper,
     BisbatUrgellScraper.site_id: BisbatUrgellScraper,
     ClaretiansScraper.site_id: ClaretiansScraper,
@@ -64,6 +86,17 @@ def instantiate_scrapers(site_ids: Sequence[str] | None = None) -> list[BaseScra
 __all__ = [
     "BaseScraper",
     "BisbatLleidaScraper",
+    "BisbatTarragonaScraper",
+    "BisbatGironaScraper",
+    "BisbatBarcelonaScraper",
+    "BisbatSantFeliuScraper",
+    "BisbatTerrassaScraper",
+    "BisbatVicScraper",
+    "BisbatTortosaScraper",
+    "SagradaFamiliaScraper",
+    "SantJoanDeDeuScraper",
+    "AbadiaMontserratScraper",
+    "PeretarresScraper",
     "BisbatSolsonaScraper",
     "BisbatUrgellScraper",
     "ClaretiansScraper",
