@@ -82,7 +82,7 @@ class TrelloPipeline:
                 continue
 
             total_items += len(items)
-            for item in items:
+            for item in reversed(items):
                 if item.doc_id in seen_ids:
                     skipped_existing += 1
                     continue
