@@ -15,35 +15,27 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 ---
 
 websites to scrape (initial)
-https://jesuites.net/ca/totes-les-noticies
-https://www.maristes.cat/noticies 
-https://lasalle.cat/actualitat/
-https://escolapia.cat/actualitat/
-https://www.salesians.cat/noticies/
-
-... more to come
-
 
 1. jesuites (actualitzen sovint) https://jesuites.net/ca/totes-les-noticies
 2. maristes https://www.maristes.cat/noticies
 3. lasalle https://lasalle.cat/actualitat/
-4. escolapia http://www.escolapia.cat/
+4. escolapia https://escolapia.cat/actualitat/
 5. salesians https://www.salesians.cat/noticies/
-6. claretians http://www.claretians.cat/
-7. bisbatsolsona: https://bisbatsolsoxna.cat/
+6. claretians https://claretpaulus.org/ca/actualitat/
+7. bisbatsolsona: https://bisbatsolsona.cat/comunicacio/noticies/
 8. bisbaturgell: https://bisbaturgell.org/ca/category/actualitat-cat
 9. bisbatlleida: https://www.bisbatlleida.org/ca/news
 10. bisbattarragona: https://www.arquebisbattarragona.cat/
-11. bisbatgirona: http://www.bisbatgirona.cat/
-12. bisbatbarcelona: https://esglesia.barcelona/
-13. bisbatsantfeliu: https://bisbatsantfeliu.cat/
-14. bisbatterrassa: https://www.bisbatdeterrassa.org/
-15. bisbatvic: https://www.bisbatvic.org/ca
-16. bisbattortosa: https://www.bisbattortosa.org/
+11. bisbatgirona: https://www.bisbatgirona.cat/ca/noticies.html
+12. bisbatbarcelona: https://esglesia.barcelona/noticies/
+13. bisbatsantfeliu: https://bisbatsantfeliu.cat/wp-json/wp/v2/posts?per_page=9&_fields=link,title.rendered,date
+14. bisbatterrassa: https://www.bisbatdeterrassa.org/wp-json/wp/v2/posts?per_page=9&_fields=link,title.rendered,date
+15. bisbatvic: https://www.bisbatvic.org/ca/noticies?field_tax_blog_tid=All
+16. bisbattortosa: https://www.bisbattortosa.org/wp-json/wp/v2/posts?per_page=9&_fields=link,title.rendered,date
 17. sagradafamilia https://sagradafamilia.org/actualitat
-18. santjoandedeu https://sjd.es/noticias/
-19. abadiamontserrat https://www.millenarimontserrat.cat/
-20. peretarres https://www.peretarres.org/wps/wcm/connect/peretarres_ca/peretarres/home
+18. santjoandedeu https://sjd.es/wp-json/wp/v2/posts?per_page=9&_fields=link,title.rendered,date
+19. abadiamontserrat https://www.millenarimontserrat.cat/noticies
+20. peretarres https://www.peretarres.org/actualitat/noticies
 
 ---
 

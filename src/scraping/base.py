@@ -13,6 +13,9 @@ from config import get_settings
 from models import NewsItem
 
 
+MAX_ITEMS_PER_SOURCE = 9
+
+
 class ScraperNoArticlesError(RuntimeError):
     """Raised when a scraper yields zero URLs from the listing page."""
 
@@ -52,8 +55,10 @@ class BaseScraper(ABC):
         items = list(self.extract_items(listing_soup))
         if not items:
             raise ScraperNoArticlesError(self.site_id)
+        effective_limit = MAX_ITEMS_PER_SOURCE
         if limit is not None:
-            items = items[:limit]
+            effective_limit = min(limit, MAX_ITEMS_PER_SOURCE)
+        items = items[:effective_limit]
         return items
 
     # -- Networking helpers ----------------------------------------------
