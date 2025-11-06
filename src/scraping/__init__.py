@@ -4,9 +4,16 @@ from __future__ import annotations
 from typing import Iterable, Sequence, Type
 
 from .base import BaseScraper
+from .jesuites import JesuitesScraper
+from .maristes import MaristesScraper
+from .lasalle import LaSalleScraper
+from .escolapia import EscolaPiaScraper
+from .salesians import SalesiansScraper
+from .claretians import ClaretiansScraper
+from .bisbatsolsona import BisbatSolsonaScraper
+from .bisbaturgell import BisbatUrgellScraper
 from .bisbatlleida import BisbatLleidaScraper
 from .bisbattarragona import BisbatTarragonaScraper
-from .bisbatsolsona import BisbatSolsonaScraper
 from .bisbatgirona import BisbatGironaScraper
 from .bisbatbarcelona import BisbatBarcelonaScraper
 from .bisbatsantfeliu import BisbatSantFeliuScraper
@@ -17,15 +24,17 @@ from .sagradafamilia import SagradaFamiliaScraper
 from .santjoandedeu import SantJoanDeDeuScraper
 from .abadiamontserrat import AbadiaMontserratScraper
 from .peretarres import PeretarresScraper
-from .bisbaturgell import BisbatUrgellScraper
-from .claretians import ClaretiansScraper
-from .escolapia import EscolaPiaScraper
-from .jesuites import JesuitesScraper
-from .lasalle import LaSalleScraper
-from .maristes import MaristesScraper
-from .salesians import SalesiansScraper
 
+# Order matters: earlier entries receive higher priority when sorting mixed results.
 _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
+    JesuitesScraper.site_id: JesuitesScraper,
+    MaristesScraper.site_id: MaristesScraper,
+    LaSalleScraper.site_id: LaSalleScraper,
+    EscolaPiaScraper.site_id: EscolaPiaScraper,
+    SalesiansScraper.site_id: SalesiansScraper,
+    ClaretiansScraper.site_id: ClaretiansScraper,
+    BisbatSolsonaScraper.site_id: BisbatSolsonaScraper,
+    BisbatUrgellScraper.site_id: BisbatUrgellScraper,
     BisbatLleidaScraper.site_id: BisbatLleidaScraper,
     BisbatTarragonaScraper.site_id: BisbatTarragonaScraper,
     BisbatGironaScraper.site_id: BisbatGironaScraper,
@@ -38,14 +47,10 @@ _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
     SantJoanDeDeuScraper.site_id: SantJoanDeDeuScraper,
     AbadiaMontserratScraper.site_id: AbadiaMontserratScraper,
     PeretarresScraper.site_id: PeretarresScraper,
-    BisbatSolsonaScraper.site_id: BisbatSolsonaScraper,
-    BisbatUrgellScraper.site_id: BisbatUrgellScraper,
-    ClaretiansScraper.site_id: ClaretiansScraper,
-    EscolaPiaScraper.site_id: EscolaPiaScraper,
-    JesuitesScraper.site_id: JesuitesScraper,
-    LaSalleScraper.site_id: LaSalleScraper,
-    MaristesScraper.site_id: MaristesScraper,
-    SalesiansScraper.site_id: SalesiansScraper,
+}
+
+SCRAPER_PRIORITY: dict[str, int] = {
+    site_id: index for index, site_id in enumerate(_SCRAPER_REGISTRY)
 }
 
 
@@ -105,6 +110,7 @@ __all__ = [
     "LaSalleScraper",
     "MaristesScraper",
     "SalesiansScraper",
+    "SCRAPER_PRIORITY",
     "get_scraper_classes",
     "instantiate_scrapers",
     "list_scraper_ids",

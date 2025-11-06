@@ -8,7 +8,7 @@ from typing import Optional, Sequence
 
 from integrations import GoogleSheetsRepository, SlackNotifier, TrelloClient
 from models import NewsItem, SheetRecord, utcnow
-from scraping import BaseScraper, instantiate_scrapers
+from scraping import BaseScraper, SCRAPER_PRIORITY, instantiate_scrapers
 from scraping.base import ScraperNoArticlesError
 
 logger = logging.getLogger(__name__)
@@ -54,6 +54,7 @@ class TrelloPipeline:
         logger.info("Loaded %d existing IDs from Google Sheets.", len(existing_ids))
 
         seen_ids = set(existing_ids)
+        pending_items: list[NewsItem] = []
         records_to_append: list[SheetRecord] = []
         total_items = 0
         new_items = 0
@@ -82,7 +83,7 @@ class TrelloPipeline:
                 continue
 
             total_items += len(items)
-            for item in reversed(items):
+            for item in items:
                 if item.doc_id in seen_ids:
                     skipped_existing += 1
                     continue
@@ -90,10 +91,12 @@ class TrelloPipeline:
                 logger.info("New item detected: %s %s", item.source, item.url)
                 seen_ids.add(item.doc_id)
                 new_items += 1
+                pending_items.append(item)
 
-                if dry_run:
-                    continue
+        ordered_items = sorted(pending_items, key=_item_sort_key)
 
+        if not dry_run:
+            for item in ordered_items:
                 try:
                     card_id = self._trello.create_card(item)
                     logger.info("Created Trello card %s for %s", card_id or "<unknown>", item.url)
@@ -139,12 +142,24 @@ class TrelloPipeline:
 
 
 def _resolve_item_date(item: NewsItem) -> str:
+    candidate = _resolve_item_datetime(item)
+    return candidate.date().isoformat()
+
+
+def _resolve_item_datetime(item: NewsItem) -> datetime:
     candidate: datetime | None = item.published_at or item.retrieved_at
     if candidate is None:
         candidate = utcnow()
     if candidate.tzinfo is None:
         candidate = candidate.replace(tzinfo=timezone.utc)
-    return candidate.astimezone(timezone.utc).date().isoformat()
+    return candidate.astimezone(timezone.utc)
+
+
+def _item_sort_key(item: NewsItem) -> tuple[datetime, int, str, str]:
+    timestamp = _resolve_item_datetime(item)
+    source = item.source or ""
+    priority = SCRAPER_PRIORITY.get(source, len(SCRAPER_PRIORITY))
+    return (timestamp, -priority, source, item.url)
 
 
 __all__ = ["TrelloPipeline", "PipelineResult"]
