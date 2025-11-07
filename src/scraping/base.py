@@ -38,12 +38,11 @@ class BaseScraper(ABC):
     def __init__(self) -> None:
         settings = get_settings().scraper
         self._client = httpx.Client(
-            headers={
-                "User-Agent": settings.user_agent
-            },
+            headers={"User-Agent": settings.user_agent},
             timeout=settings.request_timeout,
             follow_redirects=True,
         )
+        self._request_timeout = settings.request_timeout
         self._throttle_seconds = settings.throttle_seconds
         self._max_retries = settings.max_retries
 

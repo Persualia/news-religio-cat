@@ -6,3 +6,4 @@ lxml==5.*
 gspread==6.*
 google-auth==2.*
 pytest==8.*
+cloudscraper==1.2.71

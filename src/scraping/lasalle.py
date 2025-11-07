@@ -1,15 +1,23 @@
 """Scraper implementation for https://lasalle.cat/feed/."""
 from __future__ import annotations
 
+import logging
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
-from typing import Iterable
+from typing import Iterable, Optional
 
 from bs4 import BeautifulSoup
 
 from models import NewsItem, utcnow
 
 from .base import BaseScraper
+
+logger = logging.getLogger(__name__)
+
+_CF_HEADERS = {
+    "Accept": "application/rss+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "ca-ES,ca;q=0.9,en-US;q=0.8,en;q=0.7",
+}
 
 
 class LaSalleScraper(BaseScraper):
@@ -18,9 +26,38 @@ class LaSalleScraper(BaseScraper):
     listing_url = "https://lasalle.cat/feed/"
     default_lang = "ca"
 
+    def __init__(self) -> None:
+        super().__init__()
+        self._cf_scraper = self._init_cloudscraper()
+
+    def _init_cloudscraper(self) -> Optional["cloudscraper.CloudScraper"]:
+        try:
+            import cloudscraper
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Cloudscraper not available; falling back to default client: %s", exc)
+            return None
+
+        return cloudscraper.create_scraper(
+            browser={"browser": "chrome", "platform": "windows", "mobile": False}
+        )
+
+    def _download_feed(self, url: str) -> str:
+        if self._cf_scraper is None:
+            response = self._get(url)
+            return response.text
+
+        try:
+            response = self._cf_scraper.get(url, headers=_CF_HEADERS, timeout=self._request_timeout)
+            response.raise_for_status()
+            return response.text
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Cloudscraper fetch failed (%s). Retrying with default client.", exc)
+            response = self._get(url)
+            return response.text
+
     def _get_soup(self, url: str) -> BeautifulSoup:
-        response = self._get(url)
-        return BeautifulSoup(response.text, "xml")
+        text = self._download_feed(url)
+        return BeautifulSoup(text, "xml")
 
     def extract_items(self, listing_soup: BeautifulSoup) -> Iterable[NewsItem]:
         items: list[NewsItem] = []

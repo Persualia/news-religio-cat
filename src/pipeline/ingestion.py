@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import logging
 from typing import Optional, Sequence
 
+import httpx
 from integrations import GoogleSheetsRepository, SlackNotifier, TrelloClient
 from models import NewsItem, SheetRecord, utcnow
 from scraping import BaseScraper, SCRAPER_PRIORITY, instantiate_scrapers
@@ -74,12 +75,10 @@ class TrelloPipeline:
                 logger.warning(message)
                 self._slack.notify(message)
                 continue
-            except Exception:  # noqa: BLE001
+            except Exception as exc:  # noqa: BLE001
                 logger.exception("Unexpected error scraping %s", scraper.site_id)
                 alerts_sent += 1
-                self._slack.notify(
-                    f":warning: Error inesperado al scrapear '{scraper.site_id}'. Revisa los logs."
-                )
+                self._slack.notify(_format_scraper_error(scraper.site_id, exc))
                 continue
 
             total_items += len(items)
@@ -160,6 +159,19 @@ def _item_sort_key(item: NewsItem) -> tuple[datetime, int, str, str]:
     source = item.source or ""
     priority = SCRAPER_PRIORITY.get(source, len(SCRAPER_PRIORITY))
     return (timestamp, -priority, source, item.url)
+
+
+def _format_scraper_error(site_id: str, exc: Exception) -> str:
+    if isinstance(exc, httpx.HTTPStatusError):
+        response = exc.response
+        status = response.status_code if response is not None else "unknown"
+        reason = getattr(response, "reason_phrase", "") if response else ""
+        url = str(response.request.url) if response and response.request else "<unknown>"
+        return (
+            f":warning: HTTP {status} {reason} al scrapear '{site_id}'. "
+            f"URL: {url}"
+        )
+    return f":warning: Error inesperado al scrapear '{site_id}': {exc}"
 
 
 __all__ = ["TrelloPipeline", "PipelineResult"]
