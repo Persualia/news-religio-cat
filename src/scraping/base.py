@@ -1,10 +1,11 @@
 """Shared scraping infrastructure returning lightweight news items."""
 from __future__ import annotations
 
+import logging
 import time
 from abc import ABC, abstractmethod
 from typing import Iterable, List, Optional
-from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qsl, urlencode
+from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
 
 import httpx
 from bs4 import BeautifulSoup
@@ -14,6 +15,8 @@ from models import NewsItem
 
 
 MAX_ITEMS_PER_SOURCE = 9
+
+logger = logging.getLogger(__name__)
 
 
 class ScraperNoArticlesError(RuntimeError):
@@ -35,7 +38,9 @@ class BaseScraper(ABC):
     def __init__(self) -> None:
         settings = get_settings().scraper
         self._client = httpx.Client(
-            headers={"User-Agent": settings.user_agent},
+            headers={
+                "User-Agent": settings.user_agent
+            },
             timeout=settings.request_timeout,
             follow_redirects=True,
         )
@@ -70,6 +75,27 @@ class BaseScraper(ABC):
                 response = self._client.get(url)
                 response.raise_for_status()
                 return response
+            except httpx.HTTPStatusError as exc:
+                status = exc.response.status_code if exc.response else "unknown"
+                reason = getattr(exc.response, "reason_phrase", "") if exc.response else ""
+                snippet = ""
+                if exc.response is not None:
+                    content = exc.response.text
+                    if content:
+                        snippet = content[:200].replace("\n", " ").strip()
+                logger.warning(
+                    "Scraper '%s' blocked with HTTP %s %s when requesting %s (attempt %d/%d). Body preview: %s",
+                    getattr(self, "site_id", "<unknown>"),
+                    status,
+                    reason,
+                    url,
+                    attempt,
+                    self._max_retries,
+                    snippet,
+                )
+                last_exc = exc
+                sleep_time = self._throttle_seconds * attempt if self._throttle_seconds else attempt
+                time.sleep(sleep_time)
             except Exception as exc:  # noqa: BLE001
                 last_exc = exc
                 sleep_time = self._throttle_seconds * attempt if self._throttle_seconds else attempt
