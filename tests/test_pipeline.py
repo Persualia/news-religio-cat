@@ -44,9 +44,13 @@ class StubTrello:
 class StubSlack:
     def __init__(self) -> None:
         self.messages: list[str] = []
+        self.block_messages: list[dict] = []
 
     def notify(self, message: str) -> None:
         self.messages.append(message)
+
+    def notify_blocks(self, *, blocks, text=None):
+        self.block_messages.append({"blocks": blocks, "text": text})
 
 
 def _news_item(url: str, source: str = "salesians") -> NewsItem:
@@ -68,13 +72,15 @@ def test_pipeline_creates_cards_for_new_items():
     slack = StubSlack()
 
     pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
-    result: PipelineResult = pipeline.run()
+    result: PipelineResult = pipeline.run(live_run=False)
 
     assert result.new_items == 2
+    assert result.live is False
     assert len(trello.created) == 2
     assert len(sheets.appended) == 2
     assert sheets.trimmed_to == 800
     assert not slack.messages
+    assert len(slack.block_messages) == 1
 
 
 def test_pipeline_skips_existing_ids():
@@ -89,7 +95,7 @@ def test_pipeline_skips_existing_ids():
     slack = StubSlack()
 
     pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
-    result = pipeline.run()
+    result = pipeline.run(live_run=False)
 
     assert result.new_items == 1
     assert result.skipped_existing == 1
@@ -106,14 +112,15 @@ def test_pipeline_dry_run_avoids_side_effects():
     slack = StubSlack()
 
     pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
-    result = pipeline.run(dry_run=True)
+    result = pipeline.run(dry_run=True, live_run=False)
 
-    assert result.dry_run is True
+    assert result.live is False
     assert result.new_items == 1
     assert not trello.created
     assert not sheets.appended
     assert sheets.trimmed_to is None
     assert not slack.messages
+    assert any("Mode" in field["text"] for field in slack.block_messages[0]["blocks"][1]["fields"])
 
 
 def test_pipeline_notifies_when_scraper_returns_no_items():
@@ -129,7 +136,7 @@ def test_pipeline_notifies_when_scraper_returns_no_items():
     slack = StubSlack()
 
     pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
-    result = pipeline.run()
+    result = pipeline.run(live_run=False)
 
     assert result.new_items == 0
     assert result.alerts_sent == 1
@@ -137,3 +144,19 @@ def test_pipeline_notifies_when_scraper_returns_no_items():
     assert not trello.created
     assert not sheets.appended
     assert sheets.trimmed_to is None
+
+
+def test_pipeline_summary_marks_live_runs():
+    items = [_news_item("https://example.com/a")]
+    scrapers = [StubScraper("salesians", items)]
+    sheets = StubSheets()
+    trello = StubTrello()
+    slack = StubSlack()
+
+    pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
+    result = pipeline.run(live_run=True)
+
+    assert result.live is True
+    summary_fields = slack.block_messages[0]["blocks"][1]["fields"]
+    live_field = next(field for field in summary_fields if "*Live*" in field["text"])
+    assert "true" in live_field["text"]

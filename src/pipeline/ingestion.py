@@ -4,7 +4,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 import logging
+import os
 from typing import Optional, Sequence
+
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:  # pragma: no cover
+    ZoneInfo = None  # type: ignore[assignment]
 
 import httpx
 from integrations import GoogleSheetsRepository, SlackNotifier, TrelloClient
@@ -16,6 +22,14 @@ logger = logging.getLogger(__name__)
 
 MAX_SHEET_ROWS = 800
 
+if ZoneInfo:
+    try:
+        MADRID_TZ = ZoneInfo("Europe/Madrid")
+    except Exception:  # pragma: no cover - tz data missing
+        MADRID_TZ = timezone.utc
+else:  # pragma: no cover
+    MADRID_TZ = timezone.utc
+
 
 @dataclass(slots=True)
 class PipelineResult:
@@ -24,7 +38,7 @@ class PipelineResult:
     new_items: int
     skipped_existing: int
     alerts_sent: int
-    dry_run: bool
+    live: bool
 
 
 class TrelloPipeline:
@@ -48,8 +62,14 @@ class TrelloPipeline:
         *,
         limit_per_site: Optional[int] = None,
         dry_run: bool = False,
+        live_run: Optional[bool] = None,
     ) -> PipelineResult:
-        logger.info("==== TRENDING NEWS → TRELLO PIPELINE (dry_run=%s) ====", dry_run)
+        live = _detect_live_run() if live_run is None else bool(live_run)
+        logger.info(
+            "==== TRENDING NEWS → TRELLO PIPELINE (dry_run=%s, live=%s) ====",
+            dry_run,
+            live,
+        )
 
         existing_ids = self._sheets.fetch_existing_ids()
         logger.info("Loaded %d existing IDs from Google Sheets.", len(existing_ids))
@@ -130,14 +150,27 @@ class TrelloPipeline:
             alerts_sent,
         )
 
-        return PipelineResult(
+        result = PipelineResult(
             sources_processed=len(self._scrapers),
             total_items=total_items,
             new_items=new_items,
             skipped_existing=skipped_existing,
             alerts_sent=alerts_sent,
-            dry_run=dry_run,
+            live=live,
         )
+        self._send_summary(result, dry_run=dry_run)
+        return result
+
+    def _send_summary(self, result: PipelineResult, *, dry_run: bool) -> None:
+        notifier = getattr(self._slack, "notify_blocks", None)
+        if not notifier:
+            return
+
+        blocks = _build_summary_blocks(result, dry_run)
+        try:
+            notifier(blocks=blocks, text="Resumen de la ingesta diaria completado.")
+        except Exception:  # noqa: BLE001
+            logger.debug("Unable to send Slack summary notification.", exc_info=True)
 
 
 def _resolve_item_date(item: NewsItem) -> str:
@@ -172,6 +205,51 @@ def _format_scraper_error(site_id: str, exc: Exception) -> str:
             f"URL: {url}"
         )
     return f":warning: Error inesperado al scrapear '{site_id}': {exc}"
+
+
+def _detect_live_run() -> bool:
+    for env_var in ("GITHUB_ACTIONS", "CI"):
+        value = os.getenv(env_var, "")
+        if value and value.lower() not in ("0", "false", "no"):
+            return True
+    return False
+
+
+def _build_summary_blocks(result: PipelineResult, dry_run: bool) -> list[dict]:
+    madrid_now = datetime.now(tz=MADRID_TZ)
+    timestamp = madrid_now.strftime("%Y-%m-%d %H:%M:%S")
+
+    fields = [
+        ("Sources processed", result.sources_processed),
+        ("Total items", result.total_items),
+        ("New items", result.new_items),
+        ("Skipped existing", result.skipped_existing),
+        ("Alerts sent", result.alerts_sent),
+        ("Live", str(result.live).lower()),
+    ]
+    if dry_run:
+        fields.append(("Mode", "dry-run"))
+
+    field_blocks = [
+        {"type": "mrkdwn", "text": f"*{label}*\n{value}"}
+        for label, value in fields
+    ]
+
+    header_text = (
+        "*Resumen de la ingesta diaria*"
+        f"\n{timestamp} (Madrid)"
+    )
+
+    return [
+        {
+            "type": "section",
+            "text": {"type": "mrkdwn", "text": header_text},
+        },
+        {
+            "type": "section",
+            "fields": field_blocks,
+        },
+    ]
 
 
 __all__ = ["TrelloPipeline", "PipelineResult"]

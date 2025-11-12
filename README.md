@@ -122,6 +122,7 @@ Useful flags:
 - `--sites salesians jesuites`: restrict execution to specific scrapers (comma- or space-separated).
 
 The script prints a JSON summary with totals at the end of the run.
+The payload now includes a `live` flag that is `true` when the execution runs from GitHub Actions (production) and `false` otherwise.
 
 ---
 
@@ -135,6 +136,7 @@ The script prints a JSON summary with totals at the end of the run.
 
 - If a scraper returns zero URLs, a Slack alert is raised suggesting a review (site layout likely changed).
 - Errors while creating Trello cards also trigger an alert.
+- When the run finishes, a Slack block message is posted with the Madrid timestamp plus the aggregate counters (`sources_processed`, `total_items`, `new_items`, `skipped_existing`, `alerts_sent`, `live`) directly to `#catalunya-religio`. `live=true` indicates the message was produced by the GitHub Action.
 - When no webhook is configured, the pipeline keeps running and logs the messages locally.
 
 ---

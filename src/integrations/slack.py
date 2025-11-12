@@ -10,7 +10,7 @@ from config import SlackSettings, get_settings
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_TARGET = "@albert"
+DEFAULT_CHANNEL = "#catalunya-religio"
 SLACK_CHAT_POST_MESSAGE_URL = "https://slack.com/api/chat.postMessage"
 
 
@@ -21,7 +21,6 @@ class SlackNotifier:
         settings = get_settings().slack
         self._webhook_url: Optional[str] = settings.webhook_url
         self._bot_token: Optional[str] = settings.bot_token
-        self._target_user: str = settings.target_user or DEFAULT_TARGET
 
     def notify(self, message: str) -> None:
         stripped = message.strip()
@@ -39,9 +38,40 @@ class SlackNotifier:
 
         logger.debug("Slack credentials not configured; skipping notification: %s", stripped)
 
+    def notify_blocks(self, *, blocks: list[dict], text: Optional[str] = None) -> None:
+        if not blocks:
+            logger.debug("Skipping Slack block notification with empty payload.")
+            return
+
+        if self._bot_token:
+            payload = {
+                "channel": DEFAULT_CHANNEL,
+                "blocks": blocks,
+                "link_names": True,
+            }
+            if text:
+                payload["text"] = text
+            self._post_via_api(payload)
+            return
+
+        if self._webhook_url:
+            payload = {"blocks": blocks, "channel": DEFAULT_CHANNEL}
+            if text:
+                payload["text"] = text
+            self._post_via_webhook(payload)
+            return
+
+        logger.debug("Slack credentials not configured; skipping block notification.")
+
     def _send_via_api(self, message: str) -> None:
-        channel = self._normalize_target(self._target_user)
-        payload = {"channel": channel, "text": message, "link_names": True}
+        payload = {
+            "channel": DEFAULT_CHANNEL,
+            "text": message,
+            "link_names": True,
+        }
+        self._post_via_api(payload)
+
+    def _post_via_api(self, payload: dict) -> None:
         headers = {
             "Authorization": f"Bearer {self._bot_token}",
             "Content-Type": "application/json; charset=utf-8",
@@ -56,29 +86,14 @@ class SlackNotifier:
             logger.warning("Failed to send Slack message via API: %s", exc)
 
     def _send_via_webhook(self, message: str) -> None:
-        formatted = self._ensure_mention(message)
+        payload = {"text": message, "channel": DEFAULT_CHANNEL}
+        self._post_via_webhook(payload)
+
+    def _post_via_webhook(self, payload: dict) -> None:
         try:
-            response = httpx.post(self._webhook_url, json={"text": formatted}, timeout=10)
+            response = httpx.post(self._webhook_url, json=payload, timeout=10)
             response.raise_for_status()
         except Exception as exc:  # noqa: BLE001
             logger.warning("Failed to send Slack message via webhook: %s", exc)
-
-    @staticmethod
-    def _normalize_target(target: str) -> str:
-        stripped = target.strip()
-        if not stripped:
-            return DEFAULT_TARGET
-        if not stripped.startswith("@") and not stripped.startswith("#"):
-            return f"@{stripped}"
-        return stripped
-
-    @staticmethod
-    def _ensure_mention(message: str) -> str:
-        mention = f"<{DEFAULT_TARGET}>"
-        stripped = message.strip()
-        if stripped.startswith(mention):
-            return stripped
-        return f"{mention} {stripped}"
-
 
 __all__ = ["SlackNotifier"]
