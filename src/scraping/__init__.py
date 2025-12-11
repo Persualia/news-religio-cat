@@ -28,6 +28,16 @@ from .serveijesuitarefugiats import ServeiJesuitaRefugiatsScraper
 from .migrastudium import MigrastudiumScraper
 from .fundaciocomtal import FundacioComtalScraper
 from .caminsfundacio import CaminsFundacioScraper
+from .franciscans import FranciscansScraper
+from .vedruna import VedrunaScraper
+from .fedac import FedacScraper
+from .sjddobrasocial import SJDDObraSocialScraper
+from .blanquerna import BlanquernaScraper
+from .iqs import IQSScraper
+from .euss import EUSSScraper
+from .justiciaipau import JusticiaIPauScraper
+from .gter import GTERScraper
+from .islamat import IslamatScraper
 
 # Order matters: earlier entries receive higher priority when sorting mixed results.
 _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
@@ -55,6 +65,16 @@ _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
     MigrastudiumScraper.site_id: MigrastudiumScraper,
     FundacioComtalScraper.site_id: FundacioComtalScraper,
     CaminsFundacioScraper.site_id: CaminsFundacioScraper,
+    FranciscansScraper.site_id: FranciscansScraper,
+    VedrunaScraper.site_id: VedrunaScraper,
+    FedacScraper.site_id: FedacScraper,
+    SJDDObraSocialScraper.site_id: SJDDObraSocialScraper,
+    BlanquernaScraper.site_id: BlanquernaScraper,
+    IQSScraper.site_id: IQSScraper,
+    EUSSScraper.site_id: EUSSScraper,
+    JusticiaIPauScraper.site_id: JusticiaIPauScraper,
+    GTERScraper.site_id: GTERScraper,
+    IslamatScraper.site_id: IslamatScraper,
 }
 
 SCRAPER_PRIORITY: dict[str, int] = {
@@ -114,6 +134,16 @@ __all__ = [
     "MigrastudiumScraper",
     "FundacioComtalScraper",
     "CaminsFundacioScraper",
+    "FranciscansScraper",
+    "VedrunaScraper",
+    "FedacScraper",
+    "SJDDObraSocialScraper",
+    "BlanquernaScraper",
+    "IQSScraper",
+    "EUSSScraper",
+    "JusticiaIPauScraper",
+    "GTERScraper",
+    "IslamatScraper",
     "BisbatSolsonaScraper",
     "BisbatUrgellScraper",
     "ClaretiansScraper",

@@ -40,9 +40,6 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 22. migrastudium https://www.migrastudium.org/actualitat
 23. fundaciocomtal https://comtal.org/es/noticias/
 24. caminsfundacio https://www.caminsfundacio.org/posat-al-dia/
-
-
-## Next websites to scrape (future)
 25. franciscans https://caputxins.cat/actualitat-caputxina/
 26. vedruna https://vedruna.cat/noticies/
 27. fedac https://escoles.fedac.cat/noticies/
@@ -53,6 +50,9 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 32. justiciaipau https://www.justiciaipau.org/diem
 33. gter http://www.grupdereligions.org/
 34. islamat https://www.islamcat.org/category/actualitats/
+
+
+## Next websites to scrape (future)
 35. urc https://urc.cat/actualitat/
 36. moenstirdelpoblet https://www.poblet.cat/ca/actualitat/
 37. oar https://ajuntament.barcelona.cat/oficina-afers-religiosos/ca/noticies

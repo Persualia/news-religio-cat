@@ -1,0 +1,14 @@
+[
+  {
+    "link": "https://escoles.fedac.cat/noticia-1/",
+    "title": {"rendered": "<span>Notícia 1</span>"},
+    "date": "2025-12-05T10:00:00",
+    "excerpt": {"rendered": "<p>Resum 1</p>"}
+  },
+  {
+    "link": "https://escoles.fedac.cat/noticia-2/",
+    "title": {"rendered": "Notícia 2"},
+    "date": "2025-11-30T08:30:00",
+    "excerpt": {"rendered": "<p></p>"}
+  }
+]
