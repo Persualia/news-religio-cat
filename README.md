@@ -14,7 +14,7 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 
 ---
 
-websites to scrape (initial)
+## websites to scrape (initial)
 
 1. jesuites (actualitzen sovint) https://jesuites.net/ca/totes-les-noticies
 2. maristes https://www.maristes.cat/noticies
@@ -36,6 +36,48 @@ websites to scrape (initial)
 18. santjoandedeu https://sjd.es/wp-json/wp/v2/posts?per_page=9&_fields=link,title.rendered,date
 19. abadiamontserrat https://www.millenarimontserrat.cat/noticies
 20. peretarres https://www.peretarres.org/actualitat/noticies
+21. serveijesuitarefugiats https://jrs.net/es/noticias-e-historias/
+22. migrastudium https://www.migrastudium.org/actualitat
+23. fundaciocomtal https://comtal.org/es/noticias/
+24. caminsfundacio https://www.caminsfundacio.org/posat-al-dia/
+
+
+## Next websites to scrape (future)
+25. franciscans https://caputxins.cat/actualitat-caputxina/
+26. vedruna https://vedruna.cat/noticies/
+27. fedac https://escoles.fedac.cat/noticies/
+28. sjddobrasocial https://solidaritat.santjoandedeu.org/actual/
+29. blanquerna https://www.blanquerna.edu/ca/noticies
+30. iqs https://iqs.edu/ca/iqs/noticies/
+31. euss https://neussletter.4veuss.com/
+32. justiciaipau https://www.justiciaipau.org/diem
+33. gter http://www.grupdereligions.org/
+34. islamat https://www.islamcat.org/category/actualitats/
+35. urc https://urc.cat/actualitat/
+36. moenstirdelpoblet https://www.poblet.cat/ca/actualitat/
+37. oar https://ajuntament.barcelona.cat/oficina-afers-religiosos/ca/noticies
+38. audir https://audir.org/noticies/
+39. dgar https://afersreligiosos.gencat.cat/ca/actualitat/noticies/
+40. caritassantfeliu https://www.caritassantfeliu.cat/
+41. caritasterrassa https://diocesanaterrassa.caritas.es/es/
+42. caritasbarcelona https://blog.caritas.barcelona/es/
+43. caritastarragona https://www.caritasdtarragona.cat/que-diem/actualitat/
+44. caritasgirona https://www.caritasgirona.cat/
+45. cpl: https://www.cpl.es/actualidad/noticias/ 
+46. carmelitesdescalcosdecatalunya: http://www.carmelcat.cat/
+47. iscreb: https://www.iscreb.org/ca/comunicacio/noticies
+48. opusdei: http://opusdei.cat/ca-es/
+59. adoratrius http://www.adoratrius.cat/
+50. cataloniasacra https://www.cataloniasacra.cat/noticies/noticies
+51. acat https://acat.pangea.org/
+52. fundaciolacaixa: https://mediahub.fundacionlacaixa.org/ca/social 
+
+
+53. Fundació PROIDE http://www.fundacioproide.org/ !no veig pagina de notícies
+54. Caputxins http://www.caputxins.cat/ ! On son les notícies? son les de franciscans?
+55. santaluisademarillac: http://osmarillac.org/ ! no existeix domini
+56. Servei Arxiu Monges Benedictines http://www.federaciobenedictines.cat/wordpress/ ! no existeix
+
 
 ---
 

@@ -24,6 +24,10 @@ from .sagradafamilia import SagradaFamiliaScraper
 from .santjoandedeu import SantJoanDeDeuScraper
 from .abadiamontserrat import AbadiaMontserratScraper
 from .peretarres import PeretarresScraper
+from .serveijesuitarefugiats import ServeiJesuitaRefugiatsScraper
+from .migrastudium import MigrastudiumScraper
+from .fundaciocomtal import FundacioComtalScraper
+from .caminsfundacio import CaminsFundacioScraper
 
 # Order matters: earlier entries receive higher priority when sorting mixed results.
 _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
@@ -47,6 +51,10 @@ _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
     SantJoanDeDeuScraper.site_id: SantJoanDeDeuScraper,
     AbadiaMontserratScraper.site_id: AbadiaMontserratScraper,
     PeretarresScraper.site_id: PeretarresScraper,
+    ServeiJesuitaRefugiatsScraper.site_id: ServeiJesuitaRefugiatsScraper,
+    MigrastudiumScraper.site_id: MigrastudiumScraper,
+    FundacioComtalScraper.site_id: FundacioComtalScraper,
+    CaminsFundacioScraper.site_id: CaminsFundacioScraper,
 }
 
 SCRAPER_PRIORITY: dict[str, int] = {
@@ -102,6 +110,10 @@ __all__ = [
     "SantJoanDeDeuScraper",
     "AbadiaMontserratScraper",
     "PeretarresScraper",
+    "ServeiJesuitaRefugiatsScraper",
+    "MigrastudiumScraper",
+    "FundacioComtalScraper",
+    "CaminsFundacioScraper",
     "BisbatSolsonaScraper",
     "BisbatUrgellScraper",
     "ClaretiansScraper",
