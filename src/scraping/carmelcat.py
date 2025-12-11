@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from typing import Iterable
 
 from bs4 import BeautifulSoup, Tag
@@ -25,6 +26,8 @@ class CarmelitesDescalcosScraper(BaseScraper):
         items: list[NewsItem] = []
         seen: set[str] = set()
 
+        normalized_listing = self._normalize_url(self.listing_url)
+
         for heading in container.find_all("h2"):
             title = heading.get_text(strip=True)
             if not title:
@@ -33,9 +36,10 @@ class CarmelitesDescalcosScraper(BaseScraper):
             link = _find_link(heading)
             if not link:
                 slug = _slugify(title)
-                link = f"{self.listing_url}#{slug}"
+                normalized = _build_slug_url(normalized_listing, slug)
+            else:
+                normalized = self._normalize_url(link)
 
-            normalized = self._normalize_url(link)
             if normalized in seen:
                 continue
             seen.add(normalized)
@@ -57,20 +61,28 @@ class CarmelitesDescalcosScraper(BaseScraper):
 
 
 def _find_link(heading: Tag) -> str:
+    column = heading.find_parent("td")
+
     for anchor in heading.find_all("a", href=True):
         href = anchor["href"].strip()
-        if href:
+        if href and _is_valid_article_link(anchor):
             return href
 
     node: Tag | None = heading
     while node is not None:
         node = node.find_next()
-        if node is None or node.name == "h2":
+        if node is None:
             break
-        if isinstance(node, Tag) and node.name == "a" and node.get("href"):
-            href = node["href"].strip()
-            if href:
-                return href
+        parent_td = node.find_parent("td") if hasattr(node, "find_parent") else None
+        if column is not None and parent_td is not column and node is not column:
+            break
+        if isinstance(node, Tag):
+            if node.name == "h2":
+                break
+            if node.name == "a" and node.get("href"):
+                href = node["href"].strip()
+                if href and _is_valid_article_link(node):
+                    return href
     return ""
 
 
@@ -89,10 +101,28 @@ def _extract_summary(heading: Tag) -> str:
 
 
 def _slugify(value: str) -> str:
-    normalized = value.lower()
+    normalized = unicodedata.normalize("NFKD", value)
+    normalized = normalized.encode("ascii", "ignore").decode("ascii")
+    normalized = normalized.lower()
     normalized = re.sub(r"[^\w\s-]", "", normalized)
     normalized = re.sub(r"[\s_-]+", "-", normalized).strip("-")
     return normalized or "noticia"
+
+
+def _build_slug_url(listing_url: str, slug: str) -> str:
+    if listing_url.endswith("/"):
+        return f"{listing_url}#{slug}"
+    return f"{listing_url}/#{slug}"
+
+
+def _is_valid_article_link(anchor: Tag) -> bool:
+    href = anchor.get("href", "").strip().lower()
+    if not href or href.startswith(("mailto:", "javascript:")):
+        return False
+    path = href.split("#", 1)[0].split("?", 1)[0]
+    if path.endswith((".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".svg", ".tiff", ".ico", ".pdf")):
+        return False
+    return True
 
 
 __all__ = ["CarmelitesDescalcosScraper"]

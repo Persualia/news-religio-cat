@@ -24,4 +24,11 @@ def test_extract_items_from_listing():
     assert first.summary.startswith("El dimecres dia 10 de desembre")
     assert first.metadata["lang"] == "ca"
 
-    assert first.url.startswith(scraper.listing_url)
+    assert first.url == f"{scraper.listing_url}#trobada-de-comunitats-a-tarragona"
+
+    second = items[1]
+    assert second.url.startswith("https://ocdiberica.com/")
+
+    last = items[-1]
+    assert last.title == "Festa de santa Teresa de Jesús"
+    assert last.url == f"{scraper.listing_url}#festa-de-santa-teresa-de-jesus"

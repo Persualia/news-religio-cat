@@ -1,6 +1,7 @@
 """Scraper implementation for https://vedruna.cat/noticies/."""
 from __future__ import annotations
 
+import re
 import unicodedata
 from datetime import datetime, timezone
 from typing import Iterable
@@ -78,25 +79,44 @@ _MONTHS = {
     "desembre": 12,
 }
 
+_DATE_RE = re.compile(r"(?P<day>\d{1,2})\s+d['e]?\s*(?P<month>[a-zà-ÿ]+)\s+d['e]?\s*(?P<year>\d{4})", re.IGNORECASE)
+
 
 def _parse_catalan_date(value: str | None) -> datetime | None:
     if not value:
         return None
-    cleaned = unicodedata.normalize("NFKD", value)
-    parts = [part for part in cleaned.replace(",", " ").split() if part]
-    if len(parts) < 4:
-        return None
-    try:
-        day = int(parts[0])
-    except ValueError:
-        return None
-    month = _MONTHS.get(parts[2].lower())
+
+    normalized = unicodedata.normalize("NFKD", value)
+    normalized = normalized.encode("ascii", "ignore").decode("ascii")
+    normalized = normalized.lower()
+    normalized = normalized.replace("del", "de")
+
+    match = _DATE_RE.search(normalized)
+    if not match:
+        fallback = normalized
+        fallback = fallback.replace(" d'", " ")
+        fallback = fallback.replace(" de ", " ")
+        fallback = re.sub(r"[^a-z0-9 ]+", " ", fallback)
+        parts = [part for part in fallback.split() if part]
+        if len(parts) < 3:
+            return None
+        try:
+            day = int(parts[0])
+            month = _MONTHS.get(parts[1].lower())
+            year = int(parts[2])
+        except ValueError:
+            return None
+    else:
+        try:
+            day = int(match.group("day"))
+            month = _MONTHS.get(match.group("month").lower())
+            year = int(match.group("year"))
+        except ValueError:
+            return None
+
     if month is None:
         return None
-    try:
-        year = int(parts[-1])
-    except ValueError:
-        return None
+
     try:
         return datetime(year, month, day, tzinfo=timezone.utc)
     except ValueError:

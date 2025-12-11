@@ -3,7 +3,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from scraping.vedruna import VedrunaScraper
+from scraping.vedruna import VedrunaScraper, _parse_catalan_date
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -27,3 +27,11 @@ def test_extract_items_from_listing():
     assert item.summary == "Arribem a les portes de l’hivern..."
     assert item.published_at == datetime(2025, 12, 4, tzinfo=timezone.utc)
     assert item.metadata["published_at"] == "2025-12-04T00:00:00+00:00"
+
+
+def test_parse_catalan_date_variants():
+    date = _parse_catalan_date("14 de novembre de 2025")
+    assert date == datetime(2025, 11, 14, tzinfo=timezone.utc)
+
+    date = _parse_catalan_date("27 d'octubre de 2025")
+    assert date == datetime(2025, 10, 27, tzinfo=timezone.utc)
