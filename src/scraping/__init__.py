@@ -38,6 +38,11 @@ from .euss import EUSSScraper
 from .justiciaipau import JusticiaIPauScraper
 from .gter import GTERScraper
 from .islamat import IslamatScraper
+from .urc import URCScraper
+from .moenstirdelpoblet import MoenstirDelPobletScraper
+from .oar import OARScraper
+from .audir import AudirScraper
+from .dgar import DGARScraper
 
 # Order matters: earlier entries receive higher priority when sorting mixed results.
 _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
@@ -75,6 +80,11 @@ _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
     JusticiaIPauScraper.site_id: JusticiaIPauScraper,
     GTERScraper.site_id: GTERScraper,
     IslamatScraper.site_id: IslamatScraper,
+    URCScraper.site_id: URCScraper,
+    MoenstirDelPobletScraper.site_id: MoenstirDelPobletScraper,
+    OARScraper.site_id: OARScraper,
+    AudirScraper.site_id: AudirScraper,
+    DGARScraper.site_id: DGARScraper,
 }
 
 SCRAPER_PRIORITY: dict[str, int] = {
@@ -144,6 +154,11 @@ __all__ = [
     "JusticiaIPauScraper",
     "GTERScraper",
     "IslamatScraper",
+    "URCScraper",
+    "MoenstirDelPobletScraper",
+    "OARScraper",
+    "AudirScraper",
+    "DGARScraper",
     "BisbatSolsonaScraper",
     "BisbatUrgellScraper",
     "ClaretiansScraper",

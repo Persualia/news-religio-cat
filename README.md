@@ -50,14 +50,14 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 32. justiciaipau https://www.justiciaipau.org/diem
 33. gter http://www.grupdereligions.org/
 34. islamat https://www.islamcat.org/category/actualitats/
-
-
-## Next websites to scrape (future)
 35. urc https://urc.cat/actualitat/
 36. moenstirdelpoblet https://www.poblet.cat/ca/actualitat/
 37. oar https://ajuntament.barcelona.cat/oficina-afers-religiosos/ca/noticies
 38. audir https://audir.org/noticies/
 39. dgar https://afersreligiosos.gencat.cat/ca/actualitat/noticies/
+
+
+## Next websites to scrape (future)
 40. caritassantfeliu https://www.caritassantfeliu.cat/
 41. caritasterrassa https://diocesanaterrassa.caritas.es/es/
 42. caritasbarcelona https://blog.caritas.barcelona/es/
