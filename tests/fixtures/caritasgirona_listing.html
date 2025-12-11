@@ -1,0 +1,1104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> Notícies - Càritas</title>
+<meta name="description" content=""/>
+<meta name="keywords" content="voluntariat,cooperacio internacional,pobresa,marginacio,exclusio,exclusio social,empreses amb cor,col·laborar,socis,donacio,herencia,parroquial,arxiprestal,interparroquial,diocesana,treball social,quart mon,emergencia,campanya,gent gran,ONG,solidaritat,diocesi,caritas,Girona,accio social,insercio laboral,immigracio,justicia,bisbat,sie,solidaritat,nei,sai,llegat,ecosol,caritas girona"/>
+<meta name="URL" content="https://www.caritasgirona.cat/"/>
+<meta name="Subject" content="CÀRITAS"/>
+<meta name="copyright" content="CÀRITAS"/>
+<meta name="document-class" content="Completed"/>
+<meta name="document-rights" content="Copyrighted Work"/>
+<meta name="Revisit" content="7 days"/>
+<meta name="REVISIT-AFTER" content="7 days"/>
+<meta name="robots" content="all"/>
+<meta name="language" content="español"/>
+<meta name="DC.Language" scheme="RFC1766" content="ca"/>
+<meta name="VW96.objecttype" content="Document"/>
+<meta name="distribution" content="global"/>
+<meta name="resource-type" content="document"/>
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="google-translate-customization" content="4a4ab4eba42f58a8-d1ccd616b8a2605e-g3f6514d5fbe7914b-15"></meta>
+
+<link type="image/png" rel="shortcut icon" href="https://www.caritasgirona.cat/templates/PUBLIC/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://www.caritasgirona.cat/templates/PUBLIC/css/fonts.css" />
+<link rel="stylesheet" href="https://www.caritasgirona.cat/templates/PUBLIC/css/estils.css?v=1765453489" />
+<link rel="stylesheet" href="https://www.caritasgirona.cat/templates/PUBLIC/css/magnific-popup.css" />
+<link rel="stylesheet" href="https://www.caritasgirona.cat/templates/PUBLIC/css/jquery.mCustomScrollbar.css" />
+
+<link rel="stylesheet" href="https://www.caritasgirona.cat/templates/PUBLIC/css/responsive.css" />
+
+<meta property="og:image" content="https://www.caritasgirona.cat/tmp/images/IMAGES_SPACER_W_200_H_200_ADJUST_1_BG_1.GIF"/>
+<meta property="og:title" content=" Notícies - Càritas"/>
+<meta property="og:description" content=" "/>
+<meta property="og:url" content="https://www.caritasgirona.cat/ca/1715/noticies.html" />
+<meta property="og:site_name" content="Càritas" />
+
+<script type="text/javascript" src="https://www.caritasgirona.cat/templates/PUBLIC/js/jquery.js"></script>
+<script type="text/javascript" src="https://www.caritasgirona.cat/templates/PUBLIC/js/magnific-popup.js"></script>
+<script type="text/javascript" src="https://www.caritasgirona.cat/templates/PUBLIC/js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="https://www.caritasgirona.cat/templates/PUBLIC/js/jquery.mCustomScrollbar.min.js"></script>
+
+<script src="https://malsup.github.io/jquery.cycle2.js"></script>
+<script src="https://malsup.github.io/jquery.cycle2.carousel.js"></script>
+<script>$.fn.cycle.defaults.autoSelector = '.cycle,.slide_gran';</script>
+
+<script type="text/javascript">
+var idioma_missatge_cookies = 'ca';
+
+$(function(){
+
+	comprova_header();
+	$(window).load(function(){
+		comprova_header();
+		
+		$("#boto_acceptar_cookies").click(function(){
+			
+			setTimeout("comprova_header()",100);
+		});
+	});
+	
+	$(window).resize(function(){
+		comprova_header();
+	});
+		
+		
+	$(".desplegable > li > ul").mCustomScrollbar();
+		
+				$(".desplegable > li").hover(function(){
+				$(this).find("ul").stop(true,true).slideDown(300, function(){
+					$(this).mCustomScrollbar("update");
+				});
+			},function(){
+				$(this).find("ul").stop(true,true).slideUp(300);
+			});
+		
+	
+	
+	
+	
+	if('' != '')
+	{
+		$.magnificPopup.open({
+		  items: {
+			src: '<div class="white-popup"></div>', // can be a HTML string, jQuery object, or CSS selector
+			type: 'inline'
+		  }
+		});
+	}
+	
+	$('.enllac_politica').magnificPopup({
+		type: 'inline',
+		midClick: true
+	});
+	
+	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+	  type: 'iframe',
+	  preloader: false,
+	  fixedContentPos: false
+	});
+	
+	$(".cycle").magnificPopup({
+	  delegate: 'a',
+	  type: 'image'
+	});
+});
+
+function comprova_header()
+{
+	var height_box_cookies;
+	if($("#msg_cookies_fbox").length>0 && $("#msg_cookies_fbox").is(":visible"))
+	{
+		height_box_cookies =$("#msg_cookies_fbox").outerHeight();
+		$("#msg_cookies_fbox").css({'position':'fixed','z-index':'200','left':'0','right':'0','top':'0'});
+	}
+	else
+		height_box_cookies =0;
+		 
+	
+	$("#header").css({'position':'fixed','z-index':'201','left':'0','right':'0','top':height_box_cookies});
+	$("#nav").css({'position':'fixed','left':'0','border-bottom':'1px solid #FFFFFF','right':'0','top':height_box_cookies+$("#header").outerHeight()});
+	
+	$("body").css({'padding-top':(height_box_cookies+$("#header").outerHeight()+$("#nav").outerHeight())});
+}
+</script>
+
+<script type="text/javascript" src="https://www.caritasgirona.cat/avis_cookies.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="https://www.caritasgirona.cat/index.php?action=p&p=PUBLIC/js/generic.js&v=1765453489"></script>
+<script src="https://platform.twitter.com/widgets.js" type="text/javascript"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12095143-50"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-12095143-50');
+</script>
+
+<!-- Facebook Pixel Code -->
+<script> 
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1693379357602281');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1693379357602281&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+        
+	<div id="header">
+    	<div>
+            <a href="https://www.caritasgirona.cat/"><img src="https://www.caritasgirona.cat//templates/PUBLIC/img/logo2020.jpg" id="logo" /></a>
+            <div class="fr" id="xarxes_socials">
+                <div>
+                    <div class="fl" id="icons_socials">
+                    		<!--<a href="https://www.caritasgirona.cat/"><img src="https://www.caritasgirona.cat/templates/PUBLIC/img/ico_web.png" /><font>www.caritasgirona.cat</font></a>-->
+                    		<a href="http://www.facebook.com/caritasgirona" target="_blank"><img src="https://www.caritasgirona.cat/templates/PUBLIC/img/ico_facebook.png" /><font>/caritasgirona</font></a>
+                            <!--<a href="mailto:caritas@caritasgirona.cat"><img src="https://www.caritasgirona.cat/templates/PUBLIC/img/ico_email.png" /><font>caritas@caritasgirona.cat</font></a>-->
+                            <a href="https://twitter.com/caritasgirona" target="_blank"><img src="https://www.caritasgirona.cat/templates/PUBLIC/img/ico_twitter.png" /><font>@caritasgirona</font></a>
+                            <a href="https://www.youtube.com/channel/UCKjzGVRMI3VsO4M0_hmBmUQ/videos" target="_blank"><img src="https://www.caritasgirona.cat/templates/PUBLIC/img/ico_youtube.png" /><font>caritasgirona</font></a>
+                            <!--<span><img src="https://www.caritasgirona.cat/templates/PUBLIC/img/ico_telf.png" /><font>972 204 980</font></span>-->
+                    		
+                            <!--<div class="fl">
+                            <a href="https://twitter.com/caritasgirona" class="twitter-follow-button" data-show-count="false" data-lang="es">Segueix @caritasgirona</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            </div>
+                            <div class="fl">
+                                <div class="fb-like" data-href="http://www.facebook.com/caritasgirona" data-send="false" data-layout="button_count" data-show-faces="false"></div>
+                            </div>
+                            <div class="fl">
+                                <a href="http://www.youtube.com/user/caritasgirona" target="_blank" style="background-color: #b40000; display: inline-block; vertical-align: top; font-size: 12px; line-height: 12px; color: #FFFFFF; font-style: italic; font-style: italic; text-decoration: none; padding: 2px 5px 2px 5px; margin-left: 5px;">Segueix-nos a<img style="margin-left:5px; vertical-align: middle;" src="https://www.caritasgirona.cat/templates/PUBLIC/img/icon_youtube.png" /></a>
+                            </div>
+        
+                            <div class="fl">
+                                <a href="http://www.instagram.com/caritasgirona" target="_blank" style="background-color: #DFDFDF; display: inline-block; vertical-align: top; font-size: 12px; line-height: 12px; color: #333333; font-style: italic; font-style: italic; text-decoration: none; padding: 2px 5px 2px 5px; margin-left: 5px;">Segueix-nos a<img style="margin-left:5px; vertical-align: middle; width: 15px;" src="https://www.caritasgirona.cat/templates/PUBLIC/img/icon_instagram.jpg" /></a>
+                            </div>-->
+                    	</div>
+                    <div class="fr">
+                    	<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'ca', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    	
+    </div>
+    <div id="desplegador_menu" onclick="desplegar_menu();">
+    	<img src="https://www.caritasgirona.cat//templates/PUBLIC/img/ratlles_desplegador_menu.png" />MENÚ
+    </div>
+    <div id="nav">
+        <div>
+            
+<ul id="menu">
+
+	    <li id="punt_1683" >
+    	        <img src="https://www.caritasgirona.cat//templates/PUBLIC/img/separador_menu.jpg" />
+                
+                <a href="https://www.caritasgirona.cat/ca/1683/som.html" id="punt_1683" class="menu_desplegable ">Som</a>
+                <img src="https://www.caritasgirona.cat//templates/PUBLIC/img/separador_menu.jpg" />
+        
+                <ul id="submenu_1683">
+        	            <li><a href="https://www.caritasgirona.cat/ca/1690/missio-visio-i-valors.html" id="punt_1690">Missió, Visió i Valors</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/1692/organitzacio.html" id="punt_1692">Organització</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/2091/organitzacio-territorial.html" id="punt_2091">Organització Territorial</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/2109/anagrama.html" id="punt_2109">Anagrama</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/2110/una-mica-d-historia.html" id="punt_2110">Una mica d&#39;història</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/2092/els-comptes-clars.html" id="punt_2092">Els comptes clars</a></li>
+                    </ul>
+            </li>
+        <li id="punt_1684" >
+    	        
+                <a href="https://www.caritasgirona.cat/ca/1684/fem.html" id="punt_1684" class="menu_desplegable ">Fem</a>
+                <img src="https://www.caritasgirona.cat//templates/PUBLIC/img/separador_menu.jpg" />
+        
+                <ul id="submenu_1684">
+        	            <li><a href="https://www.caritasgirona.cat/ca/1711/accio-social.html" id="punt_1711">Acció Social</a></li>
+                    </ul>
+            </li>
+        <li id="punt_1713" >
+    	        
+                <a href="https://www.caritasgirona.cat/ca/1713/52-caritas-a-prop-teu.html" id="punt_1713" class="">52 Càritas A prop teu</a>
+                <img src="https://www.caritasgirona.cat//templates/PUBLIC/img/separador_menu.jpg" />
+        
+            </li>
+        <li id="punt_1685" >
+    	        
+                <a href="https://www.caritasgirona.cat/ca/1685/col-labora.html" id="punt_1685" class="menu_desplegable ">Col·labora</a>
+                <img src="https://www.caritasgirona.cat//templates/PUBLIC/img/separador_menu.jpg" />
+        
+                <ul id="submenu_1685">
+        	            <li><a href="https://www.caritasgirona.cat/ca/1704/fes-te-voluntari.html" id="punt_1704">Fes-te voluntari</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/3715/campanya-actual.html" id="punt_3715">Campanya actual</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/3292/fes-te-soci-o-fes-un-donatiu.html" id="punt_3292">Fes-te soci o fes un donatiu</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/3979/irregularitat-sobrevinguda.html" id="punt_3979">Irregularitat sobrevinguda</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/2102/herencies-i-llegats.html" id="punt_2102">Herències i llegats</a></li>
+                        <li><a href="http://www.caritasgirona.cat/entitatsambcor/" id="punt_1703">Entitats amb cor</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/2992/informacio-modificacio-fiscal.html" id="punt_2992">INFORMACIÓ MODIFICACIÓ FISCAL</a></li>
+                    </ul>
+            </li>
+        <li id="punt_1686" >
+    	        
+                <a href="https://www.caritasgirona.cat/ca/1686/diem.html" id="punt_1686" class="menu_desplegable ">Diem</a>
+                <img src="https://www.caritasgirona.cat//templates/PUBLIC/img/separador_menu.jpg" />
+        
+                <ul id="submenu_1686">
+        	            <li><a href="https://www.caritasgirona.cat/ca/1715/noticies.html" id="punt_1715">Notícies</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/3908/informes-d-impacte.html" id="punt_3908">Informes d&#39;impacte</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/1723/agenda-d-activitats.html" id="punt_1723">Agenda d&#39;activitats</a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/1714/memoria.html" id="punt_1714">Memòria </a></li>
+                        <li><a href="https://www.caritasgirona.cat/ca/3991/revista-trenats.html" id="punt_3991">Revista Trenats</a></li>
+                    </ul>
+            </li>
+        <li id="punt_1689" >
+    	        
+                <a href="https://www.caritasgirona.cat/ca/1689/contacte.html" id="punt_1689" class="">Contacte</a>
+                <img src="https://www.caritasgirona.cat//templates/PUBLIC/img/separador_menu.jpg" />
+        
+            </li>
+        <li id="punt_3381" >
+    	        
+                <a href="https://www.caritasgirona.cat/ca/3381/transparencia.html" id="punt_3381" class="">Transparència</a>
+                <img src="https://www.caritasgirona.cat//templates/PUBLIC/img/separador_menu.jpg" />
+        
+            </li>
+        
+        <li class="destacat">
+    	<a href="https://www.caritasgirona.cat/ca/3292/fes-te-soci-o-fes-un-donatiu.html"><!-- img height=15 width=15 src="https://www.caritasgirona.cat//templates/PUBLIC/img/cors_caritas.png" style="height: 15px;vertical-align: middle;margin-right: 5px;"/ -->Fes un donatiu</a>
+    </li>
+</ul>
+            <div id="cercador">
+                <!--<form name="frm_recerca" method="get" action="https://www.caritasgirona.cat/index.php">
+                    <img onclick="javascript:document.frm_recerca.submit()" class="fl" src="https://www.caritasgirona.cat//templates/PUBLIC/img/img_lupa.png" />
+                    <input name="desc" class="fl" type="text" value="Cercar"  onblur="if(this.value==''){this.value='Cercar'}" onfocus="if(this.value=='Cercar'){this.value=''}"/>
+                    
+                    <input type="hidden" value="2115" name="id" />
+                </form>-->
+                
+            
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+        <div id="content_centrat" style="width: 1010px; margin: auto;">
+    	
+            <div id="ruta"><a href="https://www.caritasgirona.cat/ca/1/home.html">Home</a> &gt;&gt; <a href="https://www.caritasgirona.cat/ca/1686/diem.html">Diem</a> &gt;&gt; Notícies</div>       
+    	<!-- template noticies -->
+<style>
+    input[type=text],textarea
+    {
+        width: 41%;
+        border: 1px solid #CECECE;
+        margin: 2px 0px;
+        padding: 8px 4%;
+        font-style: italic;
+        font-size: 14px;
+        resize: none;
+        
+    }
+    
+    .boto_form
+    {
+        border: 1px solid #CECECE;
+        display: inline-block;
+        margin: 2px 0px;
+        padding: 8px 8px;
+        font-style: italic;
+        font-size: 14px;
+        line-height: 17px;
+        color: #CCCCCC;
+    }
+    
+    .boto_form.active
+    {
+        color: #000000;
+    }
+</style>
+
+        <div id="content">
+            <h1>Notícies</h1>
+            
+                        
+            <span style="font-size: 20px; line-height: 25px; display: block; text-align: center; font-weight: normal; font-style: italic; margin-bottom: 25px;">Vols rebre les notícies al teu correu? <a href="javascript:desplega_newsletter();" style="text-decoration: none;">Fes clic aquí</a></span>
+                               			 <div class="contenidor_newsletter" style="margin: 10px auto; display: none;">
+                    	
+                        <form method="post" action="https://www.caritasgirona.cat/index.php" name="frm_newsletter" enctype="multipart/form-data">	
+    <div>
+        <input type="text" name="name" value="Nom" onblur="if(this.value==''){this.value='Nom'}" onfocus="if(this.value=='Nom'){this.value=''}" style="width: 91%;">
+        <input type="text" name="xmal" value="E-mail" onblur="if(this.value==''){this.value='E-mail'}" onfocus="if(this.value=='E-mail'){this.value=''}" style="width: 91%;">
+        <br /><br />
+        <input type="checkbox" name="check_condicions" style="vertical-align: middle;"/>&nbsp;<a href="#legal" class="enllac_politica" style="text-decoration: none; color: #000000;">Accepto condicions</a>
+    </div>
+    <div align="center" style="margin-top: 15px;">
+        <a href="javascript:comprova_form_newsletter();" class="boto_generic" style="margin: 0;">Subscriu-te</a>
+    </div>
+    <input type="hidden" value="newsletter_subscription" name="saction" />
+    <input type="hidden" value="Noticies" name="nom_grup" />
+    <input type="hidden" value="1715" name="id" />
+</form>                    </div>
+                    <br />
+            
+                        
+
+                    
+                    
+			<div class="bloc_noticia" style="">
+                <div >
+                	<div class="fl data_noticia">
+                    	                        <span style="font-weight: bold;">02</span><br />
+                        Desembre<br />
+                        <span style="font-weight: bold;">2025</span><br />
+                    </div>
+                    <div class="fl col_esquerra_curt">
+                        <h3>El projecte L’Obrador de Càritas Diocesana de Girona guardonat als Premis Josep Gassó Espina </h3>
+                        <div >
+                            <div style="text-align: justify; margin-bottom: 15px;">
+                                                                <em>Els atorga la Fundaci&oacute; Catalana de l&rsquo;Esplai a propostes que treballen amb infants i joves sota els eixos de la conviv&egrave;ncia i la sostenibilitat</em><br />
+<br />
+El projecte <strong>L&rsquo;Obrador: espai jove d&rsquo;art en conviv&egrave;ncia</strong> de C&agrave;ritas Diocesana de Girona ha estat guardonat als Premis Josep Gass&oacute; Espina, concretament a la categoria Imagina. Els guardons es van entregar aquest dilluns 1 de desembre al Centre Esplai del Prat de Llobregat dins els actes de celebraci&oacute; del Sopar Solidari de Funesplai.<br />
+<br />
+L&rsquo;Obrador &eacute;s un espai situat a Banyoles, per a joves d&rsquo;entre 15 i 25 anys, on a trav&eacute;s de l&rsquo;art els participants aborden amb sentit cr&iacute;tic la realitat que els envolta. Concretament, es facilita un punt de trobada on joves i agents de la comunitat del Pla de l&rsquo;Estany es troben per abordar temes que els preocupen de la realitat que els envolta, amb un sentit cr&iacute;tic i amb la voluntat de fer reflexionar la ciutadania. El motor &eacute;s la participaci&oacute; de totes les persones implicades i el fil conductor &eacute;s l&rsquo;art, a trav&eacute;s del qual expressen all&ograve; que es vol denunciar.<br />
+<br />
+La directora de C&agrave;ritas Diocesana de Girona, <strong>&Agrave;ngels Cam&oacute;s</strong>, explica que <strong>&ldquo;aquest reconeixement &eacute;s per a totes les persones que des del 2014 han donat vida a l&rsquo;Obrador. Participants, voluntariat, t&egrave;cnics, administracions,&hellip;, han fet gran aquest espai inclusiu per a joves on poden expressar-se dir la seva a trav&eacute;s de l&rsquo;art&rdquo;</strong>.<br />
+<br />
+Els Premis Josep Gass&oacute; Espina reconeixen l&rsquo;educaci&oacute; en el lleure i l&rsquo;acci&oacute; transformadora de les entitats sense &agrave;nim de lucre que treballen amb infants i joves sota els eixos de la conviv&egrave;ncia i la sostenibilitat.                            </div>
+                                                        <div style="margin: 15px 0px; position: relative; z-index: 10;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.caritasgirona.cat/ca/4388/el-projecte-l’obrador-de-caritas-diocesana-de-girona-guardonat-als-premis-josep-gasso-espina.html" data-text="El projecte L’Obrador de Càritas Diocesana de Girona guardonat als Premis Josep Gassó Espina">Tweet</a>
+                            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                                <div class="fb-like" data-href="https://www.caritasgirona.cat/ca/4388/el-projecte-l’obrador-de-caritas-diocesana-de-girona-guardonat-als-premis-josep-gasso-espina.html" data-send="false" data-layout="button_count" data-show-faces="false"></div>       
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                                        <div class="fr col_dreta">
+                    	<div class="cycle" style="margin-bottom: 15px;" data-cycle-fx="fade"
+                    data-cycle-timeout="5000"
+                    data-cycle-auto-height="container"
+                    data-cycle-speed="500"
+                    data-cycle-next="#next" 
+                    data-cycle-prev="#prev"
+                    data-cycle-pager="#pager_noticia_4388"
+                    data-cycle-slides="> a">
+                        	                            		<a href="https://www.caritasgirona.cat/biblioteca/items/4388/2025_12_Sopar_Solidari_Fundesplai_2025.jpg"><span class="label_imatge">El projecte L’Obrador de Càritas Diocesana de Girona guardonat als Premis Josep Gassó Espina</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4388_2025_12_SOPAR_SOLIDARI_FUNDESPLAI_2025_W_300.JPG" /> </a>
+                                                    </div>
+                                                <div style="text-align: center;">
+                        	                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                                        <div style="clear:both;"></div>
+                </div>
+            </div>
+                        
+
+                    
+                    
+			<div class="bloc_noticia" style="">
+                <div >
+                	<div class="fl data_noticia">
+                    	                        <span style="font-weight: bold;">01</span><br />
+                        Desembre<br />
+                        <span style="font-weight: bold;">2025</span><br />
+                    </div>
+                    <div class="fl col_esquerra_curt">
+                        <h3>Càritas Diocesana de Girona engega la campanya de Nadal apel·lant a ‘una vida digna’ </h3>
+                        <div >
+                            <div style="text-align: justify; margin-bottom: 15px;">
+                                                                <em>&lsquo;Fem que una vida digna no sigui una q&uuml;esti&oacute; de sort&rsquo; &eacute;s l&rsquo;esl&ograve;gan que presidir&agrave; totes les accions</em><br />
+<br />
+Aprofitant l&rsquo;inici del mes desembre, C&agrave;ritas Diocesana de Girona ha comen&ccedil;at a difondre la campanya solid&agrave;ria que impulsa cada cada i que, enguany, se centrar en defensar &lsquo;una vida digna&rsquo;. Durant aquestes properes setmanes, totes les accions que s&rsquo;organitzaran des de l&rsquo;entitat estaran presidides per la frase <strong>&lsquo;fem que una vida digna no sigui una q&uuml;esti&oacute; de sort&rsquo;.</strong><br />
+<br />
+En aquest sentit, i segons l&rsquo;informe sobre exclusi&oacute; i desenvolupament social a Catalunya elaborat per la Fundaci&oacute;n FOESSA, un 17% de la poblaci&oacute; catalana pateix exclusi&oacute; i 1 de cada 3 joves pateix aquesta situaci&oacute;. D&rsquo;altra banda, dos milions de persones pateixen exclusi&oacute; a Catalunya per problemes relacionats amb l&#39;habitatge.<br />
+<br />
+La directora de C&agrave;ritas Diocesana de Girona, &Agrave;ngels Cam&oacute;s, fa una crida a celebrar un Nadal<strong> &ldquo;en qu&egrave; viure amb dignitat sigui un prop&ograve;sit, una opci&oacute; i no una q&uuml;esti&oacute; de sort. Ara &eacute;s moment de prendre consci&egrave;ncia, preparar-nos i viure uns dies de festa que siguin coherents amb la dignitat, la nostra i la de totes les persones que acompanyem i a les quals donem suport des de les parr&ograve;quies, projectes i serveis&rdquo;.</strong><br />
+<br />
+<strong>&ldquo;A dia d&rsquo;avui hi ha tres situacions concretes que vivim amb m&eacute;s complexitat i que afecten d&rsquo;una manera escandalosa les persones m&eacute;s vulnerables que acompanyem des de C&agrave;ritas: el problema de l&rsquo;habitatge, la precarietat pel que fa a l&rsquo;ocupaci&oacute; i la realitat que viuen les persones migrants&rdquo;</strong>, afegeix Cam&oacute;s.<br />
+<br />
+Tothom que vulgui fer un donatiu i donar suport als nostres projectes d&rsquo;habitatge per ajudar les fam&iacute;lies que m&eacute;s ho necessiten es pot adre&ccedil;ar a la web de l&rsquo;entitat, <a href="http://www.caritasgirona.cat/ca/3292/fes-te-soci-o-fes-un-donatiu.html">www.caritasgirona.cat</a>, on trobaran tota la informaci&oacute; necess&agrave;ria i les f&oacute;rmules per fer-ho possible.<br />
+<br />
+Per desgravar la donaci&oacute; es pot contactar amb <strong>atenciodonant@caritasgirona.cat</strong> i per qualsevol altre dubte, totes les persones interessades es poden dirigir a la seu dels serveis generals, Pujada de la Merc&egrave; n&uacute;mero 8 de Girona, o trucar al tel&egrave;fon 972 20 49 80.                            </div>
+                                                        <div style="margin: 15px 0px; position: relative; z-index: 10;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.caritasgirona.cat/ca/4387/caritas-diocesana-de-girona-engega-la-campanya-de-nadal-apel-lant-a-‘una-vida-digna’.html" data-text="Càritas Diocesana de Girona engega la campanya de Nadal apel·lant a ‘una vida digna’">Tweet</a>
+                            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                                <div class="fb-like" data-href="https://www.caritasgirona.cat/ca/4387/caritas-diocesana-de-girona-engega-la-campanya-de-nadal-apel-lant-a-‘una-vida-digna’.html" data-send="false" data-layout="button_count" data-show-faces="false"></div>       
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                                        <div class="fr col_dreta">
+                    	<div class="cycle" style="margin-bottom: 15px;" data-cycle-fx="fade"
+                    data-cycle-timeout="5000"
+                    data-cycle-auto-height="container"
+                    data-cycle-speed="500"
+                    data-cycle-next="#next" 
+                    data-cycle-prev="#prev"
+                    data-cycle-pager="#pager_noticia_4387"
+                    data-cycle-slides="> a">
+                        	                            		<a href="https://www.caritasgirona.cat/biblioteca/items/4387/2025_12_NADAL_C__RITAS_GIRONA.png"><span class="label_imatge">Càritas Diocesana de Girona engega la campanya de Nadal apel·lant a ‘una vida digna’</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4387_2025_12_NADAL_C__RITAS_GIRONA_W_300.PNG" /> </a>
+                                                    </div>
+                                                <div style="text-align: center;">
+                        	                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                                        <div style="clear:both;"></div>
+                </div>
+            </div>
+                        
+
+                    
+                    
+			<div class="bloc_noticia" style="">
+                <div >
+                	<div class="fl data_noticia">
+                    	                        <span style="font-weight: bold;">20</span><br />
+                        Novembre<br />
+                        <span style="font-weight: bold;">2025</span><br />
+                    </div>
+                    <div class="fl col_esquerra_curt">
+                        <h3>La campanya Ningú Sense Llar reivindica l’aprovació urgent de la llei del sensellarisme que s’està tramitant al Parlament </h3>
+                        <div >
+                            <div style="text-align: justify; margin-bottom: 15px;">
+                                                                <em>Del 24 al 30 de novembre es celebra una nova edici&oacute; d&rsquo;aquesta proposta reivindicativa i que enguany porta per nom Amb llei, amb llar<br />
+<br />
+Les activitats organitzades per C&agrave;ritas, La Sopa, Nou Sol i Creu Roja, compten amb la col&middot;laboraci&oacute; de l&rsquo;Ajuntament de Girona, el Consorci de Benestar Social Giron&egrave;s-Salt i la UdG.</em><br />
+<br />
+Del 24 al 30 de novembre se celebrar&agrave; una nova edici&oacute; de la campanya Ning&uacute; Sense Llar que enguany porta per nom <strong>Amb llei, amb llar</strong> amb l&rsquo;objectiu de centrar les accions en la proposici&oacute; de llei que a hores d&rsquo;ara s&rsquo;est&agrave; tramitant al Parlament de Catalunya i que, amb la seva aprovaci&oacute;, hauria d&rsquo;aportar les eines per lluitar de forma m&eacute;s efectiva i aportar solucions a les persones que viuen al carrer.<br />
+<br />
+Organitzada per C&agrave;ritas Diocesana de Girona, el Consorci La Sopa, Nou Sol i Creu Roja, la campanya de conscienciaci&oacute; compta amb amb la col&middot;laboraci&oacute; de l&rsquo;Ajuntament de Girona, el Consorci de Benestar Social Giron&egrave;s-Salt i la UdG.<br />
+<br />
+Els impulsors de la campanya consideren que <strong>&ldquo;la proposici&oacute; de llei de mesures transit&ograve;ries i urgents per a fer front al sensellarisme i erradicar-lo, que han impulsat diverses entitats socials catalanes &eacute;s b&agrave;sica per donar una protecci&oacute; adequada a les persones sense llar&rdquo;</strong>.<br />
+<br />
+Tal i com es recull al manifest que es llegir&agrave; arreu de la di&ograve;cesi, <strong>&ldquo;la llei t&eacute; com a element principal el dret a un espai residencial digne, un dret subjectiu que ha de ser exigible per totes les persones que es troben en situaci&oacute; de sense llar&rdquo;</strong>. El text tamb&eacute; tamb&eacute; inclou altres drets elementals que <strong>&ldquo;aporten dignitat, com ara el dret a una consigna, el dret a serveis d&rsquo;higiene personal, el dret a un centre de baixa exig&egrave;ncia, el dret a fer &uacute;s de l&rsquo;espai p&uacute;blic sense c&oacute;rrer el risc de ser sancionat mentre no es garanteixi un espai residencial digne per a tothom, o el dret a un comiat digne en el trasp&agrave;s, entre d&rsquo;altres&rdquo;</strong>.<br />
+<br />
+La directora de <strong>C&agrave;ritas Diocesana de Girona, &Agrave;ngels Cam&oacute;s</strong>, recorda que <strong>&ldquo;la pobresa de qui viu al carrer &eacute;s una realitat incompresa que fa por i que es vol amagar. Hem de ser conscients que, actualment, els motius que porten a viure al carrer no es poden associar a esdeveniments extraordinaris o a hist&ograve;ries especials de marginaci&oacute; perqu&egrave; tothom est&agrave; exposat a una situaci&oacute; d&rsquo;aquest tipus. Ning&uacute; viu al carrer per lliure elecci&oacute;&rdquo;</strong>.<br />
+<br />
+<strong>Una trentena d&rsquo;actes programats</strong><br />
+<br />
+Durant els darrers mesos s&rsquo;ha treballat per elaborar una &agrave;mplia programaci&oacute; que, a dia d&rsquo;avui, ja compta amb una trentena de propostes que se celebraran a municipis de tota la di&ograve;cesi gironina i que aniran des de la ja tradicional lectura del manifest a exposicions, jornades de debat o projecci&oacute; de documentals.<br />
+<br />
+Enguany, i durant dos dies, la campanya inclou les Jornades Internacionals sobre exclusi&oacute; residencial que el 26 i el 27 de novembre se celebraran a la Facultat de Lletres de la Universitat de Girona.<br />
+<br />
+Entre altres actes, cal destacar que el dimecres 26 es projectar&agrave; a l&rsquo;Ateneu Popular de Salt el documental <em>13 veus, una realitat: El sensellarisme</em> que ha elaborat C&agrave;ritas Jove i el dijous 27, al cinema Truffaut es podr&agrave; gaudir de la pel&iacute;cula <em>Invisibles </em>que permet prendre consci&egrave;ncia de les barreres socials, econ&ograve;miques i burocr&agrave;tiques que afecten les persones que es troben en situaci&oacute; de sensellarisme.<br />
+<br />
+<br />
+Podeu consultar el <a href="http://drive.google.com/file/d/1CaLImfxFCiaEropQ57mRk8z2TKG1BkqL/view?usp=sharing">programa d&#39;actes</a>, el <a href="http://drive.google.com/file/d/1D7zQpZQ8uZZQH9oNArotlhc4KyC9GJvZ/view?usp=sharing">cartell</a> i el <a href="http://drive.google.com/file/d/19_QZHCQsTgDdzi1-WI43NV-cu95hoZOS/view?usp=sharing">manifest</a> de la campanya.<br />
+<br />
+&nbsp;                            </div>
+                                                        <div style="margin: 15px 0px; position: relative; z-index: 10;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.caritasgirona.cat/ca/4382/la-campanya-ningu-sense-llar-reivindica-l’aprovacio-urgent-de-la-llei-del-sensellarisme-que-s’esta-tramitant-al-parlament.html" data-text="La campanya Ningú Sense Llar reivindica l’aprovació urgent de la llei del sensellarisme que s’està tramitant al Parlament">Tweet</a>
+                            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                                <div class="fb-like" data-href="https://www.caritasgirona.cat/ca/4382/la-campanya-ningu-sense-llar-reivindica-l’aprovacio-urgent-de-la-llei-del-sensellarisme-que-s’esta-tramitant-al-parlament.html" data-send="false" data-layout="button_count" data-show-faces="false"></div>       
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                                        <div class="fr col_dreta">
+                    	<div class="cycle" style="margin-bottom: 15px;" data-cycle-fx="fade"
+                    data-cycle-timeout="5000"
+                    data-cycle-auto-height="container"
+                    data-cycle-speed="500"
+                    data-cycle-next="#next" 
+                    data-cycle-prev="#prev"
+                    data-cycle-pager="#pager_noticia_4382"
+                    data-cycle-slides="> a">
+                        	                            		<a href="https://www.caritasgirona.cat/biblioteca/items/4382/2025_11_RdP_Ning___Sense_Llar_2025.jpg"><span class="label_imatge">La campanya Ningú Sense Llar reivindica l’aprovació urgent de la llei del sensellarisme que s’està tramitant al Parlament</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4382_2025_11_RDP_NING___SENSE_LLAR_2025_W_300.JPG" /> </a>
+                                                    </div>
+                                                <div style="text-align: center;">
+                        	                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                                        <div style="clear:both;"></div>
+                </div>
+            </div>
+                        
+
+                    
+                    
+			<div class="bloc_noticia" style="">
+                <div >
+                	<div class="fl data_noticia">
+                    	                        <span style="font-weight: bold;">11</span><br />
+                        Novembre<br />
+                        <span style="font-weight: bold;">2025</span><br />
+                    </div>
+                    <div class="fl col_esquerra_curt">
+                        <h3>Notes d&#39;Agraïment </h3>
+                        <div >
+                            <div style="text-align: justify; margin-bottom: 15px;">
+                                                                Us convidem a l&#39;acte <strong>&quot;Notes d&rsquo;agra&iuml;ment&quot;</strong>​, un espai de recon​eixement per a totes les persones que formeu part de C&agrave;ritas.<br />
+<br />
+<strong>Divendres 12 de desembre de 2025<br />
+​de 18 ​a 20h<br />
+Catedral de Girona</strong><br />
+<br />
+<strong>Programa</strong><br />
+17:30 h &ndash; Obertura de portes i acollida.<br />
+18:00 h &ndash; Acte &ldquo;Notes d&rsquo;agra&iuml;ment &quot; amb la Mariona Escoda i la Neus Mar entre d&#39;altres sorpreses.<br />
+19:05 h &ndash; Copa de Cava amb Cor i refrigeri al Claustre.<br />
+20:00 h &ndash; Cloenda.<br />
+<br />
+​Confirm​aci&oacute; d&#39;assist&egrave;ncia abans de​ l&#39;1 de desembre del 2025 a trav&eacute;s del seg&uuml;ent enlla&ccedil;: <a href="http://docs.google.com/forms/d/e/1FAIpQLSfr8iMsbP4K0rAsaf-63PFrkkkJOM2jKGdg5gFsQ3Y2KuV50A/viewform">Formulari d&rsquo;inscripci&oacute;</a><br />
+<br />
+Moltes gr&agrave;cies per formar part d&rsquo;aquesta gran fam&iacute;lia. Esperem comptar amb ​vosaltres en aquesta trobada tan significativa.<br />
+<br />
+&nbsp;                            </div>
+                                                        <div style="margin: 15px 0px; position: relative; z-index: 10;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.caritasgirona.cat/ca/4380/notes-d-agraïment.html" data-text="Notes d&amp;#39;Agraïment">Tweet</a>
+                            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                                <div class="fb-like" data-href="https://www.caritasgirona.cat/ca/4380/notes-d-agraïment.html" data-send="false" data-layout="button_count" data-show-faces="false"></div>       
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                                        <div class="fr col_dreta">
+                    	<div class="cycle" style="margin-bottom: 15px;" data-cycle-fx="fade"
+                    data-cycle-timeout="5000"
+                    data-cycle-auto-height="container"
+                    data-cycle-speed="500"
+                    data-cycle-next="#next" 
+                    data-cycle-prev="#prev"
+                    data-cycle-pager="#pager_noticia_4380"
+                    data-cycle-slides="> a">
+                        	                            		<a href="https://www.caritasgirona.cat/biblioteca/items/4380/2025_11_cartell_Notes_d_Agra__ment_Captura.JPG"><span class="label_imatge">Notes d&#39;Agraïment</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4380_2025_11_CARTELL_NOTES_D_AGRA__MENT_CAPTURA_W_300.JPG" /> </a>
+                                                    </div>
+                                                <div style="text-align: center;">
+                        	                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                                        <div style="clear:both;"></div>
+                </div>
+            </div>
+                        
+
+                    
+                    
+			<div class="bloc_noticia" style="">
+                <div >
+                	<div class="fl data_noticia">
+                    	                        <span style="font-weight: bold;">03</span><br />
+                        Novembre<br />
+                        <span style="font-weight: bold;">2025</span><br />
+                    </div>
+                    <div class="fl col_esquerra_curt">
+                        <h3>NIUCO, primera marca pròpia d’Ecosol, l’empresa d’inserció de Càritas Diocesana de Girona </h3>
+                        <div >
+                            <div style="text-align: justify; margin-bottom: 15px;">
+                                                                <em>A trav&eacute;s del Cosidor d&rsquo;Olot s&rsquo;elaboraran productes t&egrave;xtils, objectes de decoraci&oacute; i l&iacute;nies de marxandatge<br />
+<br />
+Es comercialitzaran a trav&eacute;s dels canals propis en l&iacute;nia, com la web, per&ograve; tamb&eacute; es podran trobar a espais de trobada de C&agrave;ritas i punts solidaris del territori</em><br />
+<br />
+<strong>Ecosol</strong>, l&rsquo;empresa d&rsquo;inserci&oacute; de <strong>C&agrave;ritas Diocesana de Girona</strong>, va presentar aquest divendres 21 d&rsquo;octubre la seva primera marca pr&ograve;pia <strong>NIUCO</strong> que inclou des de productes t&egrave;xtils a objectes de decoraci&oacute; i l&iacute;nies de marxandatge. L&rsquo;acte s&rsquo;ha dut a terme al pati de l&rsquo;Hospici d&rsquo;Olot.<br />
+<br />
+El projecte neix amb la voluntat d&rsquo;Ecosol de donar un pas endavant en la seva tasca d&rsquo;inserci&oacute; laboral i de sostenibilitat. En aquesta l&iacute;nia, despr&eacute;s d&rsquo;anys gestionant projectes d&rsquo;economia circular a trav&eacute;s del cosidor d&rsquo;Olot amb productes t&egrave;xtils, es va veure la necessitats de crear una marca pr&ograve;pia que pos&eacute;s en valor tot aquest coneixement i experi&egrave;ncia.<br />
+<br />
+El coordinador general de l&rsquo;empresa d&rsquo;inserci&oacute;,<strong> Jordi Tarridas</strong>, explica que <strong>&ldquo;amb NIUCO fem un pas cap al disseny, producci&oacute; i comercialitzaci&oacute; de productes propis, sempre amb la mirada posada en la sostenibilitat i la inserci&oacute; laboral de persones en situaci&oacute; de vulnerabilitat&rdquo;</strong>.<br />
+<br />
+NIUCO t&eacute; oferir&agrave; productes d&rsquo;&uacute;s quotidi&agrave; amb valor social i ambiental, elaborats a partir de materials reutilitzats o sostenibles. En aquesta primera etapa, es centrar&agrave; en:<br />
+<br />
+● Productes t&egrave;xtils (bosses, motxilles, complements i articles per a la llar)<br />
+● Objectes de disseny i decoraci&oacute; elaborats amb materials reciclats<br />
+● L&iacute;nies de marxandatge sostenible per a tercers<br />
+<br />
+El projecte NIUCO compta amb un equip d&rsquo;entre 5 i 10 persones, entre personal t&egrave;cnic, professionals de disseny i producci&oacute;, i persones en proc&eacute;s d&rsquo;inserci&oacute;. Tamb&eacute; es preveu la implicaci&oacute; de voluntariat i entitats col&middot;laboradores que donen suport en tasques de log&iacute;stica, comunicaci&oacute; i venda.<br />
+<br />
+<strong>Des del Cosidor d&rsquo;Olot</strong><br />
+<br />
+Els productes es fabriquen, principalment, al cosidor d&rsquo;Olot on treballen persones en proc&eacute;s d&rsquo;inserci&oacute; sociolaboral. Per la seva banda, la comercialitzaci&oacute; es realitzar&agrave; a trav&eacute;s de canals propis en l&iacute;nia, com la web de NIUCO, espais de de trobada de C&agrave;ritas i punts solidaris del territori, col&middot;laboracions amb comer&ccedil;os locals i entitats socials.<br />
+<br />
+A curt termini, NIUCO vol consolidar la seva primera col&middot;lecci&oacute; de productes i donar-se a con&egrave;ixer com una marca de refer&egrave;ncia en consum responsable i solidari a la prov&iacute;ncia de Girona. Tamb&eacute; es busca generar nous llocs de feina d&rsquo;inserci&oacute;, especialment en &agrave;mbits com la costura i la gesti&oacute; de residus t&egrave;xtils.<br />
+<br />
+M&eacute;s endavant, es vol ampliar el cat&agrave;leg de productes i establir aliances amb empreses i administracions per desenvolupar projectes conjunts de sostenibilitat.<br />
+&nbsp;                            </div>
+                                                        <div style="margin: 15px 0px; position: relative; z-index: 10;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.caritasgirona.cat/ca/4376/niuco-primera-marca-propia-d’ecosol-l’empresa-d’insercio-de-caritas-diocesana-de-girona.html" data-text="NIUCO, primera marca pròpia d’Ecosol, l’empresa d’inserció de Càritas Diocesana de Girona">Tweet</a>
+                            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                                <div class="fb-like" data-href="https://www.caritasgirona.cat/ca/4376/niuco-primera-marca-propia-d’ecosol-l’empresa-d’insercio-de-caritas-diocesana-de-girona.html" data-send="false" data-layout="button_count" data-show-faces="false"></div>       
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                                        <div class="fr col_dreta">
+                    	<div class="cycle" style="margin-bottom: 15px;" data-cycle-fx="fade"
+                    data-cycle-timeout="5000"
+                    data-cycle-auto-height="container"
+                    data-cycle-speed="500"
+                    data-cycle-next="#next" 
+                    data-cycle-prev="#prev"
+                    data-cycle-pager="#pager_noticia_4376"
+                    data-cycle-slides="> a">
+                        	                            		<a href="https://www.caritasgirona.cat/biblioteca/items/4376/2025_10_NIUCO_Captura.JPG"><span class="label_imatge">NIUCO, primera marca pròpia d’Ecosol, l’empresa d’inserció de Càritas Diocesana de Girona</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4376_2025_10_NIUCO_CAPTURA_W_300.JPG" /> </a>
+                                                    </div>
+                                                <div style="text-align: center;">
+                        	                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                                        <div style="clear:both;"></div>
+                </div>
+            </div>
+                        
+
+                    
+                    
+			<div class="bloc_noticia" style="">
+                <div >
+                	<div class="fl data_noticia">
+                    	                        <span style="font-weight: bold;">20</span><br />
+                        Octubre<br />
+                        <span style="font-weight: bold;">2025</span><br />
+                    </div>
+                    <div class="fl col_esquerra_curt">
+                        <h3>Un miler de persones han format part d’Ecosol durant els seus primers 20 anys d&#39;història </h3>
+                        <div >
+                            <div style="text-align: justify; margin-bottom: 15px;">
+                                                                <em>L&#39;empresa d&rsquo;inserci&oacute; sociolaboral de C&agrave;ritas Diocesana de Girona ha celebrat el seu 20&egrave; aniversari al Centre Cultural la Merc&egrave;</em><br />
+<br />
+El Centre Cultural la Merc&egrave; ha estat aquest divendres 17 d&rsquo;octubre la seu de l&rsquo;acte de celebraci&oacute; del 20&egrave; aniversari d&rsquo;<strong>Ecosol</strong>, l&rsquo;empresa d&rsquo;Inserci&oacute; sociolaboral de <strong>C&agrave;ritas Diocesana de Girona</strong>. Dues d&egrave;cades durant les quals m&eacute;s de mil persones han participat de la seva activitat, entre persones contractades, t&egrave;cnics i voluntaris.<br />
+<br />
+La llavor de l&rsquo;activitat d&rsquo;ECOSOL es va iniciar com un programa laboral de C&agrave;ritas Diocesana de Girona i la primera l&iacute;nia de muntatge de bicicletes es va crear el 1995 dins aquest mateix paraig&uuml;es. Posteriorment, l&rsquo;activitat va anar creixent fins que l&rsquo;any 2005 es va constituir com l&rsquo;empresa d&rsquo;inserci&oacute; que avui coneixem: una empresa que facilita la inserci&oacute; laboral de persones que es troben en situaci&oacute; de vulnerabilitat social i laboral.<br />
+<br />
+A dia d&rsquo;avui, l&rsquo;empresa compta amb set l&iacute;nies d&rsquo;activitat que estan repartides per 16 centres de treball situats arreu del territori i que s&oacute;n les seg&uuml;ents:<br />
+<br />
+● Servei de recollida i gesti&oacute; de roba i llibres - Sensibilitzaci&oacute; ambiental<br />
+● Serveis de manteniment integral d&#39;edificis, instal&middot;lacions el&egrave;ctriques i serveis de neteja<br />
+● Muntatge, lloguer i recuperaci&oacute; de bicicletes<br />
+● Taller de confecci&oacute;-Projectes d&#39;economia circular<br />
+● Missatgeria Sostenible<br />
+● Restauraci&oacute; i c&agrave;tering<br />
+● Gesti&oacute; de magatzem i distribuci&oacute; productes alimentaris<br />
+<br />
+A l&rsquo;hora d&rsquo;afrontar els reptes de futur, des d&rsquo;Ecosol es treballa en ampliar les oportunitats d&rsquo;inserci&oacute;, fer un acompanyament posterior i adaptar-se a les noves realitats socials, gestionant perfils amb una severa exclusi&oacute; social.<br />
+<br />
+En aquesta l&iacute;nia, el coordinador general de l&rsquo;empresa d&rsquo;inserci&oacute;, <strong>Jordi Tarridas</strong>, explica que<strong> &ldquo;estem en una evoluci&oacute; per arribar a m&eacute;s persones en risc d&rsquo;exclusi&oacute;, especialment dones i migrants, i garantir que el proc&eacute;s d&rsquo;integraci&oacute; sigui real i durador. Aix&ograve; implica mantenir un acompanyament continuat despr&eacute;s que les persones deixen l&rsquo;empresa i adaptar els programes a noves realitats socials, com ara la salut mental, les addiccions o la manca de compet&egrave;ncies digitals&rdquo;</strong>.<br />
+<br />
+<strong>&ldquo;Aquesta tasca l&rsquo;afrontem amb el ferm comprom&iacute;s de mantenir l&rsquo;equilibri entre la rendibilitat i la missi&oacute; social. Volem continuar generant ocupaci&oacute; inclusiva, diversificant les seves fonts d&rsquo;ingressos i potenciant serveis i productes competitius, com la producci&oacute; de bicicletes, la restauraci&oacute;, els serveis i la gesti&oacute; de residus. Alhora, &eacute;s clau incorporar innovaci&oacute; tecnol&ograve;gica i eines digitals que permetin millorar la gesti&oacute;, la comunicaci&oacute; i la visibilitat del projecte&rdquo;</strong>, afegeix Tarridas.<br />
+<br />
+<strong>Una celebraci&oacute; emotiva</strong><br />
+<br />
+L&rsquo;acte de celebraci&oacute; dels 20 anys d&rsquo;Ecosol s&rsquo;ha iniciat amb les intervencions institucionals del membre del Consell d&#39;Administraci&oacute;, Mart&iacute; Batllori, i del director dels serveis territorials a Girona del departament d&rsquo;Empresa i Treball, Pau Rich.<br />
+<br />
+Despr&eacute;s s&rsquo;ha donat pas a diferents v&iacute;deos de testimonis de persones que han passat per Ecosol i ha intervingut la presidenta de la Federaci&oacute; d&#39;empreses d&#39;inserci&oacute;, FEICAT, Alba Coma.<br />
+<br />
+Posteriorment, Anna G&uuml;ell, antiga gerent, i la diputada de la Diputaci&oacute; de Girona, Maite Tixis, han fet diverses refer&egrave;ncies a la hist&ograve;ria de l&rsquo;empresa. Ha tancat l&rsquo;acte el bisbe fra Octavi Vil&agrave; i durant la cloenda s&rsquo;ha fet l&rsquo;entrega d&rsquo;obsequis a les persones que van &lsquo;posar la primera pedra&rsquo; per fer realitat el projecte d&rsquo;Ecosol.<br />
+<br />
+El Grup d&rsquo;Acci&oacute; Participativa (GAP) interpretant la can&ccedil;&oacute; <em>M&rsquo;agrada la vida</em> ha donat per finalitzada la trobada que ha estat condu&iuml;da pels comunicadors Ester Bertran i Aleix Cabarroca.<br />
+&nbsp;                            </div>
+                                                        <div style="margin: 15px 0px; position: relative; z-index: 10;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.caritasgirona.cat/ca/4375/un-miler-de-persones-han-format-part-d’ecosol-durant-els-seus-primers-20-anys-d-historia.html" data-text="Un miler de persones han format part d’Ecosol durant els seus primers 20 anys d&amp;#39;història">Tweet</a>
+                            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                                <div class="fb-like" data-href="https://www.caritasgirona.cat/ca/4375/un-miler-de-persones-han-format-part-d’ecosol-durant-els-seus-primers-20-anys-d-historia.html" data-send="false" data-layout="button_count" data-show-faces="false"></div>       
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                                        <div class="fr col_dreta">
+                    	<div class="cycle" style="margin-bottom: 15px;" data-cycle-fx="fade"
+                    data-cycle-timeout="5000"
+                    data-cycle-auto-height="container"
+                    data-cycle-speed="500"
+                    data-cycle-next="#next" 
+                    data-cycle-prev="#prev"
+                    data-cycle-pager="#pager_noticia_4375"
+                    data-cycle-slides="> a">
+                        	                            		<a href="https://www.caritasgirona.cat/biblioteca/items/4375/2025_10_Foto_20_anys_ECOSOL_Captura.JPG"><span class="label_imatge">Un miler de persones han format part d’Ecosol durant els seus primers 20 anys d&#39;història</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4375_2025_10_FOTO_20_ANYS_ECOSOL_CAPTURA_W_300.JPG" /> </a>
+                                                    </div>
+                                                <div style="text-align: center;">
+                        	                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                                        <div style="clear:both;"></div>
+                </div>
+            </div>
+                        
+
+                    
+                    
+			<div class="bloc_noticia" style="">
+                <div >
+                	<div class="fl data_noticia">
+                    	                        <span style="font-weight: bold;">09</span><br />
+                        Octubre<br />
+                        <span style="font-weight: bold;">2025</span><br />
+                    </div>
+                    <div class="fl col_esquerra_curt">
+                        <h3>Reivindiquen menys burocràcia per millorar la inserció laboral a la jornada del ‘Treball Decent’ organitzada per Càritas Diocesana de Girona </h3>
+                        <div >
+                            <div style="text-align: justify; margin-bottom: 15px;">
+                                                                <strong>C&agrave;ritas Diocesana de Girona </strong>ha organitzat aquest dijous 9 d&rsquo;octubre la quarta edici&oacute; d&rsquo;un acte adre&ccedil;at a commemorar el dia del Treball Decent i que enguany ha portat per urs. nom Treball que dignifica: veus, vides i futur. Professionals de diversos &agrave;mbits i testimonis en debatut i han posat a sobre la taula els reptes a l&rsquo;entorn del mercat laboral que, a hores d&rsquo;ara, aboca a la precarietat laboral i social a bona part de la societat.<br />
+<br />
+La jornada s&rsquo;ha iniciat amb la benvinguda de la directora de C&agrave;ritas Diocesana de i Girona, <strong>&Agrave;ngels Cam&oacute;s</strong>, que ha fet una crida a <strong>&ldquo;superar la precarietat existent al mercat laboral i establir les bases per un m&oacute;n del treball amb sous justos, condicions segures, protecci&oacute; social universal i llibertat per defensar col&middot;lectivament els drets&rdquo;</strong>.<br />
+<br />
+Posteriorment s&rsquo;ha donat pas a una taula rodona amb persones que han parlat sobre la seva experi&egrave;ncia personal i, concretament, hi han participat Jaspreet Kaur (cuidadura de la resid&egrave;ncia Llar Oxals), Niamat El Baghozi (treballadora d&rsquo;hostaleria a la Fundaci&oacute; Ramon Noguera) i Souleye Dieng (treballador d&rsquo;hostaleria al Restaurant Blau).<br />
+<br />
+S&rsquo;han posat a sobre la taula les dificultats per compaginar formaci&oacute; i trobar feina, el repte d&rsquo;aprendre una nova llengua, l&rsquo;homologaci&oacute; dels t&iacute;tols, les traves per aconseguir la documentaci&oacute; que dona acc&eacute;s a bona part dels serveis b&agrave;sics o la discriminaci&oacute; i precarietat laboral patida a nivell d&rsquo;horaris, sous i/o condicions.&nbsp;<br />
+<br />
+Posteriorment s&rsquo;ha donat pas a un di&agrave;leg amb agents del territori que ha posat el focus en diversos reptes de present i futur als quals s&rsquo;enfronta la societat. Reptes que passen entre altres aspectes a simplificar i acompanyar a la ciutadania per superar les barreres administratives i la burocr&agrave;cia, establir les condicions per superar la precarietat laboral existent, i no nom&eacute;s centrar-se en els salaris, o potenciar les pol&iacute;tiques p&uacute;bliques d&rsquo;inserci&oacute; laboral sense deixar enrere, tot al contrari, les fam&iacute;lies vulnerables.<br />
+<br />
+Hi han aportat la seva visi&oacute; Maxi Rica (secretari general d&rsquo;UGT a les comarques gironines), Karim Sabni (director de la Cooperativa Id&agrave;ria), Alba Felip (Coordinadora de l&rsquo;Espai Municipal d&rsquo;Ocupaci&oacute; de Salt) i N&uacute;ria Mart&iacute;nez (cap del programa d&rsquo;Itineraris Integrals d&rsquo;Inserci&oacute; de C&agrave;ritas Diocesana de Girona.<br />
+<br />
+<strong>Manifest i acci&oacute; simb&ograve;lica</strong><br />
+Amb la lectura del manifest del Treball i la instal&middot;laci&oacute; art&iacute;stica participativa &lsquo;Fils de vida Laboral&rsquo; s&rsquo;ha donat per finalitzada una jornada que ha estat condu&iuml;da per la periodista Mariona Ferrer i que ha comptat amb la col&middot;laboraci&oacute; de l&rsquo;Ajuntament de Girona, el departament de Drets Socials i Inclusi&oacute; de la Generalitat de Catalunya, Just&iacute;cia i Pau, Pastoral Obrera de Girona i el cofinan&ccedil;ament de la Uni&oacute; Europea.                            </div>
+                                                        <div style="margin: 15px 0px; position: relative; z-index: 10;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.caritasgirona.cat/ca/4374/reivindiquen-menys-burocracia-per-millorar-la-insercio-laboral-a-la-jornada-del-‘treball-decent’-organitzada-per-caritas-diocesana-de-girona.html" data-text="Reivindiquen menys burocràcia per millorar la inserció laboral a la jornada del ‘Treball Decent’ organitzada per Càritas Diocesana de Girona">Tweet</a>
+                            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                                <div class="fb-like" data-href="https://www.caritasgirona.cat/ca/4374/reivindiquen-menys-burocracia-per-millorar-la-insercio-laboral-a-la-jornada-del-‘treball-decent’-organitzada-per-caritas-diocesana-de-girona.html" data-send="false" data-layout="button_count" data-show-faces="false"></div>       
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                                        <div class="fr col_dreta">
+                    	<div class="cycle" style="margin-bottom: 15px;" data-cycle-fx="fade"
+                    data-cycle-timeout="5000"
+                    data-cycle-auto-height="container"
+                    data-cycle-speed="500"
+                    data-cycle-next="#next" 
+                    data-cycle-prev="#prev"
+                    data-cycle-pager="#pager_noticia_4374"
+                    data-cycle-slides="> a">
+                        	                            		<a href="https://www.caritasgirona.cat/biblioteca/items/4374/Treball_Decent_2025_2.jpg"><span class="label_imatge">Reivindiquen menys burocràcia per millorar la inserció laboral a la jornada del ‘Treball Decent’ organitzada per Càritas Diocesana de Girona</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4374_TREBALL_DECENT_2025_2_W_300.JPG" /> </a>
+                                                    </div>
+                                                <div style="text-align: center;">
+                        	                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                                        <div style="clear:both;"></div>
+                </div>
+            </div>
+                        
+
+                    
+                    
+			<div class="bloc_noticia" style="">
+                <div >
+                	<div class="fl data_noticia">
+                    	                        <span style="font-weight: bold;">07</span><br />
+                        Octubre<br />
+                        <span style="font-weight: bold;">2025</span><br />
+                    </div>
+                    <div class="fl col_esquerra_curt">
+                        <h3>El programa de Joves, Infància i Família de Càritas Diocesana de Girona augmenta prop d’un 20% les persones ateses que cursen estudis postobligatoris </h3>
+                        <div >
+                            <div style="text-align: justify; margin-bottom: 15px;">
+                                                                <em>Durant el curs 2024-2025, des del programa s&rsquo;han at&egrave;s 1.395 persones, arribant a m&eacute;s de 800 fam&iacute;lies<br />
+<br />
+M&eacute;s del 70% de les persones participants manifesten millores emocionals i a nivell d&rsquo;integraci&oacute; social<br />
+<br />
+El 68% de les persones ateses s&oacute;n de nacionalitat espanyola</em><br />
+<br />
+El programa d&rsquo;Inf&agrave;ncia, Joves i Fam&iacute;lia de <strong>C&agrave;ritas Diocesana de Girona</strong> ha presentat les dades que fan refer&egrave;ncia al curs 2024-25 en les quals s&rsquo;han at&egrave;s a 1.395 persones (750 participants infants i joves i 645 adults), una xifra que es mant&eacute; estable respecte a l&rsquo;any passat. Aquesta dada suposa que s&rsquo;ha arribat a 809 fam&iacute;lies.<br />
+<br />
+Entres les xifres que recull la mem&ograve;ria destaquen diversos aspectes com el fet que durant aquests darrers 12 mesos ha augmentat molt significativament el percentatge de persones ateses que estan cursant estudis postobligatoris, concretament un 17,4%.<br />
+<br />
+La cap de Programa d&rsquo;Inf&agrave;ncia, Joves i Fam&iacute;lia, Marta Piany, explica aquest notable augment <strong>&ldquo;&eacute;s resultat dels acompanyaments que s&#39;han dut a terme els &uacute;ltims anys en els estudis de prim&agrave;ria i secund&agrave;ria. Els nostres projectes que ja far&agrave; uns 25 anys que es porten a terme han contribu&iuml;t a que els joves superin l&#39;ESO, tinguin ganes de continuar estudiant i aix&ograve; implica aquest increment&rdquo;</strong>.<br />
+<br />
+D&rsquo;altra banda, a l&rsquo;hora d&rsquo;analitzar les dades d&rsquo;impacte, cal fer esment l&rsquo;elevat &iacute;ndex de millora en diversos &agrave;mbits que afecta als participants del programa i que supera el 70% en aspectes com l&rsquo;educatiu, l&rsquo;emocional o el de relaci&oacute; social.<br />
+<br />
+<strong>&ldquo;S&oacute;n dades que mostren l&#39;efectivitat dels nostres projectes i que cada vegada obtenen millors resultats: quasi un 1 per sobre del curs passat, passant del 70% de millora a un 70,8%&rdquo;</strong>, argumenta Piany.<br />
+<br />
+Desde C&agrave;ritas Diocesana de Girona s&rsquo;explica que quasi un 39,6% dels infants i joves manifesten, o es detecta, que hi ha dificultats de suport familiar. Aquesta realitat s&rsquo;agreuja segons dades del Departament d&#39;Educaci&oacute; on es diu que 1 de cada 3 alumnes necessiten suport educatiu, 1 de cada 3 docents canvia de centre educatiu cada curs i que s&#39;ha redu&iuml;t la figura d&#39;educador i/o integrador social a les escoles. <strong>&ldquo;Tot plegat provoca que els nostres serveis es facin molt necessaris perqu&egrave; les persones t&egrave;cniques i volunt&agrave;ries som referents per als infants, joves i les seves fam&iacute;lies. Oferim suport d&#39;entre 3 i 4 hores a la setmana amb l&#39;objectiu de garantir una educaci&oacute; equitativa&rdquo;</strong>, afegeix Piany.<br />
+<br />
+Altres xifres que inclou el document s&oacute;n:<br />
+<br />
+● el 68% dels infants i joves s&oacute;n de nacionalitat espanyola<br />
+● el 84% manifesta satisfacci&oacute; envers el servei<br />
+● un 56% de les adultes ateses est&agrave; a l&rsquo;atur<br />
+● s&rsquo;ha incrementat un 30% les tutories a infants i joves en temes de salut emocional i mental<br />
+<br />
+El perfil de les persones adultes s&oacute;n dones, de 30 a 44 anys, amb estudis, dels quals un 5% tenen estudis universitaris, i que m&eacute;s de la meitat es troben en situaci&oacute; d&rsquo;atur.<br />
+<br />
+<strong>Sostenibilitat dels serveis</strong><br />
+<br />
+El cost dels serveis que desenvolupa el programa d&rsquo;Inf&agrave;ncia, Joves i Fam&iacute;lia icompta amb un pressupost global de 939.025 euros dels quals un 338.470 euros (36%) provenen de fons propis. Els ajuntament n&rsquo;aporten 293.070 (31%), la Fundaci&oacute; &lsquo;la Caixa&rsquo; 207.076 (22%), la Generalitat de Catalunya 87.458 (9%) i altres administracions supramunicipals com la Diputaci&oacute; de Girona o els Consells Comarcals 12.957 (1,3%).<br />
+<br />
+Un altre dels reptes que es planteja l&rsquo;entitat per al futur &eacute;s el d&rsquo;aconseguir augmentar la bossa de persones volunt&agrave;ries que s&oacute;n b&agrave;siques per poder seguir endavant amb la tasca que es desenvolupa i, per aquest fet, l&rsquo;objectiu passa per aconseguir arribar a la r&agrave;tio que es recomana d&rsquo;una persona volunt&agrave;ria per a cada 3 participants.<br />
+<br />
+<strong>Pres&egrave;ncia a 23 C&agrave;ritas locals</strong><br />
+<br />
+A dia d&rsquo;avui el programa t&eacute; fins a sis projectes en marxa <em>(Servei d&rsquo;Intervenci&oacute; Educativa, Refor&ccedil; Educatiu, Pla d&rsquo;Acompanyament a l&rsquo;Escolaritat, Fes M&eacute;s , Obrador i Proinf&agrave;ncia)</em> que es desenvolupen arreu de la di&ograve;cesi gironina, concretament a 23 C&agrave;ritas locals des d&rsquo;on es duen a terme fins a 48 serveis. L&rsquo;equip est&agrave; format per 33 persones contractades i 212 volunt&agrave;ries.<br />
+&nbsp;                            </div>
+                                                        <div style="margin: 15px 0px; position: relative; z-index: 10;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.caritasgirona.cat/ca/4373/el-programa-de-joves-infancia-i-familia-de-caritas-diocesana-de-girona-augmenta-prop-d’un-20-les-persones-ateses-que-cursen-estudis-postobligatoris.html" data-text="El programa de Joves, Infància i Família de Càritas Diocesana de Girona augmenta prop d’un 20% les persones ateses que cursen estudis postobligatoris">Tweet</a>
+                            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                                <div class="fb-like" data-href="https://www.caritasgirona.cat/ca/4373/el-programa-de-joves-infancia-i-familia-de-caritas-diocesana-de-girona-augmenta-prop-d’un-20-les-persones-ateses-que-cursen-estudis-postobligatoris.html" data-send="false" data-layout="button_count" data-show-faces="false"></div>       
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                                        <div class="fr col_dreta">
+                    	<div class="cycle" style="margin-bottom: 15px;" data-cycle-fx="fade"
+                    data-cycle-timeout="5000"
+                    data-cycle-auto-height="container"
+                    data-cycle-speed="500"
+                    data-cycle-next="#next" 
+                    data-cycle-prev="#prev"
+                    data-cycle-pager="#pager_noticia_4373"
+                    data-cycle-slides="> a">
+                        	                            		<a href="https://www.caritasgirona.cat/biblioteca/items/4373/2025_10_Memo_Inf__ncia_Joves_i_Fam__lia.jpeg"><span class="label_imatge">El programa de Joves, Infància i Família de Càritas Diocesana de Girona augmenta prop d’un 20% les persones ateses que cursen estudis postobligatoris</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4373_2025_10_MEMO_INF__NCIA_JOVES_I_FAM__LIA_W_300.JPEG" /> </a>
+                                                    </div>
+                                                <div style="text-align: center;">
+                        	                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                                        <div style="clear:both;"></div>
+                </div>
+            </div>
+                        
+
+                    
+                    
+			<div class="bloc_noticia" style="">
+                <div >
+                	<div class="fl data_noticia">
+                    	                        <span style="font-weight: bold;">01</span><br />
+                        Octubre<br />
+                        <span style="font-weight: bold;">2025</span><br />
+                    </div>
+                    <div class="fl col_esquerra_curt">
+                        <h3>Jornada "Treball que dignifica: Veus, Vides i Futurs" </h3>
+                        <div >
+                            <div style="text-align: justify; margin-bottom: 15px;">
+                                                                Us convidem a la jornada<strong>&nbsp;&quot;Treball que dignifica: Veus, Vides i Futurs&quot;</strong>, que tindr&agrave; lloc el dijous 9 d&#39;octubre, de 10:30 a 13:00h, al Centre Cultural La Merc&egrave; de Girona, en el marc de la campanya <strong>Defensem el Treball Decent.</strong><br />
+<br />
+Ens agradaria molt comptar amb la vostra assist&egrave;ncia.<br />
+<br />
+Podeu consultar el programa&nbsp;<a href="http://drive.google.com/file/d/1SUYS5MjzXHMTvGlIw2z738aEk9L3omyp/view?usp=sharing">aqu&iacute;</a>.&nbsp;<br />
+&nbsp;                            </div>
+                                                        <div style="margin: 15px 0px; position: relative; z-index: 10;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.caritasgirona.cat/ca/4372/jornada-treball-que-dignifica-veus-vides-i-futurs.html" data-text="Jornada &quot;Treball que dignifica: Veus, Vides i Futurs&quot;">Tweet</a>
+                            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                                <div class="fb-like" data-href="https://www.caritasgirona.cat/ca/4372/jornada-treball-que-dignifica-veus-vides-i-futurs.html" data-send="false" data-layout="button_count" data-show-faces="false"></div>       
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                                        <div class="fr col_dreta">
+                    	<div class="cycle" style="margin-bottom: 15px;" data-cycle-fx="fade"
+                    data-cycle-timeout="5000"
+                    data-cycle-auto-height="container"
+                    data-cycle-speed="500"
+                    data-cycle-next="#next" 
+                    data-cycle-prev="#prev"
+                    data-cycle-pager="#pager_noticia_4372"
+                    data-cycle-slides="> a">
+                        	                            		<a href="https://www.caritasgirona.cat/biblioteca/items/4372/Captura_invitaci___Treball_Decent_2025.JPG"><span class="label_imatge">Jornada "Treball que dignifica: Veus, Vides i Futurs"</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4372_CAPTURA_INVITACI___TREBALL_DECENT_2025_W_300.JPG" /> </a>
+                                                    </div>
+                                                <div style="text-align: center;">
+                        	                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                                        <div style="clear:both;"></div>
+                </div>
+            </div>
+                        
+
+                    
+                    
+			<div class="bloc_noticia" style="">
+                <div >
+                	<div class="fl data_noticia">
+                    	                        <span style="font-weight: bold;">29</span><br />
+                        Setembre<br />
+                        <span style="font-weight: bold;">2025</span><br />
+                    </div>
+                    <div class="fl col_esquerra_curt">
+                        <h3>La campanya solidària ‘Cava amb Cor’ apadrinada pel Celler de Can Roca arriba a la seva sisena edició </h3>
+                        <div >
+                            <div style="text-align: justify; margin-bottom: 15px;">
+                                                                <em>Impulsada per C&agrave;ritas Catalunya, compta amb la col&middot;laboraci&oacute; de la Confraria del Cava Sant Sadurn&iacute;<br />
+<br />
+De tota la producci&oacute; venuda, la Confraria del Cava destina dos euros per unitat per als projectes del Programa de Fam&iacute;lia i Inf&agrave;ncia de C&agrave;ritas</em><br />
+<br />
+La campanya &lsquo;Cava amb Cor&rsquo; arriba a la 6a edici&oacute; amb l&rsquo;objectiu de continuar sent un referent solidari en dates assenyalades com, sobretot, la festivitat nadalenca. Un any m&eacute;s el Celler de Can Roca &eacute;s el padr&iacute; d&rsquo;una campanya impulsada per C&agrave;ritas Catalunya i que compta amb la col&middot;laboraci&oacute; de la Confraria del Cava Sant Sadurn&iacute;.<br />
+<br />
+Cal recordar que tot i que aquest projecte va comen&ccedil;ar el 2020, la col&middot;laboraci&oacute; amb la Confraria data de fa 12 anys amb l&rsquo;anomenada Nit Solid&agrave;ria del Cava que aplegava a cavistes i empreses al Museu Nacional d&rsquo;Art de Catalunya (MNAC). Aquesta iniciativa va quedar suspesa per la COVID-19 i es va reformular amb l&rsquo;actual campanya.<br />
+<br />
+Aleshores un nombre de cellers que formen part de la Confraria van col&middot;laborar amb els seus caves per treure una marca conjunta sota el nom Cava amb Cor, d&#39;un escum&oacute;s de gran qualitat, que es va comercialitzar a trav&eacute;s d&rsquo;un bon grup de supermercats. De tota la producci&oacute; venuda, la Confraria del Cava destina dos euros per unitat per als projectes del Programa de Fam&iacute;lia i Inf&agrave;ncia de C&agrave;ritas.<br />
+<br />
+<strong>Reconeixement als col&middot;laboradors</strong><br />
+<br />
+Enguany s&rsquo;ha donat el tret de sortida a la campanya a trav&eacute;s d&rsquo;un acte de reconeixement als col&middot;laboradors de la campanya que s&rsquo;ha dut a terme a la seu de la Confraria del Cava Sant Sadurn&iacute; i que ha comptat amb les intervencions d&rsquo;Eduard Sanfeliu, president de la Confraria del Cava Sant Sadurn&iacute;; Josep Roca, sommelier i restaurador d&rsquo;El Celler de Can Roca i padr&iacute; d&rsquo;aquesta iniciativa solid&agrave;ria; Salvador Busquets, president de C&agrave;ritas Catalunya; i Ramon Carbonell, director de C&agrave;ritas Diocesana de Sant Feliu de Llobregat.<br />
+<br />
+Durant l&rsquo;acte s&rsquo;han lliurat els diplomes d&rsquo;agra&iuml;ment a un conjunt de m&eacute;s de 90 empreses i institucions i Carbonell ha volgut destacar que<strong> &ldquo;C&agrave;ritas est&agrave; com les vinyes, fortament arrelada a tot Catalunya, participant de la seva cultura, de les seves inquietuds, il&middot;lusions i esperances; tamb&eacute; dels problemes socials que sacsegen m&eacute;s d&rsquo;un mili&oacute; de persones al nostre pa&iacute;s. &Eacute;s una realitat crua i dura que coneixem de primera m&agrave;&rdquo;</strong>.<br />
+<br />
+Eduard Sanfeliu ha insistit en el fet que <strong>&ldquo;el cava &eacute;s tradici&oacute;, &eacute;s cultura, &eacute;s futur. Per&ograve; avui, m&eacute;s que mai, el cava &eacute;s tamb&eacute; cor&rdquo;</strong>, una visi&oacute; que Josep Roca ha refermat explicant que<strong> &ldquo;el cava &eacute;s cultura, &eacute;s pol&iacute;tica, &eacute;s territori&rdquo;</strong>.<br />
+<br />
+L&rsquo;acte de reconeixement ha finalitzat amb la intervenci&oacute; del president de C&agrave;ritas Catalunya, Salvador Busquets que ha alertat que<strong> &ldquo;els moments s&oacute;n dif&iacute;cils i tan sols ens en sortirem junts, administracions p&uacute;bliques, empreses, entitats socials i altres agents socials. Si ho fem plegats des del cor, ho aconseguirem&rdquo;</strong>.<br />
+<br />
+Les campanyes Cava amb Cor han estat possibles gr&agrave;cies al suport de 22 cavistes que elaboren el cava, 6 empreses col&middot;laboradores (taps, ampolles, etiquetes, log&iacute;stica, marca...), 21 supermercats i cellers com a punts de venda, 62 empreses que el regalen a treballadors, clients o prove&iuml;dors.<br />
+<br />
+S&rsquo;han venut 45.411 ampolles i s&rsquo;han recaptat m&eacute;s de 126.827 euros que ens han perm&egrave;s ajudar a gaireb&eacute; 846 infants, joves i a les seves fam&iacute;lies.<br />
+<br />
+<br />
+<br />
+<strong>Com col&middot;laborar a la campanya &quot;CAVA AMB COR&quot;</strong><br />
+<br />
+Cava amb Cor est&agrave; a la venda a trav&eacute;s de tots els establiments col&middot;laboradors, que es poden trobar al web <a href="http://www.caritascatalunya.cat/campanas/cavaambcor/">www.cavaambcor.cat,</a> on tamb&eacute; es poden fer donatius.<br />
+<br />
+Les empreses i persones interessades poden fer comandes tamb&eacute; a trav&eacute;s del web <a href="http://www.caritascatalunya.cat/campanas/cavaambcor/">www.cavaambcor.cat</a>.<br />
+&nbsp;<br />
+<strong>Regaleu Cava amb Cor i celebreu solid&agrave;riament!</strong><br />
+Preu per ampolla: 7,58&euro; + IVA = 9,17&euro;<br />
+<br />
+<br />
+<strong>SI ETS UNA EMPRESA, AIX&Ograve; T&#39;INTERESSA!</strong><br />
+<br />
+Diuen que qualsevol moment &eacute;s un bon moment per celebrar, i per aix&ograve; et proposem sorprendre els teus clients/es​, personal i col&middot;laboradors amb el Cava amb Cor, la iniciativa solid&agrave;ria de la Confraria del Cava.<br />
+<br />
+<strong>Si vols, pots personalitzar l&#39;ampolla de cava amb el logotip de la teva empresa.</strong><br />
+<br />
+Posa&#39;t en contacte amb nosaltres mitjan&ccedil;ant el correu electr&ograve;nic<br />
+entitatsambcor@caritasgirona.cat o truca o escriu un WhatsApp al 683 14 32 39.<br />
+<br />
+<strong>Termini: fins esgotar exist&egrave;ncies</strong><br />
+<br />
+<br />
+Per a m&eacute;s informaci&oacute;, podeu consultar <a href="http://drive.google.com/file/d/1EisjRR8YbU2urRSu8K8Z9U0DJJG9xWAz/view?usp=sharing">aqu&iacute;</a>.<br />
+&nbsp;                            </div>
+                                                        <div style="margin: 15px 0px; position: relative; z-index: 10;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.caritasgirona.cat/ca/4370/la-campanya-solidaria-‘cava-amb-cor’-apadrinada-pel-celler-de-can-roca-arriba-a-la-seva-sisena-edicio.html" data-text="La campanya solidària ‘Cava amb Cor’ apadrinada pel Celler de Can Roca arriba a la seva sisena edició">Tweet</a>
+                            	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                                <div class="fb-like" data-href="https://www.caritasgirona.cat/ca/4370/la-campanya-solidaria-‘cava-amb-cor’-apadrinada-pel-celler-de-can-roca-arriba-a-la-seva-sisena-edicio.html" data-send="false" data-layout="button_count" data-show-faces="false"></div>       
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                                        <div class="fr col_dreta">
+                    	<div class="cycle" style="margin-bottom: 15px;" data-cycle-fx="fade"
+                    data-cycle-timeout="5000"
+                    data-cycle-auto-height="container"
+                    data-cycle-speed="500"
+                    data-cycle-next="#next" 
+                    data-cycle-prev="#prev"
+                    data-cycle-pager="#pager_noticia_4370"
+                    data-cycle-slides="> a">
+                        	                            		<a href="https://www.caritasgirona.cat/biblioteca/items/4370/2025_09_Cava_amb_Cor_2025.jpg"><span class="label_imatge">La campanya solidària ‘Cava amb Cor’ apadrinada pel Celler de Can Roca arriba a la seva sisena edició</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4370_2025_09_CAVA_AMB_COR_2025_W_300.JPG" /> </a>
+                                                        		<a href="https://www.caritasgirona.cat/biblioteca/items/4370/Cava_amb_cor_72ppp_600x896__1_.jpg"><span class="label_imatge">La campanya solidària ‘Cava amb Cor’ apadrinada pel Celler de Can Roca arriba a la seva sisena edició</span><img src="https://www.caritasgirona.cat/tmp/images/BIBLIOTECA_ITEMS_4370_CAVA_AMB_COR_72PPP_600X896__1__W_300.JPG" /> </a>
+                                                    </div>
+                                                <div class="pager_noticia" id="pager_noticia_4370"></div>
+                                                <div style="text-align: center;">
+                        	                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                                        <div style="clear:both;"></div>
+                </div>
+            </div>
+                        <div class="paginacio">
+                            <a href="https://www.caritasgirona.cat/ca/1715/noticies.html?next=0" class="selected numero_pag ">1</a>
+                            <a href="https://www.caritasgirona.cat/ca/1715/noticies.html?next=10" class=" numero_pag ">2</a>
+                            <a href="https://www.caritasgirona.cat/ca/1715/noticies.html?next=20" class=" numero_pag ">3</a>
+                            <a href="https://www.caritasgirona.cat/ca/1715/noticies.html?next=30" class=" numero_pag ">4</a>
+                            <a href="https://www.caritasgirona.cat/ca/1715/noticies.html?next=40" class=" numero_pag ">5</a>
+                            <a href="https://www.caritasgirona.cat/ca/1715/noticies.html?next=50" class=" numero_pag ">6</a>
+                            <a href="https://www.caritasgirona.cat/ca/1715/noticies.html?next=10" class="next numero_pag ">&raquo;</a>
+                        </div>
+            
+
+            <div align="right"><a href="https://www.caritasgirona.cat/caH/1715/noticies.html" class=" boto_generic">Històric de notícies</a></div>
+
+        </div>
+        <div id="peu" >
+        	<div id='peucont'>
+                <div class="fl" id="dades_contacte_peu">
+                    Càritas Diocesana de Girona<br />                    Pujada de la Mercè 8, 17004 Girona<br />                    Tel. 972 20 49 80<br />
+                    <a href="mailto:caritas@caritasgirona.cat" class="mail">caritas@caritasgirona.cat</a><br />
+                    Tots els drets reservats<br />
+                    
+                                        <div id="legal" class="white-popup mfp-hide">
+                        <div>
+                                                        El lloc web i el domini <a href="http://www.caritasgirona.cat/">caritasgirona.cat</a> corresponen a C&agrave;ritas Diocesana de Girona (d&rsquo;ara endavant, C&Agrave;RITAS), amb CIF R1700016G i domicili a la Pujada de la Merc&egrave;, 8 de Girona (CP 17004), tel&egrave;fon +34 972 20 49 80, a/e caritas@caritasgirona.cat i inscrita al Registre d&rsquo;entitats religioses amb el n&uacute;mero 000356.<br />
+<br />
+<strong>PROPIETAT INTEL&middot;LECTUAL I INDUSTRIAL</strong><br />
+<br />
+Els drets sobre els continguts d&rsquo;aquest lloc, incloent-hi els textos, imatges, dissenys gr&agrave;fics, marques i altres signes distintius (en endavant els continguts), pertanyen a C&Agrave;RITAS o a tercers que n&rsquo;han autoritzat el seu &uacute;s. C&Agrave;RITAS presenta aquests continguts per a informar dels seus serveis i activitats. C&Agrave;RITAS autoritza la utilitzaci&oacute; dels continguts per a usos no comercials sempre i quan s&rsquo;indiqui de forma clara la font.<br />
+Si els continguts s&rsquo;utilitzen en entorns web caldr&agrave; incloure un enlla&ccedil; a la p&agrave;gina d&rsquo;inici del lloc <a href="http://www.caritasgirona.cat/">web</a>. C&Agrave;RITAS es reserva el dret a iniciar les accions legals oportunes en defensa dels seus drets de propietat intel&middot;lectual o industrial.<br />
+No s&rsquo;autoritzen presentacions dels continguts d&rsquo;aquest lloc en una finestra aliena a <a href="http://www.caritasgirona.cat/">http://www.caritasgirona.cat</a>/ (framing).<br />
+<br />
+<strong>RESPONSABILITAT SOBRE ELS CONTINGUTS&nbsp;</strong><br />
+<br />
+Tot i que C&Agrave;RITAS actua amb el m&agrave;xim de dilig&egrave;ncia possible, es pot donar el cas que alguna dada o informaci&oacute; no estigui del tot actualitzada en el moment que l&rsquo;usuari del lloc web el consulti.<br />
+<br />
+C&Agrave;RITAS es reserva el dret a modificar unilateralment, en qualsevol moment i sense av&iacute;s previ, la presentaci&oacute;, configuraci&oacute; i continguts del web.<br />
+C&Agrave;RITAS no ser&agrave; responsable de la informaci&oacute; que es pugui obtenir a trav&eacute;s d&rsquo;enlla&ccedil;os inclosos en el lloc.<br />
+<br />
+<strong>CONDICIONS D&rsquo;&Uacute;S&nbsp;</strong><br />
+<br />
+L&rsquo;&uacute;s d&rsquo;aquest web implica l&rsquo;acceptaci&oacute; plena dels termes i condicions del present av&iacute;s legal. Els possibles conflictes relatius a aquest web es regiran exclusivament pel dret de l&rsquo;Estat espanyol. Tota persona usu&agrave;ria del web, independentment de la jurisdicci&oacute; territorial des de la qual es produeixi el seu acc&eacute;s, accepta el compliment i respecte d&rsquo;aquestes cl&agrave;usules amb ren&uacute;ncia expressa a qualsevol altre fur que li pogu&eacute;s correspondre.                        </div>
+                    </div>
+            
+                    <a href="#legal" class="enllac_politica">Avís legal</a>  |  <a href="javascript:mostraPopupCookies();">Política de cookies</a>
+					
+
+					
+					
+                </div>
+                <div class="fl" id="enllacos_peu">
+                	                    <a href="https://www.caritasgirona.cat/ca/1980/borsa-de-treball.html">Borsa de treball</a>
+                                        <a href="https://www.caritasgirona.cat/ca/3541/politica-de-proteccio-de-dades.html">Política de Protecció de Dades</a>
+                                        <a href="https://www.caritasgirona.cat/ca/3999/html">Horari: De dilluns a divendres de 9 h a 14 h</a>
+                                    </div>
+							<div>
+				
+					Si prefereixes donar per transferència bancària:<br>
+					<b>Caixabank</b>: ES88-2100-0002-53-0200129121<br>
+					<b>Triodos Bank</b>: ES38-1491-0001-26-2073033124<br>
+				
+			</div>
+            </div>
+			<div style="text-align: right; ">
+			© Copyright NEORG 2023			<a class="neorgby" href="https://www.neorgsite.com" target="_blank" title="NEORG Branding Partners | Publicidad · Online · Estrategia de Inbound Marketing · Social media · Posicionamiento SEO · Campañas SEM (Adwords) · E-mail marketing" rel="follow"><b>by NEORG</b></a>
+		</div>
+        </div>
+    </div>
+<script type="text/javascript">
+$(function(){
+   $("#punt_1668").addClass("active");$("#punt_1686").addClass("active");$("#punt_1715").addClass("active");});
+</script>
+
+</body>
+</html>
+

@@ -43,6 +43,21 @@ from .moenstirdelpoblet import MoenstirDelPobletScraper
 from .oar import OARScraper
 from .audir import AudirScraper
 from .dgar import DGARScraper
+from .caritassantfeliu import CaritasSantFeliuScraper
+from .caritasterrassa import CaritasTerrassaScraper
+from .caritasbarcelona import CaritasBarcelonaScraper
+from .caritastarragona import CaritasTarragonaScraper
+from .caritasgirona import CaritasGironaScraper
+from .cpl import CPLScraper
+from .carmelcat import CarmelitesDescalcosScraper
+from .iscreb import ISCREBScraper
+from .opusdei import OpusDeiScraper
+from .adoratrius import AdoratriusScraper
+from .cataloniasacra import CataloniaSacraScraper
+from .acat import ACATScraper
+from .fundaciolacaixa import FundacioLaCaixaScraper
+from .fundacioproide import FundacioProideScraper
+from .caputxins import CaputxinsScraper
 
 # Order matters: earlier entries receive higher priority when sorting mixed results.
 _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
@@ -85,6 +100,21 @@ _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
     OARScraper.site_id: OARScraper,
     AudirScraper.site_id: AudirScraper,
     DGARScraper.site_id: DGARScraper,
+    CaritasSantFeliuScraper.site_id: CaritasSantFeliuScraper,
+    CaritasTerrassaScraper.site_id: CaritasTerrassaScraper,
+    CaritasBarcelonaScraper.site_id: CaritasBarcelonaScraper,
+    CaritasTarragonaScraper.site_id: CaritasTarragonaScraper,
+    CaritasGironaScraper.site_id: CaritasGironaScraper,
+    CPLScraper.site_id: CPLScraper,
+    CarmelitesDescalcosScraper.site_id: CarmelitesDescalcosScraper,
+    ISCREBScraper.site_id: ISCREBScraper,
+    OpusDeiScraper.site_id: OpusDeiScraper,
+    AdoratriusScraper.site_id: AdoratriusScraper,
+    CataloniaSacraScraper.site_id: CataloniaSacraScraper,
+    ACATScraper.site_id: ACATScraper,
+    FundacioLaCaixaScraper.site_id: FundacioLaCaixaScraper,
+    FundacioProideScraper.site_id: FundacioProideScraper,
+    CaputxinsScraper.site_id: CaputxinsScraper,
 }
 
 SCRAPER_PRIORITY: dict[str, int] = {
@@ -159,6 +189,21 @@ __all__ = [
     "OARScraper",
     "AudirScraper",
     "DGARScraper",
+    "CaritasSantFeliuScraper",
+    "CaritasTerrassaScraper",
+    "CaritasBarcelonaScraper",
+    "CaritasTarragonaScraper",
+    "CaritasGironaScraper",
+    "CPLScraper",
+    "CarmelitesDescalcosScraper",
+    "ISCREBScraper",
+    "OpusDeiScraper",
+    "AdoratriusScraper",
+    "CataloniaSacraScraper",
+    "ACATScraper",
+    "FundacioLaCaixaScraper",
+    "FundacioProideScraper",
+    "CaputxinsScraper",
     "BisbatSolsonaScraper",
     "BisbatUrgellScraper",
     "ClaretiansScraper",

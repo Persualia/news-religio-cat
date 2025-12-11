@@ -55,26 +55,25 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 37. oar https://ajuntament.barcelona.cat/oficina-afers-religiosos/ca/noticies
 38. audir https://audir.org/noticies/
 39. dgar https://afersreligiosos.gencat.cat/ca/actualitat/noticies/
-
-
-## Next websites to scrape (future)
 40. caritassantfeliu https://www.caritassantfeliu.cat/
 41. caritasterrassa https://diocesanaterrassa.caritas.es/es/
 42. caritasbarcelona https://blog.caritas.barcelona/es/
 43. caritastarragona https://www.caritasdtarragona.cat/que-diem/actualitat/
 44. caritasgirona https://www.caritasgirona.cat/
-45. cpl: https://www.cpl.es/actualidad/noticias/ 
-46. carmelitesdescalcosdecatalunya: http://www.carmelcat.cat/
-47. iscreb: https://www.iscreb.org/ca/comunicacio/noticies
-48. opusdei: http://opusdei.cat/ca-es/
-59. adoratrius http://www.adoratrius.cat/
+45. cpl https://www.cpl.es/
+46. carmelitesdescalcosdecatalunya http://www.carmelcat.cat/
+47. iscreb https://www.iscreb.org/ca/comunicacio/noticies
+48. opusdei http://opusdei.cat/ca-es/
+49. adoratrius http://www.adoratrius.cat/
 50. cataloniasacra https://www.cataloniasacra.cat/noticies/noticies
 51. acat https://acat.pangea.org/
-52. fundaciolacaixa: https://mediahub.fundacionlacaixa.org/ca/social 
+52. fundaciolacaixa https://mediahub.fundacionlacaixa.org/ca/social
 
+
+## Next websites to scrape (future)
 
 53. Fundació PROIDE http://www.fundacioproide.org/ !no veig pagina de notícies
-54. Caputxins http://www.caputxins.cat/ ! On son les notícies? son les de franciscans?
+54. Caputxins http://www.caputxins.cat/ ! ja hi son
 55. santaluisademarillac: http://osmarillac.org/ ! no existeix domini
 56. Servei Arxiu Monges Benedictines http://www.federaciobenedictines.cat/wordpress/ ! no existeix
 
