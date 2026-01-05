@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import logging
 import os
 from typing import Optional, Sequence
@@ -37,6 +37,7 @@ class PipelineResult:
     total_items: int
     new_items: int
     skipped_existing: int
+    skipped_stale: int
     alerts_sent: int
     live: bool
 
@@ -80,7 +81,9 @@ class TrelloPipeline:
         total_items = 0
         new_items = 0
         skipped_existing = 0
+        skipped_stale = 0
         alerts_sent = 0
+        stale_cutoff = utcnow() - timedelta(days=10)
 
         for scraper in self._scrapers:
             logger.info("Processing source: %s", scraper.site_id)
@@ -103,6 +106,16 @@ class TrelloPipeline:
 
             total_items += len(items)
             for item in items:
+                if _is_stale(item, stale_cutoff):
+                    skipped_stale += 1
+                    logger.info(
+                        "Skipping stale item (>10d): %s %s %s",
+                        item.source,
+                        item.published_at,
+                        item.url,
+                    )
+                    continue
+
                 if item.doc_id in seen_ids:
                     skipped_existing += 1
                     continue
@@ -147,6 +160,7 @@ class TrelloPipeline:
             total_items,
             new_items,
             skipped_existing,
+            skipped_stale,
             alerts_sent,
         )
 
@@ -155,6 +169,7 @@ class TrelloPipeline:
             total_items=total_items,
             new_items=new_items,
             skipped_existing=skipped_existing,
+            skipped_stale=skipped_stale,
             alerts_sent=alerts_sent,
             live=live,
         )
@@ -185,6 +200,17 @@ def _resolve_item_datetime(item: NewsItem) -> datetime:
     if candidate.tzinfo is None:
         candidate = candidate.replace(tzinfo=timezone.utc)
     return candidate.astimezone(timezone.utc)
+
+
+def _is_stale(item: NewsItem, cutoff: datetime) -> bool:
+    """Return True when the item has a published_at older than the cutoff."""
+
+    published = item.published_at
+    if published is None:
+        return False
+    if published.tzinfo is None:
+        published = published.replace(tzinfo=timezone.utc)
+    return published.astimezone(timezone.utc) < cutoff
 
 
 def _item_sort_key(item: NewsItem) -> tuple[datetime, int, str, str]:
@@ -224,6 +250,7 @@ def _build_summary_blocks(result: PipelineResult, dry_run: bool) -> list[dict]:
         ("Total items", result.total_items),
         ("New items", result.new_items),
         ("Skipped existing", result.skipped_existing),
+        ("Skipped stale (>10d)", result.skipped_stale),
         ("Alerts sent", result.alerts_sent),
         ("Live", str(result.live).lower()),
     ]

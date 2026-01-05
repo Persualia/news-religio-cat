@@ -1,6 +1,6 @@
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
-from models import NewsItem
+from models import NewsItem, utcnow
 from pipeline.ingestion import PipelineResult, TrelloPipeline
 
 
@@ -53,13 +53,13 @@ class StubSlack:
         self.block_messages.append({"blocks": blocks, "text": text})
 
 
-def _news_item(url: str, source: str = "salesians") -> NewsItem:
+def _news_item(url: str, source: str = "salesians", *, published_at: datetime | None = None) -> NewsItem:
     return NewsItem(
         source=source,
         title=f"Title for {url}",
         url=url,
         author="Author",
-        published_at=datetime(2024, 5, 1, tzinfo=timezone.utc),
+        published_at=published_at or utcnow(),
         metadata={"lang": "ca", "base_url": "https://example.com"},
     )
 
@@ -79,6 +79,7 @@ def test_pipeline_creates_cards_for_new_items():
     assert len(trello.created) == 2
     assert len(sheets.appended) == 2
     assert sheets.trimmed_to == 800
+    assert result.skipped_stale == 0
     assert not slack.messages
     assert len(slack.block_messages) == 1
 
@@ -99,6 +100,7 @@ def test_pipeline_skips_existing_ids():
 
     assert result.new_items == 1
     assert result.skipped_existing == 1
+    assert result.skipped_stale == 0
     assert len(trello.created) == 1
     assert len(sheets.appended) == 1
     assert sheets.trimmed_to == 800
@@ -116,6 +118,7 @@ def test_pipeline_dry_run_avoids_side_effects():
 
     assert result.live is False
     assert result.new_items == 1
+    assert result.skipped_stale == 0
     assert not trello.created
     assert not sheets.appended
     assert sheets.trimmed_to is None
@@ -140,6 +143,7 @@ def test_pipeline_notifies_when_scraper_returns_no_items():
 
     assert result.new_items == 0
     assert result.alerts_sent == 1
+    assert result.skipped_stale == 0
     assert slack.messages
     assert not trello.created
     assert not sheets.appended
@@ -160,3 +164,23 @@ def test_pipeline_summary_marks_live_runs():
     summary_fields = slack.block_messages[0]["blocks"][1]["fields"]
     live_field = next(field for field in summary_fields if "*Live*" in field["text"])
     assert "true" in live_field["text"]
+
+
+def test_pipeline_skips_stale_items():
+    fresh_item = _news_item("https://example.com/fresh", published_at=utcnow())
+    stale_item = _news_item(
+        "https://example.com/old",
+        published_at=utcnow() - timedelta(days=20),
+    )
+    scrapers = [StubScraper("salesians", [stale_item, fresh_item])]
+    sheets = StubSheets()
+    trello = StubTrello()
+    slack = StubSlack()
+
+    pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
+    result = pipeline.run(live_run=False)
+
+    assert result.new_items == 1
+    assert result.skipped_stale == 1
+    assert len(trello.created) == 1
+    assert len(sheets.appended) == 1
