@@ -52,12 +52,13 @@ from .cpl import CPLScraper
 from .carmelcat import CarmelitesDescalcosScraper
 from .iscreb import ISCREBScraper
 from .opusdei import OpusDeiScraper
-from .adoratrius import AdoratriusScraper
 from .cataloniasacra import CataloniaSacraScraper
 from .acat import ACATScraper
 from .fundaciolacaixa import FundacioLaCaixaScraper
 from .fundacioproide import FundacioProideScraper
 from .caputxins import CaputxinsScraper
+# AdoratriusScraper import kept for potential future reactivation; not registered to disable processing.
+from .adoratrius import AdoratriusScraper
 
 # Order matters: earlier entries receive higher priority when sorting mixed results.
 _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
@@ -109,7 +110,6 @@ _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
     CarmelitesDescalcosScraper.site_id: CarmelitesDescalcosScraper,
     ISCREBScraper.site_id: ISCREBScraper,
     OpusDeiScraper.site_id: OpusDeiScraper,
-    AdoratriusScraper.site_id: AdoratriusScraper,
     CataloniaSacraScraper.site_id: CataloniaSacraScraper,
     ACATScraper.site_id: ACATScraper,
     FundacioLaCaixaScraper.site_id: FundacioLaCaixaScraper,
