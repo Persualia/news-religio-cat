@@ -155,7 +155,7 @@ class TrelloPipeline:
             self._sheets.trim_to_limit(MAX_SHEET_ROWS)
 
         logger.info(
-            "Pipeline completed: sources=%d, total=%d, new=%d, skipped=%d, alerts=%d",
+            "Pipeline completed: sources=%d, total=%d, new=%d, skipped=%d, stale=%d, alerts=%d",
             len(self._scrapers),
             total_items,
             new_items,
