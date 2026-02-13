@@ -2,28 +2,11 @@ name: Daily Ingestion
 
 on:
   schedule:
-    - cron: '2 12,13,21,22 * * *'  # 12/13→14:00 local, 21/22→23:00 local (Madrid)
+    - cron: '2 12,21 * * *'
   workflow_dispatch:
 
 jobs:
-  gate:
-    runs-on: ubuntu-latest
-    outputs:
-      run: ${{ steps.when.outputs.run }}
-    steps:
-      - id: when
-        run: |
-          export TZ=Europe/Madrid
-          H=$(date +%H)
-          if [ "$H" = "14" ] || [ "$H" = "23" ]; then
-            echo "run=true" >> $GITHUB_OUTPUT
-          else
-            echo "run=false" >> $GITHUB_OUTPUT
-          fi
-
   run-pipeline:
-    needs: gate
-    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
