@@ -1,4 +1,4 @@
-"""Scraper implementation for https://www.cataloniasacra.cat/noticies/noticies."""
+"""Scraper implementation for https://www.cataloniasacra.cat/category/noticies/."""
 from __future__ import annotations
 
 from datetime import datetime, timezone
@@ -14,17 +14,19 @@ from .base import BaseScraper
 class CataloniaSacraScraper(BaseScraper):
     site_id = "cataloniasacra"
     base_url = "https://www.cataloniasacra.cat"
-    listing_url = "https://www.cataloniasacra.cat/noticies/noticies"
+    listing_url = "https://www.cataloniasacra.cat/category/noticies/"
     default_lang = "ca"
 
     def extract_items(self, listing_soup: BeautifulSoup) -> Iterable[NewsItem]:
         items: list[NewsItem] = []
         seen: set[str] = set()
 
-        for block in listing_soup.select(".news"):
-            anchor = block.select_one("h2 a")
-            date_node = block.select_one("h4 strong")
-            summary_node = block.select_one("p")
+        blocks = listing_soup.select("article.et_pb_post")
+
+        for block in blocks:
+            anchor = block.select_one("h2.entry-title a")
+            date_node = block.select_one("p.post-meta .published")
+            summary_node = block.select_one("div.post-content-inner p")
 
             if anchor is None:
                 continue

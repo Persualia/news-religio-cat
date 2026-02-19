@@ -83,6 +83,7 @@ class TrelloPipeline:
         skipped_existing = 0
         skipped_stale = 0
         alerts_sent = 0
+        sources_processed = 0
         stale_cutoff = utcnow() - timedelta(days=10)
 
         for scraper in self._scrapers:
@@ -104,6 +105,7 @@ class TrelloPipeline:
                 self._slack.notify(_format_scraper_error(scraper.site_id, exc))
                 continue
 
+            sources_processed += 1
             total_items += len(items)
             for item in items:
                 if _is_stale(item, stale_cutoff):
@@ -156,7 +158,7 @@ class TrelloPipeline:
 
         logger.info(
             "Pipeline completed: sources=%d, total=%d, new=%d, skipped=%d, stale=%d, alerts=%d",
-            len(self._scrapers),
+            sources_processed,
             total_items,
             new_items,
             skipped_existing,
@@ -165,7 +167,7 @@ class TrelloPipeline:
         )
 
         result = PipelineResult(
-            sources_processed=len(self._scrapers),
+            sources_processed=sources_processed,
             total_items=total_items,
             new_items=new_items,
             skipped_existing=skipped_existing,

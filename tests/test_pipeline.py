@@ -74,6 +74,7 @@ def test_pipeline_creates_cards_for_new_items():
     pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
     result: PipelineResult = pipeline.run(live_run=False)
 
+    assert result.sources_processed == 1
     assert result.new_items == 2
     assert result.live is False
     assert len(trello.created) == 2
@@ -141,6 +142,7 @@ def test_pipeline_notifies_when_scraper_returns_no_items():
     pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
     result = pipeline.run(live_run=False)
 
+    assert result.sources_processed == 0
     assert result.new_items == 0
     assert result.alerts_sent == 1
     assert result.skipped_stale == 0

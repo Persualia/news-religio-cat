@@ -65,7 +65,7 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 47. iscreb https://www.iscreb.org/ca/comunicacio/noticies
 48. opusdei http://opusdei.cat/ca-es/
 49. adoratrius http://www.adoratrius.cat/
-50. cataloniasacra https://www.cataloniasacra.cat/noticies/noticies
+50. cataloniasacra https://www.cataloniasacra.cat/category/noticies/
 51. acat https://acat.pangea.org/
 52. fundaciolacaixa https://mediahub.fundacionlacaixa.org/ca/social
 
