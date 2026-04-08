@@ -232,7 +232,45 @@ def _format_scraper_error(site_id: str, exc: Exception) -> str:
             f":warning: HTTP {status} {reason} al scrapear '{site_id}'. "
             f"URL: {url}"
         )
+    if isinstance(exc, httpx.ConnectTimeout):
+        return (
+            f":warning: Timeout de conexion al scrapear '{site_id}'. "
+            "El origen no respondio a tiempo durante la conexion TCP/TLS."
+        )
+    if isinstance(exc, httpx.ReadTimeout):
+        return (
+            f":warning: Timeout de lectura al scrapear '{site_id}'. "
+            "El origen acepto la conexion pero tardo demasiado en responder."
+        )
+    if isinstance(exc, httpx.ConnectError):
+        detail = _extract_exception_detail(exc)
+        if "CERTIFICATE_VERIFY_FAILED" in detail:
+            return (
+                f":warning: Error TLS/certificado al scrapear '{site_id}': "
+                f"{detail}"
+            )
+        if "Network is unreachable" in detail:
+            return (
+                f":warning: Red inaccesible al scrapear '{site_id}': "
+                f"{detail}"
+            )
+        return f":warning: Error de conexion al scrapear '{site_id}': {detail}"
     return f":warning: Error inesperado al scrapear '{site_id}': {exc}"
+
+
+def _extract_exception_detail(exc: Exception) -> str:
+    text = str(exc).strip()
+    if text:
+        return text
+
+    cause = exc.__cause__
+    if cause is not None:
+        cause_text = str(cause).strip()
+        if cause_text:
+            return cause_text
+        return repr(cause)
+
+    return exc.__class__.__name__
 
 
 def _detect_live_run() -> bool:

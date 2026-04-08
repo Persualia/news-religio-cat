@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import unicodedata
 from typing import Iterable
 
+import httpx
 from bs4 import BeautifulSoup, Tag
 
 from models import NewsItem, utcnow
@@ -18,6 +19,20 @@ class PeretarresScraper(BaseScraper):
     base_url = "https://www.peretarres.org"
     listing_url = "https://www.peretarres.org/actualitat/noticies"
     default_lang = "ca"
+
+    def __init__(self) -> None:
+        super().__init__()
+        timeout = self._client.timeout
+        self._client = httpx.Client(
+            headers=self._client.headers,
+            timeout=httpx.Timeout(
+                connect=timeout.connect,
+                read=max(timeout.read or 0.0, 40.0),
+                write=timeout.write,
+                pool=timeout.pool,
+            ),
+            follow_redirects=True,
+        )
 
     def extract_items(self, listing_soup: BeautifulSoup) -> Iterable[NewsItem]:
         items: list[NewsItem] = []
