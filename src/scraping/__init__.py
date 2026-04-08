@@ -59,6 +59,7 @@ from .fundacioproide import FundacioProideScraper
 from .caputxins import CaputxinsScraper
 # AdoratriusScraper import kept for potential future reactivation; not registered to disable processing.
 from .adoratrius import AdoratriusScraper
+# GTERScraper import kept for potential future reactivation; not registered to disable processing.
 
 # Order matters: earlier entries receive higher priority when sorting mixed results.
 _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
@@ -94,7 +95,6 @@ _SCRAPER_REGISTRY: dict[str, Type[BaseScraper]] = {
     IQSScraper.site_id: IQSScraper,
     EUSSScraper.site_id: EUSSScraper,
     JusticiaIPauScraper.site_id: JusticiaIPauScraper,
-    GTERScraper.site_id: GTERScraper,
     IslamatScraper.site_id: IslamatScraper,
     URCScraper.site_id: URCScraper,
     MoenstirDelPobletScraper.site_id: MoenstirDelPobletScraper,
