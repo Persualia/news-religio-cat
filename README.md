@@ -90,6 +90,7 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 | `src/integrations/trello.py` | Minimal Trello REST client that creates cards with metadata-rich descriptions. |
 | `src/integrations/slack.py` | Webhook notifier for anomaly alerts. |
 | `scripts/run_daily.py` | CLI entry point (used locally and in GitHub Actions). |
+| `src/web/app.py` | FastAPI control plane exposing health checks and a protected `run_daily` trigger. |
 
 The pipeline is intentionally modular so each integration behaves like a small service that the orchestrator composes.
 
@@ -141,6 +142,7 @@ Configure the following variables in `.env` (loaded via `python-dotenv`):
 | `GOOGLE_SHEET_WORKSHEET` | (Optional) Worksheet/tab name; defaults to the first sheet. |
 | `GOOGLE_PRIVATE_KEY_ID`, `GOOGLE_CLIENT_ID`, `GOOGLE_TOKEN_URI`, etc. | Optional overrides when not using the default Google endpoints. |
 | `SCRAPER_USER_AGENT`, `SCRAPER_REQUEST_TIMEOUT`, `SCRAPER_MAX_RETRIES`, `SCRAPER_THROTTLE_SECONDS` | Scraper tuning knobs with safe defaults. |
+| `RUN_DAILY_USERNAME` / `RUN_DAILY_PASSWORD` | HTTP Basic Auth credentials required by the `/run-daily` endpoint on Render. |
 
 The spreadsheet must expose the columns `Date`, `ID`, `Source`, `Title`. The pipeline appends new rows at the bottom so you can pivot or audit historic runs.
 
@@ -165,11 +167,45 @@ Useful flags:
 The script prints a JSON summary with totals at the end of the run.
 The payload now includes a `live` flag that is `true` when the execution runs from GitHub Actions (production) and `false` otherwise.
 
+## Triggering `run_daily` over HTTP
+
+When deployed as a Render Web Service, the repository also exposes a minimal FastAPI app:
+
+- `GET /healthz`: health check endpoint for Render.
+- `POST /run-daily`: protected endpoint that runs the ingestion pipeline with HTTP Basic Auth.
+
+Example:
+
+```bash
+curl -u "$RUN_DAILY_USERNAME:$RUN_DAILY_PASSWORD" \
+  -X POST "https://YOUR-SERVICE.onrender.com/run-daily" \
+  -H "Content-Type: application/json" \
+  -d '{"dry_run":false,"limit_per_site":3,"sites":["salesians","jesuites"]}'
+```
+
+If you omit the JSON body, the service runs the full pipeline with default options.
+
 ---
 
 ## GitHub Actions
 
 `.github/workflows/daily-run.yml` reuses `scripts/run_daily.py` on a nightly cron (`0 23 * * *`). Provide the required secrets in the repository or organisation settings to mirror your `.env` configuration.
+
+## Render deployment
+
+To deploy from Render only on pushes to branch `render`, create a Render Web Service with these settings:
+
+- Branch: `render`
+- Build command: `pip install -r requirements.txt`
+- Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+- Health check path: `/healthz`
+- Auto-deploy: `On Commit`
+
+Render will then rebuild and redeploy automatically whenever you push to the linked branch. According to Render's current docs, auto-deploys run on pushes to the service's linked branch, and FastAPI services use a standard `uvicorn ... --host 0.0.0.0 --port $PORT` start command:
+
+- https://render.com/docs/deploys
+- https://render.com/docs/deploy-fastapi
+- https://render.com/docs/github
 
 ---
 
@@ -207,4 +243,4 @@ The deterministic document ID (`sha1(normalised_url)`) is only stored in Google 
 
 - Add health metrics (Prometheus or simple JSON logs) for ingestion duration and per-source counts.
 - Enrich Trello cards with labels or custom fields once taxonomy is defined.
-- Introduce a lightweight FastAPI service to expose the last run status if a control plane becomes necessary.
+- Persist the last manual run status so `/run-daily` can return immediately and a second endpoint can expose history.
