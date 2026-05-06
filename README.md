@@ -20,7 +20,7 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 2. maristes https://www.maristes.cat/noticies
 3. lasalle https://lasalle.cat/actualitat/
 4. escolapia https://escolapia.cat/actualitat/
-5. salesians https://www.salesians.cat/noticies/
+5. salesians https://salesianos.info/ca/feed/
 6. claretians https://claretpaulus.org/ca/actualitat/
 7. bisbatsolsona: https://bisbatsolsona.cat/comunicacio/noticies/
 8. bisbaturgell: https://bisbaturgell.org/ca/category/actualitat-cat
