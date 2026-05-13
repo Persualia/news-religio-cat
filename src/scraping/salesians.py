@@ -1,4 +1,4 @@
-"""Scraper implementation for https://salesianos.info/ca/feed/."""
+"""Scraper implementation for https://salesianos.info/feed/."""
 from __future__ import annotations
 
 from typing import Iterable
@@ -14,8 +14,8 @@ from .feed_utils import extract_text, format_iso, parse_rfc822_datetime
 class SalesiansScraper(BaseScraper):
     site_id = "salesians"
     base_url = "https://salesianos.info"
-    listing_url = "https://salesianos.info/ca/feed/"
-    default_lang = "ca"
+    listing_url = "https://salesianos.info/feed/"
+    default_lang = "es"
 
     def _get_soup(self, url: str) -> BeautifulSoup:
         response = self._get(url)
