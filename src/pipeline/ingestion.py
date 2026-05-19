@@ -16,7 +16,7 @@ import httpx
 from integrations import GoogleSheetsRepository, SlackNotifier, TrelloClient
 from models import NewsItem, SheetRecord, utcnow
 from scraping import BaseScraper, SCRAPER_PRIORITY, instantiate_scrapers
-from scraping.base import ScraperNoArticlesError
+from scraping.base import ScraperBlockedError, ScraperNoArticlesError
 
 logger = logging.getLogger(__name__)
 
@@ -90,6 +90,12 @@ class TrelloPipeline:
             logger.info("Processing source: %s", scraper.site_id)
             try:
                 items = scraper.scrape(limit=limit_per_site)
+            except ScraperBlockedError as exc:
+                alerts_sent += 1
+                message = _format_scraper_blocked_error(exc.site_id, exc)
+                logger.warning(message)
+                self._slack.notify(message)
+                continue
             except ScraperNoArticlesError as exc:
                 alerts_sent += 1
                 message = (
@@ -256,6 +262,13 @@ def _format_scraper_error(site_id: str, exc: Exception) -> str:
             )
         return f":warning: Error de conexion al scrapear '{site_id}': {detail}"
     return f":warning: Error inesperado al scrapear '{site_id}': {exc}"
+
+
+def _format_scraper_blocked_error(site_id: str, exc: ScraperBlockedError) -> str:
+    return (
+        f":warning: El origen bloqueó el scraper '{site_id}'. "
+        f"Detalle: {exc.detail}"
+    )
 
 
 def _extract_exception_detail(exc: Exception) -> str:

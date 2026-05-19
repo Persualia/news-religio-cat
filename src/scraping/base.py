@@ -27,6 +27,15 @@ class ScraperNoArticlesError(RuntimeError):
         self.site_id = site_id
 
 
+class ScraperBlockedError(RuntimeError):
+    """Raised when an origin blocks automated scraping before content is returned."""
+
+    def __init__(self, site_id: str, detail: str) -> None:
+        super().__init__(detail)
+        self.site_id = site_id
+        self.detail = detail
+
+
 class BaseScraper(ABC):
     """Reusable base scraper handling HTTP concerns and orchestration."""
 
@@ -73,6 +82,12 @@ class BaseScraper(ABC):
             try:
                 response = self._client.get(url)
                 response.raise_for_status()
+                waf_action = response.headers.get("x-amzn-waf-action")
+                if waf_action:
+                    raise ScraperBlockedError(
+                        getattr(self, "site_id", "<unknown>"),
+                        f"AWS WAF returned action '{waf_action}' for {url}",
+                    )
                 return response
             except httpx.HTTPStatusError as exc:
                 status = exc.response.status_code if exc.response else "unknown"
@@ -95,6 +110,8 @@ class BaseScraper(ABC):
                 last_exc = exc
                 sleep_time = self._throttle_seconds * attempt if self._throttle_seconds else attempt
                 time.sleep(sleep_time)
+            except ScraperBlockedError:
+                raise
             except Exception as exc:  # noqa: BLE001
                 last_exc = exc
                 sleep_time = self._throttle_seconds * attempt if self._throttle_seconds else attempt
@@ -140,4 +157,4 @@ class BaseScraper(ABC):
             return absolute
 
 
-__all__ = ["BaseScraper", "ScraperNoArticlesError"]
+__all__ = ["BaseScraper", "ScraperBlockedError", "ScraperNoArticlesError"]

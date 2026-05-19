@@ -4,6 +4,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 import re
 from typing import Iterable, Optional
+from urllib.parse import unquote, urlsplit
 
 from bs4 import BeautifulSoup
 
@@ -15,7 +16,7 @@ from .base import BaseScraper
 class MaristesScraper(BaseScraper):
     site_id = "maristes"
     base_url = "https://www.maristes.cat"
-    listing_url = "https://www.maristes.cat/noticies"
+    listing_url = "https://www.maristes.cat/sitemap.xml"
     default_lang = "ca"
 
     def __init__(self) -> None:
@@ -23,6 +24,10 @@ class MaristesScraper(BaseScraper):
         self._published_cache: dict[str, Optional[datetime]] = {}
 
     def extract_items(self, listing_soup: BeautifulSoup) -> Iterable[NewsItem]:
+        sitemap_items = self._extract_items_from_sitemap(listing_soup)
+        if sitemap_items:
+            return sitemap_items
+
         seen: set[str] = set()
         items: list[NewsItem] = []
 
@@ -114,6 +119,51 @@ class MaristesScraper(BaseScraper):
 
         return items
 
+    def _extract_items_from_sitemap(self, listing_soup: BeautifulSoup) -> list[NewsItem]:
+        rows: list[tuple[datetime, NewsItem]] = []
+        seen: set[str] = set()
+
+        for url_node in listing_soup.find_all("url"):
+            loc_node = url_node.find("loc")
+            if loc_node is None:
+                continue
+
+            url = loc_node.get_text(strip=True)
+            if "/ca/noticies/" not in url:
+                continue
+
+            normalized = self._normalize_url(url)
+            if normalized in seen:
+                continue
+            seen.add(normalized)
+
+            published_at = None
+            lastmod_node = url_node.find("lastmod")
+            if lastmod_node is not None:
+                published_at = _parse_iso(lastmod_node.get_text(strip=True))
+
+            timestamp = published_at or utcnow()
+            metadata = {"base_url": self.base_url, "lang": self.default_lang}
+            if published_at:
+                metadata["published_at"] = _format_iso(published_at)
+
+            rows.append(
+                (
+                    timestamp,
+                    NewsItem(
+                        source=self.site_id,
+                        title=_title_from_url(normalized),
+                        url=normalized,
+                        summary=normalized,
+                        published_at=timestamp,
+                        metadata=metadata,
+                    ),
+                )
+            )
+
+        rows.sort(key=lambda row: row[0], reverse=True)
+        return [item for _, item in rows]
+
 
     def _get_published_at(self, url: str) -> Optional[datetime]:
         cached = self._published_cache.get(url)
@@ -201,6 +251,15 @@ def _parse_date_string(value: str | None) -> Optional[datetime]:
     except ValueError:
         return None
     return parsed
+
+
+def _title_from_url(url: str) -> str:
+    slug = urlsplit(url).path.rstrip("/").rsplit("/", 1)[-1]
+    slug = unquote(slug).replace("-", " ")
+    slug = re.sub(r"\s+", " ", slug).strip()
+    if not slug:
+        return url
+    return slug[:1].upper() + slug[1:]
 
 
 __all__ = ["MaristesScraper"]

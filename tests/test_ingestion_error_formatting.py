@@ -1,6 +1,7 @@
 import httpx
 
-from pipeline.ingestion import _format_scraper_error
+from pipeline.ingestion import _format_scraper_blocked_error, _format_scraper_error
+from scraping.base import ScraperBlockedError
 
 
 def test_format_scraper_error_for_connect_timeout():
@@ -35,3 +36,17 @@ def test_format_scraper_error_for_network_unreachable_connect_error():
 
     assert "Red inaccesible" in message
     assert "'islamat'" in message
+
+
+def test_format_scraper_blocked_error():
+    message = _format_scraper_blocked_error(
+        "maristes",
+        ScraperBlockedError(
+            "maristes",
+            "AWS WAF returned action 'challenge' for https://www.maristes.cat/ca/noticies",
+        ),
+    )
+
+    assert "bloqueó" in message
+    assert "'maristes'" in message
+    assert "AWS WAF" in message

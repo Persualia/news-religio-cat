@@ -152,6 +152,28 @@ def test_pipeline_notifies_when_scraper_returns_no_items():
     assert sheets.trimmed_to is None
 
 
+def test_pipeline_notifies_when_scraper_is_blocked():
+    class BlockedScraper(StubScraper):
+        def scrape(self, limit=None):
+            from scraping.base import ScraperBlockedError
+
+            raise ScraperBlockedError(self.site_id, "AWS WAF returned action 'challenge'")
+
+    scrapers = [BlockedScraper("maristes", [])]
+    sheets = StubSheets()
+    trello = StubTrello()
+    slack = StubSlack()
+
+    pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
+    result = pipeline.run(live_run=False)
+
+    assert result.sources_processed == 0
+    assert result.alerts_sent == 1
+    assert slack.messages
+    assert "bloqueó" in slack.messages[0]
+    assert "maristes" in slack.messages[0]
+
+
 def test_pipeline_summary_marks_live_runs():
     items = [_news_item("https://example.com/a")]
     scrapers = [StubScraper("salesians", items)]
