@@ -35,6 +35,24 @@ def test_extract_items_from_listing():
     assert items[1].published_at == expected_second
 
 
+def test_extract_items_from_current_articles_listing():
+    scraper = BisbatLleidaScraper()
+    soup = load_fixture("bisbatlleida_articles_listing.html")
+    items = list(scraper.extract_items(soup))
+
+    assert scraper.listing_url == "https://www.bisbatlleida.org/ca/articles"
+    assert [item.title for item in items] == [
+        "Article amb estructura nova",
+        "Segon article amb estructura nova",
+    ]
+    assert [item.url for item in items] == [
+        "https://www.bisbatlleida.org/ca/content/article-amb-imatge",
+        "https://www.bisbatlleida.org/ca/content/segon-article-amb-imatge",
+    ]
+    assert items[0].published_at == datetime(2026, 5, 25, tzinfo=timezone.utc)
+    assert items[1].published_at == datetime(2026, 5, 24, tzinfo=timezone.utc)
+
+
 def test_extract_items_sets_metadata():
     scraper = BisbatLleidaScraper()
     soup = load_fixture("bisbatlleida_listing.html")

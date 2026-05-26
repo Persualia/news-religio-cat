@@ -1,4 +1,4 @@
-"""Scraper implementation for https://www.bisbatlleida.org/ca/news."""
+"""Scraper implementation for https://www.bisbatlleida.org/ca/articles."""
 from __future__ import annotations
 
 from datetime import datetime, timezone
@@ -14,7 +14,7 @@ from .base import BaseScraper
 class BisbatLleidaScraper(BaseScraper):
     site_id = "bisbatlleida"
     base_url = "https://www.bisbatlleida.org"
-    listing_url = "https://www.bisbatlleida.org/ca/news"
+    listing_url = "https://www.bisbatlleida.org/ca/articles"
     default_lang = "ca"
 
     def extract_items(self, listing_soup: BeautifulSoup) -> Iterable[NewsItem]:
@@ -28,7 +28,11 @@ class BisbatLleidaScraper(BaseScraper):
             use_simple_iteration = True
 
         for row in rows:
-            anchor = row.select_one(".views-field-title a[href]") or row.select_one("a[href]")
+            anchor = (
+                row.select_one(".views-field-title a[href]")
+                or row.select_one(".article-list-teaser__title a[href]")
+                or row.select_one("a[href]")
+            )
             if anchor is None:
                 continue
 
@@ -45,7 +49,7 @@ class BisbatLleidaScraper(BaseScraper):
             if not title:
                 continue
 
-            date_node = row.select_one(".views-field-created")
+            date_node = row.select_one(".views-field-created") or row.select_one(".article-list-teaser__date")
             date_text = ""
             if date_node:
                 date_text = date_node.get_text(" ", strip=True)

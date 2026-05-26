@@ -24,7 +24,7 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 6. claretians https://claretpaulus.org/ca/actualitat/
 7. bisbatsolsona: https://bisbatsolsona.cat/comunicacio/noticies/
 8. bisbaturgell: https://bisbaturgell.org/ca/category/actualitat-cat
-9. bisbatlleida: https://www.bisbatlleida.org/ca/news
+9. bisbatlleida: https://www.bisbatlleida.org/ca/articles
 10. bisbattarragona: https://www.arquebisbattarragona.cat/
 11. bisbatgirona: https://www.bisbatgirona.cat/ca/noticies.html
 12. bisbatbarcelona: https://esglesia.barcelona/noticies/
