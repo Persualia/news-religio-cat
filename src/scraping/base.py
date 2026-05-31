@@ -36,6 +36,15 @@ class ScraperBlockedError(RuntimeError):
         self.detail = detail
 
 
+class ScraperUnexpectedContentError(RuntimeError):
+    """Raised when an origin returns a response the scraper cannot parse."""
+
+    def __init__(self, site_id: str, detail: str) -> None:
+        super().__init__(detail)
+        self.site_id = site_id
+        self.detail = detail
+
+
 class BaseScraper(ABC):
     """Reusable base scraper handling HTTP concerns and orchestration."""
 
@@ -157,4 +166,9 @@ class BaseScraper(ABC):
             return absolute
 
 
-__all__ = ["BaseScraper", "ScraperBlockedError", "ScraperNoArticlesError"]
+__all__ = [
+    "BaseScraper",
+    "ScraperBlockedError",
+    "ScraperNoArticlesError",
+    "ScraperUnexpectedContentError",
+]

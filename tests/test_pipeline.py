@@ -174,6 +174,32 @@ def test_pipeline_notifies_when_scraper_is_blocked():
     assert "maristes" in slack.messages[0]
 
 
+def test_pipeline_distinguishes_unexpected_content_from_empty_listing():
+    class UnexpectedContentScraper(StubScraper):
+        def scrape(self, limit=None):
+            from scraping.base import ScraperUnexpectedContentError
+
+            raise ScraperUnexpectedContentError(
+                self.site_id,
+                "La API de WordPress no devolvió JSON válido. Vista previa: <html>Forbidden</html>",
+            )
+
+    scrapers = [UnexpectedContentScraper("santjoandedeu", [])]
+    sheets = StubSheets()
+    trello = StubTrello()
+    slack = StubSlack()
+
+    pipeline = TrelloPipeline(scrapers=scrapers, trello_client=trello, sheets_repo=sheets, slack_notifier=slack)
+    result = pipeline.run(live_run=False)
+
+    assert result.sources_processed == 0
+    assert result.alerts_sent == 1
+    assert slack.messages
+    assert "Respuesta inesperada" in slack.messages[0]
+    assert "no pudo interpretar el formato esperado" in slack.messages[0]
+    assert "no retornó URLs" not in slack.messages[0]
+
+
 def test_pipeline_summary_marks_live_runs():
     items = [_news_item("https://example.com/a")]
     scrapers = [StubScraper("salesians", items)]

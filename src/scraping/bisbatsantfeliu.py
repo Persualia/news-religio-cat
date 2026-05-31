@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 from models import NewsItem, utcnow
 
-from .base import BaseScraper
+from .base import BaseScraper, ScraperUnexpectedContentError
 
 
 class BisbatSantFeliuScraper(BaseScraper):
@@ -24,12 +24,23 @@ class BisbatSantFeliuScraper(BaseScraper):
     def extract_items(self, listing_soup: BeautifulSoup) -> Iterable[NewsItem]:
         text = listing_soup.get_text(strip=True)
         if not text:
-            return []
+            raise ScraperUnexpectedContentError(
+                self.site_id,
+                "La API de WordPress devolvió una respuesta vacía.",
+            )
 
         try:
             payload = json.loads(text)
-        except json.JSONDecodeError:
-            return []
+        except json.JSONDecodeError as exc:
+            raise ScraperUnexpectedContentError(
+                self.site_id,
+                f"La API de WordPress no devolvió JSON válido. Vista previa: {_preview(text)}",
+            ) from exc
+        if not isinstance(payload, list):
+            raise ScraperUnexpectedContentError(
+                self.site_id,
+                f"La API de WordPress devolvió {type(payload).__name__}; se esperaba una lista.",
+            )
 
         items: list[NewsItem] = []
         seen: set[str] = set()
@@ -89,6 +100,13 @@ def _format_iso(value: datetime) -> str:
     if value.tzinfo is None:
         value = value.replace(tzinfo=timezone.utc)
     return value.astimezone(timezone.utc).isoformat()
+
+
+def _preview(value: str, max_length: int = 160) -> str:
+    collapsed = " ".join(value.split())
+    if len(collapsed) <= max_length:
+        return collapsed
+    return f"{collapsed[:max_length]}..."
 
 
 __all__ = ["BisbatSantFeliuScraper"]

@@ -16,7 +16,7 @@ import httpx
 from integrations import GoogleSheetsRepository, SlackNotifier, TrelloClient
 from models import NewsItem, SheetRecord, utcnow
 from scraping import BaseScraper, SCRAPER_PRIORITY, instantiate_scrapers
-from scraping.base import ScraperBlockedError, ScraperNoArticlesError
+from scraping.base import ScraperBlockedError, ScraperNoArticlesError, ScraperUnexpectedContentError
 
 logger = logging.getLogger(__name__)
 
@@ -102,6 +102,12 @@ class TrelloPipeline:
                     f":rotating_light: El scraper '{exc.site_id}' no retornó URLs. "
                     "Revisa posibles cambios en la web origen."
                 )
+                logger.warning(message)
+                self._slack.notify(message)
+                continue
+            except ScraperUnexpectedContentError as exc:
+                alerts_sent += 1
+                message = _format_scraper_unexpected_content_error(exc.site_id, exc)
                 logger.warning(message)
                 self._slack.notify(message)
                 continue
@@ -267,6 +273,14 @@ def _format_scraper_error(site_id: str, exc: Exception) -> str:
 def _format_scraper_blocked_error(site_id: str, exc: ScraperBlockedError) -> str:
     return (
         f":warning: El origen bloqueó el scraper '{site_id}'. "
+        f"Detalle: {exc.detail}"
+    )
+
+
+def _format_scraper_unexpected_content_error(site_id: str, exc: ScraperUnexpectedContentError) -> str:
+    return (
+        f":warning: Respuesta inesperada al scrapear '{site_id}'. "
+        "El origen respondió, pero el scraper no pudo interpretar el formato esperado. "
         f"Detalle: {exc.detail}"
     )
 

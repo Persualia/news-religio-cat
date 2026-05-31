@@ -2,7 +2,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from bs4 import BeautifulSoup
+import pytest
 
+from scraping.base import ScraperUnexpectedContentError
 from scraping.bisbattortosa import BisbatTortosaScraper
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -43,3 +45,14 @@ def test_extract_items_sets_metadata():
     assert item.metadata["base_url"] == scraper.base_url
     assert item.metadata["lang"] == scraper.default_lang
     assert item.metadata["published_at"] == "2025-11-06T11:28:37+00:00"
+
+
+def test_extract_items_rejects_non_json_listing():
+    scraper = BisbatTortosaScraper()
+    soup = BeautifulSoup("<html><title>Forbidden</title><body>Access denied</body></html>", "lxml")
+
+    with pytest.raises(ScraperUnexpectedContentError) as exc_info:
+        list(scraper.extract_items(soup))
+
+    assert exc_info.value.site_id == "bisbattortosa"
+    assert "no devolvió JSON válido" in exc_info.value.detail
