@@ -47,7 +47,7 @@ class PeretarresScraper(BaseScraper):
                 continue
             seen.add(normalized)
 
-            title = entry.link.get_text(strip=True)
+            title = entry.title_text or _clean_text(entry.link.get_text(" ", strip=True))
             if not title:
                 continue
 
@@ -74,10 +74,25 @@ class PeretarresScraper(BaseScraper):
 @dataclass(frozen=True)
 class _Entry:
     link: Tag
+    title_text: str
     date_text: str
 
 
 def _iter_entries(soup: BeautifulSoup) -> Iterable[_Entry]:
+    for card in soup.select('.card.entity[data-type="article"]'):
+        link = card.select_one("a.entity--link[href]")
+        if link is None:
+            continue
+        title_tag = card.select_one(".entity--title")
+        title_text = _clean_text(title_tag.get_text(" ", strip=True)) if title_tag else ""
+        if not title_text:
+            title_text = _clean_text(link.get("title", ""))
+        date_tag = card.select_one("time[datetime]") or card.select_one("time")
+        date_text = ""
+        if date_tag:
+            date_text = date_tag.get("datetime", "") or date_tag.get_text(strip=True)
+        yield _Entry(link=link, title_text=title_text, date_text=date_text)
+
     featured_link = soup.select_one(".titol-noticia-destacada")
     link: Tag | None = None
     if featured_link is not None:
@@ -88,7 +103,7 @@ def _iter_entries(soup: BeautifulSoup) -> Iterable[_Entry]:
     if link is not None:
         date_tag = soup.select_one(".btn.btn-default.font-20.mt-30")
         date_text = date_tag.get_text(strip=True) if date_tag else ""
-        yield _Entry(link=link, date_text=date_text)
+        yield _Entry(link=link, title_text="", date_text=date_text)
 
     for card in soup.select(".image-box.style-2"):
         link_tag = card.select_one("a.titol-noticia-coneixement") or card.select_one("h3 a") or card.select_one("a")
@@ -96,7 +111,7 @@ def _iter_entries(soup: BeautifulSoup) -> Iterable[_Entry]:
             continue
         date_tag = card.select_one(".taronja-negreta")
         date_text = date_tag.get_text(strip=True) if date_tag else ""
-        yield _Entry(link=link_tag, date_text=date_text)
+        yield _Entry(link=link_tag, title_text="", date_text=date_text)
 
 
 def _parse_date(value: str | None) -> datetime | None:
@@ -106,6 +121,13 @@ def _parse_date(value: str | None) -> datetime | None:
     cleaned = cleaned.strip()
     if not cleaned:
         return None
+    try:
+        parsed = datetime.fromisoformat(cleaned.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            return parsed.replace(tzinfo=timezone.utc)
+        return parsed.astimezone(timezone.utc)
+    except ValueError:
+        pass
     for fmt in ("%d.%m.%y", "%d.%m.%Y", "%d/%m/%Y", "%d/%m/%y"):
         try:
             parsed = datetime.strptime(cleaned, fmt)
@@ -119,6 +141,10 @@ def _format_iso(value: datetime) -> str:
     if value.tzinfo is None:
         value = value.replace(tzinfo=timezone.utc)
     return value.astimezone(timezone.utc).isoformat()
+
+
+def _clean_text(value: str) -> str:
+    return " ".join(value.split())
 
 
 __all__ = ["PeretarresScraper"]
