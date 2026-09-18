@@ -1,4 +1,4 @@
-"""Scraper implementation for https://www.migrastudium.org/actualitat."""
+"""Scraper implementation for https://www.jesuitessocial.org/migrastudium/actualitat."""
 from __future__ import annotations
 
 import logging
@@ -17,8 +17,8 @@ logger = logging.getLogger(__name__)
 
 class MigrastudiumScraper(BaseScraper):
     site_id = "migrastudium"
-    base_url = "https://www.migrastudium.org"
-    listing_url = "https://www.migrastudium.org/actualitat"
+    base_url = "https://www.jesuitessocial.org"
+    listing_url = "https://www.jesuitessocial.org/migrastudium/actualitat"
     default_lang = "ca"
 
     def extract_items(self, listing_soup: BeautifulSoup) -> Iterable[NewsItem]:

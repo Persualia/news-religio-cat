@@ -18,9 +18,9 @@ def test_extract_items_from_listing():
     soup = load_fixture("migrastudium_listing.html")
 
     expected_dates = {
-        "https://www.migrastudium.org/actualitat/les-nostres-mans-diuen-prou": datetime(2025, 11, 25, tzinfo=timezone.utc),
-        "https://www.migrastudium.org/actualitat/presencia-que-teixeix-humanitat-alla-tot-es-trenca": datetime(2025, 10, 6, tzinfo=timezone.utc),
-        "https://www.migrastudium.org/actualitat/primera-setmana-doctubre-una-cita-amb-el-centre-dinternament-destrangers": datetime(2025, 9, 16, tzinfo=timezone.utc),
+        "https://www.jesuitessocial.org/migrastudium/actualitat/les-nostres-mans-diuen-prou": datetime(2025, 11, 25, tzinfo=timezone.utc),
+        "https://www.jesuitessocial.org/migrastudium/actualitat/presencia-que-teixeix-humanitat-alla-tot-es-trenca": datetime(2025, 10, 6, tzinfo=timezone.utc),
+        "https://www.jesuitessocial.org/migrastudium/actualitat/primera-setmana-doctubre-una-cita-amb-el-centre-dinternament-destrangers": datetime(2025, 9, 16, tzinfo=timezone.utc),
     }
 
     scraper._fetch_published_at = lambda url: expected_dates.get(url)

@@ -37,7 +37,7 @@ Ingestion service that gathers the latest headlines from selected Catholic news 
 19. abadiamontserrat https://www.millenarimontserrat.cat/noticies
 20. peretarres https://www.peretarres.org/actualitat/noticies
 21. serveijesuitarefugiats https://jrs.net/es/noticias-e-historias/
-22. migrastudium https://www.migrastudium.org/actualitat
+22. migrastudium https://www.jesuitessocial.org/migrastudium/actualitat
 23. fundaciocomtal https://comtal.org/es/noticias/
 24. caminsfundacio https://www.caminsfundacio.org/posat-al-dia/
 25. franciscans https://caputxins.cat/actualitat-caputxina/
