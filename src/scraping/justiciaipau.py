@@ -9,7 +9,12 @@ from bs4 import BeautifulSoup
 
 from models import NewsItem, utcnow
 
-from .base import BaseScraper
+from .base import BaseScraper, ScraperBlockedError
+
+# The site sits behind Anubis (anti-bot proof-of-work), which only challenges
+# browser-like User-Agents (those containing "Mozilla"). A plain client UA gets
+# the real JSON from the WordPress REST API.
+_USER_AGENT = "news-religio-cat/1.0"
 
 _API_URL = (
     "https://justiciaipau.org/wp-json/wp/v2/posts"
@@ -23,8 +28,19 @@ class JusticiaIPauScraper(BaseScraper):
     listing_url = "https://justiciaipau.org/diem/"
     default_lang = "ca"
 
+    def __init__(self) -> None:
+        super().__init__()
+        self._client.headers["User-Agent"] = _USER_AGENT
+
     def extract_items(self, listing_soup: BeautifulSoup) -> Iterable[NewsItem]:  # noqa: ARG002
         response = self._get(_API_URL)
+        content_type = response.headers.get("content-type", "")
+        if "json" not in content_type:
+            raise ScraperBlockedError(
+                self.site_id,
+                f"Expected JSON from {_API_URL}, got '{content_type}' "
+                f"(bot challenge?): {response.text[:120]!r}",
+            )
         data = response.json()
 
         items: list[NewsItem] = []

@@ -10,6 +10,7 @@ FIXTURES = Path(__file__).parent / "fixtures"
 class _DummyResponse:
     def __init__(self, payload):
         self._payload = payload
+        self.headers = {"content-type": "application/json; charset=UTF-8"}
 
     def json(self):
         return self._payload
