@@ -20,6 +20,10 @@ def pytest_configure():
         "-----BEGIN PRIVATE KEY-----\nTEST\n-----END PRIVATE KEY-----\n",
     )
     os.environ.setdefault("GOOGLE_SHEET_ID", "test-sheet")
+    # Empty values win over .env (load_dotenv never overrides), so tests never
+    # call the real Cloudflare Browser Rendering API.
+    os.environ["CF_ACCOUNT_ID"] = ""
+    os.environ["CF_API_TOKEN"] = ""
 
 
 __all__ = []

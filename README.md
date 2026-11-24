@@ -142,6 +142,7 @@ Configure the following variables in `.env` (loaded via `python-dotenv`):
 | `GOOGLE_SHEET_WORKSHEET` | (Optional) Worksheet/tab name; defaults to the first sheet. |
 | `GOOGLE_PRIVATE_KEY_ID`, `GOOGLE_CLIENT_ID`, `GOOGLE_TOKEN_URI`, etc. | Optional overrides when not using the default Google endpoints. |
 | `SCRAPER_USER_AGENT`, `SCRAPER_REQUEST_TIMEOUT`, `SCRAPER_MAX_RETRIES`, `SCRAPER_THROTTLE_SECONDS` | Scraper tuning knobs with safe defaults. |
+| `CF_ACCOUNT_ID`, `CF_API_TOKEN` | Optional. When set, requests blocked by the origin (HTTP 403/429/503, AWS WAF challenges, timeouts, or a scraper's own `_detect_block`) are retried through Cloudflare Browser Rendering, so the origin sees Cloudflare's IPs instead of Render's. The token needs the *Browser Rendering – Edit* permission. |
 | `RUN_DAILY_USERNAME` / `RUN_DAILY_PASSWORD` | HTTP Basic Auth credentials required by the `/run-daily` endpoint on Render. |
 
 The spreadsheet must expose the columns `Date`, `ID`, `Source`, `Title`. The pipeline appends new rows at the bottom so you can pivot or audit historic runs.

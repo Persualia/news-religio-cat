@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from html import unescape
 from typing import Iterable
 
+import httpx
 from bs4 import BeautifulSoup
 
 from models import NewsItem, utcnow
@@ -31,6 +32,16 @@ class JusticiaIPauScraper(BaseScraper):
     def __init__(self) -> None:
         super().__init__()
         self._client.headers["User-Agent"] = _USER_AGENT
+
+    def _detect_block(self, url: str, response: httpx.Response) -> str | None:
+        # Anubis answers the API with a 200 HTML challenge page instead of JSON.
+        # Flagging it as a block lets BaseScraper retry through Cloudflare.
+        if url == _API_URL and "json" not in response.headers.get("content-type", ""):
+            return (
+                f"Expected JSON from {_API_URL}, got "
+                f"'{response.headers.get('content-type', '')}' (bot challenge?): {response.text[:120]!r}"
+            )
+        return super()._detect_block(url, response)
 
     def extract_items(self, listing_soup: BeautifulSoup) -> Iterable[NewsItem]:  # noqa: ARG002
         response = self._get(_API_URL)

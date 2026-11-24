@@ -29,6 +29,8 @@ class ScraperSettings:
     request_timeout: float
     max_retries: int
     throttle_seconds: float
+    cloudflare_account_id: Optional[str] = None
+    cloudflare_api_token: Optional[str] = None
 
 
 @dataclass(frozen=True)
@@ -86,6 +88,8 @@ def get_settings() -> Settings:
             request_timeout=float(_optional_env("SCRAPER_REQUEST_TIMEOUT") or 20),
             max_retries=int(_optional_env("SCRAPER_MAX_RETRIES") or 3),
             throttle_seconds=float(_optional_env("SCRAPER_THROTTLE_SECONDS") or 1.5),
+            cloudflare_account_id=_optional_env("CF_ACCOUNT_ID"),
+            cloudflare_api_token=_optional_env("CF_API_TOKEN"),
         ),
         trello=TrelloSettings(
             api_key=_require_env("TRELLO_KEY"),
